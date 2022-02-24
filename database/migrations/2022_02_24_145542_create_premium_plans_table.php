@@ -16,7 +16,7 @@ class CreatePremiumPlansTable extends Migration
         Schema::create('premium_plans', function (Blueprint $table) {
             $table->id();
             $table->string('name',45);
-            $table->double('price');
+            $table->double('price', 3, 2);
             $table->integer('duration_days');
             $table->timestamps();
         });
