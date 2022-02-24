@@ -4,5 +4,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// Mixin Flex
-@import './mixin.scss';
+// importing all parts
+@import './variables';
+@import './mixins.scss';
+@import './generals';

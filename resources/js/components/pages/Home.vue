@@ -1,124 +1,45 @@
 <template>
-   <main>
-      <!-- sezione cerca -->
-      <section class="search">
 
-         <div class="container">
-            <div class="row">
+   <div class="container">
 
-               <div class="content-sx col-6"></div>
-               <div class="content-dx col-6"></div>
+      <aside></aside>
 
-            </div>
-         </div>
+      <main>
          
+         <Section 
+            v-for="(section, index) in sections" 
+            :key="index"
+            :sectionInfo="{section, index}"
+         />
 
-      </section>
-      <!-- sezione categorie -->
-      <section class="categories">
+      </main>
+      
+   </div>
 
-         <div class="container">
-            <div class="row">
-
-               <div class="content-sx col-6"></div>
-               <div class="content-dx col-6"></div>
-
-            </div>
-         </div>
-
-      </section>
-      <!-- sezione professionisti -->
-      <section class="professional">
-
-        <div class="container">
-            <div class="row">
-
-               <div class="content-sx col-6"></div>
-               <div class="content-dx col-6"></div>
-
-            </div>
-         </div>
-
-      </section>
-      <!-- sezione about -->
-      <section class="about">
-
-         <div class="container">
-            <div class="row">
-
-               <div class="content-sx col-6"></div>
-               <div class="content-dx col-6"></div>
-
-            </div>
-         </div>
-
-      </section>
-      <!-- sezione iscriviti -->
-      <section class="subscribe">
-
-         <div class="container">
-            <div class="row">
-
-               <div class="content-sx col-6"></div>
-               <div class="content-dx col-6"></div>
-
-            </div>
-         </div>
-
-      </section>
-      <!-- sezione contatti -->
-      <section class="contact">
-
-         <div class="container">
-            <div class="row">
-
-               <div class="content-sx col-6"></div>
-               <div class="content-dx col-6"></div>
-
-            </div>
-
-         </div>
-      </section>
-
-   </main>
 </template>
 
 <script>
+import Section from './Section.vue'
+import sections from '../../data/sections'
+
 export default {
-   name: 'Home'
+   name: 'Home',
+   components: { Section },
+   data() {
+      return {
+         sections
+      }
+   }
 }
 </script>
 
 <style lang="scss" scoped>
 
-main{
-   width: 100vw;
-   margin-top: 90px;
-   // background-color: #072142;
-   section{
-      height: calc(100vh - 90px);
-      width: 100vw;
-      background-color: #072142;
-      
-      margin-bottom: 20px;
+@import '../../../sass/guest/_variables.scss';
 
-      .container{
-         .row{
-            padding-top: 150px;
-            .content-sx, .content-dx{
-               height: 400px;
-                
-            }
-            .content-sx{
-               background-color: cyan;
-            }
-            .content-dx{
-               background-color: #fff;
-            }
-         }
-      }
-      
+   main{
+      width: 100%;
+      color: #000;
    }
-}
 
 </style>

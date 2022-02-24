@@ -1,23 +1,15 @@
 <template>
 
    <header>
-
       <div class="container">
-
          <div class="row">
 
-             <div class="logo col-6">
-               
-             </div>
+            <div class="logo col-6"></div>
 
-             <div class="menu col-6">
-
-             </div>
+            <div class="menu col-6"></div>
 
          </div>
       </div>
-         
-   
    </header>
  
 </template>
@@ -30,13 +22,15 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '../../../sass/guest/_variables.scss';
+
    header{
       height: 90px;
-      background-color: #072142;
-      width: 100vw;
+      width: 100%;
       position: fixed;
       top: 0;
       left: 0;
+      z-index: 1000;
       .logo{
          background-color: orange;
          height: 90px;

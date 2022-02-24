@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
  mix.js('resources/js/admin.js', 'public/js')
  .js('resources/js/guest.js', 'public/js')
+ .js('resources/js/data/sections.js', 'public/js/data')
  .sass('resources/sass/admin/style.scss', 'public/css/admin')
  .sass('resources/sass/guest/style.scss', 'public/css/guest')
  .options({
