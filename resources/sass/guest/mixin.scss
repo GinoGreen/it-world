@@ -1,0 +1,26 @@
+@mixin center($type: 'classico'){
+
+   display: flex;
+   
+   @if $type == 'centro-x'{
+     justify-content: center;
+   } @else if $type == 'centro-y'{
+     align-items: center;
+   } @else if $type == 'centro-xy'{
+     align-items: center;
+     justify-content: center;
+   } @else if $type == 'y-centro-x-sinistra'{
+       align-items: center;
+       justify-content: flex-start;
+   } @else if $type == 'y-centro-x-destra'{
+       align-items: center;
+       justify-content: flex-end;
+   } @else if $type == 'y-centro-x-estremi'{
+       align-items: center;
+       justify-content: space-between;
+   }@else if $type == 'y-centro-x-lati'{
+       align-items: center;
+       justify-content: space-around;
+   }
+
+}
