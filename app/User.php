@@ -37,7 +37,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function reviews() {
+    public function skills(){
+        return $this->belongsToMany('App\Skill');
+    }
+
+    public function premium_plans(){
+        return $this->belongsToMany('App\Premium_plan');
+    }  
+    
+    public function reviews(){
         return $this->hasMany('App\Review');
     }
 
