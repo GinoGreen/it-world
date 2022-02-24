@@ -13,21 +13,21 @@ class PremiumPlansTableSeeder extends Seeder
     public function run()
     {
         $premium_plans = [
-          [
-            'name'=>'Lite'  ,
-            'price'=> 2.99 ,
-            'days' => 1
-          ],
-          [
-            'name'=>'Premium'  ,
-            'price'=> 5.99 ,
-            'days' => 3
-          ],
-          [
-            'name'=>'Elite'  ,
-            'price'=> 9.99 ,
-            'days' => 6
-          ],
+            [
+                'name'=>'Lite'  ,
+                'price'=> 2.99 ,
+                'days' => 1
+            ],
+            [
+                'name'=>'Premium'  ,
+                'price'=> 5.99 ,
+                'days' => 3
+            ],
+            [
+                'name'=>'Elite'  ,
+                'price'=> 9.99 ,
+                'days' => 6
+            ],
         ];
 
         foreach($premium_plans as $premium_plan){
