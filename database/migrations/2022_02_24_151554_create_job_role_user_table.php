@@ -27,8 +27,6 @@ class CreateJobRoleUserTable extends Migration
                     ->references('id')
                     ->on('job_roles')
                     ->onDelete('cascade');
-
-            $table->timestamps();
         });
     }
 

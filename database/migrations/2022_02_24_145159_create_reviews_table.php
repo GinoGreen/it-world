@@ -17,9 +17,9 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description', 500)->nullable();
-            $table->tinyInteger('vote', 5);
+            $table->tinyInteger('vote');
 
-            $table->unsignedBigInteger('user_id')->after('id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
