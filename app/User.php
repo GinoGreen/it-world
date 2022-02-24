@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'region', 'avatar_path', 'cv_path', 'level', 'surename'
     ];
 
     /**
@@ -43,5 +43,9 @@ class User extends Authenticatable
 
     public function premium_plans(){
         return $this->belongsToMany('App\Premium_plan');
+    }  
+    
+    public function reviews(){
+        return $this->hasMany('App\Review');
     }
 }
