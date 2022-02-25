@@ -123,6 +123,20 @@ __webpack_require__.r(__webpack_exports__);
     sx: 9,
     dx: 3
   }
+}, {
+  title: 'Qualcuno ha detto Potato?!',
+  "class": 'potato',
+  col: {
+    sx: 9,
+    dx: 3
+  }
+}, {
+  title: 'Qualcuno ha detto Potato?!',
+  "class": 'potato',
+  col: {
+    sx: 9,
+    dx: 3
+  }
 }]);
 
 /***/ }),

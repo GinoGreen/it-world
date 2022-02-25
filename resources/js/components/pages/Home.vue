@@ -1,17 +1,14 @@
 <template>
 
-   <div class="container">
+   <div class="container d-flex">
 
       <aside>
-         <div class="position">
-
-            <div
+         <!-- :class="{'active': index === sectionIndex}" -->
+         <div
+            class="scroll-line"
             v-for="(line, index) in sections"
             :key="`line${index}`"
-            class="scroll-line">
-            </div>
-
-         </div>
+         ></div>
       </aside>
 
       <main>
@@ -51,27 +48,29 @@ export default {
 @import '../../../sass/guest/_variables.scss';
    
 .container{
-   position: relative;
    aside{
-      position: absolute;
-      left: -120px;
-      top: 320px;
-      .position{
-         position: fixed;
-         .scroll-line{
-            
-            cursor: pointer;
-            background-color: #fff;
-            border-radius: 10px;
-            height: 5px;
-            width: 50px;
-            margin-bottom: 20px;
-            transition: 1s;
-            &:hover{
-               width: 80px;
-            }
+      width: 13%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .scroll-line{
+         
+         cursor: pointer;
+         background-color: #fff;
+         border-radius: 10px;
+         height: 5px;
+         width: 50px;
+         margin-bottom: 20px;
+         transition: 1s;
+         &:hover{
+            width: 80px;
+         }
+         &.active {
+            width: 80px;
          }
       }
+   
    }
 
    main{
