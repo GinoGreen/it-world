@@ -251,7 +251,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container aside[data-v-a9aac016] {\n  width: 13%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .scroll-line[data-v-a9aac016] {\n  cursor: pointer;\n  background-color: #fff;\n  border-radius: 10px;\n  height: 5px;\n  width: 50px;\n  margin-bottom: 20px;\n  transition: 1s;\n}\n.container aside .scroll-line[data-v-a9aac016]:hover {\n  width: 80px;\n}\n.container aside .scroll-line.active[data-v-a9aac016] {\n  width: 80px;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  color: #000;\n}", ""]);
+exports.push([module.i, ".container[data-v-a9aac016] {\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  width: 13%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .scroll-line[data-v-a9aac016] {\n  cursor: pointer;\n  background-color: #fff;\n  border-radius: 10px;\n  height: 5px;\n  width: 50px;\n  margin-bottom: 20px;\n  transition: 1s;\n}\n.container aside .scroll-line[data-v-a9aac016]:hover {\n  width: 80px;\n}\n.container aside .scroll-line.active[data-v-a9aac016] {\n  width: 80px;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
 
 // exports
 

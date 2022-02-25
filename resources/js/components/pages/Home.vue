@@ -72,10 +72,17 @@ export default {
       }
    
    }
-
+   /* Hide scrollbar */
+   main::-webkit-scrollbar {
+      display: none;
+   }
    main{
       width: 100%;
+      height: 100vh;
       color: #000;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      overflow-y: scroll;
    }
 }   
 
