@@ -1,12 +1,19 @@
 <template>
    <main class="container">
-      <h1>Home</h1>
+      <AdvancedSearch />
    </main>
 </template>
 
 <script>
+
+import AdvancedSearch from './AdvancedSearch.vue'
+
 export default {
-   name: 'Home'
+   name: 'Home',
+
+   components: {
+      AdvancedSearch
+   }
 }
 </script>
 
