@@ -38,13 +38,12 @@ export default {
       height: 100vh;
       width: 100%;
       
-      margin-bottom: 20px;
+      border-bottom: 20px solid white;
 
          .row{
             padding-top: 150px;
             .content-sx, .content-dx{
-               height: 400px;
-                
+               height: 400px;   
             }
             .content-sx{
                background-color: cyan;

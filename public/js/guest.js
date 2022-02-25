@@ -144,6 +144,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -244,7 +254,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "main[data-v-a9aac016] {\n  width: 100%;\n  color: #000;\n}", ""]);
+exports.push([module.i, ".container[data-v-a9aac016] {\n  position: relative;\n}\n.container aside[data-v-a9aac016] {\n  position: absolute;\n  left: -120px;\n  top: 320px;\n}\n.container aside .position[data-v-a9aac016] {\n  position: fixed;\n}\n.container aside .position .scroll-line[data-v-a9aac016] {\n  cursor: pointer;\n  background-color: #fff;\n  border-radius: 10px;\n  height: 5px;\n  width: 50px;\n  margin-bottom: 20px;\n  transition: 1s;\n}\n.container aside .position .scroll-line[data-v-a9aac016]:hover {\n  width: 80px;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  color: #000;\n}", ""]);
 
 // exports
 
@@ -263,7 +273,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "section {\n  height: 100vh;\n  width: 100%;\n  margin-bottom: 20px;\n}\nsection .row {\n  padding-top: 150px;\n}\nsection .row .content-sx, section .row .content-dx {\n  height: 400px;\n}\nsection .row .content-sx {\n  background-color: cyan;\n}\nsection .row .content-dx {\n  background-color: #fff;\n}", ""]);
+exports.push([module.i, "section {\n  height: 100vh;\n  width: 100%;\n  border-bottom: 20px solid white;\n}\nsection .row {\n  padding-top: 150px;\n}\nsection .row .content-sx, section .row .content-dx {\n  height: 400px;\n}\nsection .row .content-sx {\n  background-color: cyan;\n}\nsection .row .content-dx {\n  background-color: #fff;\n}", ""]);
 
 // exports
 
@@ -1483,7 +1493,16 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("aside"),
+    _c("aside", [
+      _c(
+        "div",
+        { staticClass: "position" },
+        _vm._l(_vm.sections, function (line, index) {
+          return _c("div", { key: "line" + index, staticClass: "scroll-line" })
+        }),
+        0
+      ),
+    ]),
     _vm._v(" "),
     _c(
       "main",
@@ -16771,6 +16790,20 @@ __webpack_require__.r(__webpack_exports__);
     sx: 9,
     dx: 3
   }
+}, {
+  title: 'Qualcuno ha detto Potato?!',
+  "class": 'potato',
+  col: {
+    sx: 9,
+    dx: 3
+  }
+}, {
+  title: 'Qualcuno ha detto Potato?!',
+  "class": 'potato',
+  col: {
+    sx: 9,
+    dx: 3
+  }
 }]);
 
 /***/ }),
@@ -16837,7 +16870,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\luigi\Documents\Boolean\final-project\it-world\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! /Users/matteodeias/Documents/Boolean/progetto finale/it-world/resources/js/guest.js */"./resources/js/guest.js");
 
 
 /***/ })
