@@ -7,3 +7,7 @@
 
 </div>
 @endsection
+
+@section('title')
+    Statistiche
+@endsection

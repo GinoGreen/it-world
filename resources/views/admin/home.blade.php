@@ -36,3 +36,7 @@
     </div> --}}
 </div>
 @endsection
+
+@section('title')
+    Dashboard
+@endsection
