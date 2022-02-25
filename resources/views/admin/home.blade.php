@@ -8,10 +8,18 @@
     <div>
         <h3>collegamenti</h3>
         <ul>
-            <li><a href="{{ route('admin.edit') }}">Edit Profile</a></li>
-            <li><a href="{{ route('admin.message') }}">My Messages</a></li>
-            <li><a href="{{ route('admin.review') }}">My Reviews</a></li>
-            <li><a href="{{ route('admin.statistic') }}">Statistics</a></li>
+            <li>
+                <a href="{{ route('admin.profile.edit', $profile) }}">Edit Profile</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.message') }}">My Messages</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.review') }}">My Reviews</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.statistic') }}">Statistics</a>
+            </li>
         </ul>
     </div>
 
