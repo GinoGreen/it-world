@@ -16,32 +16,34 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('surename')->nullable();
-            $table->enum('region', [
-                'Abruzzo',
-            	'Basilicata',
-                'Calabria',
-                'Campania',
-                'Emilia-Romagna',
-                'Friuli Venezia Giulia',
-                'Lazio',
-                'Liguria',
-                'Lombardia',
-                'Marche',
-                'Molise',
-                'Piemonte',
-                'Puglia',
-                'Sardegna',
-                'Sicilia',
-                'Toscana',
-                'Trentino-Alto Adige',
-                'Valle d Aosta',
-                'Veneto',
-            ])->nullable();
+            $table->string('surname')->nullable();
+            // $table->enum('region', [
+            //     'Abruzzo',
+            // 	'Basilicata',
+            //     'Calabria',
+            //     'Campania',
+            //     'Emilia-Romagna',
+            //     'Friuli Venezia Giulia',
+            //     'Lazio',
+            //     'Liguria',
+            //     'Lombardia',
+            //     'Marche',
+            //     'Molise',
+            //     'Piemonte',
+            //     'Puglia',
+            //     'Sardegna',
+            //     'Sicilia',
+            //     'Toscana',
+            //     'Trentino-Alto Adige',
+            //     'Valle d Aosta',
+            //     'Veneto',
+            // ])->nullable();
+            $table->string('region')->nullable();
             $table->string('email')->unique();
             $table->string('avatar_path')->nullable();
             $table->string('cv_path')->nullable();
-            $table->enum('level', ['junior', 'middle', 'senior'])->nullable();
+            // $table->enum('level', ['junior', 'middle', 'senior'])->nullable();
+            $table->string('level');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
