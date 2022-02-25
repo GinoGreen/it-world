@@ -74,4 +74,33 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function showRegistrationForm()
+    {
+        $regions = [
+            'Abruzzo',
+            'Basilicata',
+            'Calabria',
+            'Campania',
+            'Emilia-Romagna',
+            'Friuli Venezia Giulia',
+            'Lazio',
+            'Liguria',
+            'Lombardia',
+            'Marche',
+            'Molise',
+            'Piemonte',
+            'Puglia',
+            'Sardegna',
+            'Sicilia',
+            'Toscana',
+            'Trentino-Alto Adige',
+            'Valle d Aosta',
+            'Veneto',
+        ];
+
+        $levels = ['junior', 'middle', 'senior'];
+
+        return view('auth.register', compact('regions', 'levels'));
+    }
 }
