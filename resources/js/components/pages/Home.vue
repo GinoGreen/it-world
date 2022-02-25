@@ -4,23 +4,32 @@
 
       <aside>
          <!-- :class="{'active': index === sectionIndex}" -->
-         <div
+         <div class="wrap-scroll-line">
+            <div
             class="scroll-line"
             v-for="(line, index) in sections"
             :key="`line${index}`"
-         ></div>
+            ></div>
+         </div>
+         
+
+         <div class="scroll-down">
+            <span>Lorem</span>
+            <div class="line"></div>
+         </div>
       </aside>
 
       <main>
+         
          
          <Section 
             v-for="(section, index) in sections" 
             :key="index"
             :sectionInfo="{section, index}"
          />
-
+         
       </main>
-      
+
    </div>
 
 </template>
@@ -48,14 +57,21 @@ export default {
 @import '../../../sass/guest/_variables.scss';
    
 .container{
+   position: relative;
    aside{
       width: 13%;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      .scroll-line{
-         
+      justify-content: space-between;
+
+      .wrap-scroll-line{
+         margin-top: 300px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         .scroll-line{
+            
          cursor: pointer;
          background-color: #fff;
          border-radius: 10px;
@@ -69,6 +85,27 @@ export default {
          &.active {
             width: 80px;
          }
+         }
+
+      }
+      .scroll-down{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-between;
+         height: 150px;
+         width: 50px;
+         span{
+            margin-left: 4px;
+            color: white;
+            rotate: 90deg;
+         }
+         .line{
+            width: 2px;
+            height: 100px;
+            background-color: #fff;
+         }
+
       }
    
    }
@@ -77,13 +114,17 @@ export default {
       display: none;
    }
    main{
+      
       width: 100%;
       height: 100vh;
       color: #000;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
       overflow-y: scroll;
+     
    }
+
+   
 }   
 
 </style>

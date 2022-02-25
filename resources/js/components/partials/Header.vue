@@ -4,9 +4,22 @@
       <div class="container">
          <div class="row">
 
-            <div class="logo col-6"></div>
+            <div class="logo col-6">
+               <img src="/img/logo.svg" alt="">
+            </div>
 
-            <div class="menu col-6"></div>
+            <div class="menu col-6">
+
+               <span>Cerca</span>
+               <span>Accedi</span>
+               <span>Registrati</span>
+
+               <div class="wrap-line-menu">
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+               </div>
+
+            </div>
 
          </div>
       </div>
@@ -32,12 +45,33 @@ export default {
       left: 0;
       z-index: 1000;
       .logo{
-         background-color: orange;
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         // background-color: orange;
          height: 90px;
+         img{
+            width: 150px;
+            height: 80px;
+         }
       }
       .menu{
-         background-color: green;
+         display: flex;
+         justify-content: flex-end;
+         align-items: center;
+         // background-color: green;
          height: 90px;
+         span{
+            color: white;
+            margin: 0px 20px 7px 0px;
+         }
+         .menu-line{
+            width: 30px;
+            height: 5px;
+            margin-bottom: 8px;
+            background-color: #fff;
+            border-radius: 10px;
+         }
       }
 
    }

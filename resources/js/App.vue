@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="it-wrapper">
       <Header/>
       <router-view></router-view>
    </div>
@@ -18,4 +18,14 @@ export default {
 </script>
 
 <style lang="scss">
+.it-wrapper{
+   background-image: url("/img/pngwing.com.png");
+   background-position: center right;
+   background-size: 40%;
+   background-repeat: no-repeat;
+   background-position-x: 80vw;
+   
+}
+
+
 </style>

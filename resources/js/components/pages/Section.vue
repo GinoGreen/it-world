@@ -8,11 +8,13 @@
 
       <div class="row">
 
-         <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx"></div>
+         <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
+            <h2>{{ sectionInfo.section.title }}</h2>
+         </div>
 
          <div class="content-dx" :class="'col-' + sectionInfo.section.col.dx">
-            <!-- titolo di esempio (mettetelo dove volete) -->
-            <h2>{{ sectionInfo.section.title }}</h2>
+            <img :src="sectionInfo.section.image" alt="">
+           
          </div>
 
       </div>
@@ -37,21 +39,24 @@ export default {
    section {
       height: 100vh;
       width: 100%;
-      
-      border-bottom: 20px solid white;
-
-         .row{
+      .row{
             padding-top: 150px;
             .content-sx, .content-dx{
-               height: 400px;   
+               height: 500px;   
             }
             .content-sx{
                background-color: cyan;
             }
             .content-dx{
                background-color: #fff;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               img{
+                  width: 100%;
+               }
             }
-         }
+      }
    }
 
 </style>
