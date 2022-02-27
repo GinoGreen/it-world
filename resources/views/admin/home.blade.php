@@ -12,6 +12,7 @@
             <li><a href="{{ route('admin.message') }}">My Messages</a></li>
             <li><a href="{{ route('admin.review') }}">My Reviews</a></li>
             <li><a href="{{ route('admin.statistic') }}">Statistics</a></li>
+            <li><a href="{{ route('chartjs.index') }}">ChartJS</a></li>
         </ul>
     </div>
 
