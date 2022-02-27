@@ -133,3 +133,7 @@
     </div>
 </div>
 @endsection
+
+@section('title')
+    Registrati
+@endsection
