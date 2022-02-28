@@ -15,7 +15,7 @@ use App\Http\Controllers\ChartJsController;
 */
 
 Route::get('/', function() {
-    return view('guest.welcome');
+    return view('guest.home');
 });
 
 Route::get('chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
