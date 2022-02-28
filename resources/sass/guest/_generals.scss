@@ -1,3 +1,10 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none; 
+}
+
 body {
    // font-family: $font_stack;
    background-color: $secondary_color;

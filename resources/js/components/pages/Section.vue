@@ -10,6 +10,9 @@
 
          <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
             <h2>{{ sectionInfo.section.title }}</h2>
+            <Slider 
+            v-if="sectionInfo.section.class === 'professionals'"
+            />
          </div>
 
          <div class="content-dx" :class="'col-' + sectionInfo.section.col.dx">
@@ -24,8 +27,12 @@
 </template>
 
 <script>
+import Slider from './widgets/Slider'
 export default {
    name: 'Section',
+   components: { 
+      Slider, 
+   },
    props: {
       sectionInfo: Object
    }
