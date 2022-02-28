@@ -106,34 +106,34 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   title: 'Scegli tra le nostre categorie',
   "class": 'categories',
-  image: '/img/categories.svg',
+  image: null,
   col: {
-    sx: 8,
-    dx: 4
+    sx: 12,
+    dx: 0
   }
 }, {
   title: 'I nostri professionisti in evidenza',
   "class": 'professionals',
-  image: '/img/professionals.svg',
+  image: null,
   col: {
-    sx: 8,
-    dx: 4
+    sx: 12,
+    dx: 0
   }
 }, {
   title: 'La nostra storia',
   "class": 'about',
   image: '/img/about.svg',
   col: {
-    sx: 6,
-    dx: 6
+    sx: 8,
+    dx: 4
   }
 }, {
   title: 'Unisciti alla rete dei nostri professionisti',
   "class": 'join',
   image: '/img/join.svg',
   col: {
-    sx: 8,
-    dx: 4
+    sx: 9,
+    dx: 3
   }
 }, {
   title: 'Restiamo in contatto',

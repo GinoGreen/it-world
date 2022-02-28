@@ -288,7 +288,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Slider',
   data: function data() {
@@ -446,7 +445,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.swiper[data-v-a8bd8652] {\n  max-width: 768px;\n}\n.it-card[data-v-a8bd8652] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-card[data-v-a8bd8652]::before {\n  content: \"\";\n  position: absolute;\n  height: 40%;\n  width: 100%;\n  background: #FF4D5A;\n}\n.it-card .it-card-content[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .it-card .image[data-v-a8bd8652] {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  padding: 3px;\n  background: #072142;\n}\n.it-slider .it-card .image img[data-v-a8bd8652] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 3px solid white;\n}\n.it-card .media-icons[data-v-a8bd8652] {\n  position: absolute;\n  top: 10px;\n  right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-card .media-icons i[data-v-a8bd8652] {\n  color: white;\n  opacity: 0.6;\n  margin-top: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-card .media-icons i[data-v-a8bd8652]:hover {\n  opacity: 1;\n}\n.it-card .name-profession[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.name-profession .name[data-v-a8bd8652] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.name-profession .profession[data-v-a8bd8652] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.it-card .rating[data-v-a8bd8652] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-card .rating i[data-v-a8bd8652] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-card .button[data-v-a8bd8652] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-card .button button[data-v-a8bd8652] {\n  background: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.button button[data-v-a8bd8652]:hover {\n  background: #FF4D5A;\n}\n.swiper-pagination[data-v-a8bd8652] {\n  position: absolute;\n}\n.swiper-pagination-bullet[data-v-a8bd8652] {\n  height: 7px;\n  width: 26px;\n  border-radius: 25px;\n  background: #FF4D5A;\n}\n.swiper-button-next[data-v-a8bd8652], .swiper-button-prev[data-v-a8bd8652] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.swiper-button-next[data-v-a8bd8652]:hover, .swiper-button-prev[data-v-a8bd8652]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
+exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-a8bd8652] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652]::before {\n  content: \"\";\n  position: absolute;\n  height: 40%;\n  width: 100%;\n  background: #FF4D5A;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar[data-v-a8bd8652] {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  padding: 3px;\n  background: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar img[data-v-a8bd8652] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 3px solid white;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons[data-v-a8bd8652] {\n  position: absolute;\n  top: 10px;\n  right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652] {\n  color: white;\n  opacity: 0.6;\n  margin-top: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652]:hover {\n  opacity: 1;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-a8bd8652] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .profession[data-v-a8bd8652] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-a8bd8652] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-a8bd8652] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-btn[data-v-a8bd8652] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-btn button[data-v-a8bd8652] {\n  background: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-btn button[data-v-a8bd8652]:hover {\n  background: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652], .it-slider .swiper-button-prev[data-v-a8bd8652] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652]:hover, .it-slider .swiper-button-prev[data-v-a8bd8652]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -1853,7 +1852,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "it-slider container-xl" }, [
+  return _c("div", { staticClass: "it-slider container-fluid" }, [
     _c("div", { staticClass: "swiper it-swiper" }, [
       _c(
         "div",
@@ -1872,8 +1871,6 @@ var render = function () {
     _c("div", { staticClass: "swiper-button-next" }),
     _vm._v(" "),
     _c("div", { staticClass: "swiper-button-prev" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "swiper-pagination" }),
   ])
 }
 var staticRenderFns = [
@@ -1882,7 +1879,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "it-card-content" }, [
-      _c("div", { staticClass: "image" }, [
+      _c("div", { staticClass: "it-slider-avatar" }, [
         _c("img", {
           attrs: {
             src: "/img/slider/undraw_profile_pic_ic-5-t.svg",
@@ -1908,7 +1905,7 @@ var staticRenderFns = [
         }),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "name-profession" }, [
+      _c("div", { staticClass: "it-info" }, [
         _c("span", { staticClass: "name" }, [_vm._v("Nome Cognome")]),
         _vm._v(" "),
         _c("span", { staticClass: "profession" }, [_vm._v("Web Developer")]),
@@ -1941,7 +1938,7 @@ var staticRenderFns = [
         }),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "button" }, [
+      _c("div", { staticClass: "it-btn" }, [
         _c("button", { staticClass: "aboutMe" }, [_vm._v("Dettagli")]),
       ]),
     ])
@@ -17378,7 +17375,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteodeias/Documents/Boolean/progetto finale/it-world/resources/js/guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\manue\Documents\BOOLEAN\Progetto_finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
