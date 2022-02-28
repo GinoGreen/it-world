@@ -15,7 +15,8 @@
             />
          </div>
 
-         <div class="content-dx" :class="'col-' + sectionInfo.section.col.dx">
+         <div v-if="sectionInfo.section.image" 
+         class="content-dx" :class="'col-' + sectionInfo.section.col.dx">
             <img :src="sectionInfo.section.image" alt="">
            
          </div>
@@ -45,22 +46,28 @@ export default {
 
    section {
       height: 100vh;
-      width: 100%;
+      width: 90%;
       .row{
             padding-top: 150px;
             .content-sx, .content-dx{
                height: 500px;   
             }
             .content-sx{
-               background-color: cyan;
+               // background-color: cyan;
+               color: #fff;
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: flex-start;
             }
             .content-dx{
-               background-color: #fff;
+               // background-color: #fff;
                display: flex;
                align-items: center;
                justify-content: center;
                img{
                   width: 100%;
+
                }
             }
       }

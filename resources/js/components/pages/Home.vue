@@ -59,7 +59,7 @@ export default {
 .container{
    position: relative;
    aside{
-      width: 13%;
+      width: 10%;
       height: 100vh;
       display: flex;
       flex-direction: column;

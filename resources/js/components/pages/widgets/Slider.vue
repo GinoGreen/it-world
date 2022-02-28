@@ -99,7 +99,7 @@ export default {
 .it-slider{
   position: relative;
   display: flex;
-  min-height: 80vh;
+  min-height: 50vh;
   align-items: center;
 }
 
@@ -110,7 +110,7 @@ export default {
 .it-card{
   position: relative;
   background: #fff;
-  margin: 20px 0;
+  margin: 70px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 

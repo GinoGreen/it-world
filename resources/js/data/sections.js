@@ -11,19 +11,19 @@ export default [
    {
       title: 'Scegli tra le nostre categorie',
       class: 'categories',
-      image: '/img/categories.svg',
+      image: null,
       col: {
-         sx: 8,
-         dx: 4,
+         sx: 12,
+         dx: 0,
       }
    },
    {
       title: 'I nostri professionisti in evidenza',
       class: 'professionals',
-      image: '/img/professionals.svg',
+      image: null,
       col: {
-         sx: 8,
-         dx: 4,
+         sx: 12,
+         dx: 0,
       }
    },
    {
@@ -31,8 +31,8 @@ export default [
       class: 'about',
       image: '/img/about.svg',
       col: {
-         sx: 6,
-         dx: 6,
+         sx: 8,
+         dx: 4,
       }
    },
    {
@@ -40,8 +40,8 @@ export default [
       class: 'join',
       image: '/img/join.svg',
       col: {
-         sx: 8,
-         dx: 4,
+         sx: 9,
+         dx: 3,
       }
    },
    {

@@ -214,6 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Section',
@@ -388,7 +389,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".it-wrapper {\n  background-image: url(\"/img/pngwing.com.png\");\n  background-position: center right;\n  background-size: 40%;\n  background-repeat: no-repeat;\n  background-position-x: 80vw;\n}", ""]);
+exports.push([module.i, ".it-wrapper {\n  background-image: url(\"/img/moon/planet-vector-10.svg\");\n  background-position: center right;\n  background-size: 60%;\n  background-repeat: no-repeat;\n  background-position-x: 60vw;\n}", ""]);
 
 // exports
 
@@ -407,7 +408,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container[data-v-a9aac016] {\n  position: relative;\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  width: 13%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  margin-top: 300px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line .scroll-line[data-v-a9aac016] {\n  cursor: pointer;\n  background-color: #fff;\n  border-radius: 10px;\n  height: 5px;\n  width: 50px;\n  margin-bottom: 20px;\n  transition: 1s;\n}\n.container aside .wrap-scroll-line .scroll-line[data-v-a9aac016]:hover {\n  width: 80px;\n}\n.container aside .wrap-scroll-line .scroll-line.active[data-v-a9aac016] {\n  width: 80px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  height: 150px;\n  width: 50px;\n}\n.container aside .scroll-down span[data-v-a9aac016] {\n  margin-left: 4px;\n  color: white;\n  rotate: 90deg;\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 100px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
+exports.push([module.i, ".container[data-v-a9aac016] {\n  position: relative;\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  width: 10%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  margin-top: 300px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line .scroll-line[data-v-a9aac016] {\n  cursor: pointer;\n  background-color: #fff;\n  border-radius: 10px;\n  height: 5px;\n  width: 50px;\n  margin-bottom: 20px;\n  transition: 1s;\n}\n.container aside .wrap-scroll-line .scroll-line[data-v-a9aac016]:hover {\n  width: 80px;\n}\n.container aside .wrap-scroll-line .scroll-line.active[data-v-a9aac016] {\n  width: 80px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  height: 150px;\n  width: 50px;\n}\n.container aside .scroll-down span[data-v-a9aac016] {\n  margin-left: 4px;\n  color: white;\n  rotate: 90deg;\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 100px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
 
 // exports
 
@@ -426,7 +427,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "section {\n  height: 100vh;\n  width: 100%;\n}\nsection .row {\n  padding-top: 150px;\n}\nsection .row .content-sx, section .row .content-dx {\n  height: 500px;\n}\nsection .row .content-sx {\n  background-color: cyan;\n}\nsection .row .content-dx {\n  background-color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img {\n  width: 100%;\n}", ""]);
+exports.push([module.i, "section {\n  height: 100vh;\n  width: 90%;\n}\nsection .row {\n  padding-top: 150px;\n}\nsection .row .content-sx, section .row .content-dx {\n  height: 500px;\n}\nsection .row .content-sx {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-dx {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -445,7 +446,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n  display: flex;\n  min-height: 80vh;\n  align-items: center;\n}\n.swiper[data-v-a8bd8652] {\n  max-width: 768px;\n}\n.it-card[data-v-a8bd8652] {\n  position: relative;\n  background: #fff;\n  margin: 20px 0;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-card[data-v-a8bd8652]::before {\n  content: \"\";\n  position: absolute;\n  height: 40%;\n  width: 100%;\n  background: #FF4D5A;\n}\n.it-card .it-card-content[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .it-card .image[data-v-a8bd8652] {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  padding: 3px;\n  background: #072142;\n}\n.it-slider .it-card .image img[data-v-a8bd8652] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 3px solid white;\n}\n.it-card .media-icons[data-v-a8bd8652] {\n  position: absolute;\n  top: 10px;\n  right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-card .media-icons i[data-v-a8bd8652] {\n  color: white;\n  opacity: 0.6;\n  margin-top: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-card .media-icons i[data-v-a8bd8652]:hover {\n  opacity: 1;\n}\n.it-card .name-profession[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.name-profession .name[data-v-a8bd8652] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.name-profession .profession[data-v-a8bd8652] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.it-card .rating[data-v-a8bd8652] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-card .rating i[data-v-a8bd8652] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-card .button[data-v-a8bd8652] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-card .button button[data-v-a8bd8652] {\n  background: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.button button[data-v-a8bd8652]:hover {\n  background: #FF4D5A;\n}\n.swiper-pagination[data-v-a8bd8652] {\n  position: absolute;\n}\n.swiper-pagination-bullet[data-v-a8bd8652] {\n  height: 7px;\n  width: 26px;\n  border-radius: 25px;\n  background: #FF4D5A;\n}\n.swiper-button-next[data-v-a8bd8652], .swiper-button-prev[data-v-a8bd8652] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.swiper-button-next[data-v-a8bd8652]:hover, .swiper-button-prev[data-v-a8bd8652]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
+exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.swiper[data-v-a8bd8652] {\n  max-width: 768px;\n}\n.it-card[data-v-a8bd8652] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-card[data-v-a8bd8652]::before {\n  content: \"\";\n  position: absolute;\n  height: 40%;\n  width: 100%;\n  background: #FF4D5A;\n}\n.it-card .it-card-content[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .it-card .image[data-v-a8bd8652] {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  padding: 3px;\n  background: #072142;\n}\n.it-slider .it-card .image img[data-v-a8bd8652] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 3px solid white;\n}\n.it-card .media-icons[data-v-a8bd8652] {\n  position: absolute;\n  top: 10px;\n  right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-card .media-icons i[data-v-a8bd8652] {\n  color: white;\n  opacity: 0.6;\n  margin-top: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-card .media-icons i[data-v-a8bd8652]:hover {\n  opacity: 1;\n}\n.it-card .name-profession[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.name-profession .name[data-v-a8bd8652] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.name-profession .profession[data-v-a8bd8652] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.it-card .rating[data-v-a8bd8652] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-card .rating i[data-v-a8bd8652] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-card .button[data-v-a8bd8652] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-card .button button[data-v-a8bd8652] {\n  background: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.button button[data-v-a8bd8652]:hover {\n  background: #FF4D5A;\n}\n.swiper-pagination[data-v-a8bd8652] {\n  position: absolute;\n}\n.swiper-pagination-bullet[data-v-a8bd8652] {\n  height: 7px;\n  width: 26px;\n  border-radius: 25px;\n  background: #FF4D5A;\n}\n.swiper-button-next[data-v-a8bd8652], .swiper-button-prev[data-v-a8bd8652] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.swiper-button-next[data-v-a8bd8652]:hover, .swiper-button-prev[data-v-a8bd8652]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -1812,18 +1813,20 @@ var render = function () {
           1
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "content-dx",
-            class: "col-" + _vm.sectionInfo.section.col.dx,
-          },
-          [
-            _c("img", {
-              attrs: { src: _vm.sectionInfo.section.image, alt: "" },
-            }),
-          ]
-        ),
+        _vm.sectionInfo.section.image
+          ? _c(
+              "div",
+              {
+                staticClass: "content-dx",
+                class: "col-" + _vm.sectionInfo.section.col.dx,
+              },
+              [
+                _c("img", {
+                  attrs: { src: _vm.sectionInfo.section.image, alt: "" },
+                }),
+              ]
+            )
+          : _vm._e(),
       ]),
     ]
   )
@@ -17272,34 +17275,34 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   title: 'Scegli tra le nostre categorie',
   "class": 'categories',
-  image: '/img/categories.svg',
+  image: null,
   col: {
-    sx: 8,
-    dx: 4
+    sx: 12,
+    dx: 0
   }
 }, {
   title: 'I nostri professionisti in evidenza',
   "class": 'professionals',
-  image: '/img/professionals.svg',
+  image: null,
   col: {
-    sx: 8,
-    dx: 4
+    sx: 12,
+    dx: 0
   }
 }, {
   title: 'La nostra storia',
   "class": 'about',
   image: '/img/about.svg',
   col: {
-    sx: 6,
-    dx: 6
+    sx: 8,
+    dx: 4
   }
 }, {
   title: 'Unisciti alla rete dei nostri professionisti',
   "class": 'join',
   image: '/img/join.svg',
   col: {
-    sx: 8,
-    dx: 4
+    sx: 9,
+    dx: 3
   }
 }, {
   title: 'Restiamo in contatto',
@@ -17375,7 +17378,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\manue\Documents\BOOLEAN\Progetto_finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! /Users/matteodeias/Documents/Boolean/progetto finale/it-world/resources/js/guest.js */"./resources/js/guest.js");
 
 
 /***/ })

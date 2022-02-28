@@ -19,11 +19,11 @@ export default {
 
 <style lang="scss">
 .it-wrapper{
-   background-image: url("/img/pngwing.com.png");
+   background-image: url("/img/moon/planet-vector-10.svg");
    background-position: center right;
-   background-size: 40%;
+   background-size: 60%;
    background-repeat: no-repeat;
-   background-position-x: 80vw;
+   background-position-x: 60vw;
    
 }
 
