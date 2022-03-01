@@ -14,6 +14,9 @@
             <SearchBar 
             v-if="sectionInfo.section.class === 'search'"
             />
+            <CatSlider 
+            v-if="sectionInfo.section.class === 'categories'"
+            />
             <Slider 
             v-if="sectionInfo.section.class === 'professionals'"
             />
@@ -29,6 +32,17 @@
             <Slider 
             v-if="sectionInfo.section.class === 'professionals'"
             />
+
+            <div 
+            v-if="sectionInfo.section.class === 'join'"
+            class="it-btn">
+               <button>Unisciti a noi</button>
+            </div>
+
+            <ContactForm
+            v-if="sectionInfo.section.class === 'contact'"
+            />
+            
          </div>
 
          <div v-if="sectionInfo.section.image" 
@@ -39,18 +53,25 @@
 
       </div>
       
-
+      <div class="section-details">
+         <div class="line-1"></div>
+         <div class="line-2"></div>
+      </div>
    </section>
 </template>
 
 <script>
 import SearchBar from './widgets/SearchBar'
 import Slider from './widgets/Slider'
+import CatSlider from './widgets/CatSlider'
+import ContactForm from './widgets/ContactForm'
 export default {
    name: 'Section',
    components: { 
       SearchBar, 
-      Slider
+      CatSlider,
+      Slider,
+      ContactForm,
    },
    props: {
       sectionInfo: Object
@@ -58,7 +79,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import '../../../sass/guest/_variables.scss';
 @import '../../../sass/guest/_generals.scss';
@@ -87,6 +108,17 @@ export default {
                h2{
                   color: #fff;
                   margin-bottom: 20px;
+               .it-btn{
+                  justify-content: flex-start;
+                  button{
+                     font-size: 20px;
+                     background-color: $primary_color;
+                     border: 2px solid white;
+
+                     &:hover{
+                        background: $secondary_color;
+                     }
+                  }
                }
             }
             .content-dx{
@@ -100,6 +132,22 @@ export default {
                }
             }
       }
-   }
+      .section-details{
+         .line-1, .line-2{
+            background-color: $primary_color;
+            height: 7px;
+            margin: 10px;
+            border-radius: 10px;
+         }
 
+         .line-1{
+            width: 150px;
+         }
+
+         .line-2{
+            width: 90px;
+         }
+      }
+   }
+}
 </style>
