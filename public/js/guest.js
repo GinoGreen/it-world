@@ -219,6 +219,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -477,7 +490,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "section {\n  height: 100vh;\n  width: 90%;\n}\nsection .row {\n  padding-top: 150px;\n}\nsection .row .content-sx, section .row .content-dx {\n  height: 500px;\n}\nsection .row .content-sx {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-dx {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img {\n  width: 100%;\n}", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody {\n  font-family: \"Open Sans\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button:hover {\n  background: #FF4D5A;\n}\nsection {\n  height: 100vh;\n  width: 90%;\n}\nsection .row {\n  padding-top: 30px;\n}\nsection .row .content-sx, section .row .content-dx {\n  height: 500px;\n}\nsection .row .content-sx {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1 {\n  color: #FF4D5A;\n  margin-bottom: 40px;\n}\nsection .row .content-sx h2 {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-dx {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -1903,7 +1916,23 @@ var render = function () {
             class: "col-" + _vm.sectionInfo.section.col.sx,
           },
           [
-            _c("h2", [_vm._v(_vm._s(_vm.sectionInfo.section.title))]),
+            _vm.sectionInfo.section.title
+              ? _c("h1", { staticClass: "it-title-big" }, [
+                  _vm._v(_vm._s(_vm.sectionInfo.section.title)),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.sectionInfo.section.subtitle
+              ? _c("h2", { staticClass: "it-title-medium" }, [
+                  _vm._v(_vm._s(_vm.sectionInfo.section.subtitle)),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.sectionInfo.section.text
+              ? _c("p", { staticClass: "it-text" }, [
+                  _vm._v(_vm._s(_vm.sectionInfo.section.text)),
+                ])
+              : _vm._e(),
             _vm._v(" "),
             _vm.sectionInfo.section.class === "search"
               ? _c("SearchBar")
@@ -17507,14 +17536,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
   title: 'Il più grande portale di professionisti IT',
+  subtitle: 'Cerca. Scegli. Contatta. Tutti i professionisti del settore a portata di mano. Gratis e senza impegno.',
   "class": 'search',
   image: '/img/search.svg',
   col: {
-    sx: 8,
-    dx: 4
+    sx: 9,
+    dx: 3
   }
 }, {
   title: 'Scegli tra le nostre categorie',
+  subtitle: 'Scegli tra le nostre categorie e trova il professionista che fa per te.',
   "class": 'categories',
   image: null,
   col: {
@@ -17523,6 +17554,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 }, {
   title: 'I nostri professionisti in evidenza',
+  subtitle: 'IT-World permette di cercare tra migliaia di professionisti verificati quello più vicino a te',
   "class": 'professionals',
   image: null,
   col: {
@@ -17531,14 +17563,17 @@ __webpack_require__.r(__webpack_exports__);
   }
 }, {
   title: 'La nostra storia',
+  subtitle: 'IT-World è il portale più diffuso in ambito business, visitato ogni giorno da migliaia di clienti, professionisti ed HR manager',
   "class": 'about',
   image: '/img/about.svg',
+  text: 'IT-World è il marketplace per servizi professionali leader in Italia, e in espansione a livello internazionale. Ti permette di trovare esattamente quello che stai cercando in modo semplice e affidabile. IT-World nasce dall\'idea di un gruppo di imprenditori di successo con esperienza nel mondo del web, che hanno deciso di creare uno strumento in grado di aiutare l’utente nella ricerca del miglior sviluppatore o designer nella propria città, facilitando il contatto tra professionista e cliente, e semplificando il processo di prenotazione. Sei anche tu un Professionsta? IT-World è la tua vetrina online per aumentare la clientela e ottenere richieste di lavoro in linea con la tua offerta.',
   col: {
     sx: 8,
     dx: 4
   }
 }, {
   title: 'Unisciti alla rete dei nostri professionisti',
+  subtitle: 'IT-World è il tuo parter per trovare nuovi clienti online',
   "class": 'join',
   image: '/img/join.svg',
   col: {
@@ -17547,6 +17582,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 }, {
   title: 'Restiamo in contatto',
+  subtitle: 'Non importa in quale fase del processo ti trovi, siamo qui per aiutarti. Facci sapere cosa hai in mente.',
   "class": 'contact',
   image: '/img/contact.png',
   col: {
@@ -17619,7 +17655,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\manue\Documents\BOOLEAN\Progetto_finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\andre\OneDrive\Documenti\Boolean\Progetto Finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

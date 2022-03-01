@@ -8,8 +8,21 @@
 
       <div class="row">
 
-         <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
+         <!-- SECTION ORIGINALE -->
+         <!-- <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
             <h2>{{ sectionInfo.section.title }}</h2>
+            <SearchBar 
+            v-if="sectionInfo.section.class === 'search'"
+            />
+            <Slider 
+            v-if="sectionInfo.section.class === 'professionals'"
+            />
+         </div> -->
+
+         <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
+            <h1 v-if="sectionInfo.section.title" class="it-title-big">{{ sectionInfo.section.title }}</h1>
+            <h2 v-if="sectionInfo.section.subtitle" class="it-title-medium">{{ sectionInfo.section.subtitle }}</h2>
+            <p v-if="sectionInfo.section.text" class="it-text">{{ sectionInfo.section.text }}</p>
             <SearchBar 
             v-if="sectionInfo.section.class === 'search'"
             />
@@ -48,12 +61,13 @@ export default {
 <style lang="scss">
 
 @import '../../../sass/guest/_variables.scss';
+@import '../../../sass/guest/_generals.scss';
 
    section {
       height: 100vh;
       width: 90%;
       .row{
-            padding-top: 150px;
+            padding-top: 30px;
             .content-sx, .content-dx{
                height: 500px;   
             }
@@ -64,6 +78,16 @@ export default {
                flex-direction: column;
                justify-content: center;
                align-items: flex-start;
+
+               h1{
+                  color: $primary_color;
+                  margin-bottom: 40px;
+               }
+
+               h2{
+                  color: #fff;
+                  margin-bottom: 20px;
+               }
             }
             .content-dx{
                // background-color: #fff;

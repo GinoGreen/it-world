@@ -14014,8 +14014,29 @@ a.text-dark:focus {
 }
 
 body {
-  font-family: "'Open Sans', sans-serif";
+  font-family: "Open Sans", sans-serif;
   background-color: #072142;
+}
+
+.it-title-big {
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.it-title-medium {
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.it-title-small {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.it-text-info {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
 .it-btn {

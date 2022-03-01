@@ -11,6 +11,27 @@ body {
    background-color: $secondary_color;
 }
 
+// TITLE + TEXT 
+.it-title-big{
+   font-weight: 800;
+   font-size: 50px;
+}
+
+.it-title-medium{
+   font-weight: 400;
+   font-size: 25px;
+}
+
+.it-title-small{
+   font-weight: 800;
+   font-size: 18px;
+}
+
+.it-text-info{
+   font-size: 12px;
+   font-weight: 300;
+   margin-bottom: 10px;
+}
 
 // BUTTONS
 
