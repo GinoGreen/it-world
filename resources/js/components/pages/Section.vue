@@ -8,9 +8,10 @@
 
       <div class="row">
 
-         <!-- SECTION ORIGINALE -->
-         <!-- <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
-            <h2>{{ sectionInfo.section.title }}</h2>
+         <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
+            <h1 v-if="sectionInfo.section.title" class="it-title-big">{{ sectionInfo.section.title }}</h1>
+            <h2 v-if="sectionInfo.section.subtitle" class="it-title-medium">{{ sectionInfo.section.subtitle }}</h2>
+            <p v-if="sectionInfo.section.text" class="it-text">{{ sectionInfo.section.text }}</p>
             <SearchBar 
             v-if="sectionInfo.section.class === 'search'"
             />
@@ -20,22 +21,11 @@
             <Slider 
             v-if="sectionInfo.section.class === 'professionals'"
             />
-         </div> -->
-
-         <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
-            <h1 v-if="sectionInfo.section.title" class="it-title-big">{{ sectionInfo.section.title }}</h1>
-            <h2 v-if="sectionInfo.section.subtitle" class="it-title-medium">{{ sectionInfo.section.subtitle }}</h2>
-            <p v-if="sectionInfo.section.text" class="it-text">{{ sectionInfo.section.text }}</p>
-            <SearchBar 
-            v-if="sectionInfo.section.class === 'search'"
-            />
-            <Slider 
-            v-if="sectionInfo.section.class === 'professionals'"
-            />
 
             <div 
-            v-if="sectionInfo.section.class === 'join'"
-            class="it-btn">
+               v-if="sectionInfo.section.class === 'join'"
+               class="it-btn"
+            >
                <button>Unisciti a noi</button>
             </div>
 
@@ -87,53 +77,64 @@ export default {
    section {
       height: 100vh;
       width: 90%;
+
       .row{
-            padding-top: 30px;
-            .content-sx, .content-dx{
-               height: 500px;   
+         padding-top: 30px;
+
+         .content-sx,
+         .content-dx{
+            height: 500px;   
+         }
+
+         .content-sx{
+            // background-color: cyan;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            h1{
+               color: $primary_color;
+               margin-bottom: 40px;
             }
-            .content-sx{
-               // background-color: cyan;
+
+            h2{
                color: #fff;
-               display: flex;
-               flex-direction: column;
-               justify-content: center;
-               align-items: flex-start;
+               margin-bottom: 20px;
+            }
 
-               h1{
-                  color: $primary_color;
-                  margin-bottom: 40px;
-               }
+            .it-btn{
+               justify-content: flex-start;
 
-               h2{
-                  color: #fff;
-                  margin-bottom: 20px;
-               .it-btn{
-                  justify-content: flex-start;
-                  button{
-                     font-size: 20px;
-                     background-color: $primary_color;
-                     border: 2px solid white;
+               button{
+                  font-size: 20px;
+                  background-color: $primary_color;
+                  border: 2px solid white;
 
-                     &:hover{
-                        background: $secondary_color;
-                     }
+                  &:hover{
+                     background: $secondary_color;
                   }
                }
             }
-            .content-dx{
-               // background-color: #fff;
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               img{
-                  width: 100%;
+         }
 
-               }
+         .content-dx{
+            // background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img{
+               width: 100%;
+
             }
+         }
       }
       .section-details{
-         .line-1, .line-2{
+
+         .line-1,
+         .line-2{
             background-color: $primary_color;
             height: 7px;
             margin: 10px;
@@ -149,5 +150,4 @@ export default {
          }
       }
    }
-}
 </style>

@@ -161,7 +161,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\andre\OneDrive\Documenti\Boolean\Progetto Finale\it-world\resources\js\data\sections.js */"./resources/js/data/sections.js");
+module.exports = __webpack_require__(/*! C:\Users\luigi\Documents\Boolean\final-project\it-world\resources\js\data\sections.js */"./resources/js/data/sections.js");
 
 
 /***/ })

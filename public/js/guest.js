@@ -241,16 +241,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -640,7 +630,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Open Sans\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f], section .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FF4D5A;\n  margin-bottom: 40px;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx h2 .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx h2 .it-btn button[data-v-206ace3f] {\n  font-size: 20px;\n  background-color: #FF4D5A;\n  border: 2px solid white;\n}\nsection .row .content-sx h2 .it-btn button[data-v-206ace3f]:hover {\n  background: #072142;\n}\nsection .row .content-sx .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-sx .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .row .section-details .line-1[data-v-206ace3f], section .row .section-details .line-2[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  height: 7px;\n  margin: 10px;\n  border-radius: 10px;\n}\nsection .row .section-details .line-1[data-v-206ace3f] {\n  width: 150px;\n}\nsection .row .section-details .line-2[data-v-206ace3f] {\n  width: 90px;\n}", ""]);
+exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Open Sans\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FF4D5A;\n  margin-bottom: 40px;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 20px;\n  background-color: #FF4D5A;\n  border: 2px solid white;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  background: #072142;\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  height: 7px;\n  margin: 10px;\n  border-radius: 10px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  width: 150px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 90px;\n}", ""]);
 
 // exports
 
@@ -2184,6 +2174,10 @@ var render = function () {
             _vm._v(" "),
             _vm.sectionInfo.section.class === "search"
               ? _c("SearchBar")
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.sectionInfo.section.class === "categories"
+              ? _c("CatSlider")
               : _vm._e(),
             _vm._v(" "),
             _vm.sectionInfo.section.class === "professionals"
@@ -18220,7 +18214,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\andre\OneDrive\Documenti\Boolean\Progetto Finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! C:\Users\luigi\Documents\Boolean\final-project\it-world\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })
