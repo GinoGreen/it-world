@@ -20,9 +20,6 @@
             <li>
                 <a href="{{ route('admin.statistic') }}">Statistics</a>
             </li>
-            <li>
-                <a href="{{ route('chartjs.index') }}">Statistics</a>
-            </li>
         </ul>
     </div>
 
