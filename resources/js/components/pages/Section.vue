@@ -10,6 +10,9 @@
 
          <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
             <h2>{{ sectionInfo.section.title }}</h2>
+            <SearchBar 
+            v-if="sectionInfo.section.class === 'search'"
+            />
             <Slider 
             v-if="sectionInfo.section.class === 'professionals'"
             />
@@ -28,11 +31,13 @@
 </template>
 
 <script>
+import SearchBar from './widgets/SearchBar'
 import Slider from './widgets/Slider'
 export default {
    name: 'Section',
    components: { 
-      Slider, 
+      SearchBar, 
+      Slider
    },
    props: {
       sectionInfo: Object

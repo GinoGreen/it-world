@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;
+
+400;700;800&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
@@ -6,7 +8,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -14013,7 +14014,31 @@ a.text-dark:focus {
 }
 
 body {
+  font-family: "'Open Sans', sans-serif";
   background-color: #072142;
+}
+
+.it-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.it-btn button {
+  background-color: #072142;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.it-btn button:hover {
+  background: #FF4D5A;
 }
 
 @media screen and (min-width: 1400px) {

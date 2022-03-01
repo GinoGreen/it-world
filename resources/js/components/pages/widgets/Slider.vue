@@ -109,10 +109,12 @@ export default {
             position: relative;
             background: #fff;
             margin: 70px 0;
+            border-radius: 30px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             &::before{
                content: "";
                position: absolute;
+               border-radius: 30px 30px 0 0;
                height: 40%;
                width: 100%;
                background: $primary_color;
@@ -189,29 +191,6 @@ export default {
                      margin: 0 2px;
                      color: $primary_color;
                   }                    
-               }
-
-               .it-btn{
-                  width: 100%;
-                  display: flex;
-                  justify-content: space-around;
-                  margin-top: 20px;
-
-                  button{
-                     background: $secondary_color;
-                     outline: none;
-                     border: none;
-                     color: #fff;
-                     padding: 10px;
-                     border-radius: 20px;
-                     font-size: 14px;
-                     transition: all 0.3s ease;
-                     cursor: pointer;
-
-                     &:hover{
-                        background: $primary_color;
-                     }
-                  }
                }
             }
          }
