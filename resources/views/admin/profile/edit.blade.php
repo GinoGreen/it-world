@@ -106,10 +106,11 @@
                         class="form-check-input"
                         type="radio" 
                         name="level" 
-                        id="level"
+                        id="{{ $level }}"
                         @if ($level === old('level', $profile->level))
                             checked
                         @endif
+                        value="{{ $level }}"
                     >
                     <label class="form-check-label" for="level">
                     {{ $level }}

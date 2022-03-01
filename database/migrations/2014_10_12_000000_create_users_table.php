@@ -15,8 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('surname')->nullable();
+            $table->string('name', 100);
+            $table->string('surname', 100);
             $table->enum('region', [
                 'Abruzzo',
             	'Basilicata',
@@ -37,12 +37,12 @@ class CreateUsersTable extends Migration
                 'Trentino-Alto Adige',
                 'Valle d Aosta',
                 'Veneto',
-            ])->nullable();
+            ]);
             $table->string('email')->unique();
             $table->string('avatar_path')->nullable();
             $table->string('cv_path')->nullable();
             $table->text('description')->nullable();
-            $table->enum('level', ['Junior', 'Middle', 'Senior'])->nullable();
+            $table->enum('level', ['Junior', 'Middle', 'Senior']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
