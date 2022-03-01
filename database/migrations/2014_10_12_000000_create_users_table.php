@@ -41,7 +41,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('avatar_path')->nullable();
             $table->string('cv_path')->nullable();
-            $table->enum('level', ['junior', 'middle', 'senior'])->nullable();
+            $table->text('description')->nullable();
+            $table->enum('level', ['Junior', 'Middle', 'Senior'])->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

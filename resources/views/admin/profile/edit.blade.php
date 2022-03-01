@@ -5,7 +5,7 @@
 
     <h1>Edit Pofile</h1>
 
-    <form action="{{ route('admin.profile.update', $profile) }}" method="POST">
+    <form action="{{ route('admin.profile.update', $profile) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="mb-3">
@@ -33,6 +33,19 @@
                 id="surname"
                 name="surname"
                 value="{{ old('surname', $profile->surname) }}"
+            >
+        </div>
+
+        <div class="mb-3">
+            <label 
+                for="avatar_path" 
+                class="form-label"
+            >Immagine profilo</label>
+            <input 
+                type="file"
+                class="form-control"
+                id="avatar_path"
+                name="avatar_path"
             >
         </div>
 
@@ -66,6 +79,43 @@
                     >{{ $region }}</option>
                 @endforeach
             </select>
+        </div>
+
+        <div class="mb-3">
+            <label 
+                for="cv_path" 
+                class="form-label"
+            >Curriculum Vitae</label>
+            <input 
+                type="file"
+                class="form-control"
+                id="cv_path"
+                name="cv_path"
+            >
+        </div>
+
+        <div class="mb-3">
+            <label 
+                for="email" 
+                class="form-label d-block"
+            >Livello di esperienza</label>
+
+            @foreach ($levels as $level)    
+                <div class="form-check d-inline-block">
+                    <input 
+                        class="form-check-input"
+                        type="radio" 
+                        name="level" 
+                        id="level"
+                        @if ($level === old('level', $profile->level))
+                            checked
+                        @endif
+                    >
+                    <label class="form-check-label" for="level">
+                    {{ $level }}
+                    </label>
+                </div>
+            @endforeach
         </div>
 
         <button type="submit" class="btn btn-primary">Modifica</button>

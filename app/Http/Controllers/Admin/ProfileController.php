@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -62,7 +63,10 @@ class ProfileController extends Controller
     public function edit($profile)
     {
         $profile = Auth::user();
+
         if ($profile) {
+
+            $levels = ['Junior', 'Middle', 'Senior'];
 
             $regions = [
                 'Abruzzo',
@@ -86,7 +90,7 @@ class ProfileController extends Controller
                 'Veneto',
             ];
             
-            return view('admin.profile.edit', compact('profile', 'regions'));
+            return view('admin.profile.edit', compact('profile', 'regions', 'levels'));
         }
         abort(404, 'Profile non trovato o inesistente');
     }
@@ -101,6 +105,27 @@ class ProfileController extends Controller
     public function update(Request $request, User $profile)
     {
         $form_data = $request->all();
+        
+        // setting immagine profilo
+        if (array_key_exists('avatar_path', $form_data)) {
+            
+            if ($profile->avatar_path) {
+                Storage::delete($profile->avatar_path);
+            }
+
+            $avatar_path = Storage::put('upload', $form_data['avatar_path']);
+            $form_data['avatar_path'] = $avatar_path;
+        }
+        // setting cv profilo
+        if (array_key_exists('cv_path', $form_data)) {
+            
+            if ($profile->cv_path) {
+                Storage::delete($profile->cv_path);
+            }
+
+            $cv_path = Storage::put('upload', $form_data['cv_path']);
+            $form_data['cv_path'] = $cv_path;
+        }
         
         $profile->update($form_data);
 
@@ -117,4 +142,6 @@ class ProfileController extends Controller
     {
         //
     }
+
+
 }

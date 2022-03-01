@@ -99,7 +99,7 @@ class RegisterController extends Controller
             'Veneto',
         ];
 
-        $levels = ['junior', 'middle', 'senior'];
+        $levels = ['Junior', 'Middle', 'Senior'];
 
         return view('auth.register', compact('regions', 'levels'));
     }
