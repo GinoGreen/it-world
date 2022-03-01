@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ProfileController extends Controller
 {
@@ -46,11 +48,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($profile)
+    public function show($profile,User $user)
     {
         $profile=Auth::user();
+        
+        $fields = ['name','surname','region','email','avatar_path','cv_path','level','email_verified_at'];
      
-        return view('admin.profile.show',compact('profile'));
+        return view('admin.profile.show',compact('profile','fields'));
     }
 
     /**
@@ -113,8 +117,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $profile)
     {
-        //
+       
+        $profile->delete();
+        return redirect()->route('home')->with('deleted','Profilo eliminato');
     }
 }
