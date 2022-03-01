@@ -8,6 +8,11 @@
     <title>IT World</title>
 </head>
 <body>
+    @if (session('deleted'))
+        <div class="alert alert-success" role="alert">
+            {{ session('deleted') }}
+        </div>
+    @endif
     <div id="app"></div>
     <script src="{{ asset('js/guest.js') }}"></script>
 </body>
