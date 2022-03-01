@@ -10,6 +10,11 @@
     <title>IT World</title>
 </head>
 <body>
+    @if (session('deleted'))
+        <div class="alert alert-success" role="alert">
+            {{ session('deleted') }}
+        </div>
+    @endif
     <div id="app"></div>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

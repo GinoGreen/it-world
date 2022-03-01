@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChartJsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return view('guest.home');
 });
+
+Route::get('chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
+Route::get('chartjs/{prova}', [ChartJsController::class, 'prova'])->name('chartjs.prova');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')
+        ->namespace('Admin')
+        ->name('admin.')
+        ->prefix('admin')
+        ->group(function() {
+            
+            Route::get('/', 'HomeController@index')->name('home');
+
+            Route::get('/message', 'HomeController@message')->name('message');
+
+            Route::get('/review', 'HomeController@review')->name('review');
+
+            Route::get('/statistic', 'HomeController@statistic')->name('statistic');
+
+            Route::resource('/profile', 'ProfileController');
+        });
+
+Route::get('{any?}', function() {
+    return view('guest.home');
+})->where('any', '.*')->name('home');

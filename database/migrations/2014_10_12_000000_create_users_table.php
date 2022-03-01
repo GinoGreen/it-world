@@ -15,8 +15,34 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name', 100);
+            $table->string('surname', 100);
+            $table->enum('region', [
+                'Abruzzo',
+            	'Basilicata',
+                'Calabria',
+                'Campania',
+                'Emilia-Romagna',
+                'Friuli Venezia Giulia',
+                'Lazio',
+                'Liguria',
+                'Lombardia',
+                'Marche',
+                'Molise',
+                'Piemonte',
+                'Puglia',
+                'Sardegna',
+                'Sicilia',
+                'Toscana',
+                'Trentino-Alto Adige',
+                'Valle d Aosta',
+                'Veneto',
+            ]);
             $table->string('email')->unique();
+            $table->string('avatar_path')->nullable();
+            $table->string('cv_path')->nullable();
+            $table->text('description')->nullable();
+            $table->enum('level', ['Junior', 'Middle', 'Senior']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
