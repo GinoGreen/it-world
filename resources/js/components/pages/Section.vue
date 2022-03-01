@@ -13,6 +13,9 @@
             <SearchBar 
             v-if="sectionInfo.section.class === 'search'"
             />
+            <CatSlider 
+            v-if="sectionInfo.section.class === 'categories'"
+            />
             <Slider 
             v-if="sectionInfo.section.class === 'professionals'"
             />
@@ -33,10 +36,12 @@
 <script>
 import SearchBar from './widgets/SearchBar'
 import Slider from './widgets/Slider'
+import CatSlider from './widgets/CatSlider'
 export default {
    name: 'Section',
    components: { 
       SearchBar, 
+      CatSlider,
       Slider
    },
    props: {
