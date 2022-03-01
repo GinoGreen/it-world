@@ -16,6 +16,17 @@
             <Slider 
             v-if="sectionInfo.section.class === 'professionals'"
             />
+
+            <div 
+            v-if="sectionInfo.section.class === 'join'"
+            class="it-btn">
+               <button>Unisciti a noi</button>
+            </div>
+
+            <ContactForm
+            v-if="sectionInfo.section.class === 'contact'"
+            />
+            
          </div>
 
          <div v-if="sectionInfo.section.image" 
@@ -26,18 +37,23 @@
 
       </div>
       
-
+      <div class="section-details">
+         <div class="line-1"></div>
+         <div class="line-2"></div>
+      </div>
    </section>
 </template>
 
 <script>
 import SearchBar from './widgets/SearchBar'
 import Slider from './widgets/Slider'
+import ContactForm from './widgets/ContactForm'
 export default {
    name: 'Section',
    components: { 
       SearchBar, 
-      Slider
+      Slider,
+      ContactForm,
    },
    props: {
       sectionInfo: Object
@@ -45,9 +61,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import '../../../sass/guest/_variables.scss';
+@import '../../../sass/guest/_generals.scss';
 
    section {
       height: 100vh;
@@ -64,6 +81,19 @@ export default {
                flex-direction: column;
                justify-content: center;
                align-items: flex-start;
+
+               .it-btn{
+                  justify-content: flex-start;
+                  button{
+                     font-size: 20px;
+                     background-color: $primary_color;
+                     border: 2px solid white;
+
+                     &:hover{
+                        background: $secondary_color;
+                     }
+                  }
+               }
             }
             .content-dx{
                // background-color: #fff;
@@ -75,6 +105,22 @@ export default {
 
                }
             }
+      }
+      .section-details{
+         .line-1, .line-2{
+            background-color: $primary_color;
+            height: 7px;
+            margin: 10px;
+            border-radius: 10px;
+         }
+
+         .line-1{
+            width: 150px;
+         }
+
+         .line-2{
+            width: 90px;
+         }
       }
    }
 
