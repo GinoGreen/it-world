@@ -12,6 +12,9 @@
                 <a href="{{ route('admin.profile.edit', $profile) }}">Edit Profile</a>
             </li>
             <li>
+                <a href="{{ route('admin.profile.show', $profile) }}">Show Profile</a>
+            </li>
+            <li>
                 <a href="{{ route('admin.message') }}">My Messages</a>
             </li>
             <li>
@@ -19,6 +22,9 @@
             </li>
             <li>
                 <a href="{{ route('admin.statistic') }}">Statistics</a>
+            </li>
+            <li>
+                <a href="{{ route('chartjs.index') }}">Chartjs</a>
             </li>
         </ul>
     </div>

@@ -48,7 +48,9 @@ class ProfileController extends Controller
      */
     public function show($profile)
     {
-        return view('admin.profile.show', compact('profile'));
+        $profile=Auth::user();
+     
+        return view('admin.profile.show',compact('profile'));
     }
 
     /**
