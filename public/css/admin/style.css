@@ -1,4 +1,65 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;
+
+400;700;800&display=swap);@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #072142;
+}
+
+.it-title-big {
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.it-title-medium {
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.it-title-small {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.it-text-info {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.it-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.it-btn button {
+  background-color: #072142;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.it-btn button:hover {
+  background: #FF4D5A;
+}
+
+.background {
+  background-color: red;
+}
 
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)

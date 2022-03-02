@@ -6,7 +6,7 @@
 
 @foreach ($fields as $field )
 
-<div class="container m-3">
+<div class="container m-3 background">
 
     <div class="d-inline p-2 bg-primary text-white">{{$field}}</div>
 
