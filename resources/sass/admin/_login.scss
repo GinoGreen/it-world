@@ -1,0 +1,76 @@
+
+.card{
+   background: rgba(255, 255, 255, 0.16) !important;
+   border-radius: 16px;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(3.4px);
+   -webkit-backdrop-filter: blur(3.4px);
+   border: 1px solid rgba(255, 255, 255, 0.28);
+
+   .card-header{
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+   }
+
+   .card-body{
+      .row{
+         justify-content: center;
+      }
+
+      input{
+         border-left: none;
+      }
+
+      .it-mail-wrapper, .it-password-wrapper{
+         .mail-icon, .password-icon{
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #707070;
+            font-size: 25px;
+            background-color: #fff;
+            border-radius: 20px 0px 0px 20px;
+         }
+
+         .col-md-6{
+            padding-left: 0px;
+
+            .it-mail, .it-password{
+               border-radius: 0px 20px 20px 0px !important;
+            }
+         }
+      }
+
+      .it-remember{
+         text-align: center;
+
+         label{
+            color: #fff;
+            font-weight: 300;
+         }
+      }
+
+      .it-button-wrapper{
+         .it-btn-login{
+            width: 200px;
+            background-color: $primary_color;
+            border: 1px solid #fff;
+            border-radius: 30px;
+            
+            &:hover{
+               background-color: #c53a43;
+            }
+         }
+
+         a{
+            font-size: 12px;
+            font-weight: 300;
+            color: #fff;
+            text-decoration: none;
+         }
+      }
+   }
+}
