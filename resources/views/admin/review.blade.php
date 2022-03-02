@@ -22,8 +22,9 @@
                {{$review->created_at}}
            </div>
        </div> 
+       
     @endforeach
-    
+    {{$reviews->links()}}
 
 </div>
 @endsection
