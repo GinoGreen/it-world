@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;
 
 400;700;800&display=swap);@charset "UTF-8";
+
 * {
   margin: 0;
   padding: 0;
@@ -65,12 +66,97 @@ header .it-dashboard-header .it-logo {
   width: 200px;
 }
 
-.it-dashboard {
-  min-height: 100vh;
+.col-2.it-dashboard-box {
+  min-height: 80vh;
+  margin: 0;
+  padding: 0;
+  background-color: #FF4D5A;
 }
 
-.background {
-  background-color: red;
+.col-2.it-dashboard-box .it-dashboard ul {
+  list-style: none;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item {
+  width: 80%;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item:hover {
+  background-color: #072142;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item a {
+  padding: 5px;
+  text-decoration: none;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item a span {
+  color: white;
+  padding: 5px;
+}
+
+main {
+  background-color: #072142;
+}
+
+main .white-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 88%;
+  width: 80%;
+  border-radius: 30px;
+}
+
+main .white-wrapper .avatar-circle {
+  width: 120px;
+  height: 120px;
+  margin: 30px;
+  border-radius: 50%;
+  background-color: #FF4D5A;
+}
+
+main .white-wrapper .data-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #072142;
+  color: black;
+  width: 90%;
+  height: 70%;
+  border-radius: 30px;
+}
+
+main .white-wrapper .data-wrapper .wrap-text {
+  background-color: #fff;
+  color: black;
+  width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.white-wrap {
+  background-color: #fff;
+  height: 85%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-secondary {
+  background-color: #072142;
+  padding: 20px;
+  color: white;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #FF4D5A;
 }
 
 .card {
@@ -217,6 +303,27 @@ main::before {
 
 .card .card-body .it-button-register button:hover {
   background-color: #c53a43;
+}
+
+.white-wrap {
+  background-color: #fff;
+  height: 85%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-secondary {
+  background-color: #072142;
+  padding: 20px;
+  color: white;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #FF4D5A;
 }
 
 /*!

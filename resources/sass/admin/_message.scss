@@ -1,0 +1,20 @@
+.white-wrap{
+   background-color: #fff;
+   height: 85%;
+   padding: 20px;
+   border-radius: 30px;
+
+   .wrap-secondary{
+      background-color: $secondary_color;
+      padding: 20px;
+      color: white;
+      border-radius: 30px;
+   }
+
+   .wrap-avatar{
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: $primary_color;
+   }
+}

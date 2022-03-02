@@ -24,10 +24,10 @@
         
         @include('admin.partials.header')
 
-        <main class="py-4">
+        <main>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-2 it-dashboard-box">
                         @include('admin.partials.dashboard')
                     </div>
                     <div class="col-10">
