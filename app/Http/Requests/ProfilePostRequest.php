@@ -26,11 +26,11 @@ class ProfilePostRequest extends FormRequest
         return [
             'name' => 'required|string|max:100|min:2',
             'surname' => 'required|string|max:100|min:2',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255',
             'region' => 'required|string',
             'level' => 'required|string',
             'avatar_path' => 'nullable|image|max:32000',
-            'cv_path' => 'nullable|mimes:jpeg,png,pdf|max:32000',
+            'cv_path' => 'nullable|image|mimes:jpeg,png,pdf|max:32000',
             'description' => 'nullable|string|max:500',
         ];
     }
@@ -54,6 +54,7 @@ class ProfilePostRequest extends FormRequest
             'level.required' => 'Campo obbligatorio',
             'avatar_path.image' => 'Puoi inserire solo immagini',
             'avatar_path.max' => 'L\'immagine supera i :max KB',
+            'cv_path.image' => 'Puoi inserire solo immagini',
             'cv_path.mimes' => 'I file supportati sono: .jpeg, .png, .pdf',
             'cv_path.max' => 'Il file supera i :max KB',
             'description.string' => 'Testo non valido',

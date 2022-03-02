@@ -2,6 +2,16 @@
 
 @section('content')
 <div class="container">
+    
+    {{-- ERRORI --}}
+    @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+    {{-- /ERRORI --}}
 
     <h1>Edit Pofile</h1>
 
