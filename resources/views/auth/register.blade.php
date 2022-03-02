@@ -60,27 +60,26 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="job_role" class="col-md-4 col-form-label text-md-right">Specializzazione</label>
-
-                            <div class="col-md-6">
-                                <select
-                                    name="job_role" 
-                                    id="job_role"
-                                    class="form-control"
+                        <div class="form-group row px-5">
+                            
+                            
+                            @foreach ($job_roles as $job_role)
+                            <div class="col-3">
+                                <input type="checkbox"
+                                    class="form-check-input"
+                                    id="job_role{{ $job_role->id }}"
+                                    name="job_roles[]"
+                                    value="{{ $job_role->id }}"
+                                    @if (in_array($job_role->id, old('job_roles', [])))
+                                        checked
+                                    @endif
                                 >
-                                    <option value="">Scegli il tuo ruolo</option>
-    
-                                    @foreach ($job_roles as $job_role)
-                                        <option
-                                            @if($job_role->name == old('job_role'))
-                                                selected
-                                            @endif
-                                            value="{{ $job_role->name }}"
-                                        >{{ $job_role->name }}</option>
-                                    @endforeach
-                                </select>
+                                
+                                <label class="form-check-label mr-5"
+                                    for="job_role{{ $job_role->id }}"
+                                >{{ $job_role->name }}</label>
                             </div>
+                            @endforeach
                         </div>
 
                         <div class="form-group row">

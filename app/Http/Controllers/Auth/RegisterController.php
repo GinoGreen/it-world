@@ -66,7 +66,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $new_user = User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'region' => $data['region'],
@@ -74,6 +74,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if (array_key_exists('job_roles', $data)) {
+            $new_user->job_roles()->attach($data['job_roles']);
+        }
+
+        return $new_user;
     }
 
     public function showRegistrationForm()

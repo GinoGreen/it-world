@@ -36,6 +36,26 @@
             >
         </div>
 
+        <div class="mb-3 form-check">
+            @foreach ($job_roles as $job_role)
+                <input type="checkbox"
+                    class="form-check-input"
+                    id="job_role{{ $job_role->id }}"
+                    name="job_roles[]"
+                    value="{{ $job_role->id }}"
+
+                    @if (!$errors->any() && $profile->job_roles->contains($job_role->id))
+                        checked
+                    @elseif ($errors->any() && in_array($job_role->id, old('job_roles', [])))
+                        checked
+                    @endif
+                >
+                <label class="form-check-label mr-5"
+                    for="job_role{{ $job_role->id }}"
+                >{{ $job_role->name }}</label>
+            @endforeach
+        </div>
+
         <div class="mb-3">
             <label 
                 for="avatar_path" 
