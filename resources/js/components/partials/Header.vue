@@ -11,8 +11,12 @@
             <div class="menu col-6">
 
                <span>Cerca</span>
-               <span>Accedi</span>
-               <span>Registrati</span>
+               <span>
+                  <a href="/login">Accedi</a>
+               </span>
+               <span>
+                  <a href="/register">Registrati</a>
+               </span>
 
                <div class="wrap-line-menu">
                   <div class="menu-line"></div>
