@@ -2,6 +2,16 @@
 
 @section('content')
 <div class="container">
+    
+    {{-- ERRORI --}}
+    @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+    {{-- /ERRORI --}}
 
     <h1>Edit Pofile</h1>
 
@@ -137,6 +147,20 @@
                     </label>
                 </div>
             @endforeach
+        </div>
+
+        <div class="mb-3">
+            <label 
+                for="description" 
+                class="form-label"
+            >Presentati</label>
+            
+            <textarea name="description" 
+                class="form-control"
+                id="description" 
+                cols="30" 
+                rows="10"
+            >{{ old('description', $profile->description) }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Modifica</button>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProfilePostRequest;
 use App\Job_role;
 use App\User;
 use Illuminate\Http\Request;
@@ -48,13 +49,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($profile,User $user)
+    public function show($profile, User $user)
     {
-        $profile=Auth::user();
+        $profile = Auth::user();
         
-        $fields = ['name', 'surname', 'region', 'email', 'avatar_path', 'cv_path', 'level'];
+        $fields = ['name', 'surname', 'region', 'email', 'avatar_path', 'cv_path', 'level', 'description'];
      
-        return view('admin.profile.show',compact('profile','fields'));
+        return view('admin.profile.show', compact('profile','fields'));
     }
 
     /**
@@ -66,7 +67,6 @@ class ProfileController extends Controller
     public function edit($profile)
     {
         $profile = Auth::user();
-
         if ($profile) {
 
             $levels = ['Junior', 'Middle', 'Senior'];
@@ -107,7 +107,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $profile)
+    public function update(ProfilePostRequest $request, User $profile)
     {
         $form_data = $request->all();
         
