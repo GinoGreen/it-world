@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Job_role;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -101,6 +102,8 @@ class RegisterController extends Controller
 
         $levels = ['Junior', 'Middle', 'Senior'];
 
-        return view('auth.register', compact('regions', 'levels'));
+        $job_roles = Job_role::orderBy('name', 'asc')->get();
+
+        return view('auth.register', compact('regions', 'levels', 'job_roles'));
     }
 }
