@@ -1,9 +1,9 @@
 <header>
-   <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+   <nav class="it-dashboard-header navbar navbar-expand-md navbar-dark shadow-sm">
        <div class="container-fluid justify-content-between">
            <div>
                <a class="navbar-brand" href="{{ route('home') }}">
-                   {{ config('app.name', 'Laravel') }}
+                   <img class="it-logo" src="{{URL::asset('/img/logo.png')}}" alt="ItWorld">
                </a>
                @auth
                    <a class="navbar-brand" href="{{ route('admin.home') }}">
@@ -17,7 +17,8 @@
                        onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();"
                    >
-                       Logout
+                   Logout 
+                   <i class="fa fa-sign-out" aria-hidden="true"></i>
                    </a>
                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                        @csrf
@@ -26,12 +27,15 @@
                @guest
                <a class="navbar-brand" href="{{ route('login') }}">
                    Login
+                   <i class="fa fa-sign-in" aria-hidden="true"></i>
                </a>
                <a class="navbar-brand" href="{{ route('register') }}">
                    Register
+                   <i class="fa fa-user-plus" aria-hidden="true"></i>
                </a>
                @endguest
            </div>
        </div>
    </nav>
+   
 </header>

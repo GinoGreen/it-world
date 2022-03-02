@@ -57,6 +57,18 @@ body {
   background: #FF4D5A;
 }
 
+header .it-dashboard-header {
+  background-color: #072142;
+}
+
+header .it-dashboard-header .it-logo {
+  width: 200px;
+}
+
+.it-dashboard {
+  min-height: 100vh;
+}
+
 .background {
   background-color: red;
 }
