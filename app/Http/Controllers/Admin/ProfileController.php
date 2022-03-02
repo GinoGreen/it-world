@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProfilePostRequest;
 use App\Job_role;
 use App\User;
 use Illuminate\Http\Request;
@@ -48,7 +49,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($profile,User $user)
+    public function show($profile, User $user)
     {
         $profile=Auth::user();
         
@@ -106,7 +107,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $profile)
+    public function update(ProfilePostRequest $request, User $profile)
     {
         $form_data = $request->all();
         
