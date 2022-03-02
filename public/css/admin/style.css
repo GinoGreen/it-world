@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;
 
 400;700;800&display=swap);@charset "UTF-8";
-
 * {
   margin: 0;
   padding: 0;
@@ -235,23 +234,6 @@ main .white-wrapper .data-wrapper .wrap-text {
   font-weight: 300;
   color: #fff;
   text-decoration: none;
-}
-
-main {
-  background-color: #072142;
-  background-image: url(https://marmotamaps.com/de/fx/wallpaper/download/faszinationen/Marmotamaps_Wallpaper_Berchtesgaden_Desktop_1920x1080.jpg) !important;
-  background-position: center center;
-  position: relative;
-}
-
-main::before {
-  content: "";
-  background-color: rgba(0, 1, 24, 0.8);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .card {
