@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PremiumPlansTableSeeder::class);
         $this->call(ReviewsTableSeeder::class);
+        $this->call(Job_rolesTableSeeder::class);
     }
 }
