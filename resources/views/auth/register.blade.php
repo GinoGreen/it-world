@@ -61,6 +61,29 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="job_role" class="col-md-4 col-form-label text-md-right">Specializzazione</label>
+
+                            <div class="col-md-6">
+                                <select
+                                    name="job_role" 
+                                    id="job_role"
+                                    class="form-control"
+                                >
+                                    <option value="">Scegli il tuo ruolo</option>
+    
+                                    @foreach ($job_roles as $job_role)
+                                        <option
+                                            @if($job_role->name == old('job_role'))
+                                                selected
+                                            @endif
+                                            value="{{ $job_role->name }}"
+                                        >{{ $job_role->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="region" class="col-md-4 col-form-label text-md-right">Locazione Ufficio</label>
 
                             <div class="col-md-6">
@@ -104,7 +127,6 @@
                                     @endforeach
                                 </select>
                             </div>
-
                         </div>
 
                         <div class="form-group row">
