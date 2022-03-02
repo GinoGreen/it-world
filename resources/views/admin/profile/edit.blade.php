@@ -139,6 +139,20 @@
             @endforeach
         </div>
 
+        <div class="mb-3">
+            <label 
+                for="description" 
+                class="form-label"
+            >Presentati</label>
+            
+            <textarea name="description" 
+                class="form-control"
+                id="description" 
+                cols="30" 
+                rows="10"
+            >{{ old('description', $profile->description) }}</textarea>
+        </div>
+
         <button type="submit" class="btn btn-primary">Modifica</button>
 
     </form>
