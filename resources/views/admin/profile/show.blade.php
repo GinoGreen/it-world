@@ -2,24 +2,31 @@
 
 @section('content')
 
+<div class="white-wrapper">
 
+   <div class="avatar-circle"></div>
 
-@foreach ($fields as $field )
+   <div class="data-wrapper">
 
-<div class="container m-3 background">
+      @foreach ($fields as $field )
 
-    <div class="d-inline p-2 bg-primary text-white">{{$field}}</div>
+         <div class="container m-2 wrap-text">
 
-    @if ($profile->$field === null)
-        <div class="d-inline p-2 bg-danger text-white">{{$field}} non presente</div>
-    @else
-        <div class="d-inline p-2 bg-dark text-white">{{$profile->$field}}</div>   
-    @endif
-  
+            <div class="d-inline">{{$field}}</div>
+
+            @if ($profile->$field === null)
+               <div class="d-inline ">{{$field}} non presente</div>
+            @else
+               <div class="d-inline">{{$profile->$field}}</div>
+            @endif
+
+         </div>
+
+      @endforeach
+
+   </div>
+
 </div>
-    
-@endforeach
-
 @endsection
 
 @section('title')

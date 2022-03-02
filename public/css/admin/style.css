@@ -94,8 +94,68 @@ header .it-dashboard-header .it-logo {
   padding: 5px;
 }
 
-.background {
-  background-color: red;
+main {
+  background-color: #072142;
+}
+
+main .white-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 88%;
+  width: 80%;
+  border-radius: 30px;
+}
+
+main .white-wrapper .avatar-circle {
+  width: 120px;
+  height: 120px;
+  margin: 30px;
+  border-radius: 50%;
+  background-color: #FF4D5A;
+}
+
+main .white-wrapper .data-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #072142;
+  color: black;
+  width: 90%;
+  height: 70%;
+  border-radius: 30px;
+}
+
+main .white-wrapper .data-wrapper .wrap-text {
+  background-color: #fff;
+  color: black;
+  width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.white-wrap {
+  background-color: #fff;
+  height: 85%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-secondary {
+  background-color: #072142;
+  padding: 20px;
+  color: white;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #FF4D5A;
 }
 
 .card {
@@ -174,6 +234,27 @@ header .it-dashboard-header .it-logo {
   font-weight: 300;
   color: #fff;
   text-decoration: none;
+}
+
+.white-wrap {
+  background-color: #fff;
+  height: 85%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-secondary {
+  background-color: #072142;
+  padding: 20px;
+  color: white;
+  border-radius: 30px;
+}
+
+.white-wrap .wrap-avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #FF4D5A;
 }
 
 /*!

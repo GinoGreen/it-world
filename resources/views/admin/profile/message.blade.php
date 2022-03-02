@@ -1,11 +1,21 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container white-wrap">
 
-    <h1>My Messages</h1>
+    <div class="row">
+ 
 
-</div>
+ 
+      <div class="col-3">
+         <div class="wrap-avatar"></div>
+      </div>
+ 
+      <div class="col-8 wrap-secondary">
+        <h1>Messaggi</h1>
+      </div>
+    </div>
+ </div>
 @endsection
 
 @section('title')
