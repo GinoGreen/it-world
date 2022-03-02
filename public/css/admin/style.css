@@ -95,6 +95,7 @@ header .it-dashboard-header .it-logo {
 
 .card .card-body input {
   border-left: none;
+  caret-color: #FF4D5A;
 }
 
 .card .card-body .it-mail-wrapper .mail-icon,
