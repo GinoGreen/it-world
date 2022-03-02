@@ -65,8 +65,33 @@ header .it-dashboard-header .it-logo {
   width: 200px;
 }
 
-.it-dashboard {
-  min-height: 100vh;
+.col-2.it-dashboard-box {
+  min-height: 80vh;
+  margin: 0;
+  padding: 0;
+  background-color: #FF4D5A;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul {
+  list-style: none;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item {
+  width: 80%;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item:hover {
+  background-color: #072142;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item a {
+  padding: 5px;
+  text-decoration: none;
+}
+
+.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item a span {
+  color: white;
+  padding: 5px;
 }
 
 .background {
