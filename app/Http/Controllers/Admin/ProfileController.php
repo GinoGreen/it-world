@@ -66,7 +66,6 @@ class ProfileController extends Controller
     public function edit($profile)
     {
         $profile = Auth::user();
-
         if ($profile) {
 
             $levels = ['Junior', 'Middle', 'Senior'];
