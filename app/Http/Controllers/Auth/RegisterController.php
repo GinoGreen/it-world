@@ -51,11 +51,35 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+                'name' => ['required', 'string', 'max:100', 'min:2'],
+                'surname' => ['required', 'string', 'max:100', 'min:2'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'region' => ['required', 'string'],
+                'level' => ['required', 'string'],
+            ],
+            [
+                'name.required' => 'Campo obbligatorio',
+                'name.string' => 'Non sono ammessi numeri',
+                'name.max' => 'Massimo :max caratteri',
+                'name.min' => 'Almeno :min caratteri',
+                'surname.required' => 'Campo obbligatorio',
+                'surname.string' => 'Non sono ammessi numeri','surname.max' => 'Massimo :max caratteri',
+                'surname.min' => 'Almeno :min caratteri',
+                'email.required' => 'Campo obbligatorio',
+                'email.email' => 'Email non valida',
+                'email.max' => 'Massimo :max caratteri',
+                'email.unique' => 'Hai giá un account?',
+                'password.required' => 'Password obbligatoria',
+                'password.min' => 'Almeno :min caratteri',
+                'password.confirmed' => 'Le password non corrispondono',
+                'region.required' => 'Campo obbligatorio',
+                'region.string' => 'Deve contenere solo testo',
+                'level.required' => 'Campo obbligatorio',
+                'level.string' => 'Deve contenere solo testo',
+                
+            ]
+        );
     }
 
     /**
