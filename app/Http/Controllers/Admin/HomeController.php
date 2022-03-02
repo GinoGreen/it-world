@@ -12,18 +12,27 @@ class HomeController extends Controller
 
         $profile = Auth::user();
 
-        return view('admin.home', compact('profile'));
+        return view('layouts.admin', compact('profile'));
     }
 
     public function message() {
-        return view('admin.message');
+        
+        $profile = Auth::user();
+
+        return view('admin.profile.message', compact('profile'));
     }
 
     public function review() {
-        return view('admin.review');
+
+        $profile = Auth::user();
+
+        return view('admin.profile.review', compact('profile'));
     }
 
     public function statistic() {
-        return view('admin.statistic');
+
+        $profile = Auth::user();
+
+        return view('admin.profile.statistic', compact('profile'));
     }
 }
