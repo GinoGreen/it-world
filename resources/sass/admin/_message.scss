@@ -1,20 +1,21 @@
-.white-wrap{
+.white-wrap-msg{
    background-color: #fff;
    height: 85%;
    padding: 20px;
    border-radius: 30px;
 
-   .wrap-secondary{
-      background-color: $secondary_color;
-      padding: 20px;
-      color: white;
-      border-radius: 30px;
+   .wrap-content-msg{
+      display: flex;
+      justify-content: space-between;
+
+      .wrap-secondary-msg{
+         background-color: $secondary_color;
+         width: 60%;
+         padding: 20px;
+         color: white;
+         border-radius: 30px;
+      }
+
    }
 
-   .wrap-avatar{
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      background-color: $primary_color;
-   }
 }

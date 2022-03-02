@@ -5,7 +5,7 @@
          <div class="row">
 
             <div class="logo col-6">
-               <img src="/img/logo.svg" alt="">
+               <img src="/img/logo.png" alt="">
             </div>
 
             <div class="menu col-6">
@@ -52,7 +52,6 @@ export default {
          height: 90px;
          img{
             width: 150px;
-            height: 80px;
          }
       }
       .menu{

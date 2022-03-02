@@ -1,3 +1,5 @@
+@auth
+
 <div class="it-dashboard">
    <ul>
       <li class="it-dashboard-item">
@@ -29,3 +31,5 @@
       </li>
   </ul>
 </div>
+
+@endauth

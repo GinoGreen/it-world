@@ -2,15 +2,15 @@
 
 @section('content')
 
-<div class="white-wrapper">
+<div class="white-wrapper-show">
 
-   <div class="avatar-circle"></div>
+   <div class="avatar-circle-show"></div>
 
-   <div class="data-wrapper">
+   <div class="data-wrapper-show">
 
       @foreach ($fields as $field )
 
-         <div class="container m-2 wrap-text">
+         <div class="container m-2 wrap-text-show">
 
             <div class="d-inline">{{$field}}</div>
 

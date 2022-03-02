@@ -2,17 +2,17 @@
 
 @section('content')
 
-<div class="container white-wrap">
+<div class="container white-wrap-edit">
 
    <div class="row">
 
    
 
       <div class="col-3">
-         <div class="wrap-avatar"></div>
+         <div class="wrap-avatar-edit"></div>
       </div>
 
-      <div class="col-8 wrap-secondary">
+      <div class="col-8 wrap-secondary-edit">
 
    
 

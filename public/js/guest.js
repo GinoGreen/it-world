@@ -725,7 +725,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "header[data-v-79cec062] {\n  height: 90px;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1000;\n}\nheader .logo[data-v-79cec062] {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  height: 90px;\n}\nheader .logo img[data-v-79cec062] {\n  width: 150px;\n  height: 80px;\n}\nheader .menu[data-v-79cec062] {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 90px;\n}\nheader .menu span[data-v-79cec062] {\n  color: white;\n  margin: 0px 20px 7px 0px;\n}\nheader .menu .menu-line[data-v-79cec062] {\n  width: 30px;\n  height: 5px;\n  margin-bottom: 8px;\n  background-color: #fff;\n  border-radius: 10px;\n}", ""]);
+exports.push([module.i, "header[data-v-79cec062] {\n  height: 90px;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1000;\n}\nheader .logo[data-v-79cec062] {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  height: 90px;\n}\nheader .logo img[data-v-79cec062] {\n  width: 150px;\n}\nheader .menu[data-v-79cec062] {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 90px;\n}\nheader .menu span[data-v-79cec062] {\n  color: white;\n  margin: 0px 20px 7px 0px;\n}\nheader .menu .menu-line[data-v-79cec062] {\n  width: 30px;\n  height: 5px;\n  margin-bottom: 8px;\n  background-color: #fff;\n  border-radius: 10px;\n}", ""]);
 
 // exports
 
@@ -2547,7 +2547,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "logo col-6" }, [
-            _c("img", { attrs: { src: "/img/logo.svg", alt: "" } }),
+            _c("img", { attrs: { src: "/img/logo.png", alt: "" } }),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "menu col-6" }, [
@@ -18214,7 +18214,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\andre\OneDrive\Documenti\Boolean\Progetto Finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
+module.exports = __webpack_require__(/*! /Users/matteodeias/Documents/Boolean/progetto finale/it-world/resources/js/guest.js */"./resources/js/guest.js");
 
 
 /***/ })
