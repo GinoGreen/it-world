@@ -1,0 +1,97 @@
+.container{
+   h5{
+      margin-top: 20px;
+      color: #fff;
+   }
+
+   .it-dashboard-info{
+      width: 100%;
+      margin-top: 50px;
+
+      .it-dashboard-top{
+         display: flex;
+         justify-content: space-around;
+         padding: 30px;
+
+         .it-dashboard-box{
+            width: 220px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            /*glass effect*/
+            background: rgba(255, 255, 255, 0.16);
+            border-radius: 30px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(3.4px);
+            -webkit-backdrop-filter: blur(3.4px);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            /*shadow*/
+            -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75); 
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+
+            transition: all 0.5s;
+
+            &:hover{
+               bottom: 15px;
+               -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75); 
+               box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
+            }
+
+            .it-dash-icon{
+               font-size: 70px;
+               margin-bottom: 20px;
+            }
+         }
+      }
+
+      .line-horizontal{
+         width: 60%;
+         height: 3px;
+         background-color: $primary_color;
+         border-radius: 20px;
+         margin: 50px auto;
+      }
+
+      .it-dashboard-bottom{
+         display: flex;
+         /*glass effect*/
+         background: rgba(255, 255, 255, 0.16);
+         // border-radius: 30px;
+         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+         backdrop-filter: blur(3.4px);
+         -webkit-backdrop-filter: blur(3.4px);
+         border: 1px solid rgba(255, 255, 255, 0.28);
+
+         .it-dash-bottom-left,
+         .it-dash-bottom-right{
+            width: 50%;
+            padding: 30px;
+
+            h5{
+               color: $primary_color;
+               margin-bottom: 10px;
+            }
+
+            p{
+               background-color: rgba(170, 170, 170, 0.5);
+               border-radius: 10px;
+               padding: 20px;
+            }
+         }
+
+         .line-vertical{
+            width: 3px;
+            height: 200px;
+            background-color: $primary_color;
+            border-radius: 20px;
+            margin: auto;
+         }
+      }
+   }
+
+}
