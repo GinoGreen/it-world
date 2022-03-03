@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Job_role;
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Job_roleController extends Controller
 {
@@ -19,33 +19,10 @@ class Job_roleController extends Controller
 
     public function search($job_role) {
 
-        $job_roles = Job_role::where('name', 'like', '%' . $job_role . '%')->get();
+        $profiles = Job_role::with(['users'])
+                                ->where('name', 'like', '%' . $job_role . '%')
+                                ->get();
 
-        return response()->json($job_roles);
-    }
-
-    public function usera(){
-
-        // $user = DB::table('users')
-        //                 ->join('job_roles',)
-        //                 ->select('*')
-        //                 ;
-        $user = ["saluto" => "ciao"];
-        
-        
-
-        return response()->json($user);
-    }
-    public function prova(){
-
-        // $user = DB::table('users')
-        //                 ->join('job_roles',)
-        //                 ->select('*')
-        //                 ;
-        $prova = ["saluto" => "ciao"];
-        
-        
-
-        return response()->json($prova);
+        return response()->json($profiles);
     }
 }
