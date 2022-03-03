@@ -21,8 +21,8 @@ class HomeController extends Controller
     }
 
     public function review() {
-        $user = Auth::user();
-        $reviews = Review::where('user_id','=',$user->id)->paginate(3);
+        $profile = Auth::user();
+        $reviews = Review::where('user_id', $profile->id)->paginate(3);
             
         return view('admin.review',compact('reviews'));
     }
