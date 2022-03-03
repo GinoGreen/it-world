@@ -41,7 +41,7 @@ Route::middleware('auth')
 
             Route::get('/profile/edit', 'ProfileController@edit')->name('edit');
 
-            Route::put('/profile/{profile}/update', 'ProfileController@update')->name('update');
+            Route::put('/profile/update', 'ProfileController@update')->name('update');
 
             Route::delete('/profile/destroy', 'ProfileController@destroy')->name('destroy');
 

@@ -10,7 +10,7 @@
       {{ (Route::currentRouteName() === 'admin.profile.edit') ? 'active' : '' }}
       ">
          <i class="fa fa-pencil" aria-hidden="true"></i>
-         <a href="{{ route('admin.profile.edit', $profile) }}"><span>Edit Profile</span></a>
+         <a href="{{ route('admin.edit') }}"><span>Edit Profile</span></a>
       </li>
 
       {{-- show --}}
@@ -18,7 +18,7 @@
       {{ (Route::currentRouteName() === 'admin.profile.show') ? 'active' : '' }}
       ">
          <i class="fa fa-user" aria-hidden="true"></i>
-         <a href="{{ route('admin.profile.show', $profile) }}"><span>Show Profile</span></a>
+         <a href="{{ route('admin.show') }}"><span>Show Profile</span></a>
       </li>
 
       {{-- messages --}}
@@ -53,7 +53,7 @@
       {{-- DELETE PROFILE --}}
        <div class="it-delete-profile">
          <form onsubmit="return confirm(`Confermi l'eliminazione del profilo?`)"
-         action="{{ route('admin.profile.destroy', $profile)}}" method="POST">
+         action="{{ route('admin.destroy')}}" method="POST">
             @csrf
             @method('DELETE')
             

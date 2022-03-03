@@ -60,7 +60,7 @@ class ProfileController extends Controller
     }
 
     
-    public function update(ProfilePostRequest $request, User $profile)
+    public function update(ProfilePostRequest $request)
     {
 
         $profile = Auth::user();
@@ -101,7 +101,7 @@ class ProfileController extends Controller
         return redirect()->route('admin.show', $profile);
     }
 
-    public function destroy(User $profile)
+    public function destroy()
     {
         $profile = Auth::user();
 
