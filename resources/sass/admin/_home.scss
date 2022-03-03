@@ -1,21 +1,20 @@
 .container{
    h5{
-      margin-top: 20px;
+      margin: 20px 0px 0px 0px;
       color: #fff;
    }
 
    .it-dashboard-info{
       width: 100%;
-      margin-top: 50px;
+      margin-top: 20px;
 
       .it-dashboard-top{
          display: flex;
          justify-content: space-around;
-         padding: 30px;
 
          .it-dashboard-box{
             width: 220px;
-            height: 180px;
+            height: 150px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -23,6 +22,7 @@
             color: #fff;
             position: relative;
             bottom: 0;
+            cursor: pointer;
             /*glass effect*/
             background: rgba(255, 255, 255, 0.16);
             border-radius: 30px;
@@ -43,8 +43,8 @@
             }
 
             .it-dash-icon{
-               font-size: 70px;
-               margin-bottom: 20px;
+               font-size: 50px;
+               margin-bottom: 10px;
             }
          }
       }
@@ -54,7 +54,7 @@
          height: 3px;
          background-color: $primary_color;
          border-radius: 20px;
-         margin: 50px auto;
+         margin: 30px auto;
       }
 
       .it-dashboard-bottom{
@@ -70,6 +70,8 @@
          .it-dash-bottom-left,
          .it-dash-bottom-right{
             width: 50%;
+            height: 300px;
+            overflow: scroll;
             padding: 30px;
 
             h5{
@@ -78,9 +80,24 @@
             }
 
             p{
-               background-color: rgba(170, 170, 170, 0.5);
-               border-radius: 10px;
+               // background-color: rgba(170, 170, 170, 0.5);
+               // border-radius: 10px;
                padding: 20px;
+               /*glass effect*/
+               background: rgba(255, 255, 255, 0.41);
+               border-radius: 16px;
+               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+               backdrop-filter: blur(20px);
+               -webkit-backdrop-filter: blur(20px);
+               border: 1px solid rgba(255, 255, 255, 0.27);
+               /* From https://css.glass */
+               background: rgba(255, 255, 255, 0.41);
+               border-radius: 10px;
+               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+               backdrop-filter: blur(20px);
+               -webkit-backdrop-filter: blur(20px);
+               border: 1px solid rgba(255, 255, 255, 0.27);
+
             }
          }
 

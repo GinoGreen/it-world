@@ -368,24 +368,23 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .container h5 {
-  margin-top: 20px;
+  margin: 20px 0px 0px 0px;
   color: #fff;
 }
 
 .container .it-dashboard-info {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .container .it-dashboard-info .it-dashboard-top {
   display: flex;
   justify-content: space-around;
-  padding: 30px;
 }
 
 .container .it-dashboard-info .it-dashboard-top .it-dashboard-box {
   width: 220px;
-  height: 180px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -393,6 +392,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   color: #fff;
   position: relative;
   bottom: 0;
+  cursor: pointer;
   /*glass effect*/
   background: rgba(255, 255, 255, 0.16);
   border-radius: 30px;
@@ -411,8 +411,8 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .container .it-dashboard-info .it-dashboard-top .it-dashboard-box .it-dash-icon {
-  font-size: 70px;
-  margin-bottom: 20px;
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
 .container .it-dashboard-info .line-horizontal {
@@ -420,7 +420,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   height: 3px;
   background-color: #FF4D5A;
   border-radius: 20px;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 .container .it-dashboard-info .it-dashboard-bottom {
@@ -436,6 +436,8 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 .container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left,
 .container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right {
   width: 50%;
+  height: 300px;
+  overflow: scroll;
   padding: 30px;
 }
 
@@ -447,9 +449,21 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 
 .container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left p,
 .container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right p {
-  background-color: rgba(170, 170, 170, 0.5);
-  border-radius: 10px;
   padding: 20px;
+  /*glass effect*/
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
 }
 
 .container .it-dashboard-info .it-dashboard-bottom .line-vertical {
