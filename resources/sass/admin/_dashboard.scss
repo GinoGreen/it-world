@@ -1,0 +1,25 @@
+.col-2.it-dashboard-box{
+   min-height: calc(100vh - 75px);
+   margin: 0;
+   padding: 0;
+   background-color: $primary-color;
+   .it-dashboard{
+      ul{
+         list-style: none;
+         li.it-dashboard-item{
+            width: 80%;
+            &:hover{
+               background-color: $secondary-color;
+            }
+            a{
+               padding: 5px;
+               text-decoration: none;
+               span{  
+                  color: white;
+                  padding: 5px;
+               }
+            }
+         }
+      }
+   }
+}

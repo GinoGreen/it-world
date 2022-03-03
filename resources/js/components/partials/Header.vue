@@ -5,14 +5,18 @@
          <div class="row">
 
             <div class="logo col-6">
-               <img src="/img/logo.svg" alt="">
+               <img src="/img/logo.png" alt="">
             </div>
 
             <div class="menu col-6">
 
                <span>Cerca</span>
-               <span>Accedi</span>
-               <span>Registrati</span>
+               <span>
+                  <a href="/login">Accedi</a>
+               </span>
+               <span>
+                  <a href="/register">Registrati</a>
+               </span>
 
                <div class="wrap-line-menu">
                   <div class="menu-line"></div>
@@ -52,7 +56,6 @@ export default {
          height: 90px;
          img{
             width: 150px;
-            height: 80px;
          }
       }
       .menu{

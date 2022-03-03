@@ -1,0 +1,20 @@
+.white-wrap-edit{
+   background-color: #fff;
+   height: 100%;
+   padding: 20px;
+   border-radius: 30px;
+
+   .wrap-secondary-edit{
+      background-color: $secondary_color;
+      padding: 20px;
+      color: white;
+      border-radius: 30px;
+   }
+
+   .wrap-avatar-edit{
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: $primary_color;
+   }
+}

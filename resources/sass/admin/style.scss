@@ -1,5 +1,28 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+// importing generals style
+@import '.././guest/variables';
+@import '.././guest/mixins';
+@import '.././guest/generals';
+
+
+//importing all parts
+@import './header';
+@import './dashboard';
+@import './show';
+@import './edit';
+@import './login';
+@import './register';
+@import './message';
+@import './review';
+@import './home';
+@import './chartjs';
+@import './statistic';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Font Awesome
+@import '~font-awesome/scss/font-awesome';
+
