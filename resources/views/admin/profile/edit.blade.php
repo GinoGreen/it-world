@@ -30,7 +30,7 @@
 
          <h1>Edit Pofile</h1>
 
-         <form action="{{ route('admin.update') }}" method="POST" enctype="multipart/form-data">
+         <form action="{{ route('admin.update', $profile) }}" method="POST" enctype="multipart/form-data">
          @method('PUT')
          @csrf
             <div class="mb-2">
@@ -88,6 +88,29 @@
                >
             </div>
 
+            <div class="form-group row px-5">
+               <div class="col-12">
+                  @foreach ($job_roles as $job_role)
+                     <input type="checkbox"
+                        class="form-check-input"
+                        id="job_role{{ $job_role->id }}"
+                        name="job_roles[]"
+                        value="{{ $job_role->id }}"
+      
+                        @if (!$errors->any() && $profile->job_roles->contains($job_role->id))
+                              checked
+                        @elseif ($errors->any() && in_array($job_role->id, old('job_roles', [])))
+                              checked
+                        @endif
+                     >
+                     
+                     <label class="form-check-label mr-5"
+                        for="job_role{{ $job_role->id }}"
+                     >{{ $job_role->name }}</label>
+                  @endforeach
+               </div>
+           </div>
+
             <div class="mb-2">
                <label 
                   for="region" 
@@ -144,25 +167,25 @@
                @endforeach
             </div>
 
-        <div class="mb-3">
-            <label 
-                for="description" 
-                class="form-label"
-            >Presentati</label>
-            
-            <textarea name="description" 
-                class="form-control"
-                id="description" 
-                cols="30" 
-                rows="10"
-            >{{ old('description', $profile->description) }}</textarea>
-        </div>
+            <div class="mb-3">
+                  <label 
+                     for="description" 
+                     class="form-label"
+                  >Presentati</label>
+                  
+                  <textarea name="description" 
+                     class="form-control"
+                     id="description" 
+                     cols="30" 
+                     rows="10"
+                  >{{ old('description', $profile->description) }}</textarea>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Modifica</button>
+            <button type="submit" class="btn btn-primary">Modifica</button>
 
-       </form>
+         </form>
 
-    </div>   
+      </div>   
    </div>
 </div>
 @endsection

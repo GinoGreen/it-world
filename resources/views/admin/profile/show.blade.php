@@ -23,6 +23,10 @@
          </div>
 
       @endforeach
+      {{-- @dd($profile->job_roles) --}}
+      @foreach ($profile->job_roles as $job_role)
+         <div class="d-inline">{{$job_role->name}}</div>
+      @endforeach
 
    </div>
 
