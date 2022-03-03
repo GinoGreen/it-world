@@ -13,7 +13,7 @@ class HomeController extends Controller
 
         $profile = Auth::user();
 
-        return view('layouts.admin', compact('profile'));
+        return view('admin.home', compact('profile'));
     }
 
     public function message() {
@@ -29,7 +29,7 @@ class HomeController extends Controller
 
         $reviews = Review::where('user_id', $profile->id)->paginate(3);
             
-        return view('admin.review',compact('reviews', 'profile'));
+        return view('admin.profile.review',compact('reviews', 'profile'));
     }
 
     public function statistic() {
