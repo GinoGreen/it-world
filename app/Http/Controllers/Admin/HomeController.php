@@ -13,7 +13,7 @@ class HomeController extends Controller
 
         $profile = Auth::user();
 
-        return view('layouts.admin', compact('profile'));
+        return view('admin.home', compact('profile'));
     }
 
     public function message() {
