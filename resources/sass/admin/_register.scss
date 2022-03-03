@@ -35,6 +35,25 @@
          }
       }
 
+      .it-job-role-title{
+         margin: 20px 0px 20px 45px;
+      }
+
+      .it-job-role-wrapper{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: flex-start;
+         margin: 15px;
+
+         .it-job-role{
+            margin: 0px 45px 20px 0px;
+
+            label{
+               width: 170px;
+            }
+         }
+      }
+
       .it-button-register{
          display: flex;
          justify-content: center;
@@ -42,71 +61,15 @@
 
          button{
             width: 200px;
-            background-color: $primary_color;
+            background-color: #c53a43;
             border: 1px solid #fff;
             border-radius: 30px;
             
             &:hover{
-               background-color: #c53a43;
+               background-color: $primary_color;
             }
          }
       }
 
-
-
-      // input{
-      //    border-left: none;
-      //    caret-color: $primary_color;
-      // }
-
-      // .it-mail-wrapper, .it-password-wrapper{
-      //    .mail-icon, .password-icon{
-      //       width: 50px;
-      //       display: flex;
-      //       justify-content: center;
-      //       align-items: center;
-      //       color: #707070;
-      //       font-size: 25px;
-      //       background-color: #fff;
-      //       border-radius: 20px 0px 0px 20px;
-      //    }
-
-      //    .col-md-6{
-      //       padding-left: 0px;
-
-      //       .it-mail, .it-password{
-      //          border-radius: 0px 20px 20px 0px !important;
-      //       }
-      //    }
-      // }
-
-      // .it-remember{
-      //    text-align: center;
-
-      //    label{
-      //       color: #fff;
-      //       font-weight: 300;
-      //    }
-      // }
-
-      // .it-button-wrapper{
-      //    .it-btn-login{
-      //       width: 200px;
-      //       background-color: $primary_color;
-      //       border: 1px solid #fff;
-      //       border-radius: 30px;
-            
-      //       &:hover{
-      //          background-color: #c53a43;
-      //       }
-      //    }
-
-      //    a{
-      //       font-size: 12px;
-      //       font-weight: 300;
-      //       color: #fff;
-      //       text-decoration: none;
-      //    }
-      // }
    }
 }

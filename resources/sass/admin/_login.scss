@@ -57,12 +57,12 @@
       .it-button-wrapper{
          .it-btn-login{
             width: 200px;
-            background-color: $primary_color;
+            background-color: #c53a43;
             border: 1px solid #fff;
             border-radius: 30px;
             
             &:hover{
-               background-color: #c53a43;
+               background-color: $primary_color;
             }
          }
 
