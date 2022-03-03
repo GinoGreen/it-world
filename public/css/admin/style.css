@@ -114,7 +114,6 @@ main .white-wrapper-show {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
   height: calc(100vh - 95px);
   padding: 20px;
   border-radius: 30px;
@@ -133,11 +132,15 @@ main .white-wrapper-show .data-wrapper-show {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #072142;
-  color: black;
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  color: white;
   width: 90%;
   height: 70%;
-  border-radius: 30px;
 }
 
 main .white-wrapper-show .data-wrapper-show .wrap-text-show {
@@ -149,17 +152,20 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .white-wrap-edit {
-  background-color: #fff;
   height: calc(100vh - 95px);
   padding: 20px;
   border-radius: 30px;
 }
 
 .white-wrap-edit .wrap-secondary-edit {
-  background-color: #072142;
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
   padding: 30px;
   color: white;
-  border-radius: 30px;
   height: 82vh;
   overflow: scroll;
 }
@@ -312,11 +318,14 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .white-wrap-msg {
-  background-color: #fff;
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
   height: calc(100vh - 95px);
   padding: 20px;
-  border-radius: 30px;
 }
 
 .white-wrap-msg .wrap-content-msg {
@@ -333,7 +342,6 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .white-wrap-rvu {
-  background-color: #fff;
   height: calc(100vh - 95px);
   padding: 20px;
   border-radius: 30px;

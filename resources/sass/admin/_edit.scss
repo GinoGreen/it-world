@@ -1,14 +1,18 @@
 .white-wrap-edit{
-   background-color: #fff;
+   // background-color: #fff;
    height: calc(100vh - 95px);
    padding: 20px;
    border-radius: 30px;
 
    .wrap-secondary-edit{
-      background-color: $secondary_color;
+      background: rgba(255, 255, 255, 0.16) !important;
+      border-radius: 16px !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+      backdrop-filter: blur(3.4px) !important;
+      -webkit-backdrop-filter: blur(3.4px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.28) !important;
       padding: 30px;
       color: white;
-      border-radius: 30px;
       height: 82vh;
       overflow: scroll;
 
