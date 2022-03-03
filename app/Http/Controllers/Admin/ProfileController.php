@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProfilePostRequest;
+use App\Job_role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,13 +49,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($profile,User $user)
+    public function show($profile, User $user)
     {
-        $profile=Auth::user();
+        $profile = Auth::user();
         
-        $fields = ['name','surname','region','email','avatar_path','cv_path','level','email_verified_at'];
+        $fields = ['name', 'surname', 'region', 'email', 'avatar_path', 'cv_path', 'level', 'description'];
      
-        return view('admin.profile.show',compact('profile','fields'));
+        return view('admin.profile.show', compact('profile','fields'));
     }
 
     /**
@@ -65,7 +67,6 @@ class ProfileController extends Controller
     public function edit($profile)
     {
         $profile = Auth::user();
-
         if ($profile) {
 
             $levels = ['Junior', 'Middle', 'Senior'];
@@ -91,8 +92,10 @@ class ProfileController extends Controller
                 'Valle d Aosta',
                 'Veneto',
             ];
+
+            $job_roles = Job_role::orderBy('name', 'asc')->get();
             
-            return view('admin.profile.edit', compact('profile', 'regions', 'levels'));
+            return view('admin.profile.edit', compact('profile', 'regions', 'levels', 'job_roles'));
         }
         abort(404, 'Profile non trovato o inesistente');
     }
@@ -104,7 +107,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $profile)
+    public function update(ProfilePostRequest $request, User $profile)
     {
         $form_data = $request->all();
         
@@ -128,8 +131,16 @@ class ProfileController extends Controller
             $cv_path = Storage::put('upload', $form_data['cv_path']);
             $form_data['cv_path'] = $cv_path;
         }
-        
+
+        //////  UPDATING DATA   //////
         $profile->update($form_data);
+
+        //setting job_roles
+        if (array_key_exists('job_roles', $form_data)) {
+            $profile->job_roles()->sync($form_data['job_roles']);
+        } else {
+            $profile->job_roles()->detach();
+        }
 
         return redirect()->route('admin.profile.show', $profile);
     }

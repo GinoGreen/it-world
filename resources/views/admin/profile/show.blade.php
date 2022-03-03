@@ -15,9 +15,13 @@
     @else
         <div class="d-inline p-2 bg-dark text-white">{{$profile->$field}}</div>   
     @endif
-  
-</div>
     
+</div>
+
+@endforeach
+
+@foreach ($profile->job_roles as $job_role)
+    <div class="d-inline p-2 bg-dark text-white">{{$job_role->name}}</div>
 @endforeach
 
 @endsection

@@ -33,7 +33,7 @@ class ChartJsController extends Controller
         //     $user[] = User::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"),$value)->count();
         // }
 
-    	return view('admin.chartjs',compact('years'))->with('month',json_encode($month,JSON_NUMERIC_CHECK))->with('average_vote',json_encode($datas,JSON_NUMERIC_CHECK));
+    	return view('admin.profile.chartjs',compact('years'))->with('month',json_encode($month,JSON_NUMERIC_CHECK))->with('average_vote',json_encode($datas,JSON_NUMERIC_CHECK));
     }
 
     public function prova($year)
@@ -58,7 +58,7 @@ class ChartJsController extends Controller
         //     $user[] = User::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"),$value)->count();
         // }
 
-    	return view('admin.chartjs',compact('years'))->with('month',json_encode($month,JSON_NUMERIC_CHECK))->with('average_vote',json_encode($datas,JSON_NUMERIC_CHECK));
+    	return view('admin.profile.chartjs',compact('years'))->with('month',json_encode($month,JSON_NUMERIC_CHECK))->with('average_vote',json_encode($datas,JSON_NUMERIC_CHECK));
     }
 
     

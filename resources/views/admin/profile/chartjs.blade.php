@@ -13,9 +13,7 @@
                     <canvas id="canvas" height="280" width="600"></canvas>
                     
                 </div>
-                <div class="panel-body">
-                  <canvas id="canvas1" height="280" width="600"></canvas>
-              </div>
+               
             </div>
         </div>
     </div>
@@ -54,25 +52,7 @@
                 }
             }
         });
-        var ctx1 = document.getElementById("canvas1").getContext("2d");
-        window.myBar = new Chart(ctx1, {
-            type: 'bar',
-            data: barChartData,
-            options: {
-                elements: {
-                    rectangle: {
-                        borderWidth: 2,
-                        borderColor: '#c1c1c1',
-                        borderSkipped: 'bottom'
-                    }
-                },
-                responsive: true,
-                title: {
-                    display: true,
-                    text: 'Numero recensioni per mese ed anno'
-                }
-            }
-        });
+       
     };
 </script>
 @endsection
