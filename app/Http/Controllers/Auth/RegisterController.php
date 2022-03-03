@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Job_role;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,11 +51,35 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+                'name' => ['required', 'string', 'max:100', 'min:2'],
+                'surname' => ['required', 'string', 'max:100', 'min:2'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'region' => ['required', 'string'],
+                'level' => ['required', 'string'],
+            ],
+            [
+                'name.required' => 'Campo obbligatorio',
+                'name.string' => 'Non sono ammessi numeri',
+                'name.max' => 'Massimo :max caratteri',
+                'name.min' => 'Almeno :min caratteri',
+                'surname.required' => 'Campo obbligatorio',
+                'surname.string' => 'Non sono ammessi numeri','surname.max' => 'Massimo :max caratteri',
+                'surname.min' => 'Almeno :min caratteri',
+                'email.required' => 'Campo obbligatorio',
+                'email.email' => 'Email non valida',
+                'email.max' => 'Massimo :max caratteri',
+                'email.unique' => 'Hai giá un account?',
+                'password.required' => 'Password obbligatoria',
+                'password.min' => 'Almeno :min caratteri',
+                'password.confirmed' => 'Le password non corrispondono',
+                'region.required' => 'Campo obbligatorio',
+                'region.string' => 'Deve contenere solo testo',
+                'level.required' => 'Campo obbligatorio',
+                'level.string' => 'Deve contenere solo testo',
+                
+            ]
+        );
     }
 
     /**
@@ -65,7 +90,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $new_user = User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'region' => $data['region'],
@@ -73,6 +98,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if (array_key_exists('job_roles', $data)) {
+            $new_user->job_roles()->attach($data['job_roles']);
+        }
+
+        return $new_user;
     }
 
     public function showRegistrationForm()
@@ -101,6 +132,8 @@ class RegisterController extends Controller
 
         $levels = ['Junior', 'Middle', 'Senior'];
 
-        return view('auth.register', compact('regions', 'levels'));
+        $job_roles = Job_role::orderBy('name', 'asc')->get();
+
+        return view('auth.register', compact('regions', 'levels', 'job_roles'));
     }
 }

@@ -2,11 +2,21 @@
 
 @section('content')
 <div class="container">
+
+    {{-- ERRORI --}}
+    @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </div>
+    @endif
+    {{-- /ERRORI --}}
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Registrati per offrire i tuoi servizi</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -60,6 +70,28 @@
                             </div>
                         </div>
 
+                        <div class="form-group row px-5">
+                            
+                            
+                            @foreach ($job_roles as $job_role)
+                            <div class="col-3">
+                                <input type="checkbox"
+                                    class="form-check-input"
+                                    id="job_role{{ $job_role->id }}"
+                                    name="job_roles[]"
+                                    value="{{ $job_role->id }}"
+                                    @if (in_array($job_role->id, old('job_roles', [])))
+                                        checked
+                                    @endif
+                                >
+                                
+                                <label class="form-check-label mr-5"
+                                    for="job_role{{ $job_role->id }}"
+                                >{{ $job_role->name }}</label>
+                            </div>
+                            @endforeach
+                        </div>
+
                         <div class="form-group row">
                             <label for="region" class="col-md-4 col-form-label text-md-right">Locazione Ufficio</label>
 
@@ -104,7 +136,6 @@
                                     @endforeach
                                 </select>
                             </div>
-
                         </div>
 
                         <div class="form-group row">
