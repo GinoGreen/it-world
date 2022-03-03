@@ -6,16 +6,21 @@
 
             <!-- search-input -->
             <div class="it-td" id="it-search-left">
-               <input @v-on:keyup.enter="saluto()" type="text" placeholder="Ricerca..." required>
+               <input type="text"  v-model="value" placeholder="Ricerca..." required>
             </div>
 
             <!-- search-button -->
-            <div class="it-td" id="it-search-right">
-               <button type="submit">
-                     <div id="it-search-circle"></div>
-                     <span></span>
-               </button>
-            </div>
+            <router-link :to="{name: 'advanced_search', params:{category: this.value}}" >
+      
+               <div class="it-td" id="it-search-right">
+                   <button type="submit">
+                          <div id="it-search-circle"></div>
+                          <span></span>
+                   </button>
+               </div>
+
+            </router-link>
+            
 
          </div>
       </form>
@@ -28,12 +33,11 @@ export default {
    name: 'SearchBar',
    data(){
       return{
+         value: ""
       }
    },
    methods:{
-      saluto(){
-         console.log('ciao');
-      }
+     
    },
    mounted(){
       

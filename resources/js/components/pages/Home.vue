@@ -1,7 +1,7 @@
 <template>
 
    <div class="container d-flex">
-
+      
       <aside>
          <!-- :class="{'active': index === sectionIndex}" -->
          <div class="wrap-scroll-line">

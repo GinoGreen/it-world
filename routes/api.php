@@ -19,4 +19,9 @@ Route::namespace('Api')
     ->group(function(){
         Route::get('/','Job_roleController@index');
         Route::get('/{name}','Job_roleController@search');
+        Route::get('/user','Job_roleController@usera');
+        Route::get('/prova','prova@index');
+        
     });
+
+    
