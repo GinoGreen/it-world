@@ -1,28 +1,22 @@
 .white-wrap-rvu{
    background-color: #fff;
-   height: 100%;
+   height: calc(100vh - 95px);
    padding: 20px;
    border-radius: 30px;
 
-   .wrap-content-rvu{
-      display: flex;
-      justify-content: space-between;
-
-      .circle-avatar-rvu{
+   .circle-avatar-rvu{
          margin-left: 30px;
          width: 100px;
          height: 100px;
          background-color: $primary_color;
          border-radius: 50%;
-      }
-      .wrap-secondary-rvu{
+   }
+   .wrap-secondary-rvu{
          background-color: $secondary_color;
-         width: 60%;
+         width:80%;
          padding: 20px;
          color: white;
          border-radius: 30px;
-      }
-
    }
 
 }
