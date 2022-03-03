@@ -30,7 +30,7 @@ class ProfilePostRequest extends FormRequest
             'region' => 'required|string',
             'level' => 'required|string',
             'avatar_path' => 'nullable|image|max:32000',
-            'cv_path' => 'nullable|image|mimes:jpeg,png,pdf|max:32000',
+            'cv_path' => 'nullable|mimes:jpeg,png,pdf|max:32000',
             'description' => 'nullable|string|max:500',
         ];
     }
@@ -38,27 +38,27 @@ class ProfilePostRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Campo obbligatorio',
-            'name.string' => 'Non sono ammessi numeri',
-            'name.max' => 'Massimo :max caratteri',
-            'name.min' => 'Almeno :min caratteri',
-            'surname.required' => 'Campo obbligatorio',
-            'surname.string' => 'Non sono ammessi numeri','surname.max' => 'Massimo :max caratteri',
-            'surname.min' => 'Almeno :min caratteri',
-            'email.required' => 'Campo obbligatorio',
+            'name.required' => 'Nome obbligatorio',
+            'name.string' => 'Non sono ammessi numeri nel nome',
+            'name.max' => 'Nome di massimo :max caratteri',
+            'name.min' => 'Nome di almeno :min caratteri',
+            'surname.required' => 'Cognome obbligatorio',
+            'surname.string' => 'Non sono ammessi numeri',
+            'surname.max' => 'Massimo :max caratteri nel cognome',
+            'surname.min' => 'Cognome di almeno :min caratteri',
+            'email.required' => 'Email obbligatorio',
             'email.email' => 'Email non valida',
-            'email.max' => 'Massimo :max caratteri',
+            'email.max' => 'Email di massimo :max caratteri',
             'email.unique' => 'Email giá registrata',
-            'region.required' => 'Campo obbligatorio',
-            'region.string' => 'Deve contenere solo testo',
-            'level.required' => 'Campo obbligatorio',
-            'avatar_path.image' => 'Puoi inserire solo immagini',
+            'region.required' => 'Seleziona una regione',
+            'region.string' => 'La regione deve contenere solo testo',
+            'level.required' => 'Esperienza obbligatoria',
+            'avatar_path.image' => 'L\'avatar deve essere un immagine',
             'avatar_path.max' => 'L\'immagine supera i :max KB',
-            'cv_path.image' => 'Puoi inserire solo immagini',
-            'cv_path.mimes' => 'I file supportati sono: .jpeg, .png, .pdf',
-            'cv_path.max' => 'Il file supera i :max KB',
+            'cv_path.mimes' => 'Il CV deve essere .jpeg, .png o .pdf',
+            'cv_path.max' => 'Il CV supera i :max KB',
             'description.string' => 'Testo non valido',
-            'description.max' => 'Massimo :max caratteri',
+            'description.max' => 'Descrizione di massimo :max caratteri',
         ];
     }
 }
