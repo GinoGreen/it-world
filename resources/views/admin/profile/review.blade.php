@@ -28,11 +28,13 @@
           </div> 
        
         </div>
-          @endforeach
-          {{$reviews->links()}}
-
-
+          @endforeach   
       </div>
+
+      <div class="paginate">        
+        {{$reviews->links()}}
+      </div>
+
   </div>
 </div>
 @endsection
