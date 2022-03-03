@@ -27,10 +27,21 @@
         <main>
             <div class="container-fluid">
                 <div class="row">
+                    @auth
                     <div class="col-2 it-dashboard-box">
                         @include('admin.partials.dashboard')
                     </div>
-                    <div class="col-10">
+                    @endauth
+                    <div class="
+                        @auth
+                            col-10
+                        @endauth
+
+                        @guest
+                            col-12
+                        @endguest
+                    
+                    ">
                         @yield('content')
                     </div>
                 </div>

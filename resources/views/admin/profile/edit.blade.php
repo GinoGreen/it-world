@@ -17,16 +17,13 @@
 
    <div class="row">
 
-   
-
-      <div class="col-3">
+      <div class="col-3 wrap-sx">
          <div class="wrap-avatar-edit"></div>
+         <h5>Nome Utente</h5>
+         <h6>Posizione lavorativa</h6>
       </div>
 
       <div class="col-8 wrap-secondary-edit">
-
-   
-
 
          <h1>Edit Pofile</h1>
 
@@ -168,20 +165,22 @@
             </div>
 
             <div class="mb-3">
-                  <label 
-                     for="description" 
-                     class="form-label"
-                  >Presentati</label>
-                  
-                  <textarea name="description" 
-                     class="form-control"
-                     id="description" 
-                     cols="30" 
-                     rows="10"
-                  >{{ old('description', $profile->description) }}</textarea>
+               <label 
+                  for="description" 
+                  class="form-label"
+               >Presentati</label>
+               
+               <textarea name="description" 
+                  class="form-control"
+                  id="description" 
+                  cols="30" 
+                  rows="10"
+               >{{ old('description', $profile->description) }}</textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Modifica</button>
+            <div class="it-btn">
+               <button type="submit" >Salva</button>
+            </div>
 
          </form>
 

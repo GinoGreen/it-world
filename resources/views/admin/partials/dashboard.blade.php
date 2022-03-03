@@ -1,35 +1,68 @@
-@auth
+
 
 <div class="it-dashboard">
+
+   {{-- menu --}}
    <ul>
-      <li class="it-dashboard-item">
-          <a href="{{ route('admin.edit') }}"><span>Edit Profile</span></a>
+
+      {{-- edit --}}
+      <li class="it-dashboard-item 
+      {{ (Route::currentRouteName() === 'admin.profile.edit') ? 'active' : '' }}
+      ">
+         <i class="fa fa-pencil" aria-hidden="true"></i>
+         <a href="{{ route('admin.profile.edit', $profile) }}"><span>Edit Profile</span></a>
       </li>
-      <li class="it-dashboard-item">
-          <a href="{{ route('admin.show') }}"><span>Show Profile</span></a>
+
+      {{-- show --}}
+      <li class="it-dashboard-item
+      {{ (Route::currentRouteName() === 'admin.profile.show') ? 'active' : '' }}
+      ">
+         <i class="fa fa-user" aria-hidden="true"></i>
+         <a href="{{ route('admin.profile.show', $profile) }}"><span>Show Profile</span></a>
       </li>
-      <li class="it-dashboard-item">
-          <a href="{{ route('admin.message') }}"><span>My Messages</span></a>
+
+      {{-- messages --}}
+      <li class="it-dashboard-item
+      {{ (Route::currentRouteName() === 'admin.message') ? 'active' : '' }}
+      ">
+         <i class="fa fa-comments" aria-hidden="true"></i>
+         <a href="{{ route('admin.message') }}"><span>My Messages</span></a>
       </li>
-      <li class="it-dashboard-item">
-          <a href="{{ route('admin.review') }}"><span>My Reviews</span></a>
+
+      {{-- reviews --}}
+      <li class="it-dashboard-item
+      {{ (Route::currentRouteName() === 'admin.review') ? 'active' : '' }}
+      ">
+         <i class="fa fa-star" aria-hidden="true"></i>
+         <a href="{{ route('admin.review') }}"><span>My Reviews</span></a>
       </li>
+
       {{-- <li class="it-dashboard-item">
-          <a href="{{ route('admin.statistic') }}"><span>Statistics</span></a>
+         <a href="{{ route('admin.statistic') }}"><span>Statistics</span></a>
       </li>
       <li class="it-dashboard-item">
-          <a href="{{ route('chartjs.index') }}"><span>Chartjs</span></a>
+         <a href="{{ route('chartjs.index') }}"><span>Chartjs</span></a>
       </li> --}}
-      <li class="it-dashboard-item">
-          <form onsubmit="return confirm(`Confermi l'eliminazione del profilo?`)"
-          action="{{ route('admin.destroy')}}" method="POST">
-              @csrf
-              @method('DELETE')
 
-              <button type="submit" class="btn text-light">DELETE PROFILE</button>
-          </form>
-      </li>
-  </ul>
+    </ul>
+    {{-- /menu --}}
+
+    {{-- buttons --}}
+    <div class="dashboard-buttons-box">
+
+      {{-- DELETE PROFILE --}}
+       <div class="it-delete-profile">
+         <form onsubmit="return confirm(`Confermi l'eliminazione del profilo?`)"
+         action="{{ route('admin.profile.destroy', $profile)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            
+            <button type="submit" class="btn text-light">
+               <i class="fa fa-trash" aria-hidden="true"></i>
+               DELETE PROFILE
+            </button>
+         </form>
+       </div>
+      
+    </div>
 </div>
-
-@endauth
