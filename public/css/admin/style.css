@@ -334,11 +334,15 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .white-wrap-msg .wrap-content-msg .wrap-secondary-msg {
-  background-color: #072142;
   width: 60%;
   padding: 20px;
   color: white;
+  background: rgba(255, 255, 255, 0.16);
   border-radius: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .white-wrap-rvu {
