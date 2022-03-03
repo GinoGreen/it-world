@@ -22,6 +22,7 @@
             color: #fff;
             position: relative;
             bottom: 0;
+            opacity: 0.8;
             cursor: pointer;
             /*glass effect*/
             background: rgba(255, 255, 255, 0.16);
@@ -37,6 +38,7 @@
             transition: all 0.5s;
 
             &:hover{
+               opacity: 1;
                bottom: 15px;
                -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75); 
                box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
@@ -44,6 +46,7 @@
 
             .it-dash-icon{
                font-size: 50px;
+               color: $primary_color;
                margin-bottom: 10px;
             }
          }
@@ -59,30 +62,31 @@
 
       .it-dashboard-bottom{
          display: flex;
-         /*glass effect*/
-         background: rgba(255, 255, 255, 0.16);
-         // border-radius: 30px;
-         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-         backdrop-filter: blur(3.4px);
-         -webkit-backdrop-filter: blur(3.4px);
-         border: 1px solid rgba(255, 255, 255, 0.28);
 
          .it-dash-bottom-left,
          .it-dash-bottom-right{
             width: 50%;
-            height: 300px;
-            overflow: scroll;
+            height: 290px;
+            overflow: auto;
             padding: 30px;
+            margin: 0 10px;
+            opacity: 0.8;
+            /*glass effect*/
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(3.4px);
+            -webkit-backdrop-filter: blur(3.4px);
+            border: 1px solid rgba(255, 255, 255, 0.28);
 
-            h5{
+            .it-title-small{
                color: $primary_color;
-               margin-bottom: 10px;
+               margin: 0px 0px 20px 0px;
             }
 
             p{
-               // background-color: rgba(170, 170, 170, 0.5);
-               // border-radius: 10px;
                padding: 20px;
+               margin-bottom: 20px;
+               cursor: pointer;
                /*glass effect*/
                background: rgba(255, 255, 255, 0.41);
                border-radius: 16px;
@@ -90,23 +94,31 @@
                backdrop-filter: blur(20px);
                -webkit-backdrop-filter: blur(20px);
                border: 1px solid rgba(255, 255, 255, 0.27);
-               /* From https://css.glass */
-               background: rgba(255, 255, 255, 0.41);
-               border-radius: 10px;
-               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-               backdrop-filter: blur(20px);
-               -webkit-backdrop-filter: blur(20px);
-               border: 1px solid rgba(255, 255, 255, 0.27);
 
             }
-         }
 
-         .line-vertical{
+            &:hover{
+               opacity: 1;
+            }
+         }
+         
+         // SCROLLBAR
+         /* width */
+         ::-webkit-scrollbar {
             width: 3px;
-            height: 200px;
-            background-color: $primary_color;
             border-radius: 20px;
-            margin: auto;
+         }
+         /* Track */
+         ::-webkit-scrollbar-track {
+            background: none; 
+         }
+         /* Handle */
+         ::-webkit-scrollbar-thumb {
+            background: $primary_color; 
+         }
+         /* Handle on hover */
+         ::-webkit-scrollbar-thumb:hover {
+            cursor: pointer; 
          }
       }
    }

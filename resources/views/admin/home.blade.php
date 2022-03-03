@@ -33,8 +33,6 @@
                 <p>Recensione Lorem ipsum dolor sit amet consectetur adipisicing...</p>               
             </div>
 
-            <div class="line-vertical"></div>
-
             <div class="it-dash-bottom-right">
                 <h5 class="it-title-small">I tuoi ultimi messaggi</h5>
                 <p>Messaggio Lorem ipsum dolor sit amet consectetur adipisicing...</p>
@@ -45,9 +43,6 @@
             </div>
         </div>
     </div>
-
-
-
 
 </div>
 @endsection
