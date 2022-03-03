@@ -57,6 +57,8 @@ class RegisterController extends Controller
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
                 'region' => ['required', 'string'],
                 'level' => ['required', 'string'],
+                'job_roles' => ['required'],
+                
             ],
             [
                 'name.required' => 'Nome obbligatorio',
@@ -74,6 +76,7 @@ class RegisterController extends Controller
                 'region.required' => 'Seleziona una regione',
                 'region.string' => 'La regione deve contenere solo testo',
                 'level.required' => 'Esperienza obbligatoria',
+                'job_roles.required' => 'Seleziona almeno una specializzazione',
                 'password.required' => 'Password obbligatoria',
                 'password.min' => 'Password di almeno :min caratteri',
                 'password.confirmed' => 'Le password non corrispondono',
