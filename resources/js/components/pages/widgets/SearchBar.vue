@@ -6,7 +6,7 @@
 
             <!-- search-input -->
             <div class="it-td" id="it-search-left">
-               <input type="text" placeholder="Ricerca..." required>
+               <input @v-on:keyup.enter="saluto()" type="text" placeholder="Ricerca..." required>
             </div>
 
             <!-- search-button -->
@@ -31,7 +31,9 @@ export default {
       }
    },
    methods:{
-      
+      saluto(){
+         console.log('ciao');
+      }
    },
    mounted(){
       

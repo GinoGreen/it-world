@@ -2273,7 +2273,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {},
+  methods: {
+    saluto: function saluto() {
+      console.log('ciao');
+    }
+  },
   mounted: function mounted() {}
 });
 
@@ -4221,36 +4225,47 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "it-search" }, [
+    _c("form", { attrs: { method: "get", action: "" } }, [
+      _c("div", { staticClass: "it-table" }, [
+        _c("div", { staticClass: "it-td", attrs: { id: "it-search-left" } }, [
+          _c("input", {
+            attrs: { type: "text", placeholder: "Ricerca...", required: "" },
+            on: {
+              "v-on:keyup": function ($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
+                return _vm.saluto()
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "it-search" }, [
-      _c("form", { attrs: { method: "get", action: "" } }, [
-        _c("div", { staticClass: "it-table" }, [
-          _c("div", { staticClass: "it-td", attrs: { id: "it-search-left" } }, [
-            _c("input", {
-              attrs: { type: "text", placeholder: "Ricerca...", required: "" },
-            }),
-          ]),
+    return _c(
+      "div",
+      { staticClass: "it-td", attrs: { id: "it-search-right" } },
+      [
+        _c("button", { attrs: { type: "submit" } }, [
+          _c("div", { attrs: { id: "it-search-circle" } }),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "it-td", attrs: { id: "it-search-right" } },
-            [
-              _c("button", { attrs: { type: "submit" } }, [
-                _c("div", { attrs: { id: "it-search-circle" } }),
-                _vm._v(" "),
-                _c("span"),
-              ]),
-            ]
-          ),
+          _c("span"),
         ]),
-      ]),
-    ])
+      ]
+    )
   },
 ]
 render._withStripped = true
