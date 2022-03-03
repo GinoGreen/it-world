@@ -1,5 +1,5 @@
 <template>
-   <!-- notate che la classe cambia per ogni sezione. tutto é molto gestibile :-) -->
+
    <section 
       :class="sectionInfo.section.class"
       :id="'section' + sectionInfo.index"
@@ -8,19 +8,28 @@
 
       <div class="row">
 
-         <div class="content-sx" :class="'col-' + sectionInfo.section.col.sx">
-            <h1 v-if="sectionInfo.section.title" class="it-title-big">{{ sectionInfo.section.title }}</h1>
-            <h2 v-if="sectionInfo.section.subtitle" class="it-title-medium">{{ sectionInfo.section.subtitle }}</h2>
-            <p v-if="sectionInfo.section.text" class="it-text">{{ sectionInfo.section.text }}</p>
-            <SearchBar 
-            v-if="sectionInfo.section.class === 'search'"
+         <div class="content-sx" 
+            :class="'col-' + sectionInfo.section.col.sx"
+         >
+            <h1 v-if="sectionInfo.section.title" 
+               class="it-title-big"
+            >{{ sectionInfo.section.title }}</h1>
+
+            <h2 v-if="sectionInfo.section.subtitle" 
+               class="it-title-medium"
+            >{{ sectionInfo.section.subtitle }}</h2>
+
+            <p v-if="sectionInfo.section.text" 
+               class="it-text"
+            >{{ sectionInfo.section.text }}</p>
+
+            <SearchBar @initSearch="setString"
+               v-if="sectionInfo.section.class === 'search'"
             />
-            <CatSlider 
-            v-if="sectionInfo.section.class === 'categories'"
-            />
-            <Slider 
-            v-if="sectionInfo.section.class === 'professionals'"
-            />
+
+            <CatSlider v-if="sectionInfo.section.class === 'categories'"/>
+
+            <Slider v-if="sectionInfo.section.class === 'professionals'"/>
 
             <div 
                v-if="sectionInfo.section.class === 'join'"
@@ -29,16 +38,14 @@
                <button>Unisciti a noi</button>
             </div>
 
-            <ContactForm
-            v-if="sectionInfo.section.class === 'contact'"
-            />
+            <ContactForm v-if="sectionInfo.section.class === 'contact'"/>
             
          </div>
 
          <div v-if="sectionInfo.section.image" 
-         class="content-dx" :class="'col-' + sectionInfo.section.col.dx">
+            class="content-dx" :class="'col-' + sectionInfo.section.col.dx"
+         >
             <img :src="sectionInfo.section.image" alt="">
-           
          </div>
 
       </div>
@@ -47,24 +54,42 @@
          <div class="line-1"></div>
          <div class="line-2"></div>
       </div>
+
    </section>
+
 </template>
 
 <script>
+
 import SearchBar from './widgets/SearchBar'
 import Slider from './widgets/Slider'
 import CatSlider from './widgets/CatSlider'
 import ContactForm from './widgets/ContactForm'
+
 export default {
    name: 'Section',
+
    components: { 
       SearchBar, 
       CatSlider,
       Slider,
       ContactForm,
    },
+
    props: {
       sectionInfo: Object
+   },
+
+   data() {
+      return {
+         stringSearched: '',
+      }
+   },
+
+   methods: {
+      setString(str) {
+         this.stringSearched = str;
+      }
    }
 }
 </script>
