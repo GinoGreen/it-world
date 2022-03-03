@@ -68,7 +68,28 @@ export default {
 
    components: {
       ProfileBox
+   },
+
+   data(){
+      return{
+          apiUrl: 'http://127.0.0.1:8000/api/job_roles/'
+      }
+   },
+
+   methods:{
+      getApi(){
+         axios.get(this.apiUrl + this.$route.params.category)
+            .then(res => {
+               console.log(res.data);
+            })
+      }
+   },
+
+   mounted(){
+      this.getApi();
    }
+
+
 }
 </script>
 

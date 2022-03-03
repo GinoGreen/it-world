@@ -15,12 +15,17 @@
             </div>
 
             <!-- search-button -->
-            <div class="it-td" id="it-search-right">
-               <button type="submit">
-                     <div id="it-search-circle"></div>
-                     <span></span>
-               </button>
-            </div>
+            <router-link :to="{name: 'advanced_search', params:{category: this.stringSearched}}" >
+      
+               <div class="it-td" id="it-search-right">
+                   <button type="submit">
+                          <div id="it-search-circle"></div>
+                          <span></span>
+                   </button>
+               </div>
+
+            </router-link>
+            
 
          </div>
       </form>
