@@ -2001,8 +2001,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      sections: _data_sections__WEBPACK_IMPORTED_MODULE_1__["default"]
+      sections: _data_sections__WEBPACK_IMPORTED_MODULE_1__["default"],
+      apiUrl: 'http://127.0.0.1:8000/api/job_roles',
+      job_roles: null
     };
+  },
+  methods: {
+    getApi: function getApi() {
+      var _this = this;
+
+      axios.get(this.apiUrl).then(function (res) {
+        _this.job_roles = res.data;
+        console.log(res.data);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getApi();
   }
 });
 

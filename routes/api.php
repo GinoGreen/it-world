@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::namespace('Api')
+    ->prefix('job_roles')
     ->group(function(){
-        Route::get('/home','HomeController@index');
+        Route::get('/','Job_roleController@index');
+       
     });
