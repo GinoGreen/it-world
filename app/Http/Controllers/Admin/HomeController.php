@@ -11,16 +11,12 @@ class HomeController extends Controller
 {
     public function index() {
 
-        $profile = Auth::user();
-
-        return view('layouts.admin', compact('profile'));
+        return view('admin.home');
     }
 
     public function message() {
-        
-        $profile = Auth::user();
 
-        return view('admin.profile.message', compact('profile'));
+        return view('admin.profile.message');
     }
 
     public function review() {
@@ -34,8 +30,6 @@ class HomeController extends Controller
 
     public function statistic() {
 
-        $profile = Auth::user();
-
-        return view('admin.profile.statistic', compact('profile'));
+        return view('admin.profile.statistic');
     }
 }

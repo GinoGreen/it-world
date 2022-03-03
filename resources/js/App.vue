@@ -12,6 +12,24 @@ export default {
 
    components:{
       Header
+   },
+   data(){
+      return{
+         apiUrl:'http://127.0.0.1:8000/api/home',
+         user:''
+      }
+   },
+   mounted(){
+      this.getApi();
+   },
+   methods:{
+       getApi(){
+         axios.get(this.apiUrl)
+          .then(res => {
+           this.user = res.data;
+            console.log(this.user[0].cognome) ;
+          })
+       }
    }
 
 }

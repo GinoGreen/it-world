@@ -161,11 +161,11 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 
 .card {
   background: rgba(255, 255, 255, 0.16) !important;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3.4px);
-  -webkit-backdrop-filter: blur(3.4px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
 }
 
 .card .card-header {
@@ -235,6 +235,57 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   font-weight: 300;
   color: #fff;
   text-decoration: none;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+.card .card-header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+}
+
+.card .card-body .row {
+  justify-content: center;
+}
+
+.card .card-body .row label {
+  text-align: left !important;
+  color: #fff;
+}
+
+.card .card-body .row .col-md-6 input {
+  caret-color: #FF4D5A;
+  border-radius: 20px !important;
+}
+
+.card .card-body .row .col-md-6 select {
+  border-radius: 20px 0px 0px 20px !important;
+}
+
+.card .card-body .it-button-register {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card .card-body .it-button-register button {
+  width: 200px;
+  background-color: #FF4D5A;
+  border: 1px solid #fff;
+  border-radius: 30px;
+}
+
+.card .card-body .it-button-register button:hover {
+  background-color: #c53a43;
 }
 
 .white-wrap-msg {

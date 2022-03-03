@@ -5,6 +5,7 @@
    
     @foreach ($reviews as $review)
         <div class="container border border-dark">
+            @dump($review)
             <div >
                 <h1>title</h1>
                 {{$review->title}}
