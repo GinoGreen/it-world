@@ -574,6 +574,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header'
 });
@@ -2553,9 +2557,13 @@ var staticRenderFns = [
           _c("div", { staticClass: "menu col-6" }, [
             _c("span", [_vm._v("Cerca")]),
             _vm._v(" "),
-            _c("span", [_vm._v("Accedi")]),
+            _c("span", [
+              _c("a", { attrs: { href: "/login" } }, [_vm._v("Accedi")]),
+            ]),
             _vm._v(" "),
-            _c("span", [_vm._v("Registrati")]),
+            _c("span", [
+              _c("a", { attrs: { href: "/register" } }, [_vm._v("Registrati")]),
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "wrap-line-menu" }, [
               _c("div", { staticClass: "menu-line" }),

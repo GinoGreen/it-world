@@ -355,6 +355,99 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   border-radius: 30px;
 }
 
+.container h5 {
+  margin-top: 20px;
+  color: #fff;
+}
+
+.container .it-dashboard-info {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.container .it-dashboard-info .it-dashboard-top {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.container .it-dashboard-info .it-dashboard-top .it-dashboard-box {
+  width: 220px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  /*glass effect*/
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  /*shadow*/
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  transition: all 0.5s;
+}
+
+.container .it-dashboard-info .it-dashboard-top .it-dashboard-box:hover {
+  bottom: 15px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.container .it-dashboard-info .it-dashboard-top .it-dashboard-box .it-dash-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.container .it-dashboard-info .line-horizontal {
+  width: 60%;
+  height: 3px;
+  background-color: #FF4D5A;
+  border-radius: 20px;
+  margin: 50px auto;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom {
+  display: flex;
+  /*glass effect*/
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left,
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right {
+  width: 50%;
+  padding: 30px;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left h5,
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right h5 {
+  color: #FF4D5A;
+  margin-bottom: 10px;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left p,
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right p {
+  background-color: rgba(170, 170, 170, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom .line-vertical {
+  width: 3px;
+  height: 200px;
+  background-color: #FF4D5A;
+  border-radius: 20px;
+  margin: auto;
+}
+
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
