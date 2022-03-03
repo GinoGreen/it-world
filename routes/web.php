@@ -37,7 +37,14 @@ Route::middleware('auth')
 
             Route::get('/statistic', 'HomeController@statistic')->name('statistic');
 
-            Route::resource('/profile', 'ProfileController');
+            Route::get('/profile/show', 'ProfileController@show')->name('show');
+
+            Route::get('/profile/edit', 'ProfileController@edit')->name('edit');
+
+            Route::put('/profile/update', 'ProfileController@update')->name('update');
+
+            Route::delete('/profile/destroy', 'ProfileController@destroy')->name('destroy');
+
         });
 
 Route::get('{any?}', function() {

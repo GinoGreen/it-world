@@ -30,7 +30,7 @@
 
          <h1>Edit Pofile</h1>
 
-         <form action="{{ route('admin.profile.update', $profile) }}" method="POST"    enctype="multipart/form-data">
+         <form action="{{ route('admin.update') }}" method="POST" enctype="multipart/form-data">
          @method('PUT')
          @csrf
             <div class="mb-2">
