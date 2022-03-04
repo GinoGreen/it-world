@@ -2040,38 +2040,24 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(this.apiUrl + this.$route.params.job_role).then(function (res) {
         _this.jobRoles = res.data;
-        console.log('jobRoles trovati: ', _this.jobRoles);
 
         _this.jobRoles.forEach(function (jobRole) {
-          // console.log(jobRole);
           if (jobRole.users.length !== 0) {
-            var _loop = function _loop(index) {
-              jobRole.users[index].jobRole = [jobRole.name];
-
+            jobRole.users.forEach(function (profile) {
               if (!_this.profiles.some(function (element) {
-                return element.id === jobRole.users[index].id;
+                return element.id === profile.id;
               })) {
-                _this.profiles.push(jobRole.users[index]);
+                profile.jobRole = [jobRole.name];
 
-                console.log('profilo id: ', jobRole.users[index].id);
+                _this.profiles.push(profile);
               } else {
-                var duplicateJobRole = jobRole.name;
-
                 _this.profiles.find(function (element) {
-                  return element.id === jobRole.users[index].id;
-                }).jobRole.push(duplicateJobRole);
-
-                console.log('duplicato trovato: ', jobRole.name);
+                  return element.id === profile.id;
+                }).jobRole.push(jobRole.name);
               }
-            };
-
-            for (var index = 0; index < jobRole.users.length; index++) {
-              _loop(index);
-            }
+            });
           }
         });
-
-        console.log('Profili filtrati: ', _this.profiles);
       });
     }
   },

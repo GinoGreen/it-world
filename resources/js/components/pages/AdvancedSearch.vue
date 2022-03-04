@@ -100,40 +100,26 @@ export default {
             .then(res => {
             
                this.jobRoles = res.data;
-               console.log('jobRoles trovati: ', this.jobRoles);
                
                this.jobRoles.forEach(jobRole => {
                   
-                  // console.log(jobRole);
-
                   if(jobRole.users.length !== 0){
 
-                     for (let index = 0; index < jobRole.users.length; index++) {
+                     jobRole.users.forEach(profile => {
+                     
+                        if (!this.profiles.some(element => element.id === profile.id)) {
 
-                        jobRole.users[index].jobRole = [jobRole.name];
+                           profile.jobRole = [jobRole.name];
 
-                        if (!this.profiles.some(element => element.id === jobRole.users[index].id)) {
-                           
-                           this.profiles.push(jobRole.users[index]);
-
-                           console.log('profilo id: ', jobRole.users[index].id)
-
+                           this.profiles.push(profile);
                         } else {
                            
-                           const duplicateJobRole = jobRole.name;
-                           this.profiles.find(element => element.id === jobRole.users[index].id).jobRole.push(duplicateJobRole);
-
-                           console.log('duplicato trovato: ',  jobRole.name);
-                           
+                           this.profiles.find(element => element.id === profile.id).jobRole.push(jobRole.name);
                         }
-                     }
-
-
+                     });
                   }
                });
-
-               console.log('Profili filtrati: ', this.profiles);
-            })
+         });
       }
    },
 
