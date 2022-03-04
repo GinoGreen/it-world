@@ -2046,23 +2046,22 @@ __webpack_require__.r(__webpack_exports__);
           // console.log(jobRole);
           if (jobRole.users.length !== 0) {
             var _loop = function _loop(index) {
-              jobRole.users[index].jobRole = [];
+              jobRole.users[index].jobRole = [jobRole.name];
 
-              var duplicate = function duplicate(element) {
-                return element === jobRole.users[index];
-              };
-
-              if (!_this.profiles.some(duplicate)) {
-                jobRole.users[index].jobRole.push(jobRole.name);
-
+              if (!_this.profiles.some(function (element) {
+                return element.id === jobRole.users[index].id;
+              })) {
                 _this.profiles.push(jobRole.users[index]);
-              } else {
-                var indexProfileDuplicate = _this.profiles.findIndex(function (element) {
-                  console.log('duplicato trovato');
-                  return element === jobRole.users[index];
-                });
 
-                jobRole.users[indexProfileDuplicate].jobRole.push(jobRole.name);
+                console.log('profilo id: ', jobRole.users[index].id);
+              } else {
+                var duplicateJobRole = jobRole.name;
+
+                _this.profiles.find(function (element) {
+                  return element.id === jobRole.users[index].id;
+                }).jobRole.push(duplicateJobRole);
+
+                console.log('duplicato trovato: ', jobRole.name);
               }
             };
 

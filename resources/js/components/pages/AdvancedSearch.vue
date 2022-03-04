@@ -112,20 +112,18 @@ export default {
 
                         jobRole.users[index].jobRole = [jobRole.name];
 
-                        const profileDuplicate = (element) => element === jobRole.users[index];
-
-                        if (!this.profiles.some(profileDuplicate)) {
+                        if (!this.profiles.some(element => element.id === jobRole.users[index].id)) {
                            
                            this.profiles.push(jobRole.users[index]);
 
+                           console.log('profilo id: ', jobRole.users[index].id)
+
                         } else {
                            
-                           console.log('duplicato trovato');
-                           // const indexProfileDuplicate = this.profiles.findIndex(profileDuplicate);
+                           const duplicateJobRole = jobRole.name;
+                           this.profiles.find(element => element.id === jobRole.users[index].id).jobRole.push(duplicateJobRole);
 
-                           // console.log(indexProfileDuplicate);
-
-                           // jobRole.users[indexProfileDuplicate].jobRole.push(jobRole.name);
+                           console.log('duplicato trovato: ',  jobRole.name);
                            
                         }
                      }
