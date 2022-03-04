@@ -16,10 +16,6 @@ class ProfileController extends Controller
     public function show()
     {
         $profile = Auth::user();
-
-        $users = User::all();
-
-        dd($users);
         
         $fields = ['name', 'surname', 'region', 'email', 'avatar_path', 'cv_path', 'level', 'description'];
      
