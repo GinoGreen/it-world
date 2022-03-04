@@ -72,15 +72,18 @@ export default {
 
    data(){
       return{
-          apiUrl: 'http://127.0.0.1:8000/api/job_roles/'
+          apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
+          categories: {}
       }
    },
 
    methods:{
       getApi(){
-         axios.get(this.apiUrl + this.$route.params.category)
+         axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
-               console.log(res.data);
+               // this.categories = res.data;
+               console.log(res.data.name);
+
             })
       }
    },
