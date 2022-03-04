@@ -75,19 +75,14 @@
 
 <script>
 
-import ProfileBox from './ProfileBox.vue'
 
 export default {
    name: 'AdvancedSearch',
 
-   components: {
-      ProfileBox
-   },
-
    data(){
       return{
           apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
-          job_roles: {}
+          job_roles: null
       }
    },
 
@@ -160,7 +155,7 @@ export default {
 
                   .tag{
                      color: white;
-                     background-color: #FF4D5A;
+                     background-color: $primary_color;
                      padding: 3px 20px;
                      border-radius: 25px;
                      margin: 5px;
@@ -190,7 +185,7 @@ export default {
                         width: 12px;
                         height: 12px;
                         border-radius: 50%;
-                        background-color: #FF4D5A;
+                        background-color: $primary_color;
                         position: absolute;
                         top: -4px;
                         left: 60px;
@@ -219,41 +214,35 @@ export default {
             margin-top: 20px;
          }
 
-         
+         .profile-box{
+            width: 700px;
+            // height: 140px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+
+            .photo{
+               width: 90px;
+               height: 90px;
+               background-color: $primary_color;
+               margin-right: 20px;
+            }
+
+            .info{
+               margin-bottom: 15px;
+
+               p{
+                  margin-bottom: 0px;
+               }
+            }
+         }
+
       }
 
    }
 
-   // CUSTOMS
-
-   .it-text-orange{
-      color: #FF4D5A;
-   }
-
-   .it-text-white{
-      color: #ffffff;
-   }
-
-   .it-text-black{
-      color: #000000;
-   }
-
-   .it-text-blue{
-      color: #19243F;
-   }
-
-   .it-title-small{
-      font-weight: 800;
-      font-size: 18px;
-   }
-
-   .it-text-info{
-      font-size: 12px;
-      font-weight: 300;
-      margin-bottom: 10px;
-   }
-
-
-   
 
 </style>
