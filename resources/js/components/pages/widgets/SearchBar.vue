@@ -6,16 +6,26 @@
 
             <!-- search-input -->
             <div class="it-td" id="it-search-left">
-               <input type="text" placeholder="Ricerca..." required>
+               <input type="text" 
+                  placeholder="Ricerca..."
+                  v-model="stringSearched"
+                  @keypress.enter="sendSearch"
+                  @keypress="preventTyping"
+               >
             </div>
 
             <!-- search-button -->
-            <div class="it-td" id="it-search-right">
-               <button type="submit">
-                     <div id="it-search-circle"></div>
-                     <span></span>
-               </button>
-            </div>
+            <router-link :to="{name: 'advanced_search', params:{category: this.stringSearched}}" >
+      
+               <div class="it-td" id="it-search-right">
+                   <button type="submit">
+                          <div id="it-search-circle"></div>
+                          <span></span>
+                   </button>
+               </div>
+
+            </router-link>
+            
 
          </div>
       </form>
@@ -26,16 +36,22 @@
 <script>
 export default {
    name: 'SearchBar',
-   data(){
-      return{
+
+   data() {
+      return {
+         stringSearched: ''
       }
    },
+
    methods:{
-      
+      preventTyping(event) {
+
+      },
+
+      sendSearch() {
+         this.$emit('searchInit', this.stringSearched.trim());
+      }
    },
-   mounted(){
-      
-   }
 }
 
 </script>
@@ -49,7 +65,7 @@ export default {
    align-items: center;
    width: 100%;
    min-height: 50px;
-   background-color: #ff4d5a;
+   background-color: $primary_color;
    border-radius: 20px;
    border: 5px solid white;
    margin-top: 20px;

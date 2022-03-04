@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::namespace('Api')
+    ->prefix('job_roles')
     ->group(function(){
-        Route::get('/home','HomeController@index');
+        Route::get('/','Job_roleController@index');
+        Route::get('/{role}','Job_roleController@search');
     });
+
+    

@@ -310,20 +310,6 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   width: 200px;
   background-color: #FF4D5A;
   border: 1px solid #fff;
-<<<<<<< HEAD
-  border-radius: 30px;
-}
-
-.card .card-body .it-button-register button:hover {
-  background-color: #c53a43;
-}
-
-.white-wrap-msg {
-  background-color: #fff;
-  height: 85%;
-  padding: 20px;
-=======
->>>>>>> bea89c890d40adc9cf3d61548e51a982f7f66700
   border-radius: 30px;
 }
 

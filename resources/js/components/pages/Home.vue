@@ -1,7 +1,7 @@
 <template>
 
    <div class="container d-flex">
-
+      
       <aside>
          <!-- :class="{'active': index === sectionIndex}" -->
          <div class="wrap-scroll-line">
@@ -46,9 +46,26 @@ export default {
 
    data() {
       return {
-         sections
+         sections,
+         apiUrl: 'http://127.0.0.1:8000/api/job_roles',
+         job_roles: null
       }
+   },
+
+   methods: {
+      getApi(){
+         axios.get(this.apiUrl)
+            .then(res => {
+               this.job_roles = res.data;
+               console.log(res.data);
+            });
+      }
+   },
+
+   mounted() {
+      this.getApi();
    }
+
 }
 </script>
 
