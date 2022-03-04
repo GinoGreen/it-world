@@ -16,7 +16,7 @@
                      <span 
                         class="tag it-text-info"
                         v-for="job_role in job_roles"
-                        :key="job_role.id"
+                        :key="'job_role' + job_role.id"
                      >{{job_role.name}}</span>
                      
                   </div>
@@ -54,15 +54,22 @@
             <h3 class="it-title-small it-text-orange text-center">Risultati migliori</h3>
 
             <!-- COMPONENTE DA CICLARE -->
-            <div class="profile-box">
+            <div class="profile-box m-3"
+               v-for="profile in profiles"
+               :key="'profile' + profile.id"
+            >
                <div class="photo"></div>
                <div class="info-content">
                   <div class="info">
-                     <p class="it-title-small it-text-blue">Nome e Cognome</p>
+                     <p class="it-title-small it-text-blue">
+                        {{ profile.name }} {{ profile.surname }}
+                     </p>
                      <p class="it-text-info it-text-blue">Fullstack Web Developer</p>
                   </div>
                   <div class="info-description">
-                     <p class="it-text-info it-text-blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                     <p class="it-text-info it-text-blue">
+                        {{ profile.description }}
+                     </p>
                   </div>
                </div>
             </div>
@@ -82,7 +89,8 @@ export default {
    data(){
       return{
           apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
-          job_roles: null
+          job_roles: null,
+          profiles: null
       }
    },
 
@@ -92,7 +100,14 @@ export default {
             .then(res => {
                this.job_roles = res.data;
                console.log(this.job_roles);
+               
+               this.job_roles.forEach(job_role => {
+                  if(job_role.users.length !== 0){
+                     this.profiles = job_role.users;
 
+                  }
+               });
+                  console.log(this.profiles);
             })
       }
    },
@@ -109,6 +124,8 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
 
+@import '../../../sass/guest/_variables.scss';
+@import '../../../sass/guest/_generals.scss';
 
    header{
       height: 90px;
