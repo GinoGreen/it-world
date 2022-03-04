@@ -9,7 +9,6 @@
                <input type="text" 
                   placeholder="Ricerca..."
                   v-model="stringSearched"
-                  @keypress.enter="sendSearch"
                   @keypress="preventTyping"
                >
             </div>
@@ -47,10 +46,6 @@ export default {
       preventTyping(event) {
 
       },
-
-      sendSearch() {
-         this.$emit('searchInit', this.stringSearched.trim());
-      }
    },
 }
 

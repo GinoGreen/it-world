@@ -5,16 +5,14 @@
       <aside>
          <!-- :class="{'active': index === sectionIndex}" -->
          <div class="wrap-scroll-line">
-            <div
-            class="scroll-line"
-            v-for="(line, index) in sections"
-            :key="`line${index}`"
-            ></div>
+            <a v-for="(line, index) in sections"
+               :key="`line${index}`"
+            ><div class="scroll-line"></div></a>
          </div>
          
 
          <div class="scroll-down">
-            <span>Lorem</span>
+            <div class="scroll-text">Scroll down</div>
             <div class="line"></div>
          </div>
       </aside>
@@ -53,7 +51,7 @@ export default {
    },
 
    methods: {
-      
+
    },
 
 }
@@ -64,47 +62,55 @@ export default {
 @import '../../../sass/guest/_variables.scss';
    
 .container{
-   position: relative;
    aside{
+      position: relative;
       width: 10%;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
 
       .wrap-scroll-line{
-         margin-top: 300px;
          display: flex;
          flex-direction: column;
          justify-content: center;
-         .scroll-line{
+
+         a {
+            cursor: pointer;
             
-         cursor: pointer;
-         background-color: #fff;
-         border-radius: 10px;
-         height: 5px;
-         width: 50px;
-         margin-bottom: 20px;
-         transition: 1s;
-         &:hover{
-            width: 80px;
-         }
-         &.active {
-            width: 80px;
-         }
+            &:hover .scroll-line {
+               width: 60px;
+            }
+            .scroll-line{
+               margin: 14px 0;
+               background-color: #fff;
+               height: 4px;
+               width: 40px;
+               transition: .25s;
+
+               &.active {
+                  width: 60px;
+               }
+            }
          }
 
       }
       .scroll-down{
+         position: absolute;
+         bottom: 0;
+         left: -40px;
          display: flex;
          flex-direction: column;
          align-items: center;
          justify-content: space-between;
-         height: 150px;
-         width: 50px;
-         span{
-            margin-left: 4px;
+         .scroll-text{
+            font-weight: lighter;
+            font-style: italic;
+            width: min-content;
+            min-width: 100px;
+            margin-bottom: 35px;
             color: white;
+            transform: rotate(90deg);
             rotate: 90deg;
          }
          .line{

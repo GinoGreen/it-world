@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;
 
-400;700;800&display=swap);@charset "UTF-8";
+500;600;700;800&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
@@ -14014,7 +14014,8 @@ a.text-dark:focus {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Itim", cursive;
+  font-family: "Syne", sans-serif;
   background-color: #072142;
 }
 

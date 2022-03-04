@@ -1,14 +1,14 @@
 <template>
 
    <header>
-      <div class="container">
-         <div class="row">
+      <div class="container h-100">
+         <div class="row justify-content-between h-100">
 
-            <div class="logo col-6">
+            <div class="logo h-100">
                <img src="/img/logo.png" alt="">
             </div>
 
-            <div class="menu col-6">
+            <div class="menu h-100">
 
                <span>Cerca</span>
                <span>
@@ -20,8 +20,8 @@
              
 
                <div class="wrap-line-menu">
-                  <div class="menu-line"></div>
-                  <div class="menu-line"></div>
+                  <div class="menu-line upper"></div>
+                  <div class="menu-line lower"></div>
                </div>
 
             </div>
@@ -49,32 +49,42 @@ export default {
       top: 0;
       left: 0;
       z-index: 1000;
+
       .logo{
          display: flex;
-         justify-content: flex-start;
          align-items: center;
-         // background-color: orange;
-         height: 90px;
          img{
             width: 150px;
          }
       }
       .menu{
          display: flex;
-         justify-content: flex-end;
          align-items: center;
-         // background-color: green;
          height: 90px;
          span{
+            cursor: pointer;
             color: white;
             margin: 0px 20px 7px 0px;
          }
-         .menu-line{
-            width: 30px;
-            height: 5px;
-            margin-bottom: 8px;
-            background-color: #fff;
-            border-radius: 10px;
+         .wrap-line-menu {
+            cursor: pointer;
+            &:hover {
+               .upper {
+               transform: translate(5px, 5px) rotate(45deg) ;
+               }
+               .lower {
+                  transform: translate(5px, -5px) rotate(-45deg) ;  
+               }
+            }
+            .menu-line{
+               
+               transition: all .3s;
+               width: 45px;
+               height: 3px;
+               margin-bottom: 8px;
+               background-color: #fff;
+            }
+            
          }
       }
 

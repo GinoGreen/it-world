@@ -2113,8 +2113,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2407,7 +2405,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchBar',
   data: function data() {
@@ -2416,10 +2413,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    preventTyping: function preventTyping(event) {},
-    sendSearch: function sendSearch() {
-      this.$emit('searchInit', this.stringSearched.trim());
-    }
+    preventTyping: function preventTyping(event) {}
   }
 });
 
@@ -2607,10 +2601,10 @@ exports.push([module.i, ".it-wrapper {\n  background-image: url(\"/img/moon/plan
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Open Sans\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\nheader[data-v-781a2080] {\n  height: 90px;\n  background-color: aqua;\n}\nmain[data-v-781a2080] {\n  font-family: \"Open Sans\", sans-serif;\n  display: flex;\n}\nmain .content-left[data-v-781a2080], main .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\nmain .content-left[data-v-781a2080] {\n  width: 230px;\n  height: calc(100vh - 90px);\n  background-color: red;\n  margin-right: 50px;\n  justify-content: flex-end;\n}\nmain .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\nmain .content-left .filters .specialization[data-v-781a2080], main .content-left .filters .reviews[data-v-781a2080], main .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\nmain .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\nmain .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\nmain .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\nmain .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\nmain .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\nmain .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\nmain .content-left .filters .vote .stars span[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\nmain .content-right[data-v-781a2080] {\n  width: calc(100vw - 230px - 50px);\n  height: calc(100vh - 90px);\n  background-color: green;\n}\nmain .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\nmain .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\nmain .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\nmain .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\nmain .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n}", ""]);
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\nheader[data-v-781a2080] {\n  height: 90px;\n  background-color: aqua;\n}\nmain[data-v-781a2080] {\n  font-family: \"Open Sans\", sans-serif;\n  display: flex;\n}\nmain .content-left[data-v-781a2080], main .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\nmain .content-left[data-v-781a2080] {\n  width: 230px;\n  height: calc(100vh - 90px);\n  background-color: red;\n  margin-right: 50px;\n  justify-content: flex-end;\n}\nmain .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\nmain .content-left .filters .specialization[data-v-781a2080], main .content-left .filters .reviews[data-v-781a2080], main .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\nmain .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\nmain .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\nmain .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\nmain .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\nmain .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\nmain .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\nmain .content-left .filters .vote .stars span[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\nmain .content-right[data-v-781a2080] {\n  width: calc(100vw - 230px - 50px);\n  height: calc(100vh - 90px);\n  background-color: green;\n}\nmain .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\nmain .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\nmain .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\nmain .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\nmain .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n}", ""]);
 
 // exports
 
@@ -2626,10 +2620,10 @@ exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  bo
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".container[data-v-a9aac016] {\n  position: relative;\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  width: 10%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  margin-top: 300px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line .scroll-line[data-v-a9aac016] {\n  cursor: pointer;\n  background-color: #fff;\n  border-radius: 10px;\n  height: 5px;\n  width: 50px;\n  margin-bottom: 20px;\n  transition: 1s;\n}\n.container aside .wrap-scroll-line .scroll-line[data-v-a9aac016]:hover {\n  width: 80px;\n}\n.container aside .wrap-scroll-line .scroll-line.active[data-v-a9aac016] {\n  width: 80px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  height: 150px;\n  width: 50px;\n}\n.container aside .scroll-down span[data-v-a9aac016] {\n  margin-left: 4px;\n  color: white;\n  rotate: 90deg;\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 100px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
+exports.push([module.i, ".container[data-v-a9aac016] {\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  position: relative;\n  width: 10%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line a[data-v-a9aac016] {\n  cursor: pointer;\n}\n.container aside .wrap-scroll-line a:hover .scroll-line[data-v-a9aac016] {\n  width: 60px;\n}\n.container aside .wrap-scroll-line a .scroll-line[data-v-a9aac016] {\n  margin: 14px 0;\n  background-color: #fff;\n  height: 4px;\n  width: 40px;\n  transition: 0.25s;\n}\n.container aside .wrap-scroll-line a .scroll-line.active[data-v-a9aac016] {\n  width: 60px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  position: absolute;\n  bottom: 0;\n  left: -40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n}\n.container aside .scroll-down .scroll-text[data-v-a9aac016] {\n  font-weight: lighter;\n  font-style: italic;\n  width: -webkit-min-content;\n  width: -moz-min-content;\n  width: min-content;\n  min-width: 100px;\n  margin-bottom: 35px;\n  color: white;\n  transform: rotate(90deg);\n  rotate: 90deg;\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 100px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
 
 // exports
 
@@ -2645,10 +2639,10 @@ exports.push([module.i, ".container[data-v-a9aac016] {\n  position: relative;\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Open Sans\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FF4D5A;\n  margin-bottom: 40px;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 20px;\n  background-color: #FF4D5A;\n  border: 2px solid white;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  background: #072142;\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  height: 7px;\n  margin: 10px;\n  border-radius: 10px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  width: 150px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 90px;\n}", ""]);
+exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FF4D5A;\n  margin-bottom: 40px;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 20px;\n  background-color: #FF4D5A;\n  border: 2px solid white;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  background: #072142;\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  height: 7px;\n  margin: 10px;\n  border-radius: 10px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  width: 150px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 90px;\n}", ""]);
 
 // exports
 
@@ -2664,7 +2658,7 @@ exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  bo
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
 exports.push([module.i, ".it-slider[data-v-22c8bcd1] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-22c8bcd1] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  border-radius: 30px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1]::before {\n  content: \"\";\n  position: absolute;\n  border-radius: 30px;\n  background: #7B40FF;\n  height: 100%;\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-22c8bcd1] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-22c8bcd1] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-22c8bcd1] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info img[data-v-22c8bcd1] {\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-22c8bcd1] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-22c8bcd1] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1], .it-slider .swiper-button-prev[data-v-22c8bcd1] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1]:hover, .it-slider .swiper-button-prev[data-v-22c8bcd1]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
@@ -2683,10 +2677,10 @@ exports.push([module.i, ".it-slider[data-v-22c8bcd1] {\n  position: relative;\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Open Sans\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\nform[data-v-8c9f9304] {\n  width: 90%;\n}\nform input[data-v-8c9f9304], form textarea[data-v-8c9f9304] {\n  width: 100%;\n  margin: 10px 0px;\n  padding: 5px;\n  height: 50px;\n}\nform textarea[data-v-8c9f9304] {\n  height: 200px;\n}", ""]);
+exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\nform[data-v-8c9f9304] {\n  width: 90%;\n}\nform input[data-v-8c9f9304], form textarea[data-v-8c9f9304] {\n  width: 100%;\n  margin: 10px 0px;\n  padding: 5px;\n  height: 50px;\n}\nform textarea[data-v-8c9f9304] {\n  height: 200px;\n}", ""]);
 
 // exports
 
@@ -2702,7 +2696,7 @@ exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  bo
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
 exports.push([module.i, "/* SEARCH */\n.it-search[data-v-05fad3c5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  min-height: 50px;\n  background-color: #FF4D5A;\n  border-radius: 20px;\n  border: 5px solid white;\n  margin-top: 20px;\n  /*box-shadow: 0 5px 20px #f16972, 0 0 0 10px white;*/\n}\n.it-search form[data-v-05fad3c5] {\n  height: 100%;\n  width: 100%;\n}\n.it-search form .it-table[data-v-05fad3c5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  padding: 0 50px;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5] {\n  width: 100%;\n  min-height: 50px;\n  font-size: 25px;\n  line-height: 1;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]::-moz-placeholder {\n  color: #ffbfbf;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]:-ms-input-placeholder {\n  color: #ffbfbf;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]::placeholder {\n  color: #ffbfbf;\n}\n.it-search form .it-table .it-td button[data-v-05fad3c5] {\n  position: relative;\n  display: block;\n  height: 96px;\n  cursor: pointer;\n}\n.it-search form .it-table .it-td button #it-search-circle[data-v-05fad3c5] {\n  width: 30px;\n  height: 30px;\n  margin-top: 0;\n  border-width: 5px;\n  border: 5px solid #fff;\n  background-color: transparent;\n  border-radius: 50%;\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td button span[data-v-05fad3c5] {\n  position: absolute;\n  top: 55px;\n  left: 0px;\n  display: block;\n  width: 45px;\n  height: 4px;\n  background-color: transparent;\n  border-radius: 10px;\n  transform: rotateZ(52deg);\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td button span[data-v-05fad3c5]:after, .it-search form .it-table .it-td button span[data-v-05fad3c5]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 20px;\n  height: 5px;\n  background-color: #fff;\n  border-radius: 10px;\n  transform: rotateZ(0);\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td input[data-v-05fad3c5], .it-search form .it-table .it-td button[data-v-05fad3c5] {\n  color: #fff;\n  padding: 0;\n  margin: 0;\n  border: 0;\n  background-color: transparent;\n}\n.it-search form .it-table #it-search-left[data-v-05fad3c5] {\n  width: 90%;\n}\n.it-search form .it-table #it-search-right[data-v-05fad3c5] {\n  display: flex;\n  justify-content: flex-end;\n  width: 10%;\n}\n#it-search-right:hover #it-search-circle[data-v-05fad3c5] {\n  top: -1px;\n  width: 50px;\n  height: 5px;\n  border-width: 0;\n  background-color: #fff;\n  border-radius: 20px;\n}\n#it-search-right:hover span[data-v-05fad3c5] {\n  top: 55px;\n  left: 25px;\n  width: 25px;\n  margin-top: -8.5px;\n  transform: rotateZ(0);\n}\n#it-search-right:hover button span[data-v-05fad3c5]:before {\n  bottom: 6px;\n  left: 9px;\n  transform: rotateZ(52deg);\n}\n#it-search-right:hover button span[data-v-05fad3c5]:after {\n  bottom: -6px;\n  left: 9px;\n  transform: rotateZ(-52deg);\n}", ""]);
@@ -2721,7 +2715,7 @@ exports.push([module.i, "/* SEARCH */\n.it-search[data-v-05fad3c5] {\n  display:
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
 exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-a8bd8652] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  border-radius: 30px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652]::before {\n  content: \"\";\n  position: absolute;\n  border-radius: 30px 30px 0 0;\n  height: 40%;\n  width: 100%;\n  background: #FF4D5A;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar[data-v-a8bd8652] {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  padding: 3px;\n  background: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar img[data-v-a8bd8652] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 3px solid white;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons[data-v-a8bd8652] {\n  position: absolute;\n  top: 10px;\n  right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652] {\n  color: white;\n  opacity: 0.6;\n  margin-top: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652]:hover {\n  opacity: 1;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-a8bd8652] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .profession[data-v-a8bd8652] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-a8bd8652] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-a8bd8652] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652], .it-slider .swiper-button-prev[data-v-a8bd8652] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652]:hover, .it-slider .swiper-button-prev[data-v-a8bd8652]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
@@ -2740,10 +2734,10 @@ exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;400;700;800&display=swap);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "header[data-v-79cec062] {\n  height: 90px;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1000;\n}\nheader .logo[data-v-79cec062] {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  height: 90px;\n}\nheader .logo img[data-v-79cec062] {\n  width: 150px;\n}\nheader .menu[data-v-79cec062] {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 90px;\n}\nheader .menu span[data-v-79cec062] {\n  color: white;\n  margin: 0px 20px 7px 0px;\n}\nheader .menu .menu-line[data-v-79cec062] {\n  width: 30px;\n  height: 5px;\n  margin-bottom: 8px;\n  background-color: #fff;\n  border-radius: 10px;\n}", ""]);
+exports.push([module.i, "header[data-v-79cec062] {\n  height: 90px;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1000;\n}\nheader .logo[data-v-79cec062] {\n  display: flex;\n  align-items: center;\n}\nheader .logo img[data-v-79cec062] {\n  width: 150px;\n}\nheader .menu[data-v-79cec062] {\n  display: flex;\n  align-items: center;\n  height: 90px;\n}\nheader .menu span[data-v-79cec062] {\n  cursor: pointer;\n  color: white;\n  margin: 0px 20px 7px 0px;\n}\nheader .menu .wrap-line-menu[data-v-79cec062] {\n  cursor: pointer;\n}\nheader .menu .wrap-line-menu:hover .upper[data-v-79cec062] {\n  transform: translate(5px, 5px) rotate(45deg);\n}\nheader .menu .wrap-line-menu:hover .lower[data-v-79cec062] {\n  transform: translate(5px, -5px) rotate(-45deg);\n}\nheader .menu .wrap-line-menu .menu-line[data-v-79cec062] {\n  transition: all 0.3s;\n  width: 45px;\n  height: 3px;\n  margin-bottom: 8px;\n  background-color: #fff;\n}", ""]);
 
 // exports
 
@@ -4292,7 +4286,9 @@ var render = function () {
         "div",
         { staticClass: "wrap-scroll-line" },
         _vm._l(_vm.sections, function (line, index) {
-          return _c("div", { key: "line" + index, staticClass: "scroll-line" })
+          return _c("a", { key: "line" + index }, [
+            _c("div", { staticClass: "scroll-line" }),
+          ])
         }),
         0
       ),
@@ -4318,7 +4314,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "scroll-down" }, [
-      _c("span", [_vm._v("Lorem")]),
+      _c("div", { staticClass: "scroll-text" }, [_vm._v("Scroll down")]),
       _vm._v(" "),
       _c("div", { staticClass: "line" }),
     ])
@@ -4595,18 +4591,7 @@ var render = function () {
               attrs: { type: "text", placeholder: "Ricerca..." },
               domProps: { value: _vm.stringSearched },
               on: {
-                keypress: [
-                  function ($event) {
-                    if (
-                      !$event.type.indexOf("key") &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    return _vm.sendSearch.apply(null, arguments)
-                  },
-                  _vm.preventTyping,
-                ],
+                keypress: _vm.preventTyping,
                 input: function ($event) {
                   if ($event.target.composing) {
                     return
@@ -4790,13 +4775,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "logo col-6" }, [
+      _c("div", { staticClass: "container h-100" }, [
+        _c("div", { staticClass: "row justify-content-between h-100" }, [
+          _c("div", { staticClass: "logo h-100" }, [
             _c("img", { attrs: { src: "/img/logo.png", alt: "" } }),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "menu col-6" }, [
+          _c("div", { staticClass: "menu h-100" }, [
             _c("span", [_vm._v("Cerca")]),
             _vm._v(" "),
             _c("span", [
@@ -4808,9 +4793,9 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "wrap-line-menu" }, [
-              _c("div", { staticClass: "menu-line" }),
+              _c("div", { staticClass: "menu-line upper" }),
               _vm._v(" "),
-              _c("div", { staticClass: "menu-line" }),
+              _c("div", { staticClass: "menu-line lower" }),
             ]),
           ]),
         ]),
