@@ -7,10 +7,15 @@
    <div class="avatar-circle-show"></div>
 
    <div class="data-wrapper-show">
+      
+      {{-- @dd($profile->job_roles) --}}
+      @foreach ($profile->job_roles as $job_role)
+         <div class="d-inline">{{$job_role->name}}</div>
+      @endforeach
 
       @foreach ($fields as $field )
 
-         <div class="container m-2 wrap-text-show">
+         <div class="container m-1 wrap-text-show">
 
             <div class="d-inline">{{$field}}</div>
 
@@ -23,12 +28,9 @@
          </div>
 
       @endforeach
-      {{-- @dd($profile->job_roles) --}}
-      @foreach ($profile->job_roles as $job_role)
-         <div class="d-inline">{{$job_role->name}}</div>
-      @endforeach
-
+      
    </div>
+
 
 </div>
 @endsection

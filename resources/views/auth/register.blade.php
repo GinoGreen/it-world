@@ -70,11 +70,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group row px-5">
-                            
-                            
+                        <p class="it-job-role-title col-md-12 text-light">
+                            In cosa sei specializzato?
+                        </p>
+                        <div class="it-job-role-wrapper form-group row px-5">
                             @foreach ($job_roles as $job_role)
-                            <div class="col-3">
+                            <div class="it-job-role col-3">
                                 <input type="checkbox"
                                     class="form-check-input"
                                     id="job_role{{ $job_role->id }}"

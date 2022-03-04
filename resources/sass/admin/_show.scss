@@ -6,15 +6,15 @@ main{
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       // background-color: #fff;
       height: calc(100vh - 95px);
       padding: 20px;
       border-radius: 30px;
 
       .avatar-circle-show{
-         width: 120px;
-         height: 120px;
+         width: 200px;
+         height: 200px;
          margin: 30px;
          border-radius: 50%;
          background-color: $primary_color;
@@ -24,7 +24,8 @@ main{
          flex-direction: column;
          justify-content: center;
          align-items: center;
-         // background-color: $secondary_color;
+         text-align: center;
+         padding: 20px;
          background: rgba(255, 255, 255, 0.16) !important;
          border-radius: 16px !important;
          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
@@ -32,16 +33,13 @@ main{
          -webkit-backdrop-filter: blur(3.4px) !important;
          border: 1px solid rgba(255, 255, 255, 0.28) !important;
          color: white;
-         width: 90%;
-         height: 70%;
-         // border-radius: 30px;
+         width: 50%;
+         height: 450px;
+         overflow: scroll;
 
          .wrap-text-show{
-            background-color: #fff;
-            color: black;
-            width: 80%;
-            padding: 5px;
-            border-radius: 10px;
+            color: white;
+            width: 90%;
          }
       }
    }

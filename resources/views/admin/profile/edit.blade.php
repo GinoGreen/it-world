@@ -19,6 +19,18 @@
 
       <div class="col-3 wrap-sx">
          <div class="wrap-avatar-edit"></div>
+         <div class="select-path">
+            <label 
+               for="avatar_path" 
+               class="form-label"
+            >Immagine profilo</label>
+            <input 
+               type="file"
+               class="form-control"
+               id="avatar_path"
+               name="avatar_path"
+            >
+         </div>
          <h5>Nome Utente</h5>
          <h6>Posizione lavorativa</h6>
       </div>
@@ -60,19 +72,6 @@
 
             <div class="mb-2">
                <label 
-                  for="avatar_path" 
-                  class="form-label"
-               >Immagine profilo</label>
-               <input 
-                  type="file"
-                  class="form-control"
-                  id="avatar_path"
-                  name="avatar_path"
-               >
-            </div>
-
-            <div class="mb-2">
-               <label 
                   for="email" 
                   class="form-label"
                >Email address</label>
@@ -85,25 +84,29 @@
                >
             </div>
 
-            <div class="form-group row px-5">
-               <div class="col-12">
+            <div class="form-group">
+               <div>
                   @foreach ($job_roles as $job_role)
-                     <input type="checkbox"
-                        class="form-check-input"
-                        id="job_role{{ $job_role->id }}"
-                        name="job_roles[]"
-                        value="{{ $job_role->id }}"
+                  
+                     <div class="wrap-job">
+                        <input type="checkbox"
+                           class="form-check-input"
+                           id="job_role{{ $job_role->id }}"
+                           name="job_roles[]"
+                           value="{{ $job_role->id }}"
       
-                        @if (!$errors->any() && $profile->job_roles->contains($job_role->id))
-                              checked
-                        @elseif ($errors->any() && in_array($job_role->id, old('job_roles', [])))
-                              checked
-                        @endif
-                     >
+                           @if (!$errors->any() && $profile->job_roles->contains($job_role->id))
+                                 checked
+                           @elseif ($errors->any() && in_array($job_role->id, old('job_roles', [])))
+                                 checked
+                           @endif
+                        >
                      
-                     <label class="form-check-label mr-5"
-                        for="job_role{{ $job_role->id }}"
-                     >{{ $job_role->name }}</label>
+                        <label class="form-check-label mr-5"
+                           for="job_role{{ $job_role->id }}"
+                        >{{ $job_role->name }}</label>
+                     </div>
+                     
                   @endforeach
                </div>
            </div>

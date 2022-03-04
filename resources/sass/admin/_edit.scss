@@ -16,6 +16,23 @@
       height: 82vh;
       overflow: scroll;
 
+      form{
+         .form-group{
+           
+            display: flex;
+            justify-content: center;
+            padding: 5px 20px;
+            .wrap-job{
+               width: 310px;
+               
+               color: white;
+               
+               display: inline-block;
+            }
+            
+         }
+      }
+
       .it-btn{
          button{
             background-color: $primary_color;
@@ -25,10 +42,27 @@
    }
 
    .wrap-sx{
-
+      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      .select-path{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin: 5px 0px 0px 0px;
+         input{
+            background: rgba(255, 255, 255, 0.16) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+            backdrop-filter: blur(3.4px) !important;
+            -webkit-backdrop-filter: blur(3.4px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.28) !important;
+            font-size: 10px;
+            color: white;
+         }
+      }
 
       .wrap-avatar-edit{
          width: 250px;
