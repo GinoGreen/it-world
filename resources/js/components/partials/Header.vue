@@ -70,7 +70,7 @@ export default {
             cursor: pointer;
             &:hover {
                .upper {
-               transform: translate(5px, 5px) rotate(45deg) ;
+                  transform: translate(5px, 5px) rotate(45deg) ;
                }
                .lower {
                   transform: translate(5px, -5px) rotate(-45deg) ;  
