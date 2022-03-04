@@ -15,9 +15,9 @@
                      
                      <span 
                         class="tag it-text-info"
-                        v-for="job_role in job_roles"
-                        :key="'job_role' + job_role.id"
-                     >{{job_role.name}}</span>
+                        v-for="jobRole in jobRoles"
+                        :key="'jobRole' + jobRole.id"
+                     >{{jobRole.name}}</span>
                      
                   </div>
                </div>
@@ -55,8 +55,8 @@
 
             <!-- COMPONENTE DA CICLARE -->
             <div class="profile-box m-3"
-               v-for="profile in profiles"
-               :key="'profile' + profile.id"
+               v-for="(profile, index) in profiles"
+               :key="'profile' + index"
             >
                <div class="photo"></div>
                <div class="info-content">
@@ -64,7 +64,7 @@
                      <p class="it-title-small it-text-blue">
                         {{ profile.name }} {{ profile.surname }}
                      </p>
-                     <p class="it-text-info it-text-blue">Fullstack Web Developer</p>
+                     <p class="it-text-info it-text-blue">{{ profile.jobRole }}</p>
                   </div>
                   <div class="info-description">
                      <p class="it-text-info it-text-blue">
@@ -89,8 +89,8 @@ export default {
    data(){
       return{
           apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
-          job_roles: null,
-          profiles: null
+          jobRoles: null,
+          profiles: [],
       }
    },
 
@@ -98,16 +98,47 @@ export default {
       getApi(){
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
-               this.job_roles = res.data;
-               console.log(this.job_roles);
+            
+               this.jobRoles = res.data;
+               console.log('jobRoles trovati: ', this.jobRoles);
                
-               this.job_roles.forEach(job_role => {
-                  if(job_role.users.length !== 0){
-                     this.profiles = job_role.users;
+               this.jobRoles.forEach(jobRole => {
+                  
+                  // console.log(jobRole);
+
+                  if(jobRole.users.length !== 0){
+
+                     for (let index = 0; index < jobRole.users.length; index++) {
+                        
+                        jobRole.users[index].jobRole = [];
+
+                        const duplicate = (element) => element === jobRole.users[index];
+
+                        if (!this.profiles.some(duplicate)) {
+
+                           jobRole.users[index].jobRole.push(jobRole.name);
+                           
+                           this.profiles.push(jobRole.users[index]);
+
+                        } else {
+
+                           const indexProfileDuplicate = this.profiles.findIndex(element => {
+
+                              console.log('duplicato trovato');
+
+                              return element === jobRole.users[index];
+                           });
+
+                           jobRole.users[indexProfileDuplicate].jobRole.push(jobRole.name);
+                           
+                        }
+                     }
+
 
                   }
                });
-                  console.log(this.profiles);
+
+               console.log('Profili filtrati: ', this.profiles);
             })
       }
    },

@@ -113,15 +113,15 @@ main .white-wrapper-show {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: calc(100vh - 95px);
   padding: 20px;
   border-radius: 30px;
 }
 
 main .white-wrapper-show .avatar-circle-show {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   margin: 30px;
   border-radius: 50%;
   background-color: #FF4D5A;
@@ -132,6 +132,8 @@ main .white-wrapper-show .data-wrapper-show {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.16) !important;
   border-radius: 16px !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
@@ -139,16 +141,14 @@ main .white-wrapper-show .data-wrapper-show {
   -webkit-backdrop-filter: blur(3.4px) !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
   color: white;
-  width: 90%;
-  height: 70%;
+  width: 50%;
+  height: 450px;
+  overflow: scroll;
 }
 
 main .white-wrapper-show .data-wrapper-show .wrap-text-show {
-  background-color: #fff;
-  color: black;
-  width: 80%;
-  padding: 5px;
-  border-radius: 10px;
+  color: white;
+  width: 90%;
 }
 
 .white-wrap-edit {
@@ -170,15 +170,46 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   overflow: scroll;
 }
 
+.white-wrap-edit .wrap-secondary-edit form .form-group {
+  display: flex;
+  justify-content: center;
+  padding: 5px 20px;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .form-group .wrap-job {
+  width: 310px;
+  color: white;
+  display: inline-block;
+}
+
 .white-wrap-edit .wrap-secondary-edit .it-btn button {
   background-color: #FF4D5A;
   border: 1px solid white;
 }
 
 .white-wrap-edit .wrap-sx {
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.white-wrap-edit .wrap-sx .select-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0px 0px 0px;
+}
+
+.white-wrap-edit .wrap-sx .select-path input {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  font-size: 10px;
+  color: white;
 }
 
 .white-wrap-edit .wrap-sx .wrap-avatar-edit {
@@ -250,13 +281,13 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 
 .card .card-body .it-button-wrapper .it-btn-login {
   width: 200px;
-  background-color: #FF4D5A;
+  background-color: #c53a43;
   border: 1px solid #fff;
   border-radius: 30px;
 }
 
 .card .card-body .it-button-wrapper .it-btn-login:hover {
-  background-color: #c53a43;
+  background-color: #FF4D5A;
 }
 
 .card .card-body .it-button-wrapper a {
@@ -300,6 +331,25 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   border-radius: 20px 0px 0px 20px !important;
 }
 
+.card .card-body .it-job-role-title {
+  margin: 20px 0px 20px 45px;
+}
+
+.card .card-body .it-job-role-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 15px;
+}
+
+.card .card-body .it-job-role-wrapper .it-job-role {
+  margin: 0px 45px 20px 0px;
+}
+
+.card .card-body .it-job-role-wrapper .it-job-role label {
+  width: 170px;
+}
+
 .card .card-body .it-button-register {
   display: flex;
   justify-content: center;
@@ -308,13 +358,13 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 
 .card .card-body .it-button-register button {
   width: 200px;
-  background-color: #FF4D5A;
+  background-color: #c53a43;
   border: 1px solid #fff;
   border-radius: 30px;
 }
 
 .card .card-body .it-button-register button:hover {
-  background-color: #c53a43;
+  background-color: #FF4D5A;
 }
 
 .white-wrap-msg {
@@ -326,6 +376,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
   height: calc(100vh - 95px);
   padding: 20px;
+  color: white;
 }
 
 .white-wrap-msg .wrap-content-msg {
@@ -360,7 +411,12 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .white-wrap-rvu .wrap-secondary-rvu {
-  background-color: #072142;
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
   width: 80%;
   padding: 20px;
   color: white;
@@ -392,6 +448,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   color: #fff;
   position: relative;
   bottom: 0;
+  opacity: 0.8;
   cursor: pointer;
   /*glass effect*/
   background: rgba(255, 255, 255, 0.16);
@@ -406,12 +463,14 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .container .it-dashboard-info .it-dashboard-top .it-dashboard-box:hover {
+  opacity: 1;
   bottom: 15px;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
 .container .it-dashboard-info .it-dashboard-top .it-dashboard-box .it-dash-icon {
   font-size: 50px;
+  color: #FF4D5A;
   margin-bottom: 10px;
 }
 
@@ -425,6 +484,20 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 
 .container .it-dashboard-info .it-dashboard-bottom {
   display: flex;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left,
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right {
+  width: 50%;
+  height: 290px;
+  overflow: auto;
+  padding: 30px;
+  margin: 0 10px;
+  opacity: 0.8;
   /*glass effect*/
   background: rgba(255, 255, 255, 0.16);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -433,23 +506,17 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left,
-.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right {
-  width: 50%;
-  height: 300px;
-  overflow: scroll;
-  padding: 30px;
-}
-
-.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left h5,
-.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right h5 {
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left .it-title-small,
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right .it-title-small {
   color: #FF4D5A;
-  margin-bottom: 10px;
+  margin: 0px 0px 20px 0px;
 }
 
 .container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left p,
 .container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right p {
   padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
   /*glass effect*/
   background: rgba(255, 255, 255, 0.41);
   border-radius: 16px;
@@ -457,21 +524,28 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.27);
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.41);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.27);
 }
 
-.container .it-dashboard-info .it-dashboard-bottom .line-vertical {
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-left:hover,
+.container .it-dashboard-info .it-dashboard-bottom .it-dash-bottom-right:hover {
+  opacity: 1;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom ::-webkit-scrollbar {
   width: 3px;
-  height: 200px;
-  background-color: #FF4D5A;
   border-radius: 20px;
-  margin: auto;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom ::-webkit-scrollbar-track {
+  background: none;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom ::-webkit-scrollbar-thumb {
+  background: #FF4D5A;
+}
+
+.container .it-dashboard-info .it-dashboard-bottom ::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
 }
 
 /*!
