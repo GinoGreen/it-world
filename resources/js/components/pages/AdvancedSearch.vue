@@ -11,11 +11,14 @@
                <div class="specialization">
                   <h3 class="it-title-small it-text-black">Specializzazione</h3>
                   <div class="tag-container">
-                     <span class="tag it-text-info">tag</span>
-                     <span class="tag it-text-info">tag</span>
-                     <span class="tag it-text-info">tag</span>
-                     <span class="tag it-text-info">tag</span>
-                     <span class="tag it-text-info">tag</span>
+
+                     
+                     <span 
+                        class="tag it-text-info"
+                        v-for="job_role in job_roles"
+                        :key="job_role.id"
+                     >{{job_role.name}}</span>
+                     
                   </div>
                </div>
 
@@ -51,7 +54,18 @@
             <h3 class="it-title-small it-text-orange text-center">Risultati migliori</h3>
 
             <!-- COMPONENTE DA CICLARE -->
-            <ProfileBox />
+            <div class="profile-box">
+               <div class="photo"></div>
+               <div class="info-content">
+                  <div class="info">
+                     <p class="it-title-small it-text-blue">Nome e Cognome</p>
+                     <p class="it-text-info it-text-blue">Fullstack Web Developer</p>
+                  </div>
+                  <div class="info-description">
+                     <p class="it-text-info it-text-blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                  </div>
+               </div>
+            </div>
 
          </div>
       </main>
@@ -73,7 +87,7 @@ export default {
    data(){
       return{
           apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
-          categories: {}
+          job_roles: {}
       }
    },
 
@@ -81,8 +95,8 @@ export default {
       getApi(){
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
-               // this.categories = res.data;
-               console.log(res.data.name);
+               this.job_roles = res.data;
+               console.log(this.job_roles);
 
             })
       }
@@ -204,7 +218,10 @@ export default {
          h3{
             margin-top: 20px;
          }
+
+         
       }
+
    }
 
    // CUSTOMS
@@ -235,6 +252,7 @@ export default {
       font-weight: 300;
       margin-bottom: 10px;
    }
+
 
    
 
