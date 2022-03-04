@@ -53,18 +53,8 @@ export default {
    },
 
    methods: {
-      getApi(){
-         axios.get(this.apiUrl)
-            .then(res => {
-               this.job_roles = res.data;
-               console.log(res.data);
-            });
-      }
+      
    },
-
-   mounted() {
-      this.getApi();
-   }
 
 }
 </script>
