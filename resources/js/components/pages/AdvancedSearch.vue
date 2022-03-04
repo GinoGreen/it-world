@@ -109,27 +109,23 @@ export default {
                   if(jobRole.users.length !== 0){
 
                      for (let index = 0; index < jobRole.users.length; index++) {
-                        
-                        jobRole.users[index].jobRole = [];
 
-                        const duplicate = (element) => element === jobRole.users[index];
+                        jobRole.users[index].jobRole = [jobRole.name];
 
-                        if (!this.profiles.some(duplicate)) {
+                        const profileDuplicate = (element) => element === jobRole.users[index];
 
-                           jobRole.users[index].jobRole.push(jobRole.name);
+                        if (!this.profiles.some(profileDuplicate)) {
                            
                            this.profiles.push(jobRole.users[index]);
 
                         } else {
+                           
+                           console.log('duplicato trovato');
+                           // const indexProfileDuplicate = this.profiles.findIndex(profileDuplicate);
 
-                           const indexProfileDuplicate = this.profiles.findIndex(element => {
+                           // console.log(indexProfileDuplicate);
 
-                              console.log('duplicato trovato');
-
-                              return element === jobRole.users[index];
-                           });
-
-                           jobRole.users[indexProfileDuplicate].jobRole.push(jobRole.name);
+                           // jobRole.users[indexProfileDuplicate].jobRole.push(jobRole.name);
                            
                         }
                      }
