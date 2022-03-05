@@ -41,7 +41,7 @@
                v-if="sectionInfo.section.class === 'join'"
                class="it-btn"
             >
-               <button>Unisciti a noi</button>
+               <button class="it-title-small">Unisciti a noi</button>
             </div>
 
             <ContactForm v-if="sectionInfo.section.class === 'contact'"/>
@@ -133,12 +133,13 @@ export default {
                justify-content: flex-start;
 
                button{
-                  font-size: 20px;
+                  font-size: 1em;
+                  padding: 10px 20px;
                   background-color: $primary_color;
-                  border: 2px solid white;
-
+                  border-radius: 30px;
+                  transition: all .4s;
                   &:hover{
-                     background: $secondary_color;
+                     transform: translateY(-3px);
                   }
                }
             }
