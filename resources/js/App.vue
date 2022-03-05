@@ -24,6 +24,7 @@
 
 <script>
 import Header from './components/partials/Header';
+import gsap from 'gsap';
 export default {
    name: 'App',
 
@@ -33,16 +34,29 @@ export default {
    
    data(){
       return{
-         
+
       }
    },
 
    mounted(){
-
+      this.animateWavesPlanetLights();
    },
 
    methods:{
-
+      animateWavesPlanetLights() {
+         gsap.to('.circle', {
+            width: '+=40',
+            height: '+=40',
+            duration: 1.7,
+            stagger: {
+               each: .4,
+               from: 'start',
+               repeat: -1,
+               yoyo: true,
+               ease: 'Back.easeInOut.config(4)',
+            }
+         })
+      }
    }
 
 }
