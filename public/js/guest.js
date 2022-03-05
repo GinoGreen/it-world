@@ -1940,10 +1940,7 @@ __webpack_require__.r(__webpack_exports__);
     Header: _components_partials_Header__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
-    return {
-      apiUrl: 'http://127.0.0.1:8000/api/home',
-      user: ''
-    };
+    return {};
   },
   mounted: function mounted() {},
   methods: {}
