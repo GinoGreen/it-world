@@ -16,17 +16,17 @@ body {
 
 .it-title-big {
   font-weight: 800;
-  font-size: 50px;
+  font-size: 2em;
 }
 
 .it-title-medium {
   font-weight: 400;
-  font-size: 25px;
+  font-size: 1.2em;
 }
 
 .it-title-small {
   font-weight: 800;
-  font-size: 18px;
+  font-size: 1em;
 }
 
 .it-text-info {

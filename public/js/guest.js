@@ -2206,6 +2206,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2604,7 +2605,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Op
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\nheader[data-v-781a2080] {\n  height: 90px;\n  background-color: aqua;\n}\nmain[data-v-781a2080] {\n  font-family: \"Open Sans\", sans-serif;\n  display: flex;\n}\nmain .content-left[data-v-781a2080], main .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\nmain .content-left[data-v-781a2080] {\n  width: 230px;\n  height: calc(100vh - 90px);\n  background-color: red;\n  margin-right: 50px;\n  justify-content: flex-end;\n}\nmain .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\nmain .content-left .filters .specialization[data-v-781a2080], main .content-left .filters .reviews[data-v-781a2080], main .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\nmain .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\nmain .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\nmain .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\nmain .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\nmain .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\nmain .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\nmain .content-left .filters .vote .stars span[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\nmain .content-right[data-v-781a2080] {\n  width: calc(100vw - 230px - 50px);\n  height: calc(100vh - 90px);\n  background-color: green;\n}\nmain .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\nmain .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\nmain .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\nmain .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\nmain .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n}", ""]);
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\nheader[data-v-781a2080] {\n  height: 90px;\n  background-color: aqua;\n}\nmain[data-v-781a2080] {\n  font-family: \"Open Sans\", sans-serif;\n  display: flex;\n}\nmain .content-left[data-v-781a2080], main .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\nmain .content-left[data-v-781a2080] {\n  width: 230px;\n  height: calc(100vh - 90px);\n  background-color: red;\n  margin-right: 50px;\n  justify-content: flex-end;\n}\nmain .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\nmain .content-left .filters .specialization[data-v-781a2080], main .content-left .filters .reviews[data-v-781a2080], main .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\nmain .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\nmain .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\nmain .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\nmain .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\nmain .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\nmain .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\nmain .content-left .filters .vote .stars span[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\nmain .content-right[data-v-781a2080] {\n  width: calc(100vw - 230px - 50px);\n  height: calc(100vh - 90px);\n  background-color: green;\n}\nmain .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\nmain .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\nmain .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\nmain .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\nmain .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n}", ""]);
 
 // exports
 
@@ -2623,7 +2624,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".container[data-v-a9aac016] {\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  position: relative;\n  width: 10%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line a[data-v-a9aac016] {\n  cursor: pointer;\n}\n.container aside .wrap-scroll-line a:hover .scroll-line[data-v-a9aac016] {\n  width: 60px;\n}\n.container aside .wrap-scroll-line a .scroll-line[data-v-a9aac016] {\n  margin: 14px 0;\n  background-color: #fff;\n  height: 4px;\n  width: 40px;\n  transition: 0.25s;\n}\n.container aside .wrap-scroll-line a .scroll-line.active[data-v-a9aac016] {\n  width: 60px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  position: absolute;\n  bottom: 0;\n  left: -40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n}\n.container aside .scroll-down .scroll-text[data-v-a9aac016] {\n  font-weight: lighter;\n  font-style: italic;\n  width: -webkit-min-content;\n  width: -moz-min-content;\n  width: min-content;\n  min-width: 100px;\n  margin-bottom: 35px;\n  color: white;\n  transform: rotate(90deg);\n  rotate: 90deg;\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 100px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
+exports.push([module.i, ".container[data-v-a9aac016] {\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  position: relative;\n  width: 10%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line a[data-v-a9aac016] {\n  cursor: pointer;\n}\n.container aside .wrap-scroll-line a:hover .scroll-line[data-v-a9aac016] {\n  width: 45px;\n}\n.container aside .wrap-scroll-line a .scroll-line[data-v-a9aac016] {\n  margin: 11px 0;\n  background-color: #fff;\n  height: 3px;\n  width: 30px;\n  transition: 0.25s;\n}\n.container aside .wrap-scroll-line a .scroll-line.active[data-v-a9aac016] {\n  width: 45px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  position: absolute;\n  bottom: 0;\n  left: -40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n}\n.container aside .scroll-down .scroll-text[data-v-a9aac016] {\n  font-weight: lighter;\n  font-style: italic;\n  width: -webkit-min-content;\n  width: -moz-min-content;\n  width: min-content;\n  min-width: 100px;\n  margin-bottom: 35px;\n  color: white;\n  transform: rotate(90deg);\n  rotate: 90deg;\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 100px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
 
 // exports
 
@@ -2642,7 +2643,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FF4D5A;\n  margin-bottom: 40px;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 20px;\n  background-color: #FF4D5A;\n  border: 2px solid white;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  background: #072142;\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  height: 7px;\n  margin: 10px;\n  border-radius: 10px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  width: 150px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 90px;\n}", ""]);
+exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 20px;\n  background-color: #FF4D5A;\n  border: 2px solid white;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  background: #072142;\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
 
 // exports
 
@@ -2680,7 +2681,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 50px;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 25px;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 18px;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\nform[data-v-8c9f9304] {\n  width: 90%;\n}\nform input[data-v-8c9f9304], form textarea[data-v-8c9f9304] {\n  width: 100%;\n  margin: 10px 0px;\n  padding: 5px;\n  height: 50px;\n}\nform textarea[data-v-8c9f9304] {\n  height: 200px;\n}", ""]);
+exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-color: #072142;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  padding: 10px;\n  border-radius: 20px;\n  font-size: 14px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\nform[data-v-8c9f9304] {\n  width: 90%;\n}\nform input[data-v-8c9f9304], form textarea[data-v-8c9f9304] {\n  width: 100%;\n  margin: 10px 0px;\n  padding: 5px;\n  height: 50px;\n}\nform textarea[data-v-8c9f9304] {\n  height: 200px;\n}", ""]);
 
 // exports
 
@@ -4362,6 +4363,8 @@ var render = function () {
                 ])
               : _vm._e(),
             _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
             _vm.sectionInfo.section.subtitle
               ? _c("h2", { staticClass: "it-title-medium" }, [
                   _vm._v(_vm._s(_vm.sectionInfo.section.subtitle)),
@@ -4369,7 +4372,7 @@ var render = function () {
               : _vm._e(),
             _vm._v(" "),
             _vm.sectionInfo.section.text
-              ? _c("p", { staticClass: "it-text" }, [
+              ? _c("p", { staticClass: "it-title-medium" }, [
                   _vm._v(_vm._s(_vm.sectionInfo.section.text)),
                 ])
               : _vm._e(),
@@ -4414,8 +4417,6 @@ var render = function () {
             )
           : _vm._e(),
       ]),
-      _vm._v(" "),
-      _vm._m(0),
     ]
   )
 }
@@ -20416,8 +20417,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  title: 'Il più grande portale di professionisti IT',
-  subtitle: 'Cerca. Scegli. Contatta. Tutti i professionisti del settore a portata di mano. Gratis e senza impegno.',
+  title: 'IL PROTALE DI PROFESSIONISTI IT',
+  subtitle: 'Cerca Tutti i professionisti del settore a portata di mano',
   "class": 'search',
   image: '/img/search.svg',
   col: {
@@ -20425,7 +20426,7 @@ __webpack_require__.r(__webpack_exports__);
     dx: 3
   }
 }, {
-  title: 'Scegli tra le nostre categorie',
+  title: 'SCEGLI TRA LE CATEGORIE',
   subtitle: 'Scegli tra le nostre categorie e trova il professionista che fa per te.',
   "class": 'categories',
   image: null,
@@ -20434,8 +20435,8 @@ __webpack_require__.r(__webpack_exports__);
     dx: 0
   }
 }, {
-  title: 'I nostri professionisti in evidenza',
-  subtitle: 'IT-World permette di cercare tra migliaia di professionisti verificati quello più vicino a te',
+  title: 'IN EVIDENZA',
+  subtitle: 'Fatti consigliare da noi',
   "class": 'professionals',
   image: null,
   col: {
@@ -20443,17 +20444,17 @@ __webpack_require__.r(__webpack_exports__);
     dx: 0
   }
 }, {
-  title: 'La nostra storia',
-  subtitle: 'IT-World è il portale più diffuso in ambito business, visitato ogni giorno da migliaia di clienti, professionisti ed HR manager',
+  title: 'CHI SIAMO',
+  subtitle: 'il portale più diffuso in ambito business, visitato ogni giorno da migliaia di utenti, professionisti ed HR manager',
   "class": 'about',
   image: '/img/about.svg',
-  text: 'IT-World è il marketplace per servizi professionali leader in Italia, e in espansione a livello internazionale. Ti permette di trovare esattamente quello che stai cercando in modo semplice e affidabile. IT-World nasce dall\'idea di un gruppo di imprenditori di successo con esperienza nel mondo del web, che hanno deciso di creare uno strumento in grado di aiutare l’utente nella ricerca del miglior sviluppatore o designer nella propria città, facilitando il contatto tra professionista e cliente, e semplificando il processo di prenotazione. Sei anche tu un Professionsta? IT-World è la tua vetrina online per aumentare la clientela e ottenere richieste di lavoro in linea con la tua offerta.',
+  text: 'IT-World è il marketplace per servizi professionali leader in Italia, e in espansione a livello internazionale. Ti permette di trovare esattamente quello che stai cercando in modo semplice e affidabile. IT-World nasce dall\'idea di un gruppo di imprenditori di successo con esperienza nel mondo del web, che hanno deciso di creare uno strumento in grado di aiutare l’utente nella ricerca del miglior sviluppatore o designer nella propria città, facilitando il contatto tra professionista e cliente, e semplificando il processo di prenotazione.',
   col: {
     sx: 8,
     dx: 4
   }
 }, {
-  title: 'Unisciti alla rete dei nostri professionisti',
+  title: 'UNISCITI ALLA RETE',
   subtitle: 'IT-World è il tuo parter per trovare nuovi clienti online',
   "class": 'join',
   image: '/img/join.svg',
@@ -20462,7 +20463,7 @@ __webpack_require__.r(__webpack_exports__);
     dx: 3
   }
 }, {
-  title: 'Restiamo in contatto',
+  title: 'CONTATTACI',
   subtitle: 'Non importa in quale fase del processo ti trovi, siamo qui per aiutarti. Facci sapere cosa hai in mente.',
   "class": 'contact',
   image: '/img/contact.png',

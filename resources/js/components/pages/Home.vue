@@ -79,17 +79,17 @@ export default {
             cursor: pointer;
             
             &:hover .scroll-line {
-               width: 60px;
+               width: 45px;
             }
             .scroll-line{
-               margin: 14px 0;
+               margin: 11px 0;
                background-color: #fff;
-               height: 4px;
-               width: 40px;
+               height: 3px;
+               width: 30px;
                transition: .25s;
 
                &.active {
-                  width: 60px;
+                  width: 45px;
                }
             }
          }

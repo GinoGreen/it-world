@@ -15,12 +15,18 @@
                class="it-title-big"
             >{{ sectionInfo.section.title }}</h1>
 
+            <div class="section-details">
+               <div class="line-1"></div>
+               <div class="line-2"></div>
+            </div>
+
+
             <h2 v-if="sectionInfo.section.subtitle" 
                class="it-title-medium"
             >{{ sectionInfo.section.subtitle }}</h2>
 
             <p v-if="sectionInfo.section.text" 
-               class="it-text"
+               class="it-title-medium"
             >{{ sectionInfo.section.text }}</p>
 
             <SearchBar @initSearch="setString"
@@ -50,11 +56,6 @@
 
       </div>
       
-      <div class="section-details">
-         <div class="line-1"></div>
-         <div class="line-2"></div>
-      </div>
-
    </section>
 
 </template>
@@ -120,8 +121,7 @@ export default {
             align-items: flex-start;
 
             h1{
-               color: $primary_color;
-               margin-bottom: 40px;
+               color: #FFF;
             }
 
             h2{
@@ -157,21 +157,19 @@ export default {
          }
       }
       .section-details{
-
+         padding: 32px 0;
          .line-1,
          .line-2{
+            width: 88px;
+            height: 3px;
             background-color: $primary_color;
-            height: 7px;
-            margin: 10px;
-            border-radius: 10px;
+            border-radius: 6px;
          }
-
-         .line-1{
-            width: 150px;
+         .line-1 {
+            margin-bottom: 16px;
          }
-
          .line-2{
-            width: 90px;
+            margin-left: 50px;
          }
       }
    }
