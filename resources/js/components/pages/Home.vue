@@ -104,18 +104,19 @@ export default {
          align-items: center;
          justify-content: space-between;
          .scroll-text{
+            letter-spacing: 1px;
             font-weight: lighter;
             font-style: italic;
             width: min-content;
             min-width: 100px;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             color: white;
             transform: rotate(90deg);
             rotate: 90deg;
          }
          .line{
             width: 2px;
-            height: 100px;
+            height: 65px;
             background-color: #fff;
          }
 

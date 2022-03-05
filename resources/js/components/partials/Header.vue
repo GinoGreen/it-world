@@ -10,7 +10,7 @@
 
             <div class="menu h-100">
 
-               <span>Cerca</span>
+               <span>Chi siamo</span>
                <span>
                   <a href="/login">Accedi</a>
                </span>

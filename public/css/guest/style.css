@@ -14016,7 +14016,13 @@ a.text-dark:focus {
 body {
   font-family: "Itim", cursive;
   font-family: "Syne", sans-serif;
-  background-color: #072142;
+  background-image: linear-gradient(#072142, #020B16);
+}
+
+a,
+a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .it-title-big {
