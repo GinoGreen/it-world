@@ -14,7 +14,7 @@
             </div>
 
             <!-- search-button -->
-            <router-link :to="{name: 'advanced_search', params:{job_role: this.stringSearched}}" >
+            <router-link :to="{name: 'advanced_search', params:{jobRole: this.stringSearched}}" >
       
                <div class="it-td" id="it-search-right">
                    <button type="submit">

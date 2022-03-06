@@ -20,8 +20,15 @@
                <div class="line-2"></div>
             </div>
 
+            <h2 v-if="sectionInfo.section.class === 'search'"
+               class="it-title-medium"
+            >
+               <span class="typing-word"></span>
+               <span class="cursor">|</span>
+               <span class="it-title">{{ sectionInfo.section.subtitle }}</span>
+            </h2>
 
-            <h2 v-if="sectionInfo.section.subtitle" 
+            <h2 v-else-if="sectionInfo.section.subtitle" 
                class="it-title-medium"
             >{{ sectionInfo.section.subtitle }}</h2>
 
@@ -66,6 +73,9 @@ import SearchBar from './widgets/SearchBar'
 import Slider from './widgets/Slider'
 import CatSlider from './widgets/CatSlider'
 import ContactForm from './widgets/ContactForm'
+import gsap from 'gsap'
+import TextPlugin from 'gsap/TextPlugin'
+import RoughEase from 'gsap/EasePack'
 
 export default {
    name: 'Section',
@@ -84,13 +94,37 @@ export default {
    data() {
       return {
          stringSearched: '',
+         typingWords: ['Cerca', 'Scegli', 'Contatta'],
       }
    },
 
    methods: {
+      typeWords() {
+         let cursor = gsap.to('.cursor', {
+            opacity: 0, 
+            ease: 'power2.inOut', 
+            repeat: -1,
+            duration: .55,
+         });
+
+         let masterTl = gsap.timeline({repeat: -1});
+
+         this.typingWords.forEach(word => {
+            let tl = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 1});
+            tl.to('.typing-word', {duration: 1, text: word});
+            masterTl.add(tl);
+         });
+      },
+
       setString(str) {
          this.stringSearched = str;
       }
+   },
+
+   mounted() {
+      gsap.registerPlugin(RoughEase);
+      gsap.registerPlugin(TextPlugin);
+      this.typeWords();
    }
 }
 </script>
@@ -127,6 +161,10 @@ export default {
             h2{
                color: #fff;
                margin-bottom: 20px;
+
+               .cursor {
+                  margin-left: -4px;
+               }
             }
 
             .it-btn{

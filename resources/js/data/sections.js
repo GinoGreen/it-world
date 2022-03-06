@@ -1,7 +1,7 @@
 export default [
    {
       title: 'IL PROTALE DI PROFESSIONISTI IT',
-      subtitle: 'Cerca Tutti i professionisti del settore a portata di mano',
+      subtitle: 'tutti i professionisti del settore a portata di mano',
       class: 'search',
       image: '/img/search.svg',
       col: {

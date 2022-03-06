@@ -44,7 +44,6 @@
 <script>
 
 import gsap from 'gsap';
-import Elastic from 'gsap/EasePack'
 
 export default {
    name: 'ContactForm',
@@ -116,8 +115,8 @@ export default {
       }
    },
 
-   mounted(){
-      gsap.registerPlugin(Elastic);
+   mounted(){ 
+
    }
 }
 
