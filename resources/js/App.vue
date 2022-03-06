@@ -23,8 +23,10 @@
 </template>
 
 <script>
+
 import Header from './components/partials/Header';
 import gsap from 'gsap';
+
 export default {
    name: 'App',
 

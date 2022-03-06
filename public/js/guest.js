@@ -2364,6 +2364,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_EasePack__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/EasePack */ "./node_modules/gsap/EasePack.js");
 //
 //
 //
@@ -2385,13 +2387,95 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ContactForm',
   data: function data() {
-    return {};
+    return {
+      formFields: [{
+        label: 'Nome',
+        "for": 'name',
+        tag: 'input',
+        type: 'text',
+        content: ''
+      }, {
+        label: 'Email',
+        "for": 'email',
+        tag: 'input',
+        type: 'email',
+        content: ''
+      }, {
+        label: 'Messaggio',
+        "for": 'message',
+        tag: 'textarea',
+        content: ''
+      }]
+    };
   },
-  methods: {},
-  mounted: function mounted() {}
+  methods: {
+    labelAnimation: function labelAnimation(labelFor) {
+      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('label[for="' + labelFor + '"]', {
+        bottom: '100%',
+        fontSize: '1.1em',
+        duration: .1
+      });
+
+      if (labelFor === 'message') {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('textarea.it_input_field', {
+          height: 150,
+          duration: 1.4,
+          delay: .15,
+          ease: "elastic"
+        });
+      }
+    },
+    resetLabel: function resetLabel(label) {
+      this.formFields.forEach(function (field) {
+        if (field.label !== label && field.content === '') {
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('label[for="' + field["for"] + '"]', {
+            bottom: 10,
+            fontSize: '1em',
+            duration: .1
+          });
+        }
+      });
+
+      if (label !== 'Messaggio' && this.formFields[this.formFields.length - 1].content === '') {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('textarea.it_input_field', {
+          height: 40,
+          duration: .8,
+          delay: .15,
+          ease: "bounce"
+        });
+      }
+    }
+  },
+  mounted: function mounted() {
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_EasePack__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  }
 });
 
 /***/ }),
@@ -2638,7 +2722,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Op
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\nheader[data-v-781a2080] {\n  height: 90px;\n  background-color: aqua;\n}\nmain[data-v-781a2080] {\n  font-family: \"Open Sans\", sans-serif;\n  display: flex;\n}\nmain .content-left[data-v-781a2080], main .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\nmain .content-left[data-v-781a2080] {\n  width: 230px;\n  height: calc(100vh - 90px);\n  background-color: red;\n  margin-right: 50px;\n  justify-content: flex-end;\n}\nmain .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\nmain .content-left .filters .specialization[data-v-781a2080], main .content-left .filters .reviews[data-v-781a2080], main .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\nmain .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\nmain .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\nmain .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\nmain .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\nmain .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\nmain .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\nmain .content-left .filters .vote .stars span[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\nmain .content-right[data-v-781a2080] {\n  width: calc(100vw - 230px - 50px);\n  height: calc(100vh - 90px);\n  background-color: green;\n}\nmain .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\nmain .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\nmain .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\nmain .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\nmain .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n}", ""]);
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n  transition: all 0.14s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.2s;\n}\nheader[data-v-781a2080] {\n  height: 90px;\n  background-color: aqua;\n}\nmain[data-v-781a2080] {\n  font-family: \"Open Sans\", sans-serif;\n  display: flex;\n}\nmain .content-left[data-v-781a2080], main .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\nmain .content-left[data-v-781a2080] {\n  width: 230px;\n  height: calc(100vh - 90px);\n  background-color: red;\n  margin-right: 50px;\n  justify-content: flex-end;\n}\nmain .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\nmain .content-left .filters .specialization[data-v-781a2080], main .content-left .filters .reviews[data-v-781a2080], main .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\nmain .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\nmain .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\nmain .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\nmain .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\nmain .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\nmain .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\nmain .content-left .filters .vote .stars span[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\nmain .content-right[data-v-781a2080] {\n  width: calc(100vw - 230px - 50px);\n  height: calc(100vh - 90px);\n  background-color: green;\n}\nmain .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\nmain .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\nmain .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\nmain .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\nmain .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n}", ""]);
 
 // exports
 
@@ -2676,7 +2760,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
+exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-206ace3f] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-206ace3f] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-206ace3f] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-206ace3f] {\n  width: 100%;\n}\n.it_input label[data-v-206ace3f] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n  transition: all 0.14s;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.2s;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
 
 // exports
 
@@ -2714,7 +2798,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\nform[data-v-8c9f9304] {\n  width: 90%;\n}\nform input[data-v-8c9f9304], form textarea[data-v-8c9f9304] {\n  width: 100%;\n  margin: 10px 0px;\n  padding: 5px;\n  height: 50px;\n}\nform textarea[data-v-8c9f9304] {\n  height: 200px;\n}", ""]);
+exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\n.it_input label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n  transition: all 0.14s;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.2s;\n}\nform#contact_us[data-v-8c9f9304] {\n  margin-top: 40px;\n  width: 70%;\n}", ""]);
 
 // exports
 
@@ -4296,6 +4380,235 @@ Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_forEachName"])("x,y,z,top,ri
 });
 
 _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(CSSPlugin);
+
+
+/***/ }),
+
+/***/ "./node_modules/gsap/EasePack.js":
+/*!***************************************!*\
+  !*** ./node_modules/gsap/EasePack.js ***!
+  \***************************************/
+/*! exports provided: SlowMo, ExpoScaleEase, RoughEase, EasePack, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlowMo", function() { return SlowMo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExpoScaleEase", function() { return ExpoScaleEase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoughEase", function() { return RoughEase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EasePack", function() { return EasePack; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return EasePack; });
+/*!
+ * EasePack 3.9.1
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2021, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/* eslint-disable */
+var gsap,
+    _coreInitted,
+    _registerEase,
+    _getGSAP = function _getGSAP() {
+  return gsap || typeof window !== "undefined" && (gsap = window.gsap) && gsap.registerPlugin && gsap;
+},
+    _boolean = function _boolean(value, defaultValue) {
+  return !!(typeof value === "undefined" ? defaultValue : value && !~(value + "").indexOf("false"));
+},
+    _initCore = function _initCore(core) {
+  gsap = core || _getGSAP();
+
+  if (gsap) {
+    _registerEase = gsap.registerEase; //add weighted ease capabilities to standard eases so users can do "power2.inOut(0.8)" for example to push everything toward the "out", or (-0.8) to push it toward the "in" (0 is neutral)
+
+    var eases = gsap.parseEase(),
+        createConfig = function createConfig(ease) {
+      return function (ratio) {
+        var y = 0.5 + ratio / 2;
+
+        ease.config = function (p) {
+          return ease(2 * (1 - p) * p * y + p * p);
+        };
+      };
+    },
+        p;
+
+    for (p in eases) {
+      if (!eases[p].config) {
+        createConfig(eases[p]);
+      }
+    }
+
+    _registerEase("slow", SlowMo);
+
+    _registerEase("expoScale", ExpoScaleEase);
+
+    _registerEase("rough", RoughEase);
+
+    for (p in EasePack) {
+      p !== "version" && gsap.core.globals(p, EasePack[p]);
+    }
+
+    _coreInitted = 1;
+  }
+},
+    _createSlowMo = function _createSlowMo(linearRatio, power, yoyoMode) {
+  linearRatio = Math.min(1, linearRatio || 0.7);
+
+  var pow = linearRatio < 1 ? power || power === 0 ? power : 0.7 : 0,
+      p1 = (1 - linearRatio) / 2,
+      p3 = p1 + linearRatio,
+      calcEnd = _boolean(yoyoMode);
+
+  return function (p) {
+    var r = p + (0.5 - p) * pow;
+    return p < p1 ? calcEnd ? 1 - (p = 1 - p / p1) * p : r - (p = 1 - p / p1) * p * p * p * r : p > p3 ? calcEnd ? p === 1 ? 0 : 1 - (p = (p - p3) / p1) * p : r + (p - r) * (p = (p - p3) / p1) * p * p * p : calcEnd ? 1 : r;
+  };
+},
+    _createExpoScale = function _createExpoScale(start, end, ease) {
+  var p1 = Math.log(end / start),
+      p2 = end - start;
+  ease && (ease = gsap.parseEase(ease));
+  return function (p) {
+    return (start * Math.exp(p1 * (ease ? ease(p) : p)) - start) / p2;
+  };
+},
+    EasePoint = function EasePoint(time, value, next) {
+  this.t = time;
+  this.v = value;
+
+  if (next) {
+    this.next = next;
+    next.prev = this;
+    this.c = next.v - value;
+    this.gap = next.t - time;
+  }
+},
+    _createRoughEase = function _createRoughEase(vars) {
+  if (typeof vars !== "object") {
+    //users may pass in via a string, like "rough(30)"
+    vars = {
+      points: +vars || 20
+    };
+  }
+
+  var taper = vars.taper || "none",
+      a = [],
+      cnt = 0,
+      points = (+vars.points || 20) | 0,
+      i = points,
+      randomize = _boolean(vars.randomize, true),
+      clamp = _boolean(vars.clamp),
+      template = gsap ? gsap.parseEase(vars.template) : 0,
+      strength = (+vars.strength || 1) * 0.4,
+      x,
+      y,
+      bump,
+      invX,
+      obj,
+      pnt,
+      recent;
+
+  while (--i > -1) {
+    x = randomize ? Math.random() : 1 / points * i;
+    y = template ? template(x) : x;
+
+    if (taper === "none") {
+      bump = strength;
+    } else if (taper === "out") {
+      invX = 1 - x;
+      bump = invX * invX * strength;
+    } else if (taper === "in") {
+      bump = x * x * strength;
+    } else if (x < 0.5) {
+      //"both" (start)
+      invX = x * 2;
+      bump = invX * invX * 0.5 * strength;
+    } else {
+      //"both" (end)
+      invX = (1 - x) * 2;
+      bump = invX * invX * 0.5 * strength;
+    }
+
+    if (randomize) {
+      y += Math.random() * bump - bump * 0.5;
+    } else if (i % 2) {
+      y += bump * 0.5;
+    } else {
+      y -= bump * 0.5;
+    }
+
+    if (clamp) {
+      if (y > 1) {
+        y = 1;
+      } else if (y < 0) {
+        y = 0;
+      }
+    }
+
+    a[cnt++] = {
+      x: x,
+      y: y
+    };
+  }
+
+  a.sort(function (a, b) {
+    return a.x - b.x;
+  });
+  pnt = new EasePoint(1, 1, null);
+  i = points;
+
+  while (i--) {
+    obj = a[i];
+    pnt = new EasePoint(obj.x, obj.y, pnt);
+  }
+
+  recent = new EasePoint(0, 0, pnt.t ? pnt : pnt.next);
+  return function (p) {
+    var pnt = recent;
+
+    if (p > pnt.t) {
+      while (pnt.next && p >= pnt.t) {
+        pnt = pnt.next;
+      }
+
+      pnt = pnt.prev;
+    } else {
+      while (pnt.prev && p <= pnt.t) {
+        pnt = pnt.prev;
+      }
+    }
+
+    recent = pnt;
+    return pnt.v + (p - pnt.t) / pnt.gap * pnt.c;
+  };
+};
+
+var SlowMo = _createSlowMo(0.7);
+SlowMo.ease = SlowMo; //for backward compatibility
+
+SlowMo.config = _createSlowMo;
+var ExpoScaleEase = _createExpoScale(1, 2);
+ExpoScaleEase.config = _createExpoScale;
+var RoughEase = _createRoughEase();
+RoughEase.ease = RoughEase; //for backward compatibility
+
+RoughEase.config = _createRoughEase;
+var EasePack = {
+  SlowMo: SlowMo,
+  RoughEase: RoughEase,
+  ExpoScaleEase: ExpoScaleEase
+};
+
+for (var p in EasePack) {
+  EasePack[p].register = _initCore;
+  EasePack[p].version = "3.9.1";
+}
+
+_getGSAP() && gsap.registerPlugin(SlowMo);
 
 
 /***/ }),
@@ -10141,45 +10454,138 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "form",
+    { attrs: { id: "contact_us" } },
+    _vm._l(_vm.formFields, function (field, index) {
+      return _c("div", { key: "field" + index, staticClass: "it_input" }, [
+        _c("label", { attrs: { for: field.for } }, [
+          _vm._v(_vm._s(field.label)),
+        ]),
+        _vm._v(" "),
+        field.type === "checkbox" && field.tag === "input"
+          ? _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: field.content,
+                  expression: "field.content",
+                },
+              ],
+              staticClass: "it_input_field",
+              attrs: { id: field.for, name: field.for, type: "checkbox" },
+              domProps: {
+                checked: Array.isArray(field.content)
+                  ? _vm._i(field.content, null) > -1
+                  : field.content,
+              },
+              on: {
+                click: function ($event) {
+                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                },
+                change: function ($event) {
+                  var $$a = field.content,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 && _vm.$set(field, "content", $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        _vm.$set(
+                          field,
+                          "content",
+                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                        )
+                    }
+                  } else {
+                    _vm.$set(field, "content", $$c)
+                  }
+                },
+              },
+            })
+          : field.type === "radio" && field.tag === "input"
+          ? _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: field.content,
+                  expression: "field.content",
+                },
+              ],
+              staticClass: "it_input_field",
+              attrs: { id: field.for, name: field.for, type: "radio" },
+              domProps: { checked: _vm._q(field.content, null) },
+              on: {
+                click: function ($event) {
+                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                },
+                change: function ($event) {
+                  return _vm.$set(field, "content", null)
+                },
+              },
+            })
+          : field.tag === "input"
+          ? _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: field.content,
+                  expression: "field.content",
+                },
+              ],
+              staticClass: "it_input_field",
+              attrs: { id: field.for, name: field.for, type: field.type },
+              domProps: { value: field.content },
+              on: {
+                click: function ($event) {
+                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                },
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(field, "content", $event.target.value)
+                },
+              },
+            })
+          : _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: field.content,
+                  expression: "field.content",
+                },
+              ],
+              staticClass: "it_input_field",
+              attrs: { name: field.for, id: field.for },
+              domProps: { value: field.content },
+              on: {
+                click: function ($event) {
+                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                },
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(field, "content", $event.target.value)
+                },
+              },
+            }),
+        _vm._v(" "),
+        _c("div", { staticClass: "it_input_border" }),
+      ])
+    }),
+    0
+  )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("form", [
-      _c("div", { staticClass: "form-group" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { id: "exampleFormControlInput1", placeholder: "Nome" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            type: "email",
-            id: "exampleFormControlInput2",
-            placeholder: "Email",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("textarea", {
-          staticClass: "form-control",
-          attrs: {
-            id: "exampleFormControlTextarea1",
-            placeholder: "Messaggio",
-            rows: "3",
-          },
-        }),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -26044,53 +26450,58 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ([{
-  title: 'IL PROTALE DI PROFESSIONISTI IT',
-  subtitle: 'Cerca Tutti i professionisti del settore a portata di mano',
-  "class": 'search',
-  image: '/img/search.svg',
-  col: {
-    sx: 9,
-    dx: 3
-  }
-}, {
-  title: 'SCEGLI TRA LE CATEGORIE',
-  subtitle: 'Scegli tra le nostre categorie e trova il professionista che fa per te.',
-  "class": 'categories',
-  image: null,
-  col: {
-    sx: 12,
-    dx: 0
-  }
-}, {
-  title: 'IN EVIDENZA',
-  subtitle: 'Fatti consigliare da noi',
-  "class": 'professionals',
-  image: null,
-  col: {
-    sx: 12,
-    dx: 0
-  }
-}, {
-  title: 'CHI SIAMO',
-  subtitle: 'il portale più diffuso in ambito business, visitato ogni giorno da migliaia di utenti, professionisti ed HR manager',
-  "class": 'about',
-  image: '/img/about.svg',
-  text: 'IT-World è il marketplace per servizi professionali leader in Italia, e in espansione a livello internazionale. Ti permette di trovare esattamente quello che stai cercando in modo semplice e affidabile. IT-World nasce dall\'idea di un gruppo di imprenditori di successo con esperienza nel mondo del web, che hanno deciso di creare uno strumento in grado di aiutare l’utente nella ricerca del miglior sviluppatore o designer nella propria città, facilitando il contatto tra professionista e cliente, e semplificando il processo di prenotazione.',
-  col: {
-    sx: 8,
-    dx: 4
-  }
-}, {
-  title: 'UNISCITI ALLA RETE',
-  subtitle: 'IT-World è il tuo parter per trovare nuovi clienti online',
-  "class": 'join',
-  image: '/img/join.svg',
-  col: {
-    sx: 9,
-    dx: 3
-  }
-}, {
+/* harmony default export */ __webpack_exports__["default"] = ([// {
+//    title: 'IL PROTALE DI PROFESSIONISTI IT',
+//    subtitle: 'Cerca Tutti i professionisti del settore a portata di mano',
+//    class: 'search',
+//    image: '/img/search.svg',
+//    col: {
+//       sx: 9,
+//       dx: 3,
+//    }
+// },
+// {
+//    title: 'SCEGLI TRA LE CATEGORIE',
+//    subtitle: 'Scegli tra le nostre categorie e trova il professionista che fa per te.',
+//    class: 'categories',
+//    image: null,
+//    col: {
+//       sx: 12,
+//       dx: 0,
+//    }
+// },
+// {
+//    title: 'IN EVIDENZA',
+//    subtitle: 'Fatti consigliare da noi',
+//    class: 'professionals',
+//    image: null,
+//    col: {
+//       sx: 12,
+//       dx: 0,
+//    }
+// },
+// {
+//    title: 'CHI SIAMO',
+//    subtitle: 'il portale più diffuso in ambito business, visitato ogni giorno da migliaia di utenti, professionisti ed HR manager',
+//    class: 'about',
+//    image: '/img/about.svg',
+//    text: 'IT-World è il marketplace per servizi professionali leader in Italia, e in espansione a livello internazionale. Ti permette di trovare esattamente quello che stai cercando in modo semplice e affidabile. IT-World nasce dall\'idea di un gruppo di imprenditori di successo con esperienza nel mondo del web, che hanno deciso di creare uno strumento in grado di aiutare l’utente nella ricerca del miglior sviluppatore o designer nella propria città, facilitando il contatto tra professionista e cliente, e semplificando il processo di prenotazione.',
+//    col: {
+//       sx: 8,
+//       dx: 4,
+//    }
+// },
+// {
+//    title: 'UNISCITI ALLA RETE',
+//    subtitle: 'IT-World è il tuo parter per trovare nuovi clienti online',
+//    class: 'join',
+//    image: '/img/join.svg',
+//    col: {
+//       sx: 9,
+//       dx: 3,
+//    }
+// },
+{
   title: 'CONTATTACI',
   subtitle: 'Non importa in quale fase del processo ti trovi, siamo qui per aiutarti. Facci sapere cosa hai in mente.',
   "class": 'contact',
