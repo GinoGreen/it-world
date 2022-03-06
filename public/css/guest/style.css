@@ -14097,7 +14097,6 @@ a:hover {
   left: 0;
   bottom: 10px;
   z-index: 100;
-  transition: all 0.14s;
 }
 
 .it_input .it_input_border {
@@ -14106,7 +14105,7 @@ a:hover {
   height: 3px;
   background-color: #FF4D5A;
   transform: translateY(-2px);
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 
 .container {

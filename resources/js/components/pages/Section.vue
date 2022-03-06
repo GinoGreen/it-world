@@ -36,7 +36,7 @@
                class="it-title-medium"
             >{{ sectionInfo.section.text }}</p>
 
-            <SearchBar @initSearch="setString"
+            <SearchBar
                v-if="sectionInfo.section.class === 'search'"
             />
 
@@ -93,7 +93,6 @@ export default {
 
    data() {
       return {
-         stringSearched: '',
          typingWords: ['Cerca', 'Scegli', 'Contatta'],
       }
    },
@@ -115,10 +114,6 @@ export default {
             masterTl.add(tl);
          });
       },
-
-      setString(str) {
-         this.stringSearched = str;
-      }
    },
 
    mounted() {

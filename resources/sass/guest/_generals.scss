@@ -87,10 +87,6 @@ a:hover {
       &:focus + .it_input_border {
          width: 100%;
       }
-      // &:focus ~ label {
-      //    font-size: 1.15em;
-      //    bottom: 85%;
-      // }
       
    }
    label {
@@ -98,7 +94,6 @@ a:hover {
       left: 0;
       bottom: 10px;
       z-index: 100;
-      transition: all .14s;
    }
    .it_input_border {
       z-index: 300;
@@ -106,6 +101,6 @@ a:hover {
       height: 3px;
       background-color: $primary_color;
       transform: translateY(-2px);
-      transition: all .2s;
+      transition: all .5s;
    }
 }

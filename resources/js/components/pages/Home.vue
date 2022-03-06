@@ -45,8 +45,6 @@ export default {
    data() {
       return {
          sections,
-         apiUrl: 'http://127.0.0.1:8000/api/job_roles',
-         job_roles: null
       }
    },
 

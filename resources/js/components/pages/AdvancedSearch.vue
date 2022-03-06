@@ -144,7 +144,6 @@ export default {
    }
 
    main{
-      font-family: 'Open Sans', sans-serif;
       display: flex;
 
       .content-left, .content-right{
@@ -162,7 +161,7 @@ export default {
          justify-content: flex-end;
 
          // h3{
-         //    text-align: center;
+            //    text-align: center;
          // }
 
          .filters{
@@ -234,6 +233,7 @@ export default {
       }
 
       .content-right{
+         overflow-y: auto;
          width: calc(100vw - 230px - 50px);
          height: calc(100vh - 90px);
          background-color: green;
