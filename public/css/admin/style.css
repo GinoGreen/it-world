@@ -41,6 +41,76 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.it-btn {
+  margin-top: 20px;
+}
+
+.it-btn button {
+  background-color: #FF4D5A;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.it-btn button:hover {
+  transform: translateY(-3px);
+}
+
+.it_input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.it_input textarea {
+  max-height: 200px;
+}
+
+.it_input .it_input_field {
+  z-index: 200;
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  caret-color: #FF4D5A;
+  color: #fff;
+  opacity: 0;
+}
+
+.it_input .it_input_field:focus ~ .it_input_border {
+  width: 100%;
+}
+
+.it_input label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-size: 0.9em;
+  z-index: 100;
+  transition: all 0.1s;
+}
+
+.it_input .it_input_border {
+  z-index: 300;
+  width: 0;
+  height: 3px;
+  transform: translateY(-3px);
+  transition: all 0.5s;
+}
+
+label,
+p {
+  color: #fff;
+}
+
 header {
   background-color: transparent;
   position: fixed;
@@ -216,35 +286,35 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   background-color: #FF4D5A;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(3.4px) !important;
-  -webkit-backdrop-filter: blur(3.4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+.it-card {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.card .card-header {
+.it-card .card-header {
   text-align: center;
   font-size: 20px;
   font-weight: 800;
   color: white;
 }
 
-.card .card-body .row {
+.it-card .card-body .row {
   justify-content: center;
 }
 
-.card .card-body input {
+.it-card .card-body input {
   border-left: none;
   caret-color: #FF4D5A;
 }
 
-.card .card-body .it-mail-wrapper .mail-icon,
-.card .card-body .it-mail-wrapper .password-icon,
-.card .card-body .it-password-wrapper .mail-icon,
-.card .card-body .it-password-wrapper .password-icon {
+.it-card .card-body .it-mail-wrapper .mail-icon,
+.it-card .card-body .it-mail-wrapper .password-icon,
+.it-card .card-body .it-password-wrapper .mail-icon,
+.it-card .card-body .it-password-wrapper .password-icon {
   width: 50px;
   display: flex;
   justify-content: center;
@@ -255,39 +325,39 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   border-radius: 20px 0px 0px 20px;
 }
 
-.card .card-body .it-mail-wrapper .col-md-6,
-.card .card-body .it-password-wrapper .col-md-6 {
+.it-card .card-body .it-mail-wrapper .col-md-6,
+.it-card .card-body .it-password-wrapper .col-md-6 {
   padding-left: 0px;
 }
 
-.card .card-body .it-mail-wrapper .col-md-6 .it-mail,
-.card .card-body .it-mail-wrapper .col-md-6 .it-password,
-.card .card-body .it-password-wrapper .col-md-6 .it-mail,
-.card .card-body .it-password-wrapper .col-md-6 .it-password {
+.it-card .card-body .it-mail-wrapper .col-md-6 .it-mail,
+.it-card .card-body .it-mail-wrapper .col-md-6 .it-password,
+.it-card .card-body .it-password-wrapper .col-md-6 .it-mail,
+.it-card .card-body .it-password-wrapper .col-md-6 .it-password {
   border-radius: 0px 20px 20px 0px !important;
 }
 
-.card .card-body .it-remember {
+.it-card .card-body .it-remember {
   text-align: center;
 }
 
-.card .card-body .it-remember label {
+.it-card .card-body .it-remember label {
   color: #fff;
   font-weight: 300;
 }
 
-.card .card-body .it-button-wrapper .it-btn-login {
+.it-card .card-body .it-button-wrapper .it-btn-login {
   width: 200px;
   background-color: #c53a43;
   border: 1px solid #fff;
   border-radius: 30px;
 }
 
-.card .card-body .it-button-wrapper .it-btn-login:hover {
+.it-card .card-body .it-button-wrapper .it-btn-login:hover {
   background-color: #FF4D5A;
 }
 
-.card .card-body .it-button-wrapper a {
+.it-card .card-body .it-button-wrapper a {
   font-size: 12px;
   font-weight: 300;
   color: #fff;
