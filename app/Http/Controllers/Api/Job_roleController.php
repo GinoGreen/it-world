@@ -25,4 +25,5 @@ class Job_roleController extends Controller
 
         return response()->json($profiles);
     }
+    
 }

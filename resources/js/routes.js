@@ -20,11 +20,11 @@ const router = new VueRouter({
          path: '/advanced_search/:job_role',
          name: 'advanced_search',
          component: AdvancedSearch,
-      }
+      },
       {
-         path: '/profile/:job_role',
+         path: '/profile/:profile_id',
          name: 'profile',
-         component: SinglePage,
+         component: SingleProfile,
       }
    ]
 });

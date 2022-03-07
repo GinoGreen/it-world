@@ -61,9 +61,11 @@
                <div class="photo"></div>
                <div class="info-content">
                   <div class="info">
-                     <p class="it-title-small it-text-blue">
-                        {{ profile.name }} {{ profile.surname }}
-                     </p>
+                     <router-link :to="{name: 'profile', params:{profile_id: profile.id}}">
+                        <p class="it-title-small it-text-blue">
+                           {{ profile.name }} {{ profile.surname }}
+                        </p>
+                     </router-link>
                      <p class="it-text-info it-text-blue">{{ profile.jobRole }}</p>
                   </div>
                   <div class="info-description">
@@ -261,9 +263,9 @@ export default {
 
             .info{
                margin-bottom: 15px;
-
                p{
                   margin-bottom: 0px;
+                  color:black;
                }
             }
          }
