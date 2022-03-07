@@ -14025,6 +14025,19 @@ a:hover {
   text-decoration: none;
 }
 
+.it-container-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.it-container-page .it-section-page {
+  margin-top: 90px;
+  color: white;
+  min-height: calc(100vh - 90px);
+  width: 80%;
+}
+
 .it-title-big {
   font-weight: 800;
   font-size: 2em;
