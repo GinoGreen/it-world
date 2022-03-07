@@ -1,5 +1,5 @@
 <header>
-   <nav class="it-dashboard-header navbar navbar-expand-md navbar-dark shadow-sm">
+   <nav class="it-dashboard-header navbar navbar-expand-md">
        <div class="container-fluid justify-content-between">
            <div>
                <a class="navbar-brand" href="{{ route('home') }}">

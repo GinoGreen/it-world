@@ -41,70 +41,21 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.it-btn {
-  margin-top: 20px;
-}
-
-.it-btn button {
-  background-color: #072142;
-  outline: none;
-  border: none;
-  color: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.it-btn button:hover {
-  background: #FF4D5A;
-}
-
-.it_input {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.it_input textarea {
-  max-height: 200px;
-}
-
-.it_input .it_input_field {
-  z-index: 200;
-  display: block;
-  height: 40px;
-  width: 100%;
+header {
   background-color: transparent;
-  border: 0;
-  border-bottom: 2px solid #fff;
-  caret-color: #fff;
-  color: #fff;
-}
-
-.it_input .it_input_field:focus + .it_input_border {
-  width: 100%;
-}
-
-.it_input label {
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
-  bottom: 10px;
+  width: 100%;
   z-index: 100;
 }
 
-.it_input .it_input_border {
-  z-index: 300;
-  width: 0;
-  height: 3px;
-  background-color: #FF4D5A;
-  transform: translateY(-2px);
-  transition: all 0.5s;
+header .it-dashboard-header {
+  background-color: transparent;
 }
 
-header .it-dashboard-header {
-  background-color: #072142;
+header .it-dashboard-header a {
+  color: #fff;
 }
 
 header .it-dashboard-header .it-logo {
@@ -343,74 +294,99 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   text-decoration: none;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(3.4px) !important;
-  -webkit-backdrop-filter: blur(3.4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+.it_card {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.card .card-header {
+.it_card .card-header {
   text-align: center;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
   color: white;
 }
 
-.card .card-body .row {
-  justify-content: center;
+.it_card .it_input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 0;
 }
 
-.card .card-body .row label {
-  text-align: left !important;
-  color: #fff;
+.it_card .it_input.it_field {
+  position: relative;
 }
 
-.card .card-body .row .col-md-6 input {
+.it_card .it_input.it_field textarea {
+  max-height: 200px;
+}
+
+.it_card .it_input.it_field .it_input_field {
+  z-index: 200;
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
   caret-color: #FF4D5A;
-  border-radius: 20px !important;
+  color: #fff;
+  opacity: 0;
 }
 
-.card .card-body .row .col-md-6 select {
-  border-radius: 20px 0px 0px 20px !important;
+.it_card .it_input.it_field .it_input_field:focus ~ .it_input_border > .inner {
+  width: 100%;
 }
 
-.card .card-body .it-job-role-title {
-  margin: 20px 0px 20px 45px;
+.it_card .it_input.it_field .it_input_field:focus ~ .it_input_border.outer {
+  background-color: transparent;
 }
 
-.card .card-body .it-job-role-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: 15px;
+.it_card .it_input.it_field .it_input_field:focus + label {
+  bottom: 100%;
+  font-size: 1em;
 }
 
-.card .card-body .it-job-role-wrapper .it-job-role {
-  margin: 0px 45px 20px 0px;
+.it_card .it_input.it_field .it_input_field:focus {
+  opacity: 1;
 }
 
-.card .card-body .it-job-role-wrapper .it-job-role label {
-  width: 170px;
+.it_card .it_input.it_field label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-size: 0.9em;
+  z-index: 100;
+  transition: all 0.1s;
 }
 
-.card .card-body .it-button-register {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
+.it_card .it_input.it_field .it_input_border {
+  z-index: 300;
+  height: 3px;
+  transition: all 0.5s;
 }
 
-.card .card-body .it-button-register button {
-  width: 200px;
-  background-color: #c53a43;
-  border: 1px solid #fff;
-  border-radius: 30px;
-}
-
-.card .card-body .it-button-register button:hover {
+.it_card .it_input.it_field .it_input_border.inner {
   background-color: #FF4D5A;
+  width: 0;
+  z-index: 300;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.it_card .it_input.it_field .it_input_border.outer {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.it_card label,
+.it_card p {
+  color: #fff;
 }
 
 .white-wrap-msg {
@@ -14597,5 +14573,73 @@ a.text-dark:focus {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+
+main {
+  padding-top: 74px;
+  width: 100%;
+  height: 100vh;
+}
+
+.it-btn {
+  margin-top: 20px;
+}
+
+.it-btn button {
+  background-color: #FF4D5A;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.it-btn button:hover {
+  transform: translateY(-3px);
+}
+
+.it_input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.it_input textarea {
+  max-height: 200px;
+}
+
+.it_input .it_input_field {
+  z-index: 200;
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  caret-color: #fff;
+  color: #fff;
+}
+
+.it_input .it_input_field:focus + .it_input_border {
+  width: 100%;
+}
+
+.it_input label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  z-index: 100;
+}
+
+.it_input .it_input_border {
+  z-index: 300;
+  width: 0;
+  height: 3px;
+  background-color: #FF4D5A;
+  transform: translateY(-2px);
+  transition: all 0.5s;
 }
 

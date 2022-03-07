@@ -14046,68 +14046,6 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.it-btn {
-  margin-top: 20px;
-}
-
-.it-btn button {
-  background-color: #072142;
-  outline: none;
-  border: none;
-  color: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.it-btn button:hover {
-  background: #FF4D5A;
-}
-
-.it_input {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.it_input textarea {
-  max-height: 200px;
-}
-
-.it_input .it_input_field {
-  z-index: 200;
-  display: block;
-  height: 40px;
-  width: 100%;
-  background-color: transparent;
-  border: 0;
-  border-bottom: 2px solid #fff;
-  caret-color: #fff;
-  color: #fff;
-}
-
-.it_input .it_input_field:focus + .it_input_border {
-  width: 100%;
-}
-
-.it_input label {
-  position: absolute;
-  left: 0;
-  bottom: 10px;
-  z-index: 100;
-}
-
-.it_input .it_input_border {
-  z-index: 300;
-  width: 0;
-  height: 3px;
-  background-color: #FF4D5A;
-  transform: translateY(-2px);
-  transition: all 0.5s;
-}
-
 .container {
   width: calc(100vw - 50px);
   max-width: calc(100vw - 50px);
