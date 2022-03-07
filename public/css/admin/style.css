@@ -171,11 +171,6 @@ header .it-dashboard-header .it-logo {
   color: white;
 }
 
-main {
-  background-color: #072142;
-  height: calc(100vh - 74px);
-}
-
 main .white-wrapper-show {
   display: flex;
   flex-direction: column;
@@ -302,66 +297,123 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   color: white;
 }
 
-.it-card .card-body .row {
-  justify-content: center;
-}
-
-.it-card .card-body input {
-  border-left: none;
-  caret-color: #FF4D5A;
-}
-
-.it-card .card-body .it-mail-wrapper .mail-icon,
-.it-card .card-body .it-mail-wrapper .password-icon,
-.it-card .card-body .it-password-wrapper .mail-icon,
-.it-card .card-body .it-password-wrapper .password-icon {
-  width: 50px;
+.it-card .card-body .it_input_login {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #707070;
-  font-size: 25px;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 50px;
+  font-size: 1.3em;
+  caret-color: #FF4D5A;
+  margin-bottom: 30px;
+}
+
+.it-card .card-body .it_input_login:focus-within .it_icon_login {
+  width: 13%;
+  font-size: 1.3em;
+}
+
+.it-card .card-body .it_input_login:focus-within .it_input_field {
+  width: 86%;
+}
+
+.it-card .card-body .it_input_login .it_icon_login {
   background-color: #fff;
-  border-radius: 20px 0px 0px 20px;
+  width: 24%;
+  height: 100%;
+  font-size: 2em;
+  background-color: #d1d1d1;
+  color: #686868;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s;
 }
 
-.it-card .card-body .it-mail-wrapper .col-md-6,
-.it-card .card-body .it-password-wrapper .col-md-6 {
-  padding-left: 0px;
-}
-
-.it-card .card-body .it-mail-wrapper .col-md-6 .it-mail,
-.it-card .card-body .it-mail-wrapper .col-md-6 .it-password,
-.it-card .card-body .it-password-wrapper .col-md-6 .it-mail,
-.it-card .card-body .it-password-wrapper .col-md-6 .it-password {
-  border-radius: 0px 20px 20px 0px !important;
+.it-card .card-body .it_input_login .it_input_field {
+  border: 0;
+  width: 75%;
+  height: 100%;
+  transition: all 0.3s;
+  padding-left: 10px;
 }
 
 .it-card .card-body .it-remember {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
 }
 
-.it-card .card-body .it-remember label {
-  color: #fff;
-  font-weight: 300;
+.it-card .card-body .it-remember:hover input ~ .it_checkmark {
+  background-color: #ccc;
 }
 
-.it-card .card-body .it-button-wrapper .it-btn-login {
-  width: 200px;
-  background-color: #c53a43;
-  border: 1px solid #fff;
-  border-radius: 30px;
-}
-
-.it-card .card-body .it-button-wrapper .it-btn-login:hover {
+.it-card .card-body .it-remember input:checked ~ .it_checkmark {
   background-color: #FF4D5A;
 }
 
-.it-card .card-body .it-button-wrapper a {
-  font-size: 12px;
-  font-weight: 300;
+.it-card .card-body .it-remember .it_checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.it-card .card-body .it-remember input:checked ~ .it_checkmark:after {
+  display: block;
+}
+
+.it-card .card-body .it-remember .it_checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 8px;
+  height: 16px;
+  border: solid #072142;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+.it-card .card-body .it-remember .input_checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.it-card .card-body .it-remember .it_checkmark {
+  position: relative;
+  margin-right: 5px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.it-card .card-body .it-btn-login {
+  margin-top: 20px;
+}
+
+.it-card .card-body .it-btn-login button {
+  background-color: #FF4D5A;
+  width: 40%;
+  font-size: 1.2em;
+  outline: none;
+  border: none;
   color: #fff;
-  text-decoration: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.it-card .card-body .it-btn-login button:hover {
+  transform: translateY(-3px);
 }
 
 .it_card {
@@ -417,7 +469,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 
 .it_card .it_input.it_field .it_input_field:focus + label {
   bottom: 100%;
-  font-size: 1em;
+  font-size: 1.4em;
 }
 
 .it_card .it_input.it_field .it_input_field:focus {
@@ -14645,10 +14697,17 @@ a.text-dark:focus {
   clip: auto;
 }
 
-main {
+body {
+  background-image: linear-gradient(#072142, #020B16);
+}
+
+main.back-end-main {
   padding-top: 74px;
+  padding-bottom: 100px;
   width: 100%;
   height: 100vh;
+  background-color: transparent;
+  overflow: auto;
 }
 
 .it-btn {
