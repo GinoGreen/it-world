@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
 import AdvancedSearch from './components/pages/AdvancedSearch.vue';
+import SingleProfile from './components/pages/SingleProfile.vue';
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const router = new VueRouter({
          path: '/advanced_search/:job_role',
          name: 'advanced_search',
          component: AdvancedSearch,
+      }
+      {
+         path: '/profile/:job_role',
+         name: 'profile',
+         component: SinglePage,
       }
    ]
 });
