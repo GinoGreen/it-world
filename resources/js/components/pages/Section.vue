@@ -23,8 +23,10 @@
             <h2 v-if="sectionInfo.section.class === 'search'"
                class="it-title-medium"
             >
-               <span class="typing-word"></span>
-               <span class="cursor">|</span>
+               <div class="word-box d-inline-block">
+                  <span class="typing-word"></span>
+                  <span class="cursor">|</span>
+               </div>
                <span class="it-title">{{ sectionInfo.section.subtitle }}</span>
             </h2>
 
@@ -154,11 +156,24 @@ export default {
             }
 
             h2{
+               --offset: 85px;
+               position: relative;
                color: #fff;
                margin-bottom: 20px;
 
-               .cursor {
-                  margin-left: -4px;
+               .word-box {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  min-width: var(--offset);
+
+                  .cursor {
+                     margin-left: -4px;
+                  }
+               }
+               .it-title {
+                  display: inline-block;
+                  margin-left: var(--offset);
                }
             }
 
