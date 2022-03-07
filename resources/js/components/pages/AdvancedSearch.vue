@@ -11,11 +11,11 @@
                   <h3 class="it-title-small it-text-black">Specializzazione</h3>
                   <div class="tag-container">
 
-                     
-                     <span 
-                        class="tag it-text-info"
-                        v-for="jobRole in jobRoles"
+                     <span
+                        v-for="jobRole in allJobRoles"
                         :key="'jobRole' + jobRole.id"
+                        class="tag it-text-info"
+                        :class="activeJobRole(jobRole)"
                      >{{jobRole.name}}</span>
                      
                   </div>
@@ -39,11 +39,11 @@
                   <h3 class="it-title-small it-text-black">Voto</h3>
                   <div class="stars">
                      <!-- da sostituire con icona FontAwesome -->
-                     <span>&star;</span>
-                     <span>&star;</span>
-                     <span>&star;</span>
-                     <span>&star;</span>
-                     <span>&star;</span>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star-o" aria-hidden="true"></i>
+                     <i class="fa fa-star-o" aria-hidden="true"></i>
+                     <i class="fa fa-star-o" aria-hidden="true"></i>
+                     <i class="fa fa-star-o" aria-hidden="true"></i>
                   </div>
                </div>
 
@@ -90,17 +90,26 @@ export default {
    data(){
       return{
           apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
+          allJobRoles: [],
           jobRoles: null,
           profiles: [],
       }
    },
 
    methods:{
+      getJobRoles(){
+         axios.get(this.apiUrl)
+            .then(res => {
+               this.allJobRoles = res.data;
+               console.log('all roles: ', res.data);
+            });
+      },
       getApi(){
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
             
                this.jobRoles = res.data;
+               console.log(res.data);
                
                this.jobRoles.forEach(jobRole => {
                   
@@ -121,11 +130,22 @@ export default {
                   }
                });
          });
+      },
+
+      activeJobRole(jobRole){
+         for(let i = 0; i < this.jobRoles.length; i++){
+            console.log('ricercati: ', this.jobRoles[i]);
+            console.log('attuale: ', jobRole);
+            if(jobRole.id === this.jobRoles[i].id){
+               return 'active'
+            }
+         }
       }
    },
 
    mounted(){
       this.getApi();
+      this.getJobRoles();
    }
 
 
@@ -135,7 +155,6 @@ export default {
 <style lang="scss" scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
-
 @import '../../../sass/guest/_variables.scss';
 @import '../../../sass/guest/_generals.scss';
 
@@ -176,11 +195,17 @@ export default {
                   flex-wrap: wrap;
 
                   .tag{
-                     color: white;
-                     background-color: $primary_color;
+                     color: $primary_color;
+                     background-color: white;
+                     border: 2px solid $primary-color;
                      padding: 3px 20px;
                      border-radius: 25px;
                      margin: 5px;
+                     &.active{
+                        color: white;
+                        background-color: $primary-color;
+                        border: 2px solid transparent;
+                     }
                   }
                }
             }
@@ -218,7 +243,7 @@ export default {
 
             .vote{
                .stars{
-                  span{
+                  i{
                      font-size: 20px;
                      color: rgb(255, 153, 0);
                   }

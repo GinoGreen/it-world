@@ -2058,34 +2058,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AdvancedSearch',
   data: function data() {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
+      allJobRoles: [],
       jobRoles: null,
       profiles: []
     };
   },
   methods: {
-    getApi: function getApi() {
+    getJobRoles: function getJobRoles() {
       var _this = this;
 
-      axios.get(this.apiUrl + this.$route.params.job_role).then(function (res) {
-        _this.jobRoles = res.data;
+      axios.get(this.apiUrl).then(function (res) {
+        _this.allJobRoles = res.data;
+        console.log('all roles: ', res.data);
+      });
+    },
+    getApi: function getApi() {
+      var _this2 = this;
 
-        _this.jobRoles.forEach(function (jobRole) {
+      axios.get(this.apiUrl + this.$route.params.job_role).then(function (res) {
+        _this2.jobRoles = res.data;
+        console.log(res.data);
+
+        _this2.jobRoles.forEach(function (jobRole) {
           if (jobRole.users.length !== 0) {
             jobRole.users.forEach(function (profile) {
-              if (!_this.profiles.some(function (element) {
+              if (!_this2.profiles.some(function (element) {
                 return element.id === profile.id;
               })) {
                 profile.jobRole = [jobRole.name];
 
-                _this.profiles.push(profile);
+                _this2.profiles.push(profile);
               } else {
-                _this.profiles.find(function (element) {
+                _this2.profiles.find(function (element) {
                   return element.id === profile.id;
                 }).jobRole.push(jobRole.name);
               }
@@ -2093,10 +2102,31 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       });
+    },
+    activeJobRole: function activeJobRole(jobRole) {
+      // for(let roleIndex = 0; roleIndex < 2; roleIndex++){
+      //    console.log('ricercati: ', roleIndex);
+      //    if(jobRole.id === this.jobRoles[roleIndex].id){
+      //       return 'active tag it-text-info'
+      //    }
+      //    else{
+      //       return 'tag it-text-info'
+      //    };
+      // }
+      // console.log(jobRole);
+      for (var i = 0; i < this.jobRoles.length; i++) {
+        console.log('ricercati: ', this.jobRoles[i]);
+        console.log('attuale: ', jobRole);
+
+        if (jobRole.id === this.jobRoles[i].id) {
+          return 'active';
+        }
+      }
     }
   },
   mounted: function mounted() {
     this.getApi();
+    this.getJobRoles();
   }
 });
 
@@ -2317,6 +2347,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -2797,7 +2830,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Op
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\nheader[data-v-781a2080] {\n  height: 90px;\n  background-color: aqua;\n}\nmain[data-v-781a2080] {\n  display: flex;\n}\nmain .content-left[data-v-781a2080], main .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\nmain .content-left[data-v-781a2080] {\n  width: 230px;\n  height: calc(100vh - 90px);\n  background-color: red;\n  margin-right: 50px;\n  justify-content: flex-end;\n}\nmain .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\nmain .content-left .filters .specialization[data-v-781a2080], main .content-left .filters .reviews[data-v-781a2080], main .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\nmain .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\nmain .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\nmain .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\nmain .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\nmain .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\nmain .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\nmain .content-left .filters .vote .stars span[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\nmain .content-right[data-v-781a2080] {\n  overflow-y: auto;\n  width: calc(100vw - 230px - 50px);\n  height: calc(100vh - 90px);\n  background-color: green;\n}\nmain .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\nmain .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\nmain .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\nmain .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\nmain .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}", ""]);
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  width: 25%;\n  height: calc(100vh - 90px);\n  margin-right: 50px;\n  justify-content: flex-end;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: white;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\n.it-section-page .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\n.it-section-page .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\n.it-section-page .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  overflow-y: auto;\n  width: 70%;\n  height: calc(100vh - 90px);\n  background-color: green;\n}\n.it-section-page .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-section-page .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\n.it-section-page .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}", ""]);
 
 // exports
 
@@ -2835,7 +2868,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-206ace3f] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-206ace3f] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-206ace3f] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-206ace3f] {\n  width: 100%;\n}\n.it_input label[data-v-206ace3f] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  --offset: 85px;\n  position: relative;\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx h2 .word-box[data-v-206ace3f] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-width: var(--offset);\n}\nsection .row .content-sx h2 .word-box .cursor[data-v-206ace3f] {\n  margin-left: -4px;\n}\nsection .row .content-sx h2 .it-title[data-v-206ace3f] {\n  display: inline-block;\n  margin-left: var(--offset);\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
+exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-206ace3f] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-206ace3f] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-206ace3f] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-206ace3f] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-206ace3f] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-206ace3f] {\n  width: 100%;\n}\n.it_input label[data-v-206ace3f] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  --offset: 85px;\n  position: relative;\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx h2 .word-box[data-v-206ace3f] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-width: var(--offset);\n}\nsection .row .content-sx h2 .word-box .cursor[data-v-206ace3f] {\n  margin-left: -4px;\n}\nsection .row .content-sx h2 .it-title[data-v-206ace3f] {\n  display: inline-block;\n  margin-left: var(--offset);\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
 
 // exports
 
@@ -2851,10 +2884,10 @@ exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  bo
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "div[data-v-387a041b] {\n  height: 100vh;\n}", ""]);
+exports.push([module.i, "*[data-v-387a041b] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-387a041b] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-387a041b],\na[data-v-387a041b]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-387a041b] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-387a041b] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-387a041b] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-387a041b] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-387a041b] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-387a041b] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-387a041b] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-387a041b]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-387a041b] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-387a041b] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-387a041b] {\n  width: 100%;\n}\n.it_input label[data-v-387a041b] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}", ""]);
 
 // exports
 
@@ -2892,7 +2925,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\n.it_input label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\nform#contact_us[data-v-8c9f9304] {\n  margin-top: 40px;\n  width: 70%;\n}", ""]);
+exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-8c9f9304] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-8c9f9304] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\n.it_input label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\nform#contact_us[data-v-8c9f9304] {\n  margin-top: 40px;\n  width: 70%;\n}", ""]);
 
 // exports
 
@@ -10490,10 +10523,8 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("header", [_vm._v("Header da sostituire")]),
-    _vm._v(" "),
-    _c("main", [
+  return _c("div", { staticClass: "it-container-page" }, [
+    _c("section", { staticClass: "it-section-page" }, [
       _c("div", { staticClass: "content-left" }, [
         _c("h3", { staticClass: "it-title-small it-text-orange text-center" }, [
           _vm._v("Filtri"),
@@ -10508,12 +10539,13 @@ var render = function () {
             _c(
               "div",
               { staticClass: "tag-container" },
-              _vm._l(_vm.jobRoles, function (jobRole) {
+              _vm._l(_vm.allJobRoles, function (jobRole) {
                 return _c(
                   "span",
                   {
                     key: "jobRole" + jobRole.id,
                     staticClass: "tag it-text-info",
+                    class: _vm.activeJobRole(jobRole),
                   },
                   [_vm._v(_vm._s(jobRole.name))]
                 )
@@ -10636,15 +10668,30 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "stars" }, [
-        _c("span", [_vm._v("☆")]),
+        _c("i", {
+          staticClass: "fa fa-star",
+          attrs: { "aria-hidden": "true" },
+        }),
         _vm._v(" "),
-        _c("span", [_vm._v("☆")]),
+        _c("i", {
+          staticClass: "fa fa-star-o",
+          attrs: { "aria-hidden": "true" },
+        }),
         _vm._v(" "),
-        _c("span", [_vm._v("☆")]),
+        _c("i", {
+          staticClass: "fa fa-star-o",
+          attrs: { "aria-hidden": "true" },
+        }),
         _vm._v(" "),
-        _c("span", [_vm._v("☆")]),
+        _c("i", {
+          staticClass: "fa fa-star-o",
+          attrs: { "aria-hidden": "true" },
+        }),
         _vm._v(" "),
-        _c("span", [_vm._v("☆")]),
+        _c("i", {
+          staticClass: "fa fa-star-o",
+          attrs: { "aria-hidden": "true" },
+        }),
       ]),
     ])
   },
@@ -10862,8 +10909,10 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "bg-light" }, [
-    _c("h1", [_vm._v(_vm._s(_vm.profile.name))]),
+  return _c("div", { staticClass: "it-container-page" }, [
+    _c("section", { staticClass: "it-section-page" }, [
+      _c("h1", [_vm._v(_vm._s(_vm.profile.name))]),
+    ]),
   ])
 }
 var staticRenderFns = []

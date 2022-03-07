@@ -14,7 +14,7 @@ class UserController extends Controller
     }
 
     public function show($profile_id){
-        $profiles = User::where('id', $profile_id)->with(['job_roles'])->get();
+        $profiles = User::where('id', $profile_id)->with(['job_roles', 'reviews'])->get();
         return response()->json($profiles);
     }
 }
