@@ -19,6 +19,20 @@ a:hover {
 
 
 }
+
+// CONTAINERS
+.it-container-page{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   .it-section-page{
+      margin-top: 90px;
+      color: white;
+      min-height: calc(100vh - 90px);
+      width: 80%;
+   }
+}
+
 // TITLE + TEXT 
 .it-title-big{
    font-weight: 800;

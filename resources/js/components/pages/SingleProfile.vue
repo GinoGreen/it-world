@@ -1,7 +1,10 @@
 <template>
-  <div class="bg-light">
+<div class="it-container-page">
+   <section class="it-section-page">
      <h1>{{profile.name}}</h1>
-  </div>
+   </section>
+</div>
+  
 </template>
 
 <script>
@@ -31,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-   div{
-      height: 100vh;
-   }
+@import '../../../sass/guest/_variables.scss';
+@import '../../../sass/guest/_generals.scss';
+
 </style>

@@ -1,9 +1,8 @@
 <template>
 
-   <div>
-      <header>Header da sostituire</header>
+   <div class="it-container-page">
       
-      <main>
+      <section class="it-section-page">
          <div class="content-left">
             <h3 class="it-title-small it-text-orange text-center">Filtri</h3>
             <div class="filters">
@@ -77,7 +76,7 @@
             </div>
 
          </div>
-      </main>
+      </section>
    </div>
   
 </template>
@@ -140,23 +139,17 @@ export default {
 @import '../../../sass/guest/_variables.scss';
 @import '../../../sass/guest/_generals.scss';
 
-   header{
-      height: 90px;
-      background-color: aqua;
-   }
 
-   main{
+   .it-section-page{
       display: flex;
-
       .content-left, .content-right{
          display: flex;
          flex-direction: column;
       }
 
       .content-left{
-         width: 230px;
+         width: 25%;
          height: calc(100vh - 90px);
-         background-color: red;
          margin-right: 50px;
          // display: flex;
          // flex-direction: column;
@@ -236,7 +229,7 @@ export default {
 
       .content-right{
          overflow-y: auto;
-         width: calc(100vw - 230px - 50px);
+         width: 70%;
          height: calc(100vh - 90px);
          background-color: green;
 
