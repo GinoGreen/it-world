@@ -1950,8 +1950,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     animateWavesPlanetLights: function animateWavesPlanetLights() {
       gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to('.circle', {
-        width: '+=40',
-        height: '+=40',
+        scale: 1.01,
         duration: 1.7,
         stagger: {
           each: .4,
@@ -2773,7 +2772,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".container[data-v-a9aac016] {\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  position: relative;\n  width: 10%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line a[data-v-a9aac016] {\n  cursor: pointer;\n}\n.container aside .wrap-scroll-line a:hover .scroll-line[data-v-a9aac016] {\n  width: 45px;\n}\n.container aside .wrap-scroll-line a .scroll-line[data-v-a9aac016] {\n  margin: 11px 0;\n  background-color: #fff;\n  height: 3px;\n  width: 30px;\n  transition: 0.25s;\n}\n.container aside .wrap-scroll-line a .scroll-line.active[data-v-a9aac016] {\n  width: 45px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  position: absolute;\n  bottom: 0;\n  left: -40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n}\n.container aside .scroll-down .scroll-text[data-v-a9aac016] {\n  letter-spacing: 1px;\n  font-weight: lighter;\n  font-style: italic;\n  width: -webkit-min-content;\n  width: -moz-min-content;\n  width: min-content;\n  min-width: 100px;\n  margin-bottom: 40px;\n  color: white;\n  transform: rotate(90deg);\n  rotate: 90deg;\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 65px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
+exports.push([module.i, ".container[data-v-a9aac016] {\n  /* Hide scrollbar */\n}\n.container aside[data-v-a9aac016] {\n  position: relative;\n  width: 10%;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line[data-v-a9aac016] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container aside .wrap-scroll-line a[data-v-a9aac016] {\n  cursor: pointer;\n}\n.container aside .wrap-scroll-line a:hover .scroll-line[data-v-a9aac016] {\n  width: 45px;\n}\n.container aside .wrap-scroll-line a .scroll-line[data-v-a9aac016] {\n  margin: 11px 0;\n  background-color: #fff;\n  height: 3px;\n  width: 30px;\n  transition: 0.25s;\n}\n.container aside .wrap-scroll-line a .scroll-line.active[data-v-a9aac016] {\n  width: 45px;\n}\n.container aside .scroll-down[data-v-a9aac016] {\n  position: absolute;\n  bottom: 0;\n  left: -40px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n}\n.container aside .scroll-down .scroll-text[data-v-a9aac016] {\n  letter-spacing: 1px;\n  font-weight: lighter;\n  font-style: italic;\n  width: -webkit-min-content;\n  width: -moz-min-content;\n  width: min-content;\n  min-width: 100px;\n  margin-bottom: 40px;\n  color: white;\n  transform: rotate(90deg);\n}\n.container aside .scroll-down .line[data-v-a9aac016] {\n  width: 2px;\n  height: 65px;\n  background-color: #fff;\n}\n.container main[data-v-a9aac016]::-webkit-scrollbar {\n  display: none;\n}\n.container main[data-v-a9aac016] {\n  width: 100%;\n  height: 100vh;\n  color: #000;\n  -ms-overflow-style: none;\n  /* IE and Edge */\n  scrollbar-width: none;\n  /* Firefox */\n  overflow-y: scroll;\n}", ""]);
 
 // exports
 
@@ -10357,14 +10356,6 @@ var staticRenderFns = [
               _c("div", { staticClass: "circle" }, [
                 _c("div", { staticClass: "circle" }, [
                   _c("img", {
-                    staticClass: "planet",
-                    attrs: {
-                      src: "img/moon/planet-solo-vector-10.svg",
-                      alt: "it_world",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
                     staticClass: "stars",
                     attrs: {
                       src: "img/moon/planet-vector-stars-solo.svg",
@@ -10377,6 +10368,11 @@ var staticRenderFns = [
           ]),
         ]),
       ]),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "planet",
+        attrs: { src: "img/moon/planet-solo-vector-10.svg", alt: "it_world" },
+      }),
     ])
   },
 ]

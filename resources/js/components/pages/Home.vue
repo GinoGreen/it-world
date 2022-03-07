@@ -110,7 +110,6 @@ export default {
             margin-bottom: 40px;
             color: white;
             transform: rotate(90deg);
-            rotate: 90deg;
          }
          .line{
             width: 2px;

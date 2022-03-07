@@ -9,7 +9,6 @@
                   <div class="circle">
                      <div class="circle">
                         <div class="circle">
-                           <img class="planet" src="img/moon/planet-solo-vector-10.svg" alt="it_world">
                            <img class="stars" src="img/moon/planet-vector-stars-solo.svg" alt="stars">
                         </div>
                      </div>
@@ -17,6 +16,7 @@
                </div>
             </div>
          </div>
+         <img class="planet" src="img/moon/planet-solo-vector-10.svg" alt="it_world">
          
       </div>
    </div>
@@ -47,8 +47,7 @@ export default {
    methods:{
       animateWavesPlanetLights() {
          gsap.to('.circle', {
-            width: '+=40',
-            height: '+=40',
+            scale: 1.01,
             duration: 1.7,
             stagger: {
                each: .4,
