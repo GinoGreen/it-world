@@ -55,6 +55,7 @@
             <div class="wrap-review duble-glass">
                <h6>Nome Cognome</h6>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio provident distinctio laudantium ipsa, reprehenderit, quibusdam aut voluptate, labore omnis iure voluptates deserunt. Illo dicta officiis placeat nulla!</p>
+               <span>star</span>
             </div>
          </div>
       </div>
