@@ -76,7 +76,7 @@
                             </div>
                         </div>
 
-                        <div class="it-job-role-wrapper it_input_field px-5">
+                        <div class="it-job-role-wrapper it_input_selection px-5">
                             <p class="it-job-role-title">
                                 In cosa sei specializzato?
                             </p>
@@ -99,47 +99,47 @@
                             @endforeach
                         </div>
 
-                        <div class="it_input">
+                        <div class="it_input_selection">
                             <label for="region">Locazione Ufficio</label>
 
-                                <select
-                                    name="region" 
-                                    id="region"
-                                    class="it_input_select"
-                                >
-                                    <option value="">Da dove lavori?</option>
-    
-                                    @foreach ($regions as $region)
-                                        <option
-                                            @if($region == old('region'))
-                                                selected
-                                            @endif
-                                            value="{{ $region }}"
-                                        >{{ $region }}</option>
-                                    @endforeach
-                                </select>
+                            <select
+                                name="region" 
+                                id="region"
+                                class="it_input_select"
+                            >
+                                <option value="">Da dove lavori?</option>
+
+                                @foreach ($regions as $region)
+                                    <option
+                                        @if($region == old('region'))
+                                            selected
+                                        @endif
+                                        value="{{ $region }}"
+                                    >{{ $region }}</option>
+                                @endforeach
+                            </select>
 
                         </div>
 
-                        <div class="it_input">
+                        <div class="it_input_selection">
                             <label for="level">Livello di esperienza</label>
 
-                                <select
-                                    name="level" 
-                                    id="level"
-                                    class="it_input_select"
-                                >
-                                    <option value="">Come ti qualifichi?</option>
-    
-                                    @foreach ($levels as $level)
-                                        <option
-                                            @if($level == old('level'))
-                                                selected
-                                            @endif
-                                            value="{{ $level }}"
-                                        >{{ $level }}</option>
-                                    @endforeach
-                                </select>
+                            <select
+                                name="level" 
+                                id="level"
+                                class="it_input_select"
+                            >
+                                <option value="">Come ti qualifichi?</option>
+
+                                @foreach ($levels as $level)
+                                    <option
+                                        @if($level == old('level'))
+                                            selected
+                                        @endif
+                                        value="{{ $level }}"
+                                    >{{ $level }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="it_input it_field">
