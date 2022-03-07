@@ -11,10 +11,12 @@
 @import './mixins.scss';
 @import './generals';
 
-@media screen and (min-width: 1400px) {
-   .container {
-      width: calc(100vw - 100px);
-      max-width: calc(100vw - 100px);
-      margin: 0 auto;
-   }
+.container {
+   width: calc(100vw - 50px);
+   max-width: calc(100vw - 50px);
+   margin: 0 auto;
 }
+
+// @media screen and (min-width: 1000px) {
+   
+// }

@@ -7,7 +7,7 @@
 
       {{-- edit --}}
       <li class="it-dashboard-item 
-      {{ (Route::currentRouteName() === 'admin.profile.edit') ? 'active' : '' }}
+      {{ (Route::currentRouteName() === 'admin.edit') ? 'active' : '' }}
       ">
          <i class="fa fa-pencil" aria-hidden="true"></i>
          <a href="{{ route('admin.edit') }}"><span>Edit Profile</span></a>
@@ -15,7 +15,7 @@
 
       {{-- show --}}
       <li class="it-dashboard-item
-      {{ (Route::currentRouteName() === 'admin.profile.show') ? 'active' : '' }}
+      {{ (Route::currentRouteName() === 'admin.show') ? 'active' : '' }}
       ">
          <i class="fa fa-user" aria-hidden="true"></i>
          <a href="{{ route('admin.show') }}"><span>Show Profile</span></a>

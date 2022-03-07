@@ -15,15 +15,30 @@
                class="it-title-big"
             >{{ sectionInfo.section.title }}</h1>
 
-            <h2 v-if="sectionInfo.section.subtitle" 
+            <div class="section-details">
+               <div class="line-1"></div>
+               <div class="line-2"></div>
+            </div>
+
+            <h2 v-if="sectionInfo.section.class === 'search'"
+               class="it-title-medium"
+            >
+               <div class="word-box d-inline-block">
+                  <span class="typing-word"></span>
+                  <span class="cursor">|</span>
+               </div>
+               <span class="it-title">{{ sectionInfo.section.subtitle }}</span>
+            </h2>
+
+            <h2 v-else-if="sectionInfo.section.subtitle" 
                class="it-title-medium"
             >{{ sectionInfo.section.subtitle }}</h2>
 
             <p v-if="sectionInfo.section.text" 
-               class="it-text"
+               class="it-title-medium"
             >{{ sectionInfo.section.text }}</p>
 
-            <SearchBar @initSearch="setString"
+            <SearchBar
                v-if="sectionInfo.section.class === 'search'"
             />
 
@@ -35,7 +50,7 @@
                v-if="sectionInfo.section.class === 'join'"
                class="it-btn"
             >
-               <button>Unisciti a noi</button>
+               <button class="it-title-small">Unisciti a noi</button>
             </div>
 
             <ContactForm v-if="sectionInfo.section.class === 'contact'"/>
@@ -50,11 +65,6 @@
 
       </div>
       
-      <div class="section-details">
-         <div class="line-1"></div>
-         <div class="line-2"></div>
-      </div>
-
    </section>
 
 </template>
@@ -65,6 +75,9 @@ import SearchBar from './widgets/SearchBar'
 import Slider from './widgets/Slider'
 import CatSlider from './widgets/CatSlider'
 import ContactForm from './widgets/ContactForm'
+import gsap from 'gsap'
+import TextPlugin from 'gsap/TextPlugin'
+import RoughEase from 'gsap/EasePack'
 
 export default {
    name: 'Section',
@@ -82,14 +95,33 @@ export default {
 
    data() {
       return {
-         stringSearched: '',
+         typingWords: ['Cerca', 'Scegli', 'Contatta'],
       }
    },
 
    methods: {
-      setString(str) {
-         this.stringSearched = str;
-      }
+      typeWords() {
+         let cursor = gsap.to('.cursor', {
+            opacity: 0, 
+            ease: 'power2.inOut', 
+            repeat: -1,
+            duration: .55,
+         });
+
+         let masterTl = gsap.timeline({repeat: -1});
+
+         this.typingWords.forEach(word => {
+            let tl = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 1});
+            tl.to('.typing-word', {duration: 1, text: word});
+            masterTl.add(tl);
+         });
+      },
+   },
+
+   mounted() {
+      gsap.registerPlugin(RoughEase);
+      gsap.registerPlugin(TextPlugin);
+      this.typeWords();
    }
 }
 </script>
@@ -120,25 +152,42 @@ export default {
             align-items: flex-start;
 
             h1{
-               color: $primary_color;
-               margin-bottom: 40px;
+               color: #FFF;
             }
 
             h2{
+               --offset: 85px;
+               position: relative;
                color: #fff;
                margin-bottom: 20px;
+
+               .word-box {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  min-width: var(--offset);
+
+                  .cursor {
+                     margin-left: -4px;
+                  }
+               }
+               .it-title {
+                  display: inline-block;
+                  margin-left: var(--offset);
+               }
             }
 
             .it-btn{
                justify-content: flex-start;
 
                button{
-                  font-size: 20px;
+                  font-size: 1em;
+                  padding: 10px 20px;
                   background-color: $primary_color;
-                  border: 2px solid white;
-
+                  border-radius: 30px;
+                  transition: all .4s;
                   &:hover{
-                     background: $secondary_color;
+                     transform: translateY(-3px);
                   }
                }
             }
@@ -157,21 +206,19 @@ export default {
          }
       }
       .section-details{
-
+         padding: 32px 0;
          .line-1,
          .line-2{
+            width: 88px;
+            height: 3px;
             background-color: $primary_color;
-            height: 7px;
-            margin: 10px;
-            border-radius: 10px;
+            border-radius: 6px;
          }
-
-         .line-1{
-            width: 150px;
+         .line-1 {
+            margin-bottom: 16px;
          }
-
          .line-2{
-            width: 90px;
+            margin-left: 50px;
          }
       }
    }

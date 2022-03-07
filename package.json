@@ -24,8 +24,9 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "font-awesome": "^4.7.0",
         "chart.js": "^3.7.1",
+        "font-awesome": "^4.7.0",
+        "gsap": "file:gsap-bonus.tgz",
         "vue-router": "^2.8.1"
     }
 }

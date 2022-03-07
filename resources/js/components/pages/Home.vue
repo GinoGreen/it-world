@@ -5,16 +5,14 @@
       <aside>
          <!-- :class="{'active': index === sectionIndex}" -->
          <div class="wrap-scroll-line">
-            <div
-            class="scroll-line"
-            v-for="(line, index) in sections"
-            :key="`line${index}`"
-            ></div>
+            <a v-for="(line, index) in sections"
+               :key="`line${index}`"
+            ><div class="scroll-line"></div></a>
          </div>
          
 
          <div class="scroll-down">
-            <span>Lorem</span>
+            <div class="scroll-text">Scroll down</div>
             <div class="line"></div>
          </div>
       </aside>
@@ -47,13 +45,11 @@ export default {
    data() {
       return {
          sections,
-         apiUrl: 'http://127.0.0.1:8000/api/job_roles',
-         job_roles: null
       }
    },
 
    methods: {
-      
+
    },
 
 }
@@ -64,52 +60,60 @@ export default {
 @import '../../../sass/guest/_variables.scss';
    
 .container{
-   position: relative;
    aside{
+      position: relative;
       width: 10%;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
 
       .wrap-scroll-line{
-         margin-top: 300px;
          display: flex;
          flex-direction: column;
          justify-content: center;
-         .scroll-line{
+
+         a {
+            cursor: pointer;
             
-         cursor: pointer;
-         background-color: #fff;
-         border-radius: 10px;
-         height: 5px;
-         width: 50px;
-         margin-bottom: 20px;
-         transition: 1s;
-         &:hover{
-            width: 80px;
-         }
-         &.active {
-            width: 80px;
-         }
+            &:hover .scroll-line {
+               width: 45px;
+            }
+            .scroll-line{
+               margin: 11px 0;
+               background-color: #fff;
+               height: 3px;
+               width: 30px;
+               transition: .25s;
+
+               &.active {
+                  width: 45px;
+               }
+            }
          }
 
       }
       .scroll-down{
+         position: absolute;
+         bottom: 0;
+         left: -40px;
          display: flex;
          flex-direction: column;
          align-items: center;
          justify-content: space-between;
-         height: 150px;
-         width: 50px;
-         span{
-            margin-left: 4px;
+         .scroll-text{
+            letter-spacing: 1px;
+            font-weight: lighter;
+            font-style: italic;
+            width: min-content;
+            min-width: 100px;
+            margin-bottom: 40px;
             color: white;
-            rotate: 90deg;
+            transform: rotate(90deg);
          }
          .line{
             width: 2px;
-            height: 100px;
+            height: 65px;
             background-color: #fff;
          }
 

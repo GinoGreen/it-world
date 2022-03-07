@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300;
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;
 
-400;700;800&display=swap);@charset "UTF-8";
+500;600;700;800&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
@@ -14014,23 +14014,30 @@ a.text-dark:focus {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  background-color: #072142;
+  font-family: "Itim", cursive;
+  font-family: "Syne", sans-serif;
+  background-image: linear-gradient(#072142, #020B16);
+}
+
+a,
+a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .it-title-big {
   font-weight: 800;
-  font-size: 50px;
+  font-size: 2em;
 }
 
 .it-title-medium {
   font-weight: 400;
-  font-size: 25px;
+  font-size: 1.2em;
 }
 
 .it-title-small {
-  font-weight: 800;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 1em;
 }
 
 .it-text-info {
@@ -14040,9 +14047,6 @@ body {
 }
 
 .it-btn {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
   margin-top: 20px;
 }
 
@@ -14051,9 +14055,8 @@ body {
   outline: none;
   border: none;
   color: #fff;
+  border-radius: 10px;
   padding: 10px;
-  border-radius: 20px;
-  font-size: 14px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -14062,11 +14065,52 @@ body {
   background: #FF4D5A;
 }
 
-@media screen and (min-width: 1400px) {
-  .container {
-    width: calc(100vw - 100px);
-    max-width: calc(100vw - 100px);
-    margin: 0 auto;
-  }
+.it_input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.it_input textarea {
+  max-height: 200px;
+}
+
+.it_input .it_input_field {
+  z-index: 200;
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  caret-color: #fff;
+  color: #fff;
+}
+
+.it_input .it_input_field:focus + .it_input_border {
+  width: 100%;
+}
+
+.it_input label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  z-index: 100;
+}
+
+.it_input .it_input_border {
+  z-index: 300;
+  width: 0;
+  height: 3px;
+  background-color: #FF4D5A;
+  transform: translateY(-2px);
+  transition: all 0.5s;
+}
+
+.container {
+  width: calc(100vw - 50px);
+  max-width: calc(100vw - 50px);
+  margin: 0 auto;
 }
 

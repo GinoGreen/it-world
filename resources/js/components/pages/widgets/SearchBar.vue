@@ -9,13 +9,12 @@
                <input type="text" 
                   placeholder="Ricerca..."
                   v-model="stringSearched"
-                  @keypress.enter="sendSearch"
                   @keypress="preventTyping"
                >
             </div>
 
             <!-- search-button -->
-            <router-link :to="{name: 'advanced_search', params:{category: this.stringSearched}}" >
+            <router-link :to="{name: 'advanced_search', params:{job_role: this.stringSearched}}" >
       
                <div class="it-td" id="it-search-right">
                    <button type="submit">
@@ -47,10 +46,6 @@ export default {
       preventTyping(event) {
 
       },
-
-      sendSearch() {
-         this.$emit('searchInit', this.stringSearched.trim());
-      }
    },
 }
 
