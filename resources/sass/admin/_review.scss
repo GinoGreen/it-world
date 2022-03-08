@@ -1,19 +1,13 @@
-.white-wrap-rvu{
-   // background-color: #fff;
-   height: calc(100vh - 95px);
-   padding: 20px;
-   border-radius: 30px;
+.it-page-title{
+   display: flex;
+   justify-content: center;
+   color: white;
+}
 
-   .circle-avatar-rvu{
-      margin-left: 30px;
-      width: 100px;
-      height: 100px;
-      background-color: $primary_color;
-      border-radius: 50%;
-   }
-   .wrap-secondary-rvu{
+.it-reviews-wrapper{
+   .it-reviews-box{
       background: rgba(255, 255, 255, 0.16) !important;
-      border-radius: 16px !important;
+      border-radius: 5px !important;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
       backdrop-filter: blur(3.4px) !important;
       -webkit-backdrop-filter: blur(3.4px) !important;
@@ -22,6 +16,48 @@
       padding: 20px;
       color: white;
       border-radius: 30px;
+
+      .it-r-top{
+         display: flex;
+         margin-bottom: 10px;
+         
+         .it-r-title{
+            width: 50%;
+            font-size: 20px;
+            color: $primary_color;
+         }
+
+         .it-r-vote{
+            width: 50%;
+            font-size: 14px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+            .star i{
+               color: $primary_color;
+               margin: 0 2px;
+            }
+         }
+      }
+
+      
+      .it-r-bottom{         
+         .it-r-description{
+            font-size: 14px;
+            border-top: 2px solid #FF4D5A;
+            margin-bottom: 15px;
+         }
+
+         .it-r-date{
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-style: italic;
+            text-align: right;
+         }
+      }
+
    }
 
 }

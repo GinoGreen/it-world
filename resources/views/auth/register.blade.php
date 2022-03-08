@@ -82,7 +82,22 @@
                             </p>
                             @foreach ($job_roles as $job_role)
                             <div class="it-job-role">
-                                <input type="checkbox"
+                                <label class="it-remember" for="job_role{{ $job_role->id }}">
+                                    <input 
+                                        type="checkbox" 
+                                        class="it_input_checkbox input_checkbox" 
+                                        name="job_roles[]" 
+                                        id="job_role{{ $job_role->id }}"
+                                        @if (in_array($job_role->id, old('job_roles', [])))
+                                            checked
+                                        @endif
+                                    >
+                                    <span class="it_checkmark"></span>
+                                    {{-- {{ __('Remember Me') }} --}}
+                                    {{ $job_role->name }}
+                                </label>
+
+                                {{-- <input type="checkbox"
                                     class="it_input_checkbox"
                                     id="job_role{{ $job_role->id }}"
                                     name="job_roles[]"
@@ -91,16 +106,14 @@
                                         checked
                                     @endif
                                 >
-                                
                                 <label
                                     for="job_role{{ $job_role->id }}"
-                                >{{ $job_role->name }}</label>
+                                >{{ $job_role->name }}</label> --}}
                             </div>
                             @endforeach
                         </div>
 
                         <div class="it_input_selection it-select-wrapper">
-                            {{-- <label for="region" class="it-select-label">Locazione Ufficio</label> --}}
 
                             <select
                                 name="region" 
@@ -126,7 +139,6 @@
                         </div>
 
                         <div class="it_input_selection it-select-wrapper">
-                            {{-- <label for="level">Livello di esperienza</label> --}}
 
                             <select
                                 name="level" 

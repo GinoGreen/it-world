@@ -18,21 +18,15 @@
    <div class="row">
 
       <div class="col-3 wrap-sx">
-         <div class="wrap-avatar-edit"></div>
-         <div class="select-path">
-            <label 
-               for="avatar_path" 
-               class="form-label"
-            >Immagine profilo</label>
-            <input 
-               type="file"
-               class="form-control"
-               id="avatar_path"
-               name="avatar_path"
-            >
+         <div class="wrap-avatar">
+            @if (Auth::user()->avatar_path)
+               <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
+            @else
+               <img src="{{ asset('img/slider/undraw_profile_pic_ic-5-t.svg') }}" alt="avatar">
+            @endif
          </div>
-         <h5>Nome Utente</h5>
-         <h6>Posizione lavorativa</h6>
+         <h5>{{ Auth::user()->name }} {{ Auth::user()->surname }}</h5>
+         <h6>{{ Auth::user()->job_roles[0]->name }}</h6>
       </div>
 
       <div class="col-8 wrap-secondary-edit">
@@ -42,91 +36,111 @@
          <form action="{{ route('admin.update', $profile) }}" method="POST" enctype="multipart/form-data">
          @method('PUT')
          @csrf
-            <div class="mb-2">
-               <label 
-                  for="name" 
-                  class="form-label"
-               >Nome</label>
+            <div class="it_input it_field">
                <input 
                   type="text"
-                  class="form-control"
+                  class="it_input_field
+                  @error('name') 
+                     is-invalid 
+                  @enderror" 
                   id="name"
                   name="name"
                   value="{{ old('name', $profile->name) }}"
                >
+               <label for="name">Nome</label>
+
+               <div class="it_input_border outer">
+                  <div class="it_input_border inner"></div>
+              </div>
             </div>
 
-            <div>
-               <label 
-                  for="surname" 
-                  class="form-label"
-               >Cognome</label>
+            <div class="it_input it_field">
                <input 
                   type="text"
-                  class="form-control"
+                  class="it_input_field
+                  @error('surname') 
+                     is-invalid 
+                  @enderror" 
                   id="surname"
                   name="surname"
                   value="{{ old('surname', $profile->surname) }}"
                >
+
+               <label for="surname">Cognome</label>
+
+               <div class="it_input_border outer">
+                  <div class="it_input_border inner"></div>
+               </div>
+
             </div>
 
-            <div class="mb-2">
-               <label 
-                  for="email" 
-                  class="form-label"
-               >Email address</label>
+            <div class="it_input it_field">
                <input 
                   type="email"
-                  class="form-control"
+                  class="it_input_field
+                  @error('email') 
+                     is-invalid 
+                  @enderror" 
                   id="email"
                   name="email"
                   value="{{ old('email', $profile->email) }}"
                >
+               <label for="email">Email address</label>
+
+               <div class="it_input_border outer">
+                  <div class="it_input_border inner"></div>
+              </div>
+
             </div>
 
-            <div class="form-group">
-               <div>
-                  @foreach ($job_roles as $job_role)
+            <div class="it-job-role-wrapper it_input_selection px-5">
+               <p class="it-job-role-title">
+                   In cosa sei specializzato?
+               </p>
+               @foreach ($job_roles as $job_role)
+               <div class="it-job-role">
+                  <input type="checkbox"
+                     class="it_input_checkbox"
+                     id="job_role{{ $job_role->id }}"
+                     name="job_roles[]"
+                     value="{{ $job_role->id }}"
+                     @if (!$errors->any() && $profile->job_roles->contains($job_role->id))
+                        checked
+                     @elseif ($errors->any() && in_array($job_role->id, old('job_roles', [])))
+                        checked
+                     @endif
+                  >
                   
-                     <div class="wrap-job">
-                        <input type="checkbox"
-                           class="form-check-input"
-                           id="job_role{{ $job_role->id }}"
-                           name="job_roles[]"
-                           value="{{ $job_role->id }}"
-      
-                           @if (!$errors->any() && $profile->job_roles->contains($job_role->id))
-                                 checked
-                           @elseif ($errors->any() && in_array($job_role->id, old('job_roles', [])))
-                                 checked
-                           @endif
-                        >
-                     
-                        <label class="form-check-label mr-5"
-                           for="job_role{{ $job_role->id }}"
-                        >{{ $job_role->name }}</label>
-                     </div>
-                     
-                  @endforeach
+                  <label
+                     for="job_role{{ $job_role->id }}"
+                  >{{ $job_role->name }}</label>
                </div>
+               @endforeach
            </div>
+               
+                  
 
-            <div class="mb-2">
-               <label 
-                  for="region" 
-                  class="form-label"
-               >Ufficio</label>
-               <select class="form-control" name="region" id="region">
-                  <option value=""></option>
+            <div class="it_input_selection it-select-wrapper">
+
+               <select class="it_input_select it-select-select" 
+                  name="region" 
+                  id="region"
+               >
+                  <option value="">Da dove lavori?</option>
                   @foreach ($regions as $region)
                      <option 
-                           value="{{ $region }}"
-                           @if ($region === old('region', $profile->region))
-                               selected
-                           @endif
+                        class="it-select-option"
+                        value="{{ $region }}"
+                        @if ($region === old('region', $profile->region))
+                              selected
+                        @endif
                      >{{ $region }}</option>
                   @endforeach
                </select>
+               <div class="it-select-icon">
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+               </div>
+               <div class="it-select-border"></div>
             </div>
 
             <div class="mb-2">
@@ -144,41 +158,50 @@
 
             <div class="mb-2">
                <label 
-                  for="email" 
-                  class="form-label d-block"
-               >Livello di esperienza</label>
-
-               @foreach ($levels as $level)    
-                  <div class="form-check d-inline-block">
-                     <input 
-                        class="form-check-input"
-                        type="radio" 
-                        name="level" 
-                        id="{{ $level }}"
-                        @if ($level === old('level', $profile->level))
-                            checked
-                        @endif
-                        value="{{ $level }}"
-                     >
-                     <label class="form-check-label" for="level">
-                        {{ $level }}
-                     </label>
-                  </div>
-               @endforeach
+                  for="avatar_path" 
+                  class="form-label"
+               >Avatar</label>
+               <input 
+                  type="file"
+                  class="form-control"
+                  id="avatar_path"
+                  name="avatar_path"
+               >
             </div>
 
-            <div class="mb-3">
-               <label 
-                  for="description" 
-                  class="form-label"
-               >Presentati</label>
+            <div class="it_input_selection it-select-wrapper">
+
+               <select class="it_input_select it-select-select" 
+                  name="region" 
+                  id="region"
+               >
+                  <option value="">Seleziona esperienza</option>
+                  @foreach ($levels as $level)
+                     <option 
+                        class="it-select-option"
+                        value="{{ $level }}"
+                        @if ($level === old('level', $profile->level))
+                              selected
+                        @endif
+                     >{{ $level }}</option>
+                  @endforeach
+               </select>
+               <div class="it-select-icon">
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+               </div>
+               <div class="it-select-border"></div>
+            </div>
+
+            <div class="it_input it_textarea">
                
                <textarea name="description" 
-                  class="form-control"
+                  class="it_input_field"
                   id="description" 
                   cols="30" 
                   rows="10"
                >{{ old('description', $profile->description) }}</textarea>
+               
+               <label for="description">Presentati</label>
             </div>
 
             <div class="it-btn">

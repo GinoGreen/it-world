@@ -2084,24 +2084,22 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('http://127.0.0.1:8000/api/profile/').then(function (res) {
-        _this.allUsers = res.data;
-        console.log('all users: ', res.data);
+        _this.allUsers = res.data; // console.log('all users: ', res.data);
       });
     },
     getJobRoles: function getJobRoles() {
       var _this2 = this;
 
       axios.get(this.apiUrl).then(function (res) {
-        _this2.allJobRoles = res.data;
-        console.log('all roles: ', res.data);
+        _this2.allJobRoles = res.data; // console.log('all roles: ', res.data);
       });
     },
     getApi: function getApi() {
       var _this3 = this;
 
       axios.get(this.apiUrl + this.$route.params.job_role).then(function (res) {
-        _this3.jobRoles = res.data;
-        console.log(res.data); // profiles
+        _this3.jobRoles = res.data; // console.log(res.data);
+        // profiles
 
         _this3.jobRoles.forEach(function (jobRole) {
           if (jobRole.users.length !== 0) {
@@ -2120,13 +2118,14 @@ __webpack_require__.r(__webpack_exports__);
             });
           }
         });
+
+        console.log(_this3.profiles);
       });
     },
     activeJobRole: function activeJobRole(jobRole) {
       for (var i = 0; i < this.jobRoles.length; i++) {
-        console.log('ricercati: ', this.jobRoles[i]);
-        console.log('attuale: ', jobRole);
-
+        // console.log('ricercati: ', this.jobRoles[i]);
+        // console.log('attuale: ', jobRole);
         if (jobRole.id === this.jobRoles[i].id) {
           return 'active';
         }

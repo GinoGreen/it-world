@@ -10,7 +10,6 @@
 
 //importing all parts
 @import './header';
-@import './dashboard';
 @import './show';
 @import './edit';
 @import './login';
@@ -45,6 +44,9 @@ main.back-end-main {
    margin-top: 20px;
 
    button{
+      font-size: 1.2em;
+      font-weight: 600;
+      min-width: 200px;
       background-color: $primary_color;
       outline: none;
       border: none;

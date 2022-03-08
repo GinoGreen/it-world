@@ -112,14 +112,14 @@ export default {
          axios.get('http://127.0.0.1:8000/api/profile/')
             .then(res => {
                this.allUsers = res.data;
-               console.log('all users: ', res.data);
+               // console.log('all users: ', res.data);
             });
       },
       getJobRoles(){
          axios.get(this.apiUrl)
             .then(res => {
                this.allJobRoles = res.data;
-               console.log('all roles: ', res.data);
+               // console.log('all roles: ', res.data);
             });
       },
       getApi(){
@@ -127,7 +127,7 @@ export default {
             .then(res => {
             
                this.jobRoles = res.data;
-               console.log(res.data);
+               // console.log(res.data);
                
                // profiles
 
@@ -149,13 +149,15 @@ export default {
                      });
                   }
                });
+
+               console.log(this.profiles);
          });
       },
 
       activeJobRole(jobRole){
          for(let i = 0; i < this.jobRoles.length; i++){
-            console.log('ricercati: ', this.jobRoles[i]);
-            console.log('attuale: ', jobRole);
+            // console.log('ricercati: ', this.jobRoles[i]);
+            // console.log('attuale: ', jobRole);
             if(jobRole.id === this.jobRoles[i].id){
                return 'active'
             }
