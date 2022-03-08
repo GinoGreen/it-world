@@ -1,4 +1,5 @@
 // Fonts
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // importing generals style
@@ -27,6 +28,7 @@
 @import '~font-awesome/scss/font-awesome';
 
 body {
+   font-family: 'Syne', sans-serif;
    background-image: linear-gradient(#072142, #020B16);
 }
 
