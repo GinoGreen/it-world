@@ -42,12 +42,16 @@
         <div class="line-horizontal"></div>
     
         <div class="it-dashboard-bottom">
-            <div class="it-dash-bottom-left">
-                <h5 class="it-title-small">Le tue ultime recensioni</h5>
-                @foreach ($reviews as $review)
-                    <p>{{$review->description}}</p>
-                @endforeach             
-            </div>
+            @if ($reviews)
+                <div class="it-dash-bottom-left">
+                    <h5 class="it-title-small">Le tue ultime recensioni</h5>
+                    @foreach ($reviews as $review)
+                        <p>{{$review->description}}</p>
+                    @endforeach             
+                </div>
+            @else
+                <p>Non c'è niente da visualizzare</p>
+            @endif
 
             <div class="it-dash-bottom-right">
                 <h5 class="it-title-small">I tuoi ultimi messaggi</h5>
