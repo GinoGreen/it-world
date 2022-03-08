@@ -230,24 +230,169 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   padding: 30px;
   color: white;
   height: 82vh;
-  overflow: scroll;
+  overflow: auto;
 }
 
-.white-wrap-edit .wrap-secondary-edit form .form-group {
+.white-wrap-edit .wrap-secondary-edit form .it_input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 0;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_textarea textarea.it_input_field {
+  max-height: 200px;
+  border: 3px solid #fff;
+  transition: all 0.3s;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_textarea textarea.it_input_field:focus + label {
+  bottom: 100%;
+  font-size: 1.4em;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_textarea textarea.it_input_field:focus {
+  opacity: 1;
+  height: 200px;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field {
+  position: relative;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_field {
+  z-index: 200;
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  caret-color: #FF4D5A;
+  color: #fff;
+  opacity: 0;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_field:focus ~ .it_input_border > .inner {
+  width: 100%;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_field:focus ~ .it_input_border.outer {
+  background-color: transparent;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_field:focus + label {
+  bottom: 100%;
+  font-size: 1.4em;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_field:focus {
+  opacity: 1;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-size: 0.9em;
+  z-index: 100;
+  transition: all 0.1s;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_border {
+  z-index: 300;
+  height: 3px;
+  transition: all 0.5s;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_border.inner {
+  background-color: #FF4D5A;
+  width: 0;
+  z-index: 300;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input.it_field .it_input_border.outer {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it_input_selection {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.white-wrap-edit .wrap-secondary-edit form label,
+.white-wrap-edit .wrap-secondary-edit form p {
+  color: #fff;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-label {
+  position: absolute;
+  bottom: 50px;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-select {
+  height: 50px;
+  width: 100%;
+  font-size: 100%;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-select:hover,
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-select:focus {
+  color: #FF4D5A;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 30px;
+  height: 36px;
+  pointer-events: none;
+  padding-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-icon i {
+  color: #fff;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-border {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-select:hover ~ .it-select-icon i,
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-select:focus ~ .it-select-icon i {
+  color: #FF4D5A;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-select:hover ~ .it-select-border,
+.white-wrap-edit .wrap-secondary-edit form .it-select-wrapper .it-select-select:focus ~ .it-select-border {
+  background-color: #FF4D5A;
+}
+
+.white-wrap-edit .wrap-secondary-edit form .it-btn {
   display: flex;
   justify-content: center;
-  padding: 5px 20px;
-}
-
-.white-wrap-edit .wrap-secondary-edit form .form-group .wrap-job {
-  width: 310px;
-  color: white;
-  display: inline-block;
-}
-
-.white-wrap-edit .wrap-secondary-edit .it-btn button {
-  background-color: #FF4D5A;
-  border: 1px solid white;
 }
 
 .white-wrap-edit .wrap-sx {
@@ -257,29 +402,16 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   align-items: center;
 }
 
-.white-wrap-edit .wrap-sx .select-path {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 5px 0px 0px 0px;
-}
-
-.white-wrap-edit .wrap-sx .select-path input {
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(3.4px) !important;
-  -webkit-backdrop-filter: blur(3.4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
-  font-size: 10px;
-  color: white;
-}
-
-.white-wrap-edit .wrap-sx .wrap-avatar-edit {
+.white-wrap-edit .wrap-sx .wrap-avatar {
   width: 250px;
   height: 250px;
   border-radius: 50%;
   background-color: #FF4D5A;
+  overflow: hidden;
+}
+
+.white-wrap-edit .wrap-sx .wrap-avatar img {
+  width: 100%;
 }
 
 .it-card {
@@ -612,23 +744,15 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.white-wrap-rvu {
-  height: calc(100vh - 95px);
-  padding: 20px;
-  border-radius: 30px;
+.it-page-title {
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
-.white-wrap-rvu .circle-avatar-rvu {
-  margin-left: 30px;
-  width: 100px;
-  height: 100px;
-  background-color: #FF4D5A;
-  border-radius: 50%;
-}
-
-.white-wrap-rvu .wrap-secondary-rvu {
+.it-reviews-wrapper .it-reviews-box {
   background: rgba(255, 255, 255, 0.16) !important;
-  border-radius: 16px !important;
+  border-radius: 5px !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(3.4px) !important;
   -webkit-backdrop-filter: blur(3.4px) !important;
@@ -637,6 +761,44 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   padding: 20px;
   color: white;
   border-radius: 30px;
+}
+
+.it-reviews-wrapper .it-reviews-box .it-r-top {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.it-reviews-wrapper .it-reviews-box .it-r-top .it-r-title {
+  width: 50%;
+  font-size: 20px;
+  color: #FF4D5A;
+}
+
+.it-reviews-wrapper .it-reviews-box .it-r-top .it-r-vote {
+  width: 50%;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.it-reviews-wrapper .it-reviews-box .it-r-top .it-r-vote .star i {
+  color: #FF4D5A;
+  margin: 0 2px;
+}
+
+.it-reviews-wrapper .it-reviews-box .it-r-bottom .it-r-description {
+  font-size: 14px;
+  border-top: 2px solid #FF4D5A;
+  margin-bottom: 15px;
+}
+
+.it-reviews-wrapper .it-reviews-box .it-r-bottom .it-r-date {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-style: italic;
+  text-align: right;
 }
 
 .container h5 {
@@ -14793,6 +14955,9 @@ main.back-end-main {
 }
 
 .it-btn button {
+  font-size: 1.2em;
+  font-weight: 600;
+  min-width: 200px;
   background-color: #FF4D5A;
   outline: none;
   border: none;

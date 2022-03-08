@@ -100,7 +100,6 @@
                         </div>
 
                         <div class="it_input_selection it-select-wrapper">
-                            {{-- <label for="region" class="it-select-label">Locazione Ufficio</label> --}}
 
                             <select
                                 name="region" 
@@ -126,7 +125,6 @@
                         </div>
 
                         <div class="it_input_selection it-select-wrapper">
-                            {{-- <label for="level">Livello di esperienza</label> --}}
 
                             <select
                                 name="level" 
