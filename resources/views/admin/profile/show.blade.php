@@ -74,8 +74,16 @@
  
             <div class="contaier-reviews">
  
+<<<<<<< HEAD
                @foreach (Auth::user()->reviews as $review)
                <div class="wrap-review duble-glass">
+=======
+               <div 
+                  class="wrap-review duble-glass"
+                  
+            
+               >
+>>>>>>> 135cf866a773dc7a963ea395f4128c22bd938963
  
                   <h6>{{ $review->title }}</h6>
                   <p>{{ $review->description }}</p>
