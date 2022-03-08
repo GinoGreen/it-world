@@ -1,11 +1,11 @@
 
-.card{
-   background: rgba(255, 255, 255, 0.16) !important;
-   border-radius: 16px !important;
-   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-   backdrop-filter: blur(3.4px) !important;
-   -webkit-backdrop-filter: blur(3.4px) !important;
-   border: 1px solid rgba(255, 255, 255, 0.28) !important;
+.it-card{
+   background: rgba(255, 255, 255, 0.16);
+   border-radius: 16px;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(3.4px);
+   -webkit-backdrop-filter: blur(3.4px);
+   border: 1px solid rgba(255, 255, 255, 0.28);
 
    .card-header{
       text-align: center;
@@ -15,62 +15,126 @@
    }
 
    .card-body{
-      .row{
-         justify-content: center;
-      }
-
-      input{
-         border-left: none;
+      
+      .it_input_login {
+         display: flex;
+         flex-wrap: wrap;
+         width: 100%;
+         height: 50px;
+         font-size: 1.3em;
          caret-color: $primary_color;
-      }
+         
 
-      .it-mail-wrapper, .it-password-wrapper{
-         .mail-icon, .password-icon{
-            width: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #707070;
-            font-size: 25px;
+         margin-bottom: 30px;
+
+         &:focus-within .it_icon_login {
+            width: 13%;
+            font-size: 1.3em;
+         }
+         &:focus-within .it_input_field {
+            width: 86%;
+         }
+
+
+         .it_icon_login {
             background-color: #fff;
-            border-radius: 20px 0px 0px 20px;
+            width: 24%;
+            height: 100%;
+            font-size: 2em;
+            background-color: rgb(209, 209, 209);
+            color: #686868;
+            display: grid;
+            place-items: center;
+            transition: all .3s;
          }
 
-         .col-md-6{
-            padding-left: 0px;
-
-            .it-mail, .it-password{
-               border-radius: 0px 20px 20px 0px !important;
-            }
+         .it_input_field {
+            border: 0;
+            width: 75%;
+            height: 100%;
+            transition: all .3s;
+            padding-left: 10px;
          }
+
       }
 
-      .it-remember{
-         text-align: center;
-
-         label{
-            color: #fff;
-            font-weight: 300;
+      .it-remember {
+         display: flex;
+         justify-content: center;
+         position: relative;
+         margin-bottom: 12px;
+         cursor: pointer;
+         font-size: 22px;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         -ms-user-select: none;
+         user-select: none;
+         display: flex;
+         align-items: center;
+         
+         &:hover input ~ .it_checkmark {
+            background-color: #ccc;
          }
-      }
+         & input:checked ~ .it_checkmark {
+            background-color: $primary_color;
+         }
+         .it_checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+         }
+         & input:checked ~ .it_checkmark:after {
+            display: block;
+         }
 
-      .it-button-wrapper{
-         .it-btn-login{
-            width: 200px;
-            background-color: #c53a43;
-            border: 1px solid #fff;
-            border-radius: 30px;
+         .it_checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 8px;
+            height: 16px;
+            border: solid $secondary_color;
+            border-width: 0 4px 4px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
             
-            &:hover{
-               background-color: $primary_color;
-            }
-         }
+          }
 
-         a{
-            font-size: 12px;
-            font-weight: 300;
+         .input_checkbox {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+         }
+         .it_checkmark {
+            position: relative;
+            margin-right: 5px;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+         }
+         
+      }
+
+      .it-btn-login{
+         margin-top: 20px;
+      
+         button{
+            background-color: $primary_color;
+            width: 40%;
+            font-size: 1.2em;
+            outline: none;
+            border: none;
             color: #fff;
-            text-decoration: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: all .4s;
+            cursor: pointer;
+      
+            &:hover{
+               transform: translateY(-3px);
+            }
          }
       }
    }

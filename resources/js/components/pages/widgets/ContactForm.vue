@@ -3,7 +3,7 @@
 
 <form id="contact_us">
 
-   <div class="it_input"
+   <div class="it_input_contact_us"
       v-for="(field, index) in formFields"
       :key="'field' + index"
    >
@@ -130,7 +130,55 @@ export default {
       margin-top: 40px;
       width: 70%;
 
-      
+      .it_input_contact_us {
+         display: flex;
+         flex-direction: column;
+         margin-top: 70px;
+         margin-bottom: 0;
+
+            position: relative;
+         
+         
+            textarea {
+               max-height: 200px;
+            }
+            .it_input_field {
+               z-index: 200;
+               display: block;
+               height: 40px;
+               width: 100%;
+               background-color: transparent;
+               border: 0;
+               border-bottom: 2px solid #fff;
+               caret-color: $primary_color;
+               color: #fff;
+         
+               &:focus ~ .it_input_border {
+                  width: 100%;
+               }
+               
+            }
+            label {
+               position: absolute;
+               left: 0;
+               bottom: 10px;
+               font-size: .9em;
+               z-index: 100;
+               transition: all .1s;
+            }
+            .it_input_border {
+               z-index: 300;
+               width: 0;
+               height: 3px;
+               transform: translateY(-3px);
+               transition: all .5s;
+            }
+
+      }
+
+      label, p {
+         color: #fff;
+      }
    }
 
 </style>

@@ -15,69 +15,75 @@
 
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Registrati per offrire i tuoi servizi</div>
+            <div class="it_card">
+                <div class="card-header">Unisciti a IT World</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Nome</label>
+                        <div class="it_input it_field">
 
-                            <div class="col-md-6">
-                                <input id="name"
-                                    type="text" 
-                                    class="form-control 
-                                    @error('name') 
-                                        is-invalid 
-                                    @enderror" 
-                                    name="name" 
-                                    value="{{ old('name') }}" 
-                                    autofocus
-                                >
+                            <input id="name"
+                                type="text" 
+                                class="it_input_field
+                                @error('name') 
+                                    is-invalid 
+                                @enderror" 
+                                name="name" 
+                                value="{{ old('name') }}" 
+                                autofocus
+                            >
+                            <label for="name">Nome</label>
+
+                            <div class="it_input_border outer">
+                                <div class="it_input_border inner"></div>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Cognome</label>
+                        <div class="it_input it_field">
 
-                            <div class="col-md-6">
-                                <input id="surname"
-                                    type="text" 
-                                    class="form-control 
-                                    @error('surname') 
-                                        is-invalid 
-                                    @enderror" 
-                                    name="surname" 
-                                    value="{{ old('surname') }}"
-                                >
+                            <input id="surname"
+                                type="text" 
+                                class="it_input_field 
+                                @error('surname') 
+                                    is-invalid 
+                                @enderror" 
+                                name="surname" 
+                                value="{{ old('surname') }}"
+                            >
+                            <label for="surname">Cognome</label>
+
+                            <div class="it_input_border outer">
+                                <div class="it_input_border inner"></div>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                        <div class="it_input it_field">
+                            
+                            <input id="email"
+                                type="email" 
+                                class="it_input_field
+                                @error('email') 
+                                    is-invalid 
+                                @enderror" 
+                                name="email" 
+                                value="{{ old('email') }}"
+                            >
+                            <label for="email">Email</label>
 
-                            <div class="col-md-6">
-                                <input id="email"
-                                    type="email" 
-                                    class="form-control 
-                                    @error('email') 
-                                        is-invalid 
-                                    @enderror" 
-                                    name="email" 
-                                    value="{{ old('email') }}"
-                                >
+                            <div class="it_input_border outer">
+                                <div class="it_input_border inner"></div>
                             </div>
                         </div>
 
-                        <p class="it-job-role-title col-md-12 text-light">
-                            In cosa sei specializzato?
-                        </p>
-                        <div class="it-job-role-wrapper form-group row px-5">
+                        <div class="it-job-role-wrapper it_input_selection px-5">
+                            <p class="it-job-role-title">
+                                In cosa sei specializzato?
+                            </p>
                             @foreach ($job_roles as $job_role)
-                            <div class="it-job-role col-3">
+                            <div class="it-job-role">
                                 <input type="checkbox"
-                                    class="form-check-input"
+                                    class="it_input_checkbox"
                                     id="job_role{{ $job_role->id }}"
                                     name="job_roles[]"
                                     value="{{ $job_role->id }}"
@@ -86,96 +92,102 @@
                                     @endif
                                 >
                                 
-                                <label class="form-check-label mr-5"
+                                <label
                                     for="job_role{{ $job_role->id }}"
                                 >{{ $job_role->name }}</label>
                             </div>
                             @endforeach
                         </div>
 
-                        <div class="form-group row">
-                            <label for="region" class="col-md-4 col-form-label text-md-right">Locazione Ufficio</label>
+                        <div class="it_input_selection it-select-wrapper">
+                            {{-- <label for="region" class="it-select-label">Locazione Ufficio</label> --}}
 
-                            <div class="col-md-6">
-                                <select
-                                    name="region" 
-                                    id="region"
-                                    class="form-control"
-                                >
-                                    <option value="">Da dove lavori?</option>
-    
-                                    @foreach ($regions as $region)
-                                        <option
-                                            @if($region == old('region'))
-                                                selected
-                                            @endif
-                                            value="{{ $region }}"
-                                        >{{ $region }}</option>
-                                    @endforeach
-                                </select>
+                            <select
+                                name="region" 
+                                id="region"
+                                class="it_input_select it-select-select"
+                            >
+                                <option value="">Da dove lavori?</option>
+
+                                @foreach ($regions as $region)
+                                    <option
+                                        class="it-select-option"
+                                        @if($region == old('region'))
+                                            selected
+                                        @endif
+                                        value="{{ $region }}"
+                                    >{{ $region }}</option>
+                                @endforeach
+                            </select>
+                            <div class="it-select-icon">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="it-select-border"></div>
+                        </div>
+
+                        <div class="it_input_selection it-select-wrapper">
+                            {{-- <label for="level">Livello di esperienza</label> --}}
+
+                            <select
+                                name="level" 
+                                id="level"
+                                class="it_input_select it-select-select"
+                            >
+                                <option value="">Come ti qualifichi?</option>
+
+                                @foreach ($levels as $level)
+                                    <option class="it-select-option"
+                                        @if($level == old('level'))
+                                            selected
+                                        @endif
+                                        value="{{ $level }}"
+                                    >{{ $level }}</option>
+                                @endforeach
+                            </select>
+                            <div class="it-select-icon">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="it-select-border"></div>
+                        </div>
+
+                        <div class="it_input it_field">
+                            <input id="password" 
+                                type="password" 
+                                class="it_input_field 
+                                @error('password') 
+                                    is-invalid 
+                                @enderror" 
+                                name="password" 
+                                required 
+                                autocomplete="new-password"
+                            >
+                            <label for="password">Password</label>
+
+                            <div class="it_input_border outer">
+                                <div class="it_input_border inner"></div>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="level" class="col-md-4 col-form-label text-md-right">Livello di esperienza</label>
+                        <div class="it_input it_field">
+                            
+                            <input id="password-confirm" 
+                                type="password" 
+                                class="it_input_field" 
+                                name="password_confirmation" 
+                                required autocomplete="new-password"
+                            >
+                            <label for="password-confirm">Conferma password</label>
 
-                            <div class="col-md-6">
-                                <select
-                                    name="level" 
-                                    id="level"
-                                    class="form-control"
-                                >
-                                    <option value="">Come ti qualifichi?</option>
-    
-                                    @foreach ($levels as $level)
-                                        <option
-                                            @if($level == old('level'))
-                                                selected
-                                            @endif
-                                            value="{{ $level }}"
-                                        >{{ $level }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" 
-                                    type="password" 
-                                    class="form-control 
-                                    @error('password') 
-                                        is-invalid 
-                                    @enderror" 
-                                    name="password" 
-                                    required 
-                                    autocomplete="new-password"
-                                >
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Conferma password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" 
-                                    type="password" 
-                                    class="form-control" 
-                                    name="password_confirmation" 
-                                    required autocomplete="new-password"
-                                >
+                            <div class="it_input_border outer">
+                                <div class="it_input_border inner"></div>
                             </div>
                         </div>
 
                         {{-- submit --}}
-                        <div class="form-group row mb-0">
-                            <div class="it-button-register col-md-12">
-                                <button type="submit" class="btn btn-primary">
-                                    Registrati
-                                </button>
-                            </div>
+                        <div class="it-btn">
+                            <button type="submit">
+                                Registrati
+                            </button>
                         </div>
                     </form>
                 </div>

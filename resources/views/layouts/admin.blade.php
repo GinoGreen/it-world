@@ -25,7 +25,7 @@
         
         @include('admin.partials.header')
 
-        <main>
+        <main class="back-end-main">
             <div class="container-fluid">
                 <div class="row">
                     @auth

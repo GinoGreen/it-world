@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;
+@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;
 
-500;600;700;800&display=swap);@charset "UTF-8";
+500;600;700;800&display=swap);@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -59,25 +59,26 @@ a:hover {
 }
 
 .it-btn button {
-  background-color: #072142;
+  background-color: #FF4D5A;
   outline: none;
   border: none;
   color: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  transition: all 0.3s ease;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.4s;
   cursor: pointer;
 }
 
 .it-btn button:hover {
-  background: #FF4D5A;
+  transform: translateY(-3px);
 }
 
 .it_input {
   display: flex;
   flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 0;
   position: relative;
-  margin-bottom: 50px;
 }
 
 .it_input textarea {
@@ -92,11 +93,12 @@ a:hover {
   background-color: transparent;
   border: 0;
   border-bottom: 2px solid #fff;
-  caret-color: #fff;
+  caret-color: #FF4D5A;
   color: #fff;
+  opacity: 0;
 }
 
-.it_input .it_input_field:focus + .it_input_border {
+.it_input .it_input_field:focus ~ .it_input_border {
   width: 100%;
 }
 
@@ -104,20 +106,39 @@ a:hover {
   position: absolute;
   left: 0;
   bottom: 10px;
+  font-size: 0.9em;
   z-index: 100;
+  transition: all 0.1s;
 }
 
 .it_input .it_input_border {
   z-index: 300;
   width: 0;
   height: 3px;
-  background-color: #FF4D5A;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   transition: all 0.5s;
 }
 
+label,
+p {
+  color: #fff;
+}
+
+header {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 header .it-dashboard-header {
-  background-color: #072142;
+  background-color: transparent;
+}
+
+header .it-dashboard-header a {
+  color: #fff;
 }
 
 header .it-dashboard-header .it-logo {
@@ -161,11 +182,6 @@ header .it-dashboard-header .it-logo {
 
 .col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item a span {
   color: white;
-}
-
-main {
-  background-color: #072142;
-  height: calc(100vh - 74px);
 }
 
 main .white-wrapper-show {
@@ -278,152 +294,305 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   background-color: #FF4D5A;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(3.4px) !important;
-  -webkit-backdrop-filter: blur(3.4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+.it-card {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.card .card-header {
+.it-card .card-header {
   text-align: center;
   font-size: 20px;
   font-weight: 800;
   color: white;
 }
 
-.card .card-body .row {
-  justify-content: center;
-}
-
-.card .card-body input {
-  border-left: none;
-  caret-color: #FF4D5A;
-}
-
-.card .card-body .it-mail-wrapper .mail-icon,
-.card .card-body .it-mail-wrapper .password-icon,
-.card .card-body .it-password-wrapper .mail-icon,
-.card .card-body .it-password-wrapper .password-icon {
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #707070;
-  font-size: 25px;
-  background-color: #fff;
-  border-radius: 20px 0px 0px 20px;
-}
-
-.card .card-body .it-mail-wrapper .col-md-6,
-.card .card-body .it-password-wrapper .col-md-6 {
-  padding-left: 0px;
-}
-
-.card .card-body .it-mail-wrapper .col-md-6 .it-mail,
-.card .card-body .it-mail-wrapper .col-md-6 .it-password,
-.card .card-body .it-password-wrapper .col-md-6 .it-mail,
-.card .card-body .it-password-wrapper .col-md-6 .it-password {
-  border-radius: 0px 20px 20px 0px !important;
-}
-
-.card .card-body .it-remember {
-  text-align: center;
-}
-
-.card .card-body .it-remember label {
-  color: #fff;
-  font-weight: 300;
-}
-
-.card .card-body .it-button-wrapper .it-btn-login {
-  width: 200px;
-  background-color: #c53a43;
-  border: 1px solid #fff;
-  border-radius: 30px;
-}
-
-.card .card-body .it-button-wrapper .it-btn-login:hover {
-  background-color: #FF4D5A;
-}
-
-.card .card-body .it-button-wrapper a {
-  font-size: 12px;
-  font-weight: 300;
-  color: #fff;
-  text-decoration: none;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(3.4px) !important;
-  -webkit-backdrop-filter: blur(3.4px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
-}
-
-.card .card-header {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-}
-
-.card .card-body .row {
-  justify-content: center;
-}
-
-.card .card-body .row label {
-  text-align: left !important;
-  color: #fff;
-}
-
-.card .card-body .row .col-md-6 input {
-  caret-color: #FF4D5A;
-  border-radius: 20px !important;
-}
-
-.card .card-body .row .col-md-6 select {
-  border-radius: 20px 0px 0px 20px !important;
-}
-
-.card .card-body .it-job-role-title {
-  margin: 20px 0px 20px 45px;
-}
-
-.card .card-body .it-job-role-wrapper {
+.it-card .card-body .it_input_login {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: 15px;
+  width: 100%;
+  height: 50px;
+  font-size: 1.3em;
+  caret-color: #FF4D5A;
+  margin-bottom: 30px;
 }
 
-.card .card-body .it-job-role-wrapper .it-job-role {
-  margin: 0px 45px 20px 0px;
+.it-card .card-body .it_input_login:focus-within .it_icon_login {
+  width: 13%;
+  font-size: 1.3em;
 }
 
-.card .card-body .it-job-role-wrapper .it-job-role label {
-  width: 170px;
+.it-card .card-body .it_input_login:focus-within .it_input_field {
+  width: 86%;
 }
 
-.card .card-body .it-button-register {
+.it-card .card-body .it_input_login .it_icon_login {
+  background-color: #fff;
+  width: 24%;
+  height: 100%;
+  font-size: 2em;
+  background-color: #d1d1d1;
+  color: #686868;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s;
+}
+
+.it-card .card-body .it_input_login .it_input_field {
+  border: 0;
+  width: 75%;
+  height: 100%;
+  transition: all 0.3s;
+  padding-left: 10px;
+}
+
+.it-card .card-body .it-remember {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
 }
 
-.card .card-body .it-button-register button {
-  width: 200px;
-  background-color: #c53a43;
-  border: 1px solid #fff;
-  border-radius: 30px;
+.it-card .card-body .it-remember:hover input ~ .it_checkmark {
+  background-color: #ccc;
 }
 
-.card .card-body .it-button-register button:hover {
+.it-card .card-body .it-remember input:checked ~ .it_checkmark {
   background-color: #FF4D5A;
+}
+
+.it-card .card-body .it-remember .it_checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.it-card .card-body .it-remember input:checked ~ .it_checkmark:after {
+  display: block;
+}
+
+.it-card .card-body .it-remember .it_checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 8px;
+  height: 16px;
+  border: solid #072142;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+
+.it-card .card-body .it-remember .input_checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.it-card .card-body .it-remember .it_checkmark {
+  position: relative;
+  margin-right: 5px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.it-card .card-body .it-btn-login {
+  margin-top: 20px;
+}
+
+.it-card .card-body .it-btn-login button {
+  background-color: #FF4D5A;
+  width: 40%;
+  font-size: 1.2em;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.it-card .card-body .it-btn-login button:hover {
+  transform: translateY(-3px);
+}
+
+.it_card {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.it_card .card-header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.it_card .it_input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 0;
+}
+
+.it_card .it_input.it_field {
+  position: relative;
+}
+
+.it_card .it_input.it_field textarea {
+  max-height: 200px;
+}
+
+.it_card .it_input.it_field .it_input_field {
+  z-index: 200;
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  caret-color: #FF4D5A;
+  color: #fff;
+  opacity: 0;
+}
+
+.it_card .it_input.it_field .it_input_field:focus ~ .it_input_border > .inner {
+  width: 100%;
+}
+
+.it_card .it_input.it_field .it_input_field:focus ~ .it_input_border.outer {
+  background-color: transparent;
+}
+
+.it_card .it_input.it_field .it_input_field:focus + label {
+  bottom: 100%;
+  font-size: 1.4em;
+}
+
+.it_card .it_input.it_field .it_input_field:focus {
+  opacity: 1;
+}
+
+.it_card .it_input.it_field label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-size: 0.9em;
+  z-index: 100;
+  transition: all 0.1s;
+}
+
+.it_card .it_input.it_field .it_input_border {
+  z-index: 300;
+  height: 3px;
+  transition: all 0.5s;
+}
+
+.it_card .it_input.it_field .it_input_border.inner {
+  background-color: #FF4D5A;
+  width: 0;
+  z-index: 300;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.it_card .it_input.it_field .it_input_border.outer {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.it_card .it_input_selection {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.it_card label,
+.it_card p {
+  color: #fff;
+}
+
+.it_card .it-select-wrapper .it-select-label {
+  position: absolute;
+  bottom: 50px;
+}
+
+.it_card .it-select-wrapper .it-select-select {
+  height: 50px;
+  width: 100%;
+  font-size: 100%;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.it_card .it-select-wrapper .it-select-select:hover,
+.it_card .it-select-wrapper .it-select-select:focus {
+  color: #FF4D5A;
+}
+
+.it_card .it-select-wrapper .it-select-icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 30px;
+  height: 36px;
+  pointer-events: none;
+  padding-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.it_card .it-select-wrapper .it-select-icon i {
+  color: #fff;
+}
+
+.it_card .it-select-wrapper .it-select-border {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+.it_card .it-select-wrapper .it-select-select:hover ~ .it-select-icon i,
+.it_card .it-select-wrapper .it-select-select:focus ~ .it-select-icon i {
+  color: #FF4D5A;
+}
+
+.it_card .it-select-wrapper .it-select-select:hover ~ .it-select-border,
+.it_card .it-select-wrapper .it-select-select:focus ~ .it-select-border {
+  background-color: #FF4D5A;
+}
+
+.it_card .it-btn {
+  display: flex;
+  justify-content: center;
 }
 
 .white-wrap-msg {
@@ -14610,5 +14779,81 @@ a.text-dark:focus {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+
+body {
+  font-family: "Syne", sans-serif;
+  background-image: linear-gradient(#072142, #020B16);
+}
+
+main.back-end-main {
+  padding-top: 74px;
+  padding-bottom: 100px;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  overflow: auto;
+}
+
+.it-btn {
+  margin-top: 20px;
+}
+
+.it-btn button {
+  background-color: #FF4D5A;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.it-btn button:hover {
+  transform: translateY(-3px);
+}
+
+.it_input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.it_input textarea {
+  max-height: 200px;
+}
+
+.it_input .it_input_field {
+  z-index: 200;
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  caret-color: #fff;
+  color: #fff;
+}
+
+.it_input .it_input_field:focus + .it_input_border {
+  width: 100%;
+}
+
+.it_input label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  z-index: 100;
+}
+
+.it_input .it_input_border {
+  z-index: 300;
+  width: 0;
+  height: 3px;
+  background-color: #FF4D5A;
+  transform: translateY(-2px);
+  transition: all 0.5s;
 }
 

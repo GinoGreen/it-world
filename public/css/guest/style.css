@@ -14064,25 +14064,26 @@ a:hover {
 }
 
 .it-btn button {
-  background-color: #072142;
+  background-color: #FF4D5A;
   outline: none;
   border: none;
   color: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  transition: all 0.3s ease;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.4s;
   cursor: pointer;
 }
 
 .it-btn button:hover {
-  background: #FF4D5A;
+  transform: translateY(-3px);
 }
 
 .it_input {
   display: flex;
   flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 0;
   position: relative;
-  margin-bottom: 50px;
 }
 
 .it_input textarea {
@@ -14097,11 +14098,12 @@ a:hover {
   background-color: transparent;
   border: 0;
   border-bottom: 2px solid #fff;
-  caret-color: #fff;
+  caret-color: #FF4D5A;
   color: #fff;
+  opacity: 0;
 }
 
-.it_input .it_input_field:focus + .it_input_border {
+.it_input .it_input_field:focus ~ .it_input_border {
   width: 100%;
 }
 
@@ -14109,16 +14111,22 @@ a:hover {
   position: absolute;
   left: 0;
   bottom: 10px;
+  font-size: 0.9em;
   z-index: 100;
+  transition: all 0.1s;
 }
 
 .it_input .it_input_border {
   z-index: 300;
   width: 0;
   height: 3px;
-  background-color: #FF4D5A;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   transition: all 0.5s;
+}
+
+label,
+p {
+  color: #fff;
 }
 
 .container {

@@ -11001,129 +11001,133 @@ var render = function () {
     "form",
     { attrs: { id: "contact_us" } },
     _vm._l(_vm.formFields, function (field, index) {
-      return _c("div", { key: "field" + index, staticClass: "it_input" }, [
-        _c("label", { attrs: { for: field.for } }, [
-          _vm._v(_vm._s(field.label)),
-        ]),
-        _vm._v(" "),
-        field.type === "checkbox" && field.tag === "input"
-          ? _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: field.content,
-                  expression: "field.content",
+      return _c(
+        "div",
+        { key: "field" + index, staticClass: "it_input_contact_us" },
+        [
+          _c("label", { attrs: { for: field.for } }, [
+            _vm._v(_vm._s(field.label)),
+          ]),
+          _vm._v(" "),
+          field.type === "checkbox" && field.tag === "input"
+            ? _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: field.content,
+                    expression: "field.content",
+                  },
+                ],
+                staticClass: "it_input_field",
+                attrs: { id: field.for, name: field.for, type: "checkbox" },
+                domProps: {
+                  checked: Array.isArray(field.content)
+                    ? _vm._i(field.content, null) > -1
+                    : field.content,
                 },
-              ],
-              staticClass: "it_input_field",
-              attrs: { id: field.for, name: field.for, type: "checkbox" },
-              domProps: {
-                checked: Array.isArray(field.content)
-                  ? _vm._i(field.content, null) > -1
-                  : field.content,
-              },
-              on: {
-                click: function ($event) {
-                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
-                },
-                change: function ($event) {
-                  var $$a = field.content,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && _vm.$set(field, "content", $$a.concat([$$v]))
+                on: {
+                  click: function ($event) {
+                    _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                  },
+                  change: function ($event) {
+                    var $$a = field.content,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && _vm.$set(field, "content", $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          _vm.$set(
+                            field,
+                            "content",
+                            $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                          )
+                      }
                     } else {
-                      $$i > -1 &&
-                        _vm.$set(
-                          field,
-                          "content",
-                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                        )
+                      _vm.$set(field, "content", $$c)
                     }
-                  } else {
-                    _vm.$set(field, "content", $$c)
-                  }
+                  },
                 },
-              },
-            })
-          : field.type === "radio" && field.tag === "input"
-          ? _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: field.content,
-                  expression: "field.content",
+              })
+            : field.type === "radio" && field.tag === "input"
+            ? _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: field.content,
+                    expression: "field.content",
+                  },
+                ],
+                staticClass: "it_input_field",
+                attrs: { id: field.for, name: field.for, type: "radio" },
+                domProps: { checked: _vm._q(field.content, null) },
+                on: {
+                  click: function ($event) {
+                    _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                  },
+                  change: function ($event) {
+                    return _vm.$set(field, "content", null)
+                  },
                 },
-              ],
-              staticClass: "it_input_field",
-              attrs: { id: field.for, name: field.for, type: "radio" },
-              domProps: { checked: _vm._q(field.content, null) },
-              on: {
-                click: function ($event) {
-                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+              })
+            : field.tag === "input"
+            ? _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: field.content,
+                    expression: "field.content",
+                  },
+                ],
+                staticClass: "it_input_field",
+                attrs: { id: field.for, name: field.for, type: field.type },
+                domProps: { value: field.content },
+                on: {
+                  click: function ($event) {
+                    _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                  },
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(field, "content", $event.target.value)
+                  },
                 },
-                change: function ($event) {
-                  return _vm.$set(field, "content", null)
+              })
+            : _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: field.content,
+                    expression: "field.content",
+                  },
+                ],
+                staticClass: "it_input_field",
+                attrs: { name: field.for, id: field.for },
+                domProps: { value: field.content },
+                on: {
+                  click: function ($event) {
+                    _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
+                  },
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(field, "content", $event.target.value)
+                  },
                 },
-              },
-            })
-          : field.tag === "input"
-          ? _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: field.content,
-                  expression: "field.content",
-                },
-              ],
-              staticClass: "it_input_field",
-              attrs: { id: field.for, name: field.for, type: field.type },
-              domProps: { value: field.content },
-              on: {
-                click: function ($event) {
-                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
-                },
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(field, "content", $event.target.value)
-                },
-              },
-            })
-          : _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: field.content,
-                  expression: "field.content",
-                },
-              ],
-              staticClass: "it_input_field",
-              attrs: { name: field.for, id: field.for },
-              domProps: { value: field.content },
-              on: {
-                click: function ($event) {
-                  _vm.labelAnimation(field.for), _vm.resetLabel(field.label)
-                },
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(field, "content", $event.target.value)
-                },
-              },
-            }),
-        _vm._v(" "),
-        _c("div", { staticClass: "it_input_border" }),
-      ])
+              }),
+          _vm._v(" "),
+          _c("div", { staticClass: "it_input_border" }),
+        ]
+      )
     }),
     0
   )
@@ -27214,7 +27218,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\manue\Documents\BOOLEAN\Progetto_finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\andre\OneDrive\Documenti\Boolean\Progetto Finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
+>>>>>>> master
 
 
 /***/ })
