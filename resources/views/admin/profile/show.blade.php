@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="white-wrapper-show">
+<div class="it-container-page">
 
    <h1>{{ Auth::user()->name }}</h1>
     @dump(Auth::user()->review_length)
