@@ -2058,6 +2058,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AdvancedSearch',
   data: function data() {
@@ -2069,32 +2080,40 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    getJobRoles: function getJobRoles() {
+    getUsers: function getUsers() {
       var _this = this;
 
+      axios.get('http://127.0.0.1:8000/api/profile/').then(function (res) {
+        _this.allUsers = res.data;
+        console.log('all users: ', res.data);
+      });
+    },
+    getJobRoles: function getJobRoles() {
+      var _this2 = this;
+
       axios.get(this.apiUrl).then(function (res) {
-        _this.allJobRoles = res.data;
+        _this2.allJobRoles = res.data;
         console.log('all roles: ', res.data);
       });
     },
     getApi: function getApi() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.get(this.apiUrl + this.$route.params.job_role).then(function (res) {
-        _this2.jobRoles = res.data;
-        console.log(res.data);
+        _this3.jobRoles = res.data;
+        console.log(res.data); // profiles
 
-        _this2.jobRoles.forEach(function (jobRole) {
+        _this3.jobRoles.forEach(function (jobRole) {
           if (jobRole.users.length !== 0) {
             jobRole.users.forEach(function (profile) {
-              if (!_this2.profiles.some(function (element) {
+              if (!_this3.profiles.some(function (element) {
                 return element.id === profile.id;
               })) {
                 profile.jobRole = [jobRole.name];
 
-                _this2.profiles.push(profile);
+                _this3.profiles.push(profile);
               } else {
-                _this2.profiles.find(function (element) {
+                _this3.profiles.find(function (element) {
                   return element.id === profile.id;
                 }).jobRole.push(jobRole.name);
               }
@@ -2104,16 +2123,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     activeJobRole: function activeJobRole(jobRole) {
-      // for(let roleIndex = 0; roleIndex < 2; roleIndex++){
-      //    console.log('ricercati: ', roleIndex);
-      //    if(jobRole.id === this.jobRoles[roleIndex].id){
-      //       return 'active tag it-text-info'
-      //    }
-      //    else{
-      //       return 'tag it-text-info'
-      //    };
-      // }
-      // console.log(jobRole);
       for (var i = 0; i < this.jobRoles.length; i++) {
         console.log('ricercati: ', this.jobRoles[i]);
         console.log('attuale: ', jobRole);
@@ -2127,6 +2136,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getApi();
     this.getJobRoles();
+    this.getUsers();
+    console.log(this.profiles);
+    console.log('reviews: ', this.reviews);
   }
 });
 
@@ -2356,6 +2368,91 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SingleProfile',
   data: function data() {
@@ -2369,8 +2466,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.apiUrl + this.$route.params.profile_id).then(function (res) {
-        _this.profile = res.data[0];
-        console.log(res.data);
+        _this.profile = res.data;
+        console.log(res.data); // console.log(this.profile.avatar_path);
       });
     }
   },
@@ -2830,7 +2927,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Op
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  width: 25%;\n  height: calc(100vh - 90px);\n  margin-right: 50px;\n  justify-content: flex-end;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  background-color: white;\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: white;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\n.it-section-page .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\n.it-section-page .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\n.it-section-page .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  overflow-y: auto;\n  width: 70%;\n  height: calc(100vh - 90px);\n  background-color: green;\n}\n.it-section-page .content-right h3[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-section-page .content-right .profile-box[data-v-781a2080] {\n  width: 700px;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\n.it-section-page .content-right .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}", ""]);
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-781a2080], p[data-v-781a2080] {\n  color: #fff;\n}\n.glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  overflow: auto;\n  height: calc(100vh - 100px);\n  justify-content: flex-end;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  height: calc(100% - 50px);\n  border-radius: 10px 10px 0px 0px;\n  padding: 20px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: transparent;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slide .slide-numbers[data-v-781a2080] {\n  display: flex;\n  justify-content: space-between;\n}\n.it-section-page .content-left .filters .reviews .slide .slide-numbers span[data-v-781a2080] {\n  font-size: 14px;\n  color: #000000;\n  font-weight: 800;\n}\n.it-section-page .content-left .filters .reviews .slide .line[data-v-781a2080] {\n  height: 3px;\n  background-color: #19243F;\n  position: relative;\n}\n.it-section-page .content-left .filters .reviews .slide .line .round[data-v-781a2080] {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: #FF4D5A;\n  position: absolute;\n  top: -4px;\n  left: 60px;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  height: calc(100vh - 100px);\n  overflow: hidden;\n}\n.it-section-page .content-right .results-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-right .results-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-right .results-box[data-v-781a2080] {\n  padding-top: 50px;\n  overflow-y: auto;\n  width: 100%;\n}\n.it-section-page .content-right .results-box .profile-box[data-v-781a2080] {\n  width: 80%;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .results-box .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\n.it-section-page .content-right .results-box .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .results-box .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}\n.it-section-page .content-right .it-links[data-v-781a2080] {\n  position: absolute;\n  bottom: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -2868,7 +2965,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-206ace3f] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-206ace3f] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-206ace3f] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-206ace3f] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-206ace3f] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-206ace3f] {\n  width: 100%;\n}\n.it_input label[data-v-206ace3f] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  --offset: 85px;\n  position: relative;\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx h2 .word-box[data-v-206ace3f] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-width: var(--offset);\n}\nsection .row .content-sx h2 .word-box .cursor[data-v-206ace3f] {\n  margin-left: -4px;\n}\nsection .row .content-sx h2 .it-title[data-v-206ace3f] {\n  display: inline-block;\n  margin-left: var(--offset);\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
+exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-206ace3f] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-206ace3f] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-206ace3f] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-206ace3f] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-206ace3f] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-206ace3f] {\n  width: 100%;\n}\n.it_input label[data-v-206ace3f] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-206ace3f], p[data-v-206ace3f] {\n  color: #fff;\n}\n.glass[data-v-206ace3f] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-206ace3f] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  --offset: 85px;\n  position: relative;\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx h2 .word-box[data-v-206ace3f] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-width: var(--offset);\n}\nsection .row .content-sx h2 .word-box .cursor[data-v-206ace3f] {\n  margin-left: -4px;\n}\nsection .row .content-sx h2 .it-title[data-v-206ace3f] {\n  display: inline-block;\n  margin-left: var(--offset);\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
 
 // exports
 
@@ -2887,7 +2984,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-387a041b] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-387a041b] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-387a041b],\na[data-v-387a041b]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-387a041b] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-387a041b] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-387a041b] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-387a041b] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-387a041b] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-387a041b] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-387a041b] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-387a041b]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-387a041b] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-387a041b] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-387a041b] {\n  width: 100%;\n}\n.it_input label[data-v-387a041b] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}", ""]);
+exports.push([module.i, "*[data-v-387a041b] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-387a041b] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-387a041b],\na[data-v-387a041b]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-387a041b] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-387a041b] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-387a041b] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-387a041b] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-387a041b] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-387a041b] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-387a041b] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-387a041b] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-387a041b] {\n  width: 100%;\n}\n.it_input label[data-v-387a041b] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-387a041b], p[data-v-387a041b] {\n  color: #fff;\n}\n.glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-387a041b] {\n  justify-content: space-between;\n}\n.it-section-page .sx-profile[data-v-387a041b], .it-section-page .dx-profile[data-v-387a041b] {\n  width: 90%;\n  height: calc(100vh - 150px);\n}\n.it-section-page .sx-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 20px;\n  overflow: auto;\n  height: 570px;\n}\n.it-section-page .sx-profile .top-sx[data-v-387a041b] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .top-sx h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .top-sx .wrap-image[data-v-387a041b] {\n  height: 150px;\n  width: 150px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.it-section-page .sx-profile .top-sx .wrap-image img[data-v-387a041b] {\n  width: 150px;\n  height: 150px;\n}\n.it-section-page .sx-profile .top-sx .wrap-text[data-v-387a041b] {\n  margin-left: 15px;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .sx-profile .mid-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description[data-v-387a041b] {\n  margin: 15px 0px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description h5[data-v-387a041b] {\n  margin-bottom: 10px;\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .mid-sx .wrap-cv h5[data-v-387a041b] {\n  margin-bottom: 10px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-cv a[data-v-387a041b] {\n  padding: 5px 10px;\n  background-color: #FF4D5A;\n  color: white;\n  border-radius: 10px;\n  border: 1px solid white;\n  font-size: 12px;\n}\n.it-section-page .sx-profile .bottom-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .bottom-sx h5[data-v-387a041b] {\n  margin-bottom: 15px;\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px;\n}\n.it-section-page .dx-profile .top-dx[data-v-387a041b] {\n  width: 100%;\n  height: 550px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px;\n}\n.it-section-page .dx-profile .top-dx h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile .top-dx .contaier-reviews[data-v-387a041b] {\n  overflow: auto;\n}\n.it-section-page .dx-profile .top-dx .contaier-reviews .wrap-review[data-v-387a041b] {\n  margin: 15px 0px;\n  width: 100%;\n  padding: 10px;\n}\n.it-section-page .dx-profile .top-dx .contaier-reviews .wrap-review h6[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile .top-dx .contaier-reviews .wrap-review p[data-v-387a041b] {\n  font-size: 13px;\n  margin: 5px 0px;\n}\n.it-section-page .dx-profile .top-dx .contaier-reviews .wrap-review .wrap-span[data-v-387a041b] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.it-section-page .dx-profile .top-dx .contaier-reviews .wrap-review .wrap-span .wrap-star .star[data-v-387a041b] {\n  color: gold;\n  font-size: 14px;\n}\n.it-section-page .dx-profile .top-dx .contaier-reviews .wrap-review .wrap-span .date[data-v-387a041b] {\n  font-size: 15px;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -2925,7 +3022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-8c9f9304] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-8c9f9304] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #072142;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 10px;\n  padding: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  background: #FF4D5A;\n}\n.it_input[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  margin-bottom: 50px;\n}\n.it_input textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\n.it_input .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #fff;\n  color: #fff;\n}\n.it_input .it_input_field:focus + .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\n.it_input label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  z-index: 100;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\nform#contact_us[data-v-8c9f9304] {\n  margin-top: 40px;\n  width: 70%;\n}", ""]);
+exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-8c9f9304] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-8c9f9304] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\n.it_input label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-8c9f9304], p[data-v-8c9f9304] {\n  color: #fff;\n}\n.glass[data-v-8c9f9304] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-8c9f9304] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\nform#contact_us[data-v-8c9f9304] {\n  margin-top: 40px;\n  width: 70%;\n}\nform#contact_us .it_input_contact_us[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\nform#contact_us .it_input_contact_us textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\nform#contact_us .it_input_contact_us .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n}\nform#contact_us .it_input_contact_us .it_input_field:focus ~ .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\nform#contact_us .it_input_contact_us label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\nform#contact_us .it_input_contact_us .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nform#contact_us label[data-v-8c9f9304], form#contact_us p[data-v-8c9f9304] {\n  color: #fff;\n}", ""]);
 
 // exports
 
@@ -10523,114 +10620,135 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "it-container-page" }, [
-    _c("section", { staticClass: "it-section-page" }, [
-      _c("div", { staticClass: "content-left" }, [
-        _c("h3", { staticClass: "it-title-small it-text-orange text-center" }, [
-          _vm._v("Filtri"),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "filters" }, [
-          _c("div", { staticClass: "specialization" }, [
-            _c("h3", { staticClass: "it-title-small it-text-black" }, [
-              _vm._v("Specializzazione"),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "tag-container" },
-              _vm._l(_vm.allJobRoles, function (jobRole) {
-                return _c(
-                  "span",
-                  {
-                    key: "jobRole" + jobRole.id,
-                    staticClass: "tag it-text-info",
-                    class: _vm.activeJobRole(jobRole),
-                  },
-                  [_vm._v(_vm._s(jobRole.name))]
-                )
-              }),
-              0
-            ),
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-        ]),
-      ]),
-      _vm._v(" "),
+  return _c("div", { staticClass: "it-container-page container-fluid" }, [
+    _c("section", { staticClass: "it-section-page row" }, [
       _c(
         "div",
-        { staticClass: "content-right" },
+        {
+          staticClass:
+            "content-left glass p-1 col-xl-3 col-md-3 col-sm-12 ml-auto mr-auto",
+        },
         [
           _c(
             "h3",
             { staticClass: "it-title-small it-text-orange text-center" },
-            [_vm._v("Risultati migliori")]
+            [_vm._v("Filtri")]
           ),
           _vm._v(" "),
-          _vm._l(_vm.profiles, function (profile, index) {
-            return _c(
-              "div",
-              { key: "profile" + index, staticClass: "profile-box m-3" },
-              [
-                _c("div", { staticClass: "photo" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "info-content" }, [
-                  _c(
-                    "div",
-                    { staticClass: "info" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to: {
-                              name: "profile",
-                              params: { profile_id: profile.id },
+          _c("div", { staticClass: "filters" }, [
+            _c("div", { staticClass: "specialization" }, [
+              _c("h3", { staticClass: "it-title-small it-text-black" }, [
+                _vm._v("Specializzazione"),
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "tag-container" },
+                _vm._l(_vm.allJobRoles, function (jobRole) {
+                  return _c(
+                    "span",
+                    {
+                      key: "jobRole" + jobRole.id,
+                      staticClass: "tag it-text-info",
+                      class: _vm.activeJobRole(jobRole),
+                    },
+                    [_vm._v(_vm._s(jobRole.name))]
+                  )
+                }),
+                0
+              ),
+            ]),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "content-right glass p-1 col-xl-8 col-md-5 col-sm-12 mr-auto d-flex align-items-center",
+        },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "results-box" },
+            _vm._l(_vm.profiles, function (profile, index) {
+              return _c(
+                "div",
+                { key: "profile" + index, staticClass: "profile-box m-3" },
+                [
+                  _c("div", { staticClass: "photo" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "info-content" }, [
+                    _c(
+                      "div",
+                      { staticClass: "info" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "profile",
+                                params: { profile_id: profile.id },
+                              },
                             },
                           },
-                        },
-                        [
-                          _c(
+                          [
+                            _c(
+                              "p",
+                              { staticClass: "it-title-small it-text-blue" },
+                              [
+                                _vm._v(
+                                  "\n                           " +
+                                    _vm._s(profile.name) +
+                                    " " +
+                                    _vm._s(profile.surname) +
+                                    "\n                        "
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(profile.jobRole, function (role, index) {
+                          return _c(
                             "p",
-                            { staticClass: "it-title-small it-text-blue" },
-                            [
-                              _vm._v(
-                                "\n                        " +
-                                  _vm._s(profile.name) +
-                                  " " +
-                                  _vm._s(profile.surname) +
-                                  "\n                     "
-                              ),
-                            ]
-                          ),
-                        ]
-                      ),
-                      _vm._v(" "),
+                            {
+                              key: profile.id + index,
+                              staticClass: "it-text-info it-text-blue ",
+                            },
+                            [_vm._v(_vm._s(role))]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "info-description" }, [
                       _c("p", { staticClass: "it-text-info it-text-blue" }, [
-                        _vm._v(_vm._s(profile.jobRole)),
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(profile.description) +
+                            "\n                     "
+                        ),
                       ]),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "info-description" }, [
-                    _c("p", { staticClass: "it-text-info it-text-blue" }, [
-                      _vm._v(
-                        "\n                     " +
-                          _vm._s(profile.description) +
-                          "\n                  "
-                      ),
                     ]),
                   ]),
-                ]),
-              ]
-            )
-          }),
-        ],
-        2
+                ]
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "it-links col-12 text-dark" }),
+        ]
       ),
     ]),
   ])
@@ -10692,6 +10810,16 @@ var staticRenderFns = [
           staticClass: "fa fa-star-o",
           attrs: { "aria-hidden": "true" },
         }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "results-title" }, [
+      _c("h3", { staticClass: "it-title-small it-text-orange text-center" }, [
+        _vm._v("Risultati migliori"),
       ]),
     ])
   },
@@ -10910,8 +11038,105 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "it-container-page" }, [
-    _c("section", { staticClass: "it-section-page" }, [
-      _c("h1", [_vm._v(_vm._s(_vm.profile.name))]),
+    _c("section", { staticClass: "it-section-page row" }, [
+      _c("div", { staticClass: "sx-profile col-6" }, [
+        _c("div", { staticClass: "top-sx glass" }, [
+          _c("div", { staticClass: "wrap-image" }, [
+            _c("img", {
+              attrs: { src: _vm.profile.avatar_path, alt: "avatar" },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "wrap-text" }, [
+            _c("h3", [
+              _vm._v(
+                _vm._s(_vm.profile.name) + " " + _vm._s(_vm.profile.surname)
+              ),
+            ]),
+            _vm._v(" "),
+            _c("h5", [_vm._v(_vm._s(_vm.profile.job_roles[0].name))]),
+            _vm._v(" "),
+            _c("h6", [_vm._v(_vm._s(_vm.profile.region))]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mid-sx glass" }, [
+          _c("h5", [_vm._v(" Livello: " + _vm._s(_vm.profile.level))]),
+          _vm._v(" "),
+          _vm.profile.description
+            ? _c("div", { staticClass: "wrap-description" }, [
+                _c("h5", [_vm._v("Descrizione")]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(_vm.profile.description))]),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.profile.cv_path
+            ? _c("div", { staticClass: "wrap-cv" }, [
+                _c("h5", [_vm._v("Scarica il curriculum")]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: _vm.profile.cv_path } }, [
+                  _vm._v("Clicca Qui"),
+                ]),
+              ])
+            : _vm._e(),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "bottom-sx glass" }, [
+          _c("h5", [_vm._v("Contatti")]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.profile.email))]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "dx-profile col-6" }, [
+        _c("div", { staticClass: "top-dx glass" }, [
+          _c("h3", [_vm._v("Recensioni")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "contaier-reviews" },
+            _vm._l(_vm.profile.reviews, function (review) {
+              return _c(
+                "div",
+                { key: review.id, staticClass: "wrap-review duble-glass" },
+                [
+                  _c("h6", [_vm._v(_vm._s(review.title))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(review.description))]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "wrap-span" }, [
+                    _c(
+                      "div",
+                      { staticClass: "wrap-star" },
+                      _vm._l(review.vote, function (star, index) {
+                        return _c("span", { key: index, staticClass: "star" }, [
+                          _c("i", {
+                            staticClass: "fa fa-star",
+                            attrs: { "aria-hidden": "true" },
+                          }),
+                        ])
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "date" }, [
+                      _vm._v(
+                        "\r\n                        " +
+                          _vm._s(review.month) +
+                          " / " +
+                          _vm._s(review.year) +
+                          "\r\n                     "
+                      ),
+                    ]),
+                  ]),
+                ]
+              )
+            }),
+            0
+          ),
+        ]),
+      ]),
     ]),
   ])
 }
@@ -27218,11 +27443,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\manue\Documents\BOOLEAN\Progetto_finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\andre\OneDrive\Documenti\Boolean\Progetto Finale\it-world\resources\js\guest.js */"./resources/js/guest.js");
->>>>>>> master
+module.exports = __webpack_require__(/*! C:\Users\luigi\Documents\Boolean\final-project\it-world\resources\js\guest.js */"./resources/js/guest.js");
 
 
 /***/ })

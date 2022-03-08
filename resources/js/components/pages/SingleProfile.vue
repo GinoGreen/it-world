@@ -7,11 +7,7 @@
       <div class="sx-profile col-6">
          <div class="top-sx glass">
 
-            <div v-if="profile.avatar_path === null" class="wrap-image">
-               <img src="/img/slider/undraw_profile_pic_ic-5-t.svg" alt="avatar">
-            </div>
-
-            <div v-else class="wrap-image">
+            <div class="wrap-image">
                <img :src="profile.avatar_path" alt="avatar">
             </div>
 
@@ -109,8 +105,9 @@ export default {
       getApi(){
          axios.get(this.apiUrl + this.$route.params.profile_id)
             .then(res => {
-               this.profile = res.data[0];
+               this.profile = res.data;
                console.log(res.data);
+               // console.log(this.profile.avatar_path);
          });
       }
    },

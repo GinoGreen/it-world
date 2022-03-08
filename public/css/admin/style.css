@@ -85,6 +85,15 @@ a:hover {
   max-height: 200px;
 }
 
+.it_input .it_input_border {
+  z-index: 300;
+  width: 0;
+  height: 3px;
+  background-color: #FF4D5A;
+  transform: translateY(-2px);
+  transition: all 0.5s;
+}
+
 .it_input .it_input_field {
   z-index: 200;
   display: block;
@@ -122,6 +131,24 @@ a:hover {
 label,
 p {
   color: #fff;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+.duble-glass {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(3.4px) !important;
+  -webkit-backdrop-filter: blur(3.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
 }
 
 header {
