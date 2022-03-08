@@ -3,22 +3,40 @@
 @section('content')
 <div class="container">
 
-    <h5>Bentornato --User--!</h5>
+    <h5 class="text-center">Bentornato {{Auth::user()->name}}</h5>
 
     <div class="it-dashboard-info">
         <div class="it-dashboard-top">
+            <a href="{{ route('admin.show') }}">
+                <div class="it-dashboard-box it-title-small">
+                    <i class="it-dash-icon fa fa-user-circle-o" aria-hidden="true"></i>
+                    <p>Mostra Profilo</p>
+                </div>
+            </a>
+            <a href="{{ route('admin.edit') }}">
+                <div class="it-dashboard-box it-title-small">
+                    <i class="it-dash-icon fa fa-pencil-square-o" aria-hidden="true"></i>
+                    <p>Modifica Profilo</p>
+                </div>
+            </a>
+            <a href="">
             <div class="it-dashboard-box it-title-small">
-                <i class="it-dash-icon fa fa-user-circle-o" aria-hidden="true"></i>
-                <p>Mostra Profilo</p>
-            </div>
-            <div class="it-dashboard-box it-title-small">
-                <i class="it-dash-icon fa fa-bar-chart" aria-hidden="true"></i>
-                <p>Anteprima Statistiche</p>
-            </div>
-            <div class="it-dashboard-box it-title-small">
-                <i class="it-dash-icon fa fa-pencil-square-o" aria-hidden="true"></i>
-                <p>Modifica Profilo</p>
-            </div>
+                    <i class="it-dash-icon fa fa-bar-chart" aria-hidden="true"></i>
+                    <p>Anteprima Statistiche</p>
+                </div>
+            </a>
+            <a href="{{ route('admin.message') }}">
+                <div class="it-dashboard-box it-title-small">
+                    <i class="it-dash-icon fa fa-user-circle-o" aria-hidden="true"></i>
+                    <p>Messaggi</p>
+                </div>
+            </a>
+            <a href="{{ route('admin.review') }}">
+                <div class="it-dashboard-box it-title-small">
+                    <i class="it-dash-icon fa fa-user-circle-o" aria-hidden="true"></i>
+                    <p>Dicono di te</p>
+                </div>
+            </a>
         </div>
 
         <div class="line-horizontal"></div>
