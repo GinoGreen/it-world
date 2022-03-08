@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from './components/pages/Home.vue';
 import AdvancedSearch from './components/pages/AdvancedSearch.vue';
 import SingleProfile from './components/pages/SingleProfile.vue';
+import MessageReviewForm from './components/pages/MessageReviewForm.vue';
 
 Vue.use(VueRouter);
 
@@ -25,7 +26,13 @@ const router = new VueRouter({
          path: '/profile/:profile_id',
          name: 'profile',
          component: SingleProfile,
-      }
+      },
+
+      {
+         path: '/form/:type',
+         name: 'MessageReviewForm',
+         component: MessageReviewForm,
+      },
    ]
 });
 
