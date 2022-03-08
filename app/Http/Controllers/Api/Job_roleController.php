@@ -22,7 +22,30 @@ class Job_roleController extends Controller
         $profiles = Job_role::with(['users'])
                                 ->where('name', 'like', '%' . $job_role . '%')
                                 ->get();
+        
+        $profiles->each(function($job_role) {
+            $job_role->users->each(function($user) {
+                $user->avatar_path = $this->getAvatarPath($user->avatar_path);
+                $user->cv_path = $this->getCvPath($user->cv_path);
+            });
+        }); 
 
         return response()->json($profiles);
+    }
+
+    public function getAvatarPath($file) {
+        if ($file) {
+            $file = url('storage/' . $file);
+        } else {
+            $file = url('img/slider/undraw_profile_pic_ic-5-t.svg');
+        }
+        return $file;
+    }
+
+    public function getCvPath($file) {
+        if ($file) {
+            $file = url('storage/' . $file);
+            return $file;
+        }
     }
 }
