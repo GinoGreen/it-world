@@ -97,6 +97,68 @@
       color: #fff;
    }
 
+
+   .it-remember {
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      position: relative !important;
+      margin-bottom: 12px !important;
+      cursor: pointer !important;
+      font-size: 22px !important;
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      user-select: none !important;
+      
+      &:hover input ~ .it_checkmark {
+         background-color: #ccc;
+      }
+      & input:checked ~ .it_checkmark {
+         background-color: $primary_color;
+      }
+      .it_checkmark:after {
+         content: "";
+         position: absolute;
+         display: none;
+      }
+      & input:checked ~ .it_checkmark:after {
+         display: block;
+      }
+
+      .it_checkmark:after {
+         left: 9px;
+         top: 5px;
+         width: 8px;
+         height: 16px;
+         border: solid $secondary_color;
+         border-width: 0 4px 4px 0;
+         -webkit-transform: rotate(45deg);
+         -ms-transform: rotate(45deg);
+         transform: rotate(45deg);
+         
+       }
+
+      .input_checkbox {
+         position: absolute;
+         opacity: 0;
+         cursor: pointer;
+         height: 0;
+         width: 0;
+      }
+      .it_checkmark {
+         position: relative;
+         margin-right: 5px;
+         height: 25px;
+         width: 25px;
+         background-color: #eee;
+      }
+      
+   }
+
+
+
+
    .it-select-wrapper{
 
       .it-select-label{
