@@ -3,14 +3,21 @@
 @section('content')
 <div class="container white-wrap-msg">
 
-   <div class="row">
-      <div class="col-11 wrap-content-msg">
-         <h3 class="d-inline">Nome Utente</h3>
-         <div class="wrap-secondary-msg">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia quo eum itaque eius nisi inventore cum et perferendis dignissimos nesciunt pariatur omnis ea, rem error quasi voluptates blanditiis repellendus sit!</p>
+   @foreach ($messages as $message )
+      <div class="row">
+         <div class="col-11 wrap-content-msg">
+            <h3 class="d-inline">{{$message->name}}</h3>
+            <div class="wrap-secondary-msg">
+               <p>{{$message->message}}</p>
+               <h6>{{$message->date}}</h6>
+            </div>
          </div>
       </div>
-   </div>
+   @endforeach
+   <div class="paginate">        
+      {{$messages->links()}}
+    </div>
+   
 </div>
 @endsection
 
