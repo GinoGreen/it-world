@@ -1,0 +1,25 @@
+.box_button{
+   display: flex;
+   justify-content: space-between;
+   .link_statistics{
+      .statistics_btn{
+         border: 1px solid white;
+         margin: 10px;
+         padding: 5px;
+         border-radius: 10px;
+         cursor: pointer;
+         color: white;
+         background-color: #FF4D5A;
+         transition:  background-color 1s;
+         &.active{
+            padding: 10px;
+         }
+         &:hover{
+            background-color: #fd9ea4;
+         }
+      }
+      &:hover{
+         text-decoration: none;
+      }
+   }
+}

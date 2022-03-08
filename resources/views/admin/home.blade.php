@@ -11,10 +11,12 @@
                 <i class="it-dash-icon fa fa-user-circle-o" aria-hidden="true"></i>
                 <p>Mostra Profilo</p>
             </div>
-            <div class="it-dashboard-box it-title-small">
-                <i class="it-dash-icon fa fa-bar-chart" aria-hidden="true"></i>
-                <p>Anteprima Statistiche</p>
-            </div>
+            <a href="{{route('admin.statistic')}}">
+                <div class="it-dashboard-box it-title-small">
+                    <i class="it-dash-icon fa fa-bar-chart" aria-hidden="true"></i>
+                    <p>Anteprima Statistiche</p>
+                </div>
+            </a>
             <div class="it-dashboard-box it-title-small">
                 <i class="it-dash-icon fa fa-pencil-square-o" aria-hidden="true"></i>
                 <p>Modifica Profilo</p>

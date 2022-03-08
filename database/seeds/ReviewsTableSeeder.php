@@ -13,15 +13,14 @@ class ReviewsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 100 ; $i++) { 
-            # code...
+        for ($i=0; $i < 1000 ; $i++) { 
+            
             $newReview = new Review();
             $newReview->title = $faker->name();
             $newReview->description = $faker->text();
             $newReview->user_id = User::inRandomOrder()->first()->id;
             $newReview->vote = $faker->numberBetween(1, 5);
-            $newReview->month =$faker->numberBetween(1, 12);
-            $newReview->year = $faker->numberBetween(2000, 2005);
+            $newReview->date = $faker->dateTime();
             $newReview->save();
 
         }

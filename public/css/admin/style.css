@@ -803,6 +803,34 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   cursor: pointer;
 }
 
+.box_button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box_button .link_statistics .statistics_btn {
+  border: 1px solid white;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #FF4D5A;
+  transition: background-color 1s;
+}
+
+.box_button .link_statistics .statistics_btn.active {
+  padding: 10px;
+}
+
+.box_button .link_statistics .statistics_btn:hover {
+  background-color: #fd9ea4;
+}
+
+.box_button .link_statistics:hover {
+  text-decoration: none;
+}
+
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
