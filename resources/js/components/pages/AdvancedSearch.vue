@@ -27,15 +27,9 @@
 
                <div class="reviews">
                   <h3 class="it-title-small it-text-black">Recensioni</h3>
-                  <div class="slide">
-                     <div class="slide-numbers">
-                        <!-- da trasformare in input! -->
-                        <span>0</span>
-                        <span>100</span>
-                     </div>
-                     <div class="line">
-                        <div class="round"></div>
-                     </div>
+                  <div class="slider-box">
+                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                     <p>min: <span id="demo">{{rangeReviewsValue}}</span></p>
                   </div>
                </div>
 
@@ -43,11 +37,7 @@
                   <h3 class="it-title-small it-text-black">Voto</h3>
                   <div class="stars">
                      <!-- da sostituire con icona FontAwesome -->
-                     <i class="fa fa-star" aria-hidden="true"></i>
-                     <i class="fa fa-star-o" aria-hidden="true"></i>
-                     <i class="fa fa-star-o" aria-hidden="true"></i>
-                     <i class="fa fa-star-o" aria-hidden="true"></i>
-                     <i class="fa fa-star-o" aria-hidden="true"></i>
+                     <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
                   </div>
                </div>
 
@@ -114,17 +104,34 @@ export default {
           allJobRoles: [],
           jobRoles: null,
           profiles: [],
+          rangeReviewsValue: 0, 
+          actualNumberStar: 0,
+          starRange: [
+             {
+                numberStar: 1,
+                active: false,
+             },
+             {
+                numberStar: 2,
+                active: false,
+             },
+             {
+                numberStar: 3,
+                active: false,
+             },
+             {
+                numberStar: 4,
+                active: false,
+             },
+             {
+                numberStar: 5,
+                active: false,
+             }
+          ],
       }
    },
 
    methods:{
-      getUsers(){
-         axios.get('http://127.0.0.1:8000/api/profile/')
-            .then(res => {
-               this.allUsers = res.data;
-               console.log('all users: ', res.data);
-            });
-      },
       getJobRoles(){
          axios.get(this.apiUrl)
             .then(res => {
@@ -164,21 +171,34 @@ export default {
 
       activeJobRole(jobRole){
          for(let i = 0; i < this.jobRoles.length; i++){
-            console.log('ricercati: ', this.jobRoles[i]);
-            console.log('attuale: ', jobRole);
             if(jobRole.id === this.jobRoles[i].id){
                return 'active'
             }
          }
+      },
+      setRangeStar(star){
+         if(star.active){
+            return 'fa-star';
+         }
+         else{
+            return 'fa-star-o';
+         }
+      },
+      activeStar(star){
+         for(let i = 0; i < this.starRange.length; i++){
+            this.starRange[i].active = false;
+         }
+         for(let i = 0; i < star.numberStar; i++){
+            this.starRange[i].active = true;
+         }
+         this.actualNumberStar = star.numberStar;
+         console.log('numero stelle attuale:', this.actualNumberStar)
       }
    },
 
    mounted(){
       this.getApi();
       this.getJobRoles();
-      this.getUsers();
-      console.log(this.profiles);
-      console.log('reviews: ', this.reviews);
    }
 
 
@@ -257,32 +277,38 @@ export default {
             }
 
             .reviews{
-               .slide{
-                  .slide-numbers{
-                     display: flex;
-                     justify-content: space-between;
-
-                     span{
-                        font-size: 14px;
-                        color: #000000;
-                        font-weight: 800;
-                     }
+               .slider-box{
+                  width: 100%;
+                  .slider {
+                     -webkit-appearance: none;
+                     width: 100%;
+                     height: 5px;
+                     background: $secondary-color;
+                     outline: none;
+                     opacity: 1;
+                     -webkit-transition: .2s;
+                     transition: opacity .2s;
                   }
 
-                  .line{
-                     height: 3px;
-                     background-color: #19243F;
-                     position: relative;
+                  .slider:hover {
+                     opacity: .7;
+                  }
 
-                     .round{
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: $primary_color;
-                        position: absolute;
-                        top: -4px;
-                        left: 60px;
-                     }
+                  .slider::-webkit-slider-thumb {
+                     -webkit-appearance: none;
+                     appearance: none;
+                     width: 15px;
+                     height: 15px;
+                     border-radius: 50%;
+                     background: $primary-color;
+                     cursor: pointer;
+                  }
+
+                  .slider::-moz-range-thumb {
+                     width: 15px;
+                     height: 15px;
+                     background: $primary-color;
+                     cursor: pointer;
                   }
                }
             }
@@ -292,6 +318,7 @@ export default {
                   i{
                      font-size: 20px;
                      color: rgb(255, 153, 0);
+                     cursor: pointer;
                   }
                }
             }
