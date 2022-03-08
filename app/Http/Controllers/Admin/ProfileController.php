@@ -15,11 +15,7 @@ class ProfileController extends Controller
     
     public function show()
     {
-        $profile = Auth::user();
-        
-        $fields = ['name', 'surname', 'region', 'email', 'avatar_path', 'cv_path', 'level', 'description'];
-     
-        return view('admin.profile.show', compact('profile','fields'));
+        return view('admin.profile.show');
     }
 
     public function edit()
