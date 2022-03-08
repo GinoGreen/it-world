@@ -22,17 +22,19 @@
          </div>
          <div class="mid-sx glass">
             <h5> Livello: {{ Auth::user()->level }}</h5>
-            <div 
+
             @if(Auth::user()->description)
+            <div 
                class="wrap-description"
             >
                <h5>Descrizione</h5>
                <p>{{ Auth::user()->description }}</p>
-            @endif
             </div>
+            @endif
  
+            @if(Auth::user()->cv_path)
+
             <div 
-               @if(Auth::user()->cv_path)
                class="wrap-cv"
             >
                <h5>Scarica il curriculum</h5>
@@ -41,8 +43,8 @@
                      <a href="{{ asset('storage/' . Auth::user()->cv_path) }}" target="_blank">Clicca qui</a>
                   </button>
                </div>
-               @endif 
             </div>
+            @endif 
  
  
          </div>
