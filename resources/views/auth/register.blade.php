@@ -76,7 +76,7 @@
                             </div>
                         </div>
 
-                        <div class="it-job-role-wrapper it_input_field px-5">
+                        <div class="it-job-role-wrapper it_input_field px-5 mt-5">
                             <p class="it-job-role-title">
                                 In cosa sei specializzato?
                             </p>
@@ -99,40 +99,44 @@
                             @endforeach
                         </div>
 
-                        <div class="it_input">
-                            <label for="region">Locazione Ufficio</label>
+                        <div class="it_input it_field it-select-wrapper">
+                            {{-- <label for="region" class="it-select-label">Locazione Ufficio</label> --}}
 
-                                <select
-                                    name="region" 
-                                    id="region"
-                                    class="it_input_select"
-                                >
-                                    <option value="">Da dove lavori?</option>
-    
-                                    @foreach ($regions as $region)
-                                        <option
-                                            @if($region == old('region'))
-                                                selected
-                                            @endif
-                                            value="{{ $region }}"
-                                        >{{ $region }}</option>
-                                    @endforeach
-                                </select>
+                            <select
+                                name="region" 
+                                id="region"
+                                class="it_input_select it-select-select"
+                            >
+                                <option class="it-select-option" value="">Da dove lavori?</option>
 
+                                @foreach ($regions as $region)
+                                    <option
+                                        class="it-select-option"
+                                        @if($region == old('region'))
+                                            selected
+                                        @endif
+                                        value="{{ $region }}"
+                                    >{{ $region }}</option>
+                                @endforeach
+                            </select>
+                            <div class="it-select-icon">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="it-select-border"></div>
                         </div>
 
-                        <div class="it_input">
-                            <label for="level">Livello di esperienza</label>
+                        <div class="it_input it_field it-select-wrapper">
+                            {{-- <label for="level">Livello di esperienza</label> --}}
 
                                 <select
                                     name="level" 
                                     id="level"
-                                    class="it_input_select"
+                                    class="it_input_select it-select-select"
                                 >
-                                    <option value="">Come ti qualifichi?</option>
+                                    <option class="it-select-option" value="">Come ti qualifichi?</option>
     
                                     @foreach ($levels as $level)
-                                        <option
+                                        <option class="it-select-option"
                                             @if($level == old('level'))
                                                 selected
                                             @endif
@@ -140,6 +144,10 @@
                                         >{{ $level }}</option>
                                     @endforeach
                                 </select>
+                                <div class="it-select-icon">
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <div class="it-select-border"></div>
                         </div>
 
                         <div class="it_input it_field">

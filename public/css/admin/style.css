@@ -389,6 +389,71 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   color: #fff;
 }
 
+.it_card .it-select-wrapper .it-select-label {
+  position: absolute;
+  bottom: 50px;
+}
+
+.it_card .it-select-wrapper .it-select-select {
+  height: 50px;
+  width: 100%;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.it_card .it-select-wrapper .it-select-select:hover,
+.it_card .it-select-wrapper .it-select-select:focus {
+  color: #FF4D5A;
+}
+
+.it_card .it-select-wrapper .it-select-icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 30px;
+  height: 36px;
+  pointer-events: none;
+  padding-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.it_card .it-select-wrapper .it-select-icon i {
+  color: #fff;
+}
+
+.it_card .it-select-wrapper .it-select-border {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+.it_card .it-select-wrapper .it-select-select:hover ~ .it-select-icon i,
+.it_card .it-select-wrapper .it-select-select:focus ~ .it-select-icon i {
+  color: #FF4D5A;
+}
+
+.it_card .it-select-wrapper .it-select-select:hover ~ .it-select-border,
+.it_card .it-select-wrapper .it-select-select:focus ~ .it-select-border {
+  background-color: #FF4D5A;
+}
+
+.it_card .it-btn {
+  display: flex;
+  justify-content: center;
+}
+
 .white-wrap-msg {
   background: rgba(255, 255, 255, 0.16) !important;
   border-radius: 16px !important;
