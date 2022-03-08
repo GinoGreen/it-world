@@ -27,13 +27,13 @@
             </a>
             <a href="{{ route('admin.message') }}">
                 <div class="it-dashboard-box it-title-small">
-                    <i class="it-dash-icon fa fa-user-circle-o" aria-hidden="true"></i>
+                    <i class="it-dash-icon fa fa-envelope" aria-hidden="true"></i>
                     <p>Messaggi</p>
                 </div>
             </a>
             <a href="{{ route('admin.review') }}">
                 <div class="it-dashboard-box it-title-small">
-                    <i class="it-dash-icon fa fa-user-circle-o" aria-hidden="true"></i>
+                    <i class="it-dash-icon fa fa-commenting" aria-hidden="true"></i>
                     <p>Dicono di te</p>
                 </div>
             </a>
@@ -44,11 +44,9 @@
         <div class="it-dashboard-bottom">
             <div class="it-dash-bottom-left">
                 <h5 class="it-title-small">Le tue ultime recensioni</h5>
-                <p>Recensione Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Recensione Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Recensione Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Recensione Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Recensione Lorem ipsum dolor sit amet consectetur adipisicing...</p>               
+                @foreach ($reviews as $review)
+                    <p>{{$review->description}}</p>
+                @endforeach             
             </div>
 
             <div class="it-dash-bottom-right">
