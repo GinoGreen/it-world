@@ -76,7 +76,7 @@
  
                <div 
                   class="wrap-review duble-glass"
-                  @foreach ( as $review)
+                  
             
                >
  
@@ -98,7 +98,7 @@
                 
                   </div>
 
-                  @endforeach
+                 
                </div>
  
             </div>
