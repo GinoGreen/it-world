@@ -136,7 +136,7 @@ export default {
          axios.get(this.apiUrl)
             .then(res => {
                this.allJobRoles = res.data;
-               console.log('all roles: ', res.data);
+               // console.log('all roles: ', res.data);
             });
       },
       getApi(){
@@ -144,7 +144,7 @@ export default {
             .then(res => {
             
                this.jobRoles = res.data;
-               console.log(res.data);
+               // console.log(res.data);
                
                // profiles
 
@@ -166,6 +166,8 @@ export default {
                      });
                   }
                });
+
+               console.log(this.profiles);
          });
       },
 

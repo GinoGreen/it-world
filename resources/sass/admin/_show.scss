@@ -1,44 +1,187 @@
-main{
-   
+@import '../guest/_variables.scss';
+@import '../guest/_generals.scss';
 
-   .white-wrapper-show{
+.it-section-page{
+   justify-content: space-between;
+   .sx-profile, .dx-profile{
+      width: 90%;
+      // height: calc(100vh - 150px);
+   }
+   .sx-profile{
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      // background-color: #fff;
-      height: calc(100vh - 95px);
       padding: 20px;
-      border-radius: 30px;
+      overflow: auto;
+      max-height: 670px;
 
-      .avatar-circle-show{
-         width: 200px;
-         height: 200px;
-         margin: 30px;
-         border-radius: 50%;
-         background-color: $primary_color;
+      .top-sx{
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         width: 100%;
+         padding: 15px;
+         margin-bottom: 20px;
+
+         h3{
+            color: $primary_color;
+         }
+
+         .wrap-image{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img{
+               width: 150px;
+               height: 150px;
+            }
+         }
+
+         .wrap-text{
+            margin-left: 15px;
+            display: flex;
+            flex-direction: column;
+         }
+         
       }
-      .data-wrapper-show{
+
+      .mid-sx{
+         width: 100%;
+         padding: 15px;
+         margin-bottom: 20px;
+
+         .wrap-description{
+            margin: 15px 0px;
+            h5{
+               margin-bottom: 10px;
+               color: $primary_color;
+            }
+         }
+
+         .wrap-cv{
+
+            h5{
+               margin-bottom: 10px;
+            }
+
+            .it-btn{
+               button{
+                  padding: 5px 6px;
+                  a{
+                     color: white;
+                     font-size: 14px;
+                  }
+               }
+            }
+
+         }
+      }
+
+      .bottom-sx{
+         width: 100%;
+         padding: 15px;
+         margin-bottom: 20px;
+         h5{
+            margin-bottom: 15px;
+            color: $primary_color;
+         }
+      }
+
+   }
+
+
+   .dx-profile{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px 10px;
+      .call-to-action{
+         height: 350px;
+         width: 100%;
+         padding: 20px;
          display: flex;
          flex-direction: column;
+         align-items: flex-start;
          justify-content: center;
-         align-items: center;
-         text-align: center;
-         padding: 20px;
-         background: rgba(255, 255, 255, 0.16) !important;
-         border-radius: 16px !important;
-         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-         backdrop-filter: blur(3.4px) !important;
-         -webkit-backdrop-filter: blur(3.4px) !important;
-         border: 1px solid rgba(255, 255, 255, 0.28) !important;
-         color: white;
-         width: 50%;
-         height: 450px;
-         overflow: scroll;
+         h5{
+            color: $primary_color;
+         }
+         p{
+            font-size: 13px;
+            margin-top: 10px;
+         }
 
-         .wrap-text-show{
-            color: white;
-            width: 90%;
+         .it-btn{
+            button{
+               padding: 5px 6px;
+               a{
+                  color: white;
+                  font-size: 14px;
+               }
+            }
+         }
+      }
+
+   }
+
+   .bottom-profile{
+      // background-color: red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+
+      .top-bottom{
+         width: 100%;
+         height: 550px;
+         display: flex;
+         flex-direction: column;
+         padding: 15px;
+
+         h3{
+               color: $primary_color;
+         }
+         
+         .contaier-reviews{
+            overflow: auto;
+
+            .wrap-review{
+               margin: 15px 0px;
+               width: 100%;          
+               padding: 10px;
+               h6{
+                  color: $primary_color;
+               }
+               p{
+                  font-size: 13px;
+                  margin: 5px 0px;
+               }
+
+               .wrap-span{
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+               
+                  .wrap-star{
+                     .star{
+                        color: white;
+                        font-size: 14px;
+                     }
+                  }
+
+                  .date{
+                     font-size: 15px;
+                     color: $primary_color;
+                  }
+
+               }  
+
+            }
+
          }
       }
    }

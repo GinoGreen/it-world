@@ -12,7 +12,11 @@ class HomeController extends Controller
 {
     public function index() {
 
-        return view('admin.home');
+        $profile = Auth::user();
+
+        $reviews = Review::where('user_id', $profile->id)->paginate(5);
+
+        return view('admin.home',compact('reviews', 'profile'));
     }
 
     public function message() {

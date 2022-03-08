@@ -8,6 +8,11 @@
       width: 100%;
       margin-top: 20px;
 
+      a {
+         color: transparent;
+         padding: 10px;
+      }
+
       .it-dashboard-top{
          display: flex;
          justify-content: space-around;
@@ -26,7 +31,7 @@
             cursor: pointer;
             /*glass effect*/
             background: rgba(255, 255, 255, 0.16);
-            border-radius: 30px;
+            border-radius: 6px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(3.4px);
             -webkit-backdrop-filter: blur(3.4px);
@@ -53,10 +58,10 @@
       }
 
       .line-horizontal{
-         width: 60%;
+         width: 30%;
          height: 3px;
          background-color: $primary_color;
-         border-radius: 20px;
+         border-radius: 6px;
          margin: 30px auto;
       }
 

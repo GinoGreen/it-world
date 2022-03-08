@@ -38,6 +38,8 @@ class CreateUsersTable extends Migration
                 'Valle d Aosta',
                 'Veneto',
             ]);
+            $table->double('vote_average', 1, 1)->nullable();
+            $table->integer('reviews_length')->nullable();
             $table->string('email')->unique();
             $table->string('avatar_path')->nullable();
             $table->string('cv_path')->nullable();

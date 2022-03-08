@@ -62,8 +62,7 @@
                         <div class="form-group row">
                             <div class="col-md-12">
                                 
-                                <label class="it-remember"
-                                    for="remember">
+                                <label class="it-remember" for="remember">
                                     <input class="input_checkbox" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <span class="it_checkmark"></span>
                                     {{ __('Remember Me') }}

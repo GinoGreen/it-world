@@ -28,21 +28,7 @@
         <main class="back-end-main">
             <div class="container-fluid">
                 <div class="row">
-                    @auth
-                    <div class="col-2 it-dashboard-box">
-                        @include('admin.partials.dashboard')
-                    </div>
-                    @endauth
-                    <div class="
-                        @auth
-                            col-10
-                        @endauth
-
-                        @guest
-                            col-12
-                        @endguest
-                    
-                    ">
+                    <div class="col">
                         @yield('content')
                     </div>
                 </div>
