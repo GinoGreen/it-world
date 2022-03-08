@@ -6,7 +6,7 @@
 
       <h1>Form Dinamico</h1>
 
-      <form id="contact_us">
+      <form id="contact_us" @submit.prevent="sendForm">
 
          <div class="it_input_contact_us"
             v-for="(field, index) in formFields"
@@ -30,12 +30,15 @@
                @click="labelAnimation(field.for), resetLabel(field.label)"
             ></textarea>
             <div class="it_input_border"></div>
+            <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
          </div>
 
          <div class="it-btn mt-5">
-            <button>
-               Invia 
-            </button>
+            <button 
+               type="submit"
+               :class="{active: !sending}"
+               :disabled="sending"
+            >{{ sending ? 'Invio in corso...' : 'Invio' }}</button>
          </div>
 
       </form>
@@ -75,7 +78,13 @@ export default {
                tag: 'textarea',
                content: '',
             },
-         ]
+         ],
+         name: '',
+         email: '',
+         message: '',
+         errors: {},
+         success: false,
+         sending: false,
       }
    },
 
@@ -117,6 +126,39 @@ export default {
                ease: "bounce",
             })
          }
+      },
+
+      sendForm() {
+         this.name = this.formFields[0].content;
+         this.email = this.formFields[1].content;
+         this.message = this.formFields[2].content;
+         this.success = false;
+         this.sending = true;
+         axios.post('api/contacts', {
+
+            
+
+            name: this.name,
+            email: this.email,
+            message: this.message,
+
+         }).then(response => {
+
+            this.sending = false;
+            if (response.data.success) {
+               this.success = true;
+               this.name = '';
+               this.email = '';
+               this.message = '';
+               this.formFields.forEach(element => {
+                  element.content = '';
+               });
+               this.errors = {};
+            } else {
+               this.errors = response.data.errors;
+            }
+
+         });
       }
    },
 
@@ -181,6 +223,13 @@ export default {
                transition: all .5s;
             }
 
+      }
+
+      .it-btn {
+         cursor: default;
+         button.active {
+            cursor: pointer;
+         }
       }
 
       label, p {

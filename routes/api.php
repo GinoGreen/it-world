@@ -28,4 +28,4 @@ Route::namespace('Api')
         Route::get('/{profile_id}','UserController@show');
     });
 
-    
+Route::post('/contacts', 'Api\ContactController@store');
