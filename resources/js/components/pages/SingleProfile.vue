@@ -23,7 +23,7 @@
             
          </div>
          <div class="mid-sx glass">
-            <h5> Livello d'esperienza: {{profile.level}}</h5>
+            <h5> Livello: {{profile.level}}</h5>
             <div 
                v-if="profile.description"
                class="wrap-description"
@@ -37,28 +37,58 @@
                class="wrap-cv"
             >
                <h5>Scarica il curriculum</h5>
-               <a>{{profile.cv_path}}</a>
+               <a :href="profile.cv_path">Clicca Qui</a>
+               
             </div>
 
 
          </div>
          <div class="bottom-sx glass">
             <h5>Contatti</h5>
-            <p>Email: {{profile.email}}</p>
+            <p>{{profile.email}}</p>
          </div>
       </div>
 
       <div class="dx-profile col-6">
          <div class="top-dx glass">
+            
             <h3>Recensioni</h3>
 
-            <div class="wrap-review duble-glass">
-               <h6>Nome Cognome</h6>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio provident distinctio laudantium ipsa, reprehenderit, quibusdam aut voluptate, labore omnis iure voluptates deserunt. Illo dicta officiis placeat nulla!</p>
-               <span>star</span>
+            <div class="contaier-reviews">
+
+               <div 
+                  class="wrap-review duble-glass"
+                  v-for="review in profile.reviews"
+                  :key="review.id"          
+               >
+
+                  <h6>{{review.title}}</h6>
+                  <p>{{review.description}}</p>
+                  <div class="wrap-span">
+                     <div class="wrap-star">
+                        <span
+                           class="star"
+                           v-for="(star, index) in review.vote"
+                           :key="index"
+                        >
+                           <i class="fa fa-star" aria-hidden="true"></i>
+                        </span>
+                     </div>
+      
+                     <span class="date">
+                        {{review.month}} / {{review.year}}
+                     </span>
+               
+                  </div>
+
+               </div>
+
             </div>
+            
          </div>
+
       </div>
+
 
    </section>
 
@@ -108,7 +138,8 @@ export default {
       align-items: center;
       justify-content: flex-start;
       padding: 20px;
-      overflow: scroll;
+      overflow: auto;
+      height: 570px;
 
       .top-sx{
          display: flex;
@@ -118,10 +149,15 @@ export default {
          padding: 15px;
          margin-bottom: 20px;
 
+         h3{
+            color: $primary_color;
+         }
+
          .wrap-image{
             height: 150px;
             width: 150px;
             border-radius: 50%;
+            overflow: hidden;
 
             img{
                width: 150px;
@@ -143,9 +179,26 @@ export default {
          margin-bottom: 20px;
 
          .wrap-description{
-            margin: 15px 0px 15px 0px;
+            margin: 15px 0px;
             h5{
-               margin-bottom: 15px;
+               margin-bottom: 10px;
+               color: $primary_color;
+            }
+         }
+
+         .wrap-cv{
+
+            h5{
+               margin-bottom: 10px;
+            }
+
+            a{
+               padding: 5px 10px;
+               background-color: $primary_color;
+               color: white;
+               border-radius: 10px;
+               border: 1px solid white;
+               font-size: 12px;
             }
          }
       }
@@ -156,6 +209,7 @@ export default {
          margin-bottom: 20px;
          h5{
             margin-bottom: 15px;
+            color: $primary_color;
          }
       }
    }
@@ -174,14 +228,52 @@ export default {
          flex-direction: column;
          padding: 15px;
 
-         .wrap-review{
-            margin: 15px 0px;
-            width: 100%;
-            min-height: 100px;
-            padding: 10px;
+         h3{
+               color: $primary_color;
+         }
+         
+         .contaier-reviews{
+            overflow: auto;
+
+            .wrap-review{
+               margin: 15px 0px;
+               width: 100%;          
+               padding: 10px;
+               h6{
+                  color: $primary_color;
+               }
+               p{
+                  font-size: 13px;
+                  margin: 5px 0px;
+               }
+
+               .wrap-span{
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+               
+                  .wrap-star{
+                     .star{
+                        color: gold;
+                        font-size: 14px;
+                     }
+                  }
+
+                  .date{
+                     font-size: 15px;
+                     color: $primary_color;
+                  }
+
+               }  
+
+            }
+
          }
       }
    }
+
 }
+
+
 
 </style>
