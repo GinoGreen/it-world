@@ -455,7 +455,11 @@ p {
 
 .it-section-page .bottom-profile .top-bottom {
   width: 100%;
+<<<<<<< HEAD
+  height: 550px;
+=======
   max-height: 550px;
+>>>>>>> master
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -1273,6 +1277,34 @@ p {
 
 .container .it-dashboard-info .it-dashboard-bottom ::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
+}
+
+.box_button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box_button .link_statistics .statistics_btn {
+  border: 1px solid white;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #FF4D5A;
+  transition: background-color 1s;
+}
+
+.box_button .link_statistics .statistics_btn.active {
+  padding: 10px;
+}
+
+.box_button .link_statistics .statistics_btn:hover {
+  background-color: #fd9ea4;
+}
+
+.box_button .link_statistics:hover {
+  text-decoration: none;
 }
 
 /*!

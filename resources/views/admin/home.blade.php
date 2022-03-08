@@ -19,7 +19,7 @@
                     <p>Modifica Profilo</p>
                 </div>
             </a>
-            <a href="">
+            <a href="{{ route('') }}">
             <div class="it-dashboard-box it-title-small">
                     <i class="it-dash-icon fa fa-bar-chart" aria-hidden="true"></i>
                     <p>Anteprima Statistiche</p>

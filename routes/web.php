@@ -18,9 +18,6 @@ Route::get('/', function() {
     return view('guest.home');
 });
 
-Route::get('chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
-Route::get('chartjs/{prova}', [ChartJsController::class, 'prova'])->name('chartjs.prova');
-
 Auth::routes();
 
 Route::middleware('auth')
@@ -35,7 +32,11 @@ Route::middleware('auth')
 
             Route::get('/review', 'HomeController@review')->name('review');
 
-            Route::get('/statistic', 'HomeController@statistic')->name('statistic');
+            Route::get('/statistic', 'HomeController@getAverageForCurrentYear')->name('statistic');
+
+            Route::get('/statistic/{year}', 'HomeController@getAverageForSelectedYear')->name('statistic.year');
+
+            Route::get('/statistic_count', 'HomeController@getCountForCurrentYear')->name('statistic.count');
 
             Route::get('/profile/show', 'ProfileController@show')->name('show');
 
