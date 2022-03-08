@@ -47,60 +47,68 @@ a:hover {
    margin-top: 20px;
 
    button{
-      background-color: $secondary_color;
+      background-color: $primary_color;
       outline: none;
       border: none;
       color: #fff;
-      border-radius: 10px;
-      padding: 10px;
-      transition: all 0.3s ease;
+      border-radius: 30px;
+      padding: 10px 20px;
+      transition: all .4s;
       cursor: pointer;
 
       &:hover{
-         background: $primary_color;
+         transform: translateY(-3px);
       }
    }
 }
 
-// INPUT FIELD //
 .it_input {
    display: flex;
    flex-direction: column;
-   position: relative;
+   margin-top: 70px;
+   margin-bottom: 0;
 
-   margin-bottom: 50px;
-
-   textarea {
-      max-height: 200px;
-   }
-   .it_input_field {
-      z-index: 200;
-      display: block;
-      height: 40px;
-      width: 100%;
-      background-color: transparent;
-      border: 0;
-      border-bottom: 2px solid #fff;
-      caret-color: #fff;
-      color: #fff;
-
-      &:focus + .it_input_border {
-         width: 100%;
+      position: relative;
+   
+   
+      textarea {
+         max-height: 200px;
       }
-      
-   }
-   label {
-      position: absolute;
-      left: 0;
-      bottom: 10px;
-      z-index: 100;
-   }
-   .it_input_border {
-      z-index: 300;
-      width: 0;
-      height: 3px;
-      background-color: $primary_color;
-      transform: translateY(-2px);
-      transition: all .5s;
-   }
+      .it_input_field {
+         z-index: 200;
+         display: block;
+         height: 40px;
+         width: 100%;
+         background-color: transparent;
+         border: 0;
+         border-bottom: 2px solid #fff;
+         caret-color: $primary_color;
+         color: #fff;
+         opacity: 0;
+   
+         &:focus ~ .it_input_border {
+            width: 100%;
+         }
+         
+      }
+      label {
+         position: absolute;
+         left: 0;
+         bottom: 10px;
+         font-size: .9em;
+         z-index: 100;
+         transition: all .1s;
+      }
+      .it_input_border {
+         z-index: 300;
+         width: 0;
+         height: 3px;
+         transform: translateY(-3px);
+         transition: all .5s;
+      }
+
+}
+
+label, p {
+   color: #fff;
 }

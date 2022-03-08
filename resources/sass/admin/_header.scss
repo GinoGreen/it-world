@@ -1,6 +1,15 @@
 header{
+   background-color: transparent;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 100;
    .it-dashboard-header{
-      background-color: $secondary-color;
+      background-color: transparent;
+      a {
+         color: #fff;
+      }
       .it-logo{
          width: 200px;
       }
