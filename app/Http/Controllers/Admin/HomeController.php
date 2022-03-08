@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Message;
 use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,13 @@ class HomeController extends Controller
 
     public function message() {
 
-        return view('admin.profile.message');
+        $profile = Auth::user();
+
+        $messages = Message::where('user_id', $profile->id)
+                    ->orderBy('date','DESC')
+                    ->paginate(3);
+
+        return view('admin.profile.message',compact('messages'));
     }
 
     public function review() {
