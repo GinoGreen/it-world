@@ -362,8 +362,7 @@ p {
 }
 
 .it-section-page .sx-profile .top-sx .wrap-image img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
 }
 
 .it-section-page .sx-profile .top-sx .wrap-text {
@@ -456,7 +455,11 @@ p {
 
 .it-section-page .bottom-profile .top-bottom {
   width: 100%;
+<<<<<<< HEAD
   height: 550px;
+=======
+  max-height: 550px;
+>>>>>>> master
   display: flex;
   flex-direction: column;
   padding: 15px;

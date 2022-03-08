@@ -4,7 +4,7 @@
 
    <section class="it-section-page row">
 
-      <div class="sx-profile col-6">
+      <div class="sx-profile col-8">
          <div class="top-sx glass">
 
             <div class="wrap-image">
@@ -33,7 +33,11 @@
                class="wrap-cv"
             >
                <h5>Scarica il curriculum</h5>
-               <a :href="profile.cv_path">Clicca Qui</a>
+               <div class="it-btn">
+                  <button>
+                     <a :href="profile.cv_path">Clicca qui</a>
+                  </button>
+               </div>
                
             </div>
 
@@ -45,8 +49,28 @@
          </div>
       </div>
 
-      <div class="dx-profile col-6">
-         <div class="top-dx glass">
+      <div class="dx-profile col-4">
+         <div class="call-to-action glass">
+
+            <h5>Rimani in contatto con {{profile.name}}</h5>
+            <p>Compila il form e proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
+             <router-link :to="{name: 'MessageReviewForm'}">
+               <div class="it-btn mb-4">
+                  <button>Invia un messaggio</button>
+               </div>
+             </router-link>
+            <h5>Valuta l'esperienza di {{profile.name}}</h5>
+            <p>Hai già avuto a che fare con il nostro professionista? Lascia una recensione e aiuta gli altri utenti!</p>
+            <router-link :to="{name: 'MessageReviewForm'}">
+               <div class="it-btn">
+                  <button>Scrivi una recensione</button>
+               </div>
+            </router-link>
+         </div>
+      </div>
+
+      <div class="bottom-profile col-12">
+         <div class="top-bottom glass">
             
             <h3>Recensioni</h3>
 
@@ -127,7 +151,7 @@ export default {
    justify-content: space-between;
    .sx-profile, .dx-profile{
       width: 90%;
-      height: calc(100vh - 150px);
+      // height: calc(100vh - 150px);
    }
    .sx-profile{
       display: flex;
@@ -136,7 +160,7 @@ export default {
       justify-content: flex-start;
       padding: 20px;
       overflow: auto;
-      height: 570px;
+      max-height: 670px;
 
       .top-sx{
          display: flex;
@@ -157,8 +181,7 @@ export default {
             overflow: hidden;
 
             img{
-               width: 150px;
-               height: 150px;
+               width: 100%;
             }
          }
 
@@ -189,14 +212,6 @@ export default {
                margin-bottom: 10px;
             }
 
-            a{
-               padding: 5px 10px;
-               background-color: $primary_color;
-               color: white;
-               border-radius: 10px;
-               border: 1px solid white;
-               font-size: 12px;
-            }
          }
       }
 
@@ -209,8 +224,53 @@ export default {
             color: $primary_color;
          }
       }
+
+
+
+      // ::-webkit-scrollbar {
+      //    width: 3px !important;
+      //    border-radius: 20px !important; 
+      // }
+      // /* Track */
+      // ::-webkit-scrollbar-track {
+      //    background: none !important; 
+      // }
+      // /* Handle */
+      // ::-webkit-scrollbar-thumb {
+      //    background: $primary_color !important; 
+      // }
+      // /* Handle on hover */
+      // ::-webkit-scrollbar-thumb:hover {
+      //    cursor: pointer !important; 
+      // }
    }
+
+
    .dx-profile{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px 10px;
+      .call-to-action{
+         height: 350px;
+         width: 100%;
+         padding: 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         justify-content: center;
+         h5{
+            color: $primary_color;
+         }
+         p{
+            font-size: 13px;
+            margin-top: 10px;
+         }
+      }
+
+   }
+
+   .bottom-profile{
       // background-color: red;
       display: flex;
       flex-direction: column;
@@ -218,9 +278,9 @@ export default {
       justify-content: space-between;
       padding: 20px;
 
-      .top-dx{
+      .top-bottom{
          width: 100%;
-         height: 550px;
+         max-height: 550px;
          display: flex;
          flex-direction: column;
          padding: 15px;
@@ -251,7 +311,7 @@ export default {
                
                   .wrap-star{
                      .star{
-                        color: gold;
+                        color: white;
                         font-size: 14px;
                      }
                   }

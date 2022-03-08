@@ -172,7 +172,7 @@
             <div class="it_input_selection it-select-wrapper">
 
                <select class="it_input_select it-select-select" 
-                  name="region" 
+                  name="level" 
                   id="region"
                >
                   <option value="">Seleziona esperienza</option>
