@@ -181,8 +181,7 @@ export default {
             overflow: hidden;
 
             img{
-               width: 150px;
-               height: 150px;
+               width: 100%;
             }
          }
 
@@ -281,7 +280,7 @@ export default {
 
       .top-bottom{
          width: 100%;
-         height: 550px;
+         max-height: 550px;
          display: flex;
          flex-direction: column;
          padding: 15px;

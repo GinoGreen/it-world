@@ -10,7 +10,7 @@
          <div class="top-sx glass">
  
             <div class="wrap-image">
-               <img src="{{ Auth::user()->avatar_path }}" alt="avatar">
+               <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
             </div>
  
             <div class="wrap-text">
@@ -38,7 +38,7 @@
                <h5>Scarica il curriculum</h5>
                <div class="it-btn">
                   <button>
-                     <a href="{{ Auth::user()->cv_path }}">Clicca qui</a>
+                     <a href="{{ asset('storage/' . Auth::user()->cv_path) }}" target="_blank">Clicca qui</a>
                   </button>
                </div>
                @endif 
@@ -74,32 +74,27 @@
  
             <div class="contaier-reviews">
  
-               <div 
-                  class="wrap-review duble-glass"
-                  @foreach ( as $review)
-            
-               >
+               @foreach (Auth::user()->reviews as $review)
+               <div class="wrap-review duble-glass">
  
-                  <h6>titolo recensione</h6>
-                  <p>contenuto recensione</p>
+                  <h6>{{ $review->title }}</h6>
+                  <p>{{ $review->description }}</p>
                   <div class="wrap-span">
                      <div class="wrap-star">
-                        <span
-                           class="star"
-                            
-                        >
-                           <i class="fa fa-star" aria-hidden="true"></i>
-                        </span>
+                        @for ($star = 0; $star < $review->vote; $star++)
+                           <span class="star">
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                           </span>
+                        @endfor
                      </div>
        
                      <span class="date">
-                        mese / anno
+                        {{ $review->month }}/{{ $review->year }}
                      </span>
                 
                   </div>
-
-                  @endforeach
                </div>
+               @endforeach
  
             </div>
              

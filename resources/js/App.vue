@@ -9,14 +9,14 @@
                   <div class="circle">
                      <div class="circle">
                         <div class="circle">
-                           <img class="stars" src="img/moon/planet-vector-stars-solo.svg" alt="stars">
+                           <img class="stars" src="/img/moon/planet-vector-stars-solo.svg" alt="stars">
                         </div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         <img class="planet" src="img/moon/planet-solo-vector-10.svg" alt="it_world">
+         <img class="planet" src="/img/moon/planet-solo-vector-10.svg" alt="it_world">
          
       </div>
    </div>
