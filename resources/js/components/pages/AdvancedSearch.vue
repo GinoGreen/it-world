@@ -4,7 +4,11 @@
       
       <section class="it-section-page row">
          <div class="content-left glass p-1 col-xl-3 col-md-3 col-sm-12 ml-auto mr-auto">
-            <h3 class="it-title-small it-text-orange text-center">Filtri</h3>
+
+            <div class="filters-title">
+               <h3 class="it-title-small it-text-orange text-center">Filtri</h3>
+            </div>
+            
             <div class="filters">
 
                <div class="specialization">
@@ -48,6 +52,10 @@
                </div>
 
             </div>
+
+            <div class="it-links col-12 text-dark">
+            </div>
+
          </div>
          <div class="content-right glass p-1 col-xl-8 col-md-5 col-sm-12 mr-auto d-flex align-items-center">
             
@@ -61,7 +69,9 @@
                   v-for="(profile, index) in profiles"
                   :key="'profile' + index"
                >
-                  <div class="photo"></div>
+                  <div class="photo">
+                     <img :src="profile.image" alt="">
+                  </div>
                   <div class="info-content">
                      <div class="info">
                         <router-link :to="{name: 'profile', params:{profile_id: profile.id}}">
@@ -188,25 +198,38 @@ export default {
          position: relative;
          display: flex;
          flex-direction: column;
+         .it-links{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            min-height: 20px;
+            background-color: $primary-color;
+         }
       }
 
       .content-left{
-         overflow: auto;
+         overflow: hidden;
          height: calc(100vh - 100px);
-         // display: flex;
-         // flex-direction: column;
-         justify-content: flex-end;
 
-         // h3{
-            //    text-align: center;
-         // }
+         .filters-title{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 50px;
+            background-color: $primary-color;
+            h3{
+               line-height: 50px;
+               color: white;
+            }
+         }
 
          .filters{
             width: 100%;
-            height: calc(100% - 50px);
             // background-color: white;
+            overflow: auto;
             border-radius: 10px 10px 0px 0px;
-            padding: 20px;
+            padding: 50px 10px 20px 10px;
 
             .specialization, .reviews, .vote{
                margin-bottom: 30px;
@@ -278,6 +301,7 @@ export default {
       .content-right{
          height: calc(100vh - 100px);
          overflow: hidden;
+         position: relative;
          
          .results-title{
             width: 100%;
@@ -292,9 +316,12 @@ export default {
          }
 
          .results-box{
-            padding-top: 50px;
+            padding: 50px 0;
             overflow-y: auto;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             .profile-box{
                width: 80%;
                background-color: white;
@@ -319,13 +346,6 @@ export default {
                   }
                }
             }
-         }
-
-         .it-links{
-            position: absolute;
-            bottom: 0;
-            min-height: 50px;
-            background-color: $primary-color;
          }
 
       }
