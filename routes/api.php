@@ -21,4 +21,11 @@ Route::namespace('Api')
         Route::get('/{role}','Job_roleController@search');
     });
 
+Route::namespace('Api')
+    ->prefix('profile')
+    ->group(function(){
+        Route::get('/','UserController@index');
+        Route::get('/{profile_id}','UserController@show');
+    });
+
     
