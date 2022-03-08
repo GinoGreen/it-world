@@ -172,45 +172,6 @@ header .it-dashboard-header .it-logo {
   width: 200px;
 }
 
-.col-2.it-dashboard-box {
-  min-height: calc(100vh - 75px);
-  margin: 0;
-  padding: 0;
-  background-color: #FF4D5A;
-}
-
-.col-2.it-dashboard-box .it-dashboard ul {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  list-style: none;
-}
-
-.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item {
-  width: 80%;
-  margin: 20px 0;
-  padding: 25px;
-}
-
-.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item:hover,
-.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item.active {
-  background-color: #072142;
-  border-radius: 30px 0 0 30px;
-}
-
-.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item i {
-  color: white;
-}
-
-.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item a {
-  padding: 5px;
-  text-decoration: none;
-}
-
-.col-2.it-dashboard-box .it-dashboard ul li.it-dashboard-item a span {
-  color: white;
-}
-
 main .white-wrapper-show {
   display: flex;
   flex-direction: column;
@@ -349,7 +310,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 
 .it-card .card-body .it_input_login:focus-within .it_icon_login {
   width: 13%;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .it-card .card-body .it_input_login:focus-within .it_input_field {
@@ -360,7 +321,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   background-color: #fff;
   width: 24%;
   height: 100%;
-  font-size: 2em;
+  font-size: 1.6em;
   background-color: #d1d1d1;
   color: #686868;
   display: grid;
@@ -688,6 +649,11 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   margin-top: 20px;
 }
 
+.container .it-dashboard-info a {
+  color: transparent;
+  padding: 10px;
+}
+
 .container .it-dashboard-info .it-dashboard-top {
   display: flex;
   justify-content: space-around;
@@ -707,7 +673,7 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
   cursor: pointer;
   /*glass effect*/
   background: rgba(255, 255, 255, 0.16);
-  border-radius: 30px;
+  border-radius: 6px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.4px);
   -webkit-backdrop-filter: blur(3.4px);
@@ -730,10 +696,10 @@ main .white-wrapper-show .data-wrapper-show .wrap-text-show {
 }
 
 .container .it-dashboard-info .line-horizontal {
-  width: 60%;
+  width: 30%;
   height: 3px;
   background-color: #FF4D5A;
-  border-radius: 20px;
+  border-radius: 6px;
   margin: 30px auto;
 }
 
