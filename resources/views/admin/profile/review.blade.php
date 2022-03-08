@@ -2,11 +2,16 @@
 
 @section('content')
 <div class="container">
-  <div class="it-reviews-wrapper mt-5">
+
+  <div class="it-page-title">
+    <h3>Le mie Recensioni</h3>
+  </div>
+
+  <div class="it-reviews-wrapper mt-3">
     <div class="row">
       
       @foreach ($reviews as $review)
-      <div class="col-12 d-flex justify-content-between align-items-center">
+      <div class="col-12 d-flex justify-content-center align-items-center">
         
         <div class="it-reviews-box mb-4">
           <div class="it-r-top">

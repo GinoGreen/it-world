@@ -1,8 +1,10 @@
-.it-reviews-wrapper{
-   // height: calc(100vh - 95px);
-   // padding: 20px;
-   // border-radius: 30px;
+.it-page-title{
+   display: flex;
+   justify-content: center;
+   color: white;
+}
 
+.it-reviews-wrapper{
    .it-reviews-box{
       background: rgba(255, 255, 255, 0.16) !important;
       border-radius: 5px !important;
