@@ -28,7 +28,7 @@
                <div class="reviews">
                   <h3 class="it-title-small it-text-black">Recensioni</h3>
                   <div class="slider-box">
-                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="50" class="slider" id="myRange" @click="getApi()">
+                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="0" class="slider" id="myRange" @click="getApi()">
                      <p>min: <span id="demo">{{rangeReviewsValue}}</span></p>
                   </div>
                </div>
@@ -40,7 +40,7 @@
                      <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
                   </div>
                   <div class="star-reset it-btn">
-                     <button @click="actualNumberStar = 0">Stars Reset</button>
+                     <button @click="resetFilters()">Reset Filters</button>
                   </div>
                </div>
 
@@ -199,7 +199,18 @@ export default {
             this.starRange[i].active = true;
          }
          this.actualNumberStar = star.numberStar;
-         console.log('numero stelle attuale:', this.actualNumberStar)
+         console.log('numero stelle attuale:', this.actualNumberStar);
+         this.getApi();
+      },
+
+      resetFilters(){
+         this.actualNumberStar = 0;
+         this.rangeReviewsValue = 0;
+         for(let i = 0; i < this.starRange.length; i++){
+            const star = this.starRange[i];
+            star.active = false;
+            this.setRangeStar(star);
+         }
          this.getApi();
       }
    },

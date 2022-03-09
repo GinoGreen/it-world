@@ -2165,6 +2165,18 @@ __webpack_require__.r(__webpack_exports__);
       this.actualNumberStar = star.numberStar;
       console.log('numero stelle attuale:', this.actualNumberStar);
       this.getApi();
+    },
+    resetFilters: function resetFilters() {
+      this.actualNumberStar = 0;
+      this.rangeReviewsValue = 0;
+
+      for (var i = 0; i < this.starRange.length; i++) {
+        var star = this.starRange[i];
+        star.active = false;
+        this.setRangeStar(star);
+      }
+
+      this.getApi();
     }
   },
   mounted: function mounted() {
@@ -2902,15 +2914,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'CatSlider',
   data: function data() {
     return {
       swiper: null,
-      card: 1
+      card: 1,
+      apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
+      allJobRoles: []
     };
   },
   methods: {
+    getJobRoles: function getJobRoles() {
+      var _this = this;
+
+      axios.get(this.apiUrl).then(function (res) {
+        _this.allJobRoles = res.data;
+        console.log('all roles: ', _this.allJobRoles);
+      });
+    },
     mediaSlider: function mediaSlider() {
       if (window.innerWidth > 970) {
         this.card = 3;
@@ -2941,6 +2992,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.mediaSlider();
     window.addEventListener('resize', this.mediaSlider);
+    this.getJobRoles();
   }
 });
 
@@ -3406,7 +3458,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".it-slider[data-v-22c8bcd1] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-22c8bcd1] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  border-radius: 30px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1]::before {\n  content: \"\";\n  position: absolute;\n  border-radius: 30px;\n  background: #7B40FF;\n  height: 100%;\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-22c8bcd1] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-22c8bcd1] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-22c8bcd1] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info img[data-v-22c8bcd1] {\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-22c8bcd1] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-22c8bcd1] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1], .it-slider .swiper-button-prev[data-v-22c8bcd1] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1]:hover, .it-slider .swiper-button-prev[data-v-22c8bcd1]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
+exports.push([module.i, ".it-slider[data-v-22c8bcd1] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-22c8bcd1] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  border-radius: 30px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1]::before {\n  content: \"\";\n  position: absolute;\n  border-radius: 30px;\n  height: 100%;\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-22c8bcd1] {\n  padding: 60px 30px 30px 30px;\n  position: relative;\n  z-index: 100;\n  height: 350px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-btn[data-v-22c8bcd1] {\n  font-size: 13px;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-22c8bcd1] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-22c8bcd1] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info img[data-v-22c8bcd1] {\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-22c8bcd1] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-22c8bcd1] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1], .it-slider .swiper-button-prev[data-v-22c8bcd1] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1]:hover, .it-slider .swiper-button-prev[data-v-22c8bcd1]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -11108,7 +11160,7 @@ var render = function () {
                     type: "range",
                     min: "0",
                     max: "100",
-                    value: "50",
+                    value: "0",
                     id: "myRange",
                   },
                   domProps: { value: _vm.rangeReviewsValue },
@@ -11161,11 +11213,11 @@ var render = function () {
                   {
                     on: {
                       click: function ($event) {
-                        _vm.actualNumberStar = 0
+                        return _vm.resetFilters()
                       },
                     },
                   },
-                  [_vm._v("Stars Reset")]
+                  [_vm._v("Reset Filters")]
                 ),
               ]),
             ]),
@@ -12154,11 +12206,73 @@ var render = function () {
       _c(
         "div",
         { staticClass: "swiper-wrapper content" },
-        _vm._l(6, function (card, index) {
+        _vm._l(_vm.allJobRoles, function (card, index) {
           return _c(
             "div",
-            { key: index, staticClass: "swiper-slide it-card" },
-            [_vm._m(0, true)]
+            { key: index, staticClass: "swiper-slide it-card glass" },
+            [
+              _c("div", { staticClass: "it-card-content" }, [
+                _c("div", { staticClass: "it-info" }, [
+                  card.id === 1
+                    ? _c("img", {
+                        attrs: {
+                          src: "/img/catslider/front-end.svg",
+                          alt: "image",
+                        },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.id === 2
+                    ? _c("img", {
+                        attrs: {
+                          src: "/img/catslider/back-end.svg",
+                          alt: "image",
+                        },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.id === 3
+                    ? _c("img", {
+                        attrs: {
+                          src: "/img/catslider/social-media.svg",
+                          alt: "image",
+                        },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.id === 4
+                    ? _c("img", {
+                        attrs: { src: "/img/catslider/uex.svg", alt: "image" },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.id === 5
+                    ? _c("img", {
+                        attrs: { src: "/img/catslider/ui.svg", alt: "image" },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.id === 6
+                    ? _c("img", {
+                        attrs: { src: "/img/catslider/app.svg", alt: "image" },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.id === 7
+                    ? _c("img", {
+                        attrs: {
+                          src: "/img/catslider/cyber.svg",
+                          alt: "image",
+                        },
+                      })
+                    : _vm._e(),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "it-btn" }, [
+                  _c("button", [_vm._v(_vm._s(card.name))]),
+                ]),
+              ]),
+            ]
           )
         }),
         0
@@ -12170,24 +12284,7 @@ var render = function () {
     _c("div", { staticClass: "swiper-button-prev" }),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "it-card-content" }, [
-      _c("div", { staticClass: "it-info" }, [
-        _c("img", {
-          attrs: { src: "/img/catslider/frontend-dev.svg", alt: "image" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "it-btn" }, [
-        _c("button", [_vm._v("Categoria")]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
