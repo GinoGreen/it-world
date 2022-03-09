@@ -113,12 +113,26 @@
             margin-top: 10px;
          }
 
-         .it-btn{
+         .it-btn-show{
+            width: 100%;
             button{
-               padding: 5px 6px;
+               background-color: $primary_color;
+               outline: none;
+               border: none;
+               color: #fff;
+               border-radius: 30px;
+               padding: 7px 15px;
+               width: 60%;
+               transition: all .4s;
+               cursor: pointer;
+         
+               &:hover{
+                  transform: translateY(-3px);
+               }
+
                a{
                   color: white;
-                  font-size: 14px;
+
                }
             }
          }
