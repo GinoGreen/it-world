@@ -141,6 +141,7 @@ export default {
             name: this.name,
             email: this.email,
             message: this.message,
+            type: this.$route.params.type
 
          }).then(response => {
 
@@ -163,7 +164,7 @@ export default {
    },
 
    mounted(){
-      
+      console.log(this.$route.params.type);
    }
 }
 
