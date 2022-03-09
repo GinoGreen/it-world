@@ -201,7 +201,7 @@ export default {
                margin-top: 10px;
 
                .it-job-name{
-                  width: 40%;
+                  min-width: 40%;
                   font-size: 15px;
                   text-align: center;
                   border: 1px solid $primary_color;
