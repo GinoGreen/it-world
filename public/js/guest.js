@@ -2391,6 +2391,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'MessageReviewForm',
@@ -2551,8 +2566,6 @@ __webpack_require__.r(__webpack_exports__);
             _this2.formFieldsReview.forEach(function (element) {
               element.content = '';
             });
-
-            _this2.resetStars();
           }
 
           _this2.errors = {};
@@ -2560,9 +2573,6 @@ __webpack_require__.r(__webpack_exports__);
           _this2.errors = response.data.errors;
         }
       });
-    },
-    resetStars: function resetStars() {
-      this.actualNumberStar = 0; //TODO
     },
     setRangeStar: function setRangeStar(star) {
       if (star.active) {
@@ -2909,6 +2919,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -3410,7 +3424,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Op
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-781a2080], p[data-v-781a2080] {\n  color: #fff;\n}\n.glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .content-left .it-links[data-v-781a2080], .it-section-page .content-right .it-links[data-v-781a2080] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-height: 20px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  overflow: hidden;\n  height: calc(100vh - 100px);\n}\n.it-section-page .content-left .filters-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left .filters-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  overflow: auto;\n  border-radius: 10px 10px 0px 0px;\n  padding: 50px 10px 20px 10px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: transparent;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slider-box[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080] {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 5px;\n  background: #072142;\n  outline: none;\n  opacity: 1;\n  transition: opacity 0.2s;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]:hover {\n  opacity: 0.7;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  appearance: none;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-moz-range-thumb {\n  width: 15px;\n  height: 15px;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  height: calc(100vh - 100px);\n  overflow: hidden;\n  position: relative;\n}\n.it-section-page .content-right .results-title[data-v-781a2080] {\n  width: 100%;\n  z-index: 100;\n  position: absolute;\n  top: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-right .results-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-right .results-box[data-v-781a2080] {\n  padding: 50px 0;\n  overflow-y: auto;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  position: relative;\n  height: 100%;\n}\n.it-section-page .content-right .results-box .message-box[data-v-781a2080] {\n  position: absolute;\n  top: 50%;\n  transform: translate(0, -50%);\n}\n.it-section-page .content-right .results-box .profile-box[data-v-781a2080] {\n  width: 80%;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .results-box .profile-box .photo[data-v-781a2080] {\n  width: 23%;\n  min-width: 90px;\n  min-height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n  overflow: hidden;\n  border-radius: 50%;\n}\n.it-section-page .content-right .results-box .profile-box .photo img[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-right .results-box .profile-box .info-content[data-v-781a2080] {\n  width: 77%;\n  min-width: calc(100% - 90px);\n}\n.it-section-page .content-right .results-box .profile-box .info[data-v-781a2080] {\n  width: 100%;\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .results-box .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}\n.it-section-page .content-right .results-box .profile-box .info .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #FF4D5A;\n  font-weight: 600;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-781a2080], p[data-v-781a2080] {\n  color: #fff;\n}\n.glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .content-left .it-links[data-v-781a2080], .it-section-page .content-right .it-links[data-v-781a2080] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-height: 20px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  overflow: hidden;\n  height: calc(100vh - 100px);\n}\n.it-section-page .content-left .filters-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left .filters-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  overflow: auto;\n  border-radius: 10px 10px 0px 0px;\n  padding: 50px 10px 20px 10px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: transparent;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slider-box[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080] {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 5px;\n  background: #072142;\n  outline: none;\n  opacity: 1;\n  transition: opacity 0.2s;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]:hover {\n  opacity: 0.7;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  appearance: none;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-moz-range-thumb {\n  width: 15px;\n  height: 15px;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  height: calc(100vh - 100px);\n  overflow: hidden;\n  position: relative;\n}\n.it-section-page .content-right .results-title[data-v-781a2080] {\n  width: 100%;\n  z-index: 100;\n  position: absolute;\n  top: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-right .results-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-right .results-box[data-v-781a2080] {\n  padding: 50px 0;\n  overflow-y: auto;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  position: relative;\n  height: 100%;\n}\n.it-section-page .content-right .results-box .message-box[data-v-781a2080] {\n  position: absolute;\n  top: 50%;\n  transform: translate(0, -50%);\n}\n.it-section-page .content-right .results-box .profile-box[data-v-781a2080] {\n  width: 80%;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .results-box .profile-box .photo[data-v-781a2080] {\n  width: 23%;\n  min-width: 90px;\n  min-height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n  overflow: hidden;\n  border-radius: 50%;\n}\n.it-section-page .content-right .results-box .profile-box .photo img[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-right .results-box .profile-box .info-content[data-v-781a2080] {\n  width: 77%;\n  min-width: calc(100% - 90px);\n}\n.it-section-page .content-right .results-box .profile-box .info[data-v-781a2080] {\n  width: 100%;\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .results-box .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}\n.it-section-page .content-right .results-box .profile-box .info .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -3448,7 +3462,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-d6fa3d06] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-d6fa3d06] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-d6fa3d06],\na[data-v-d6fa3d06]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-d6fa3d06] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-d6fa3d06] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-d6fa3d06] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-d6fa3d06] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-d6fa3d06] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-d6fa3d06] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-d6fa3d06] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-d6fa3d06] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-d6fa3d06]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-d6fa3d06] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-d6fa3d06] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-d6fa3d06] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-d6fa3d06] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-d6fa3d06] {\n  width: 100%;\n}\n.it_input label[data-v-d6fa3d06] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-d6fa3d06] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-d6fa3d06], p[data-v-d6fa3d06] {\n  color: #fff;\n}\n.glass[data-v-d6fa3d06] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-d6fa3d06] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page form#contact_us[data-v-d6fa3d06] {\n  margin-top: 40px;\n  width: 70%;\n}\n.it-section-page form#contact_us .it_input_contact_us[data-v-d6fa3d06] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it-section-page form#contact_us .it_input_contact_us textarea[data-v-d6fa3d06] {\n  max-height: 200px;\n}\n.it-section-page form#contact_us .it_input_contact_us .it_input_field[data-v-d6fa3d06] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n}\n.it-section-page form#contact_us .it_input_contact_us .it_input_field:focus ~ .it_input_border[data-v-d6fa3d06] {\n  width: 100%;\n}\n.it-section-page form#contact_us .it_input_contact_us label[data-v-d6fa3d06] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it-section-page form#contact_us .it_input_contact_us .it_input_border[data-v-d6fa3d06] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\n.it-section-page form#contact_us .vote .stars i[data-v-d6fa3d06] {\n  font-size: 20px;\n  cursor: pointer;\n}\n.it-section-page form#contact_us .it-btn[data-v-d6fa3d06] {\n  cursor: default;\n}\n.it-section-page form#contact_us .it-btn button.active[data-v-d6fa3d06] {\n  cursor: pointer;\n}\n.it-section-page form#contact_us label[data-v-d6fa3d06], .it-section-page form#contact_us p[data-v-d6fa3d06] {\n  color: #fff;\n}", ""]);
+exports.push([module.i, "*[data-v-d6fa3d06] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-d6fa3d06] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-d6fa3d06],\na[data-v-d6fa3d06]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-d6fa3d06] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-d6fa3d06] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-d6fa3d06] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-d6fa3d06] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-d6fa3d06] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-d6fa3d06] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-d6fa3d06] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-d6fa3d06] {\n  background-color: #FF4D5A;\n  font-weight: 600;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-d6fa3d06]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-d6fa3d06] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-d6fa3d06] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-d6fa3d06] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-d6fa3d06] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-d6fa3d06] {\n  width: 100%;\n}\n.it_input label[data-v-d6fa3d06] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-d6fa3d06] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-d6fa3d06], p[data-v-d6fa3d06] {\n  color: #fff;\n}\n.glass[data-v-d6fa3d06] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-d6fa3d06] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page form#contact_us[data-v-d6fa3d06] {\n  margin-top: 40px;\n  width: 70%;\n}\n.it-section-page form#contact_us .it_input_contact_us[data-v-d6fa3d06] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it-section-page form#contact_us .it_input_contact_us textarea[data-v-d6fa3d06] {\n  max-height: 200px;\n}\n.it-section-page form#contact_us .it_input_contact_us .it_input_field[data-v-d6fa3d06] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n}\n.it-section-page form#contact_us .it_input_contact_us .it_input_field:focus ~ .it_input_border[data-v-d6fa3d06] {\n  width: 100%;\n}\n.it-section-page form#contact_us .it_input_contact_us label[data-v-d6fa3d06] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it-section-page form#contact_us .it_input_contact_us .it_input_border[data-v-d6fa3d06] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\n.it-section-page form#contact_us .vote .stars i[data-v-d6fa3d06] {\n  font-size: 20px;\n  cursor: pointer;\n}\n.it-section-page form#contact_us .it-btn[data-v-d6fa3d06] {\n  cursor: default;\n}\n.it-section-page form#contact_us .it-btn button.active[data-v-d6fa3d06] {\n  cursor: pointer;\n}\n.it-section-page form#contact_us label[data-v-d6fa3d06], .it-section-page form#contact_us p[data-v-d6fa3d06] {\n  color: #fff;\n}\n.sent[data-v-d6fa3d06] {\n  margin: 20px 0;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -3467,7 +3481,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-206ace3f] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-206ace3f] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-206ace3f] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-206ace3f] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-206ace3f] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-206ace3f] {\n  width: 100%;\n}\n.it_input label[data-v-206ace3f] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-206ace3f], p[data-v-206ace3f] {\n  color: #fff;\n}\n.glass[data-v-206ace3f] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-206ace3f] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  --offset: 85px;\n  position: relative;\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx h2 .word-box[data-v-206ace3f] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-width: var(--offset);\n}\nsection .row .content-sx h2 .word-box .cursor[data-v-206ace3f] {\n  margin-left: -4px;\n}\nsection .row .content-sx h2 .it-title[data-v-206ace3f] {\n  display: inline-block;\n  margin-left: var(--offset);\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
+exports.push([module.i, "*[data-v-206ace3f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-206ace3f] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-206ace3f],\na[data-v-206ace3f]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-206ace3f] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-206ace3f] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-206ace3f] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-206ace3f] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-206ace3f] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-206ace3f] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-206ace3f] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-206ace3f] {\n  background-color: #FF4D5A;\n  font-weight: 600;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-206ace3f] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-206ace3f] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-206ace3f] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-206ace3f] {\n  width: 100%;\n}\n.it_input label[data-v-206ace3f] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-206ace3f] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-206ace3f], p[data-v-206ace3f] {\n  color: #fff;\n}\n.glass[data-v-206ace3f] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-206ace3f] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\nsection[data-v-206ace3f] {\n  height: 100vh;\n  width: 90%;\n}\nsection .row[data-v-206ace3f] {\n  padding-top: 30px;\n}\nsection .row .content-sx[data-v-206ace3f],\nsection .row .content-dx[data-v-206ace3f] {\n  height: 500px;\n}\nsection .row .content-sx[data-v-206ace3f] {\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n}\nsection .row .content-sx h1[data-v-206ace3f] {\n  color: #FFF;\n}\nsection .row .content-sx h2[data-v-206ace3f] {\n  --offset: 85px;\n  position: relative;\n  color: #fff;\n  margin-bottom: 20px;\n}\nsection .row .content-sx h2 .word-box[data-v-206ace3f] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-width: var(--offset);\n}\nsection .row .content-sx h2 .word-box .cursor[data-v-206ace3f] {\n  margin-left: -4px;\n}\nsection .row .content-sx h2 .it-title[data-v-206ace3f] {\n  display: inline-block;\n  margin-left: var(--offset);\n}\nsection .row .content-sx .it-btn[data-v-206ace3f] {\n  justify-content: flex-start;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f] {\n  font-size: 1em;\n  padding: 10px 20px;\n  background-color: #FF4D5A;\n  border-radius: 30px;\n  transition: all 0.4s;\n}\nsection .row .content-sx .it-btn button[data-v-206ace3f]:hover {\n  transform: translateY(-3px);\n}\nsection .row .content-dx[data-v-206ace3f] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .row .content-dx img[data-v-206ace3f] {\n  width: 100%;\n}\nsection .section-details[data-v-206ace3f] {\n  padding: 32px 0;\n}\nsection .section-details .line-1[data-v-206ace3f],\nsection .section-details .line-2[data-v-206ace3f] {\n  width: 88px;\n  height: 3px;\n  background-color: #FF4D5A;\n  border-radius: 6px;\n}\nsection .section-details .line-1[data-v-206ace3f] {\n  margin-bottom: 16px;\n}\nsection .section-details .line-2[data-v-206ace3f] {\n  margin-left: 50px;\n}", ""]);
 
 // exports
 
@@ -3486,7 +3500,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-387a041b] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-387a041b] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-387a041b],\na[data-v-387a041b]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-387a041b] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-387a041b] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-387a041b] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-387a041b] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-387a041b] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-387a041b] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-387a041b] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-387a041b] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-387a041b] {\n  width: 100%;\n}\n.it_input label[data-v-387a041b] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-387a041b], p[data-v-387a041b] {\n  color: #fff;\n}\n.glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-387a041b] {\n  justify-content: space-between;\n}\n.it-section-page .sx-profile[data-v-387a041b], .it-section-page .dx-profile[data-v-387a041b] {\n  width: 90%;\n}\n.it-section-page .sx-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 20px;\n  overflow: auto;\n  max-height: 670px;\n}\n.it-section-page .sx-profile .top-sx[data-v-387a041b] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .top-sx h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .top-sx .wrap-image[data-v-387a041b] {\n  height: 150px;\n  width: 150px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.it-section-page .sx-profile .top-sx .wrap-image img[data-v-387a041b] {\n  width: 100%;\n}\n.it-section-page .sx-profile .top-sx .wrap-text[data-v-387a041b] {\n  margin-left: 15px;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .sx-profile .top-sx .wrap-text .it-job-box[data-v-387a041b] {\n  display: flex;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n  margin-top: 10px;\n}\n.it-section-page .sx-profile .top-sx .wrap-text .it-job-box .it-job-name[data-v-387a041b] {\n  min-width: 40%;\n  font-size: 15px;\n  text-align: center;\n  border: 1px solid #FF4D5A;\n  border-radius: 30px;\n  padding: 5px;\n  margin: 0px 20px 10px 0px;\n}\n.it-section-page .sx-profile .mid-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description[data-v-387a041b] {\n  margin: 15px 0px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description h5[data-v-387a041b] {\n  margin-bottom: 10px;\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .mid-sx .wrap-cv h5[data-v-387a041b] {\n  margin-bottom: 10px;\n}\n.it-section-page .sx-profile .bottom-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .bottom-sx h5[data-v-387a041b] {\n  margin-bottom: 15px;\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding: 20px 10px;\n}\n.it-section-page .dx-profile .call-to-action[data-v-387a041b] {\n  height: 350px;\n  width: 100%;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n  overflow-y: auto;\n}\n.it-section-page .dx-profile .call-to-action h5[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile .call-to-action p[data-v-387a041b] {\n  font-size: 13px;\n  margin-top: 10px;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit[data-v-387a041b] {\n  width: 100%;\n  margin-top: 15px;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 7px 15px;\n  width: 100%;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button a[data-v-387a041b] {\n  color: white;\n}\n.it-section-page .bottom-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px;\n}\n.it-section-page .bottom-profile .top-bottom[data-v-387a041b] {\n  width: 100%;\n  max-height: 550px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px;\n}\n.it-section-page .bottom-profile .top-bottom h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews[data-v-387a041b] {\n  overflow: auto;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review[data-v-387a041b] {\n  margin: 15px 0px;\n  width: 100%;\n  padding: 10px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review h6[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review p[data-v-387a041b] {\n  font-size: 13px;\n  margin: 5px 0px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span[data-v-387a041b] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .wrap-star .star[data-v-387a041b] {\n  color: white;\n  font-size: 14px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .date[data-v-387a041b] {\n  font-size: 15px;\n  color: #FF4D5A;\n}", ""]);
+exports.push([module.i, "*[data-v-387a041b] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-387a041b] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-387a041b],\na[data-v-387a041b]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-387a041b] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-387a041b] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-387a041b] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-387a041b] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-387a041b] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-387a041b] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  font-weight: 600;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-387a041b] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-387a041b] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-387a041b] {\n  width: 100%;\n}\n.it_input label[data-v-387a041b] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-387a041b], p[data-v-387a041b] {\n  color: #fff;\n}\n.glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-387a041b] {\n  justify-content: space-between;\n}\n.it-section-page .sx-profile[data-v-387a041b], .it-section-page .dx-profile[data-v-387a041b] {\n  width: 90%;\n}\n.it-section-page .sx-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 20px;\n  overflow: auto;\n  max-height: 670px;\n}\n.it-section-page .sx-profile .top-sx[data-v-387a041b] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .top-sx h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .top-sx .wrap-image[data-v-387a041b] {\n  height: 150px;\n  width: 150px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.it-section-page .sx-profile .top-sx .wrap-image img[data-v-387a041b] {\n  width: 100%;\n}\n.it-section-page .sx-profile .top-sx .wrap-text[data-v-387a041b] {\n  margin-left: 15px;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .sx-profile .top-sx .wrap-text .it-job-box[data-v-387a041b] {\n  display: flex;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n  margin-top: 10px;\n}\n.it-section-page .sx-profile .top-sx .wrap-text .it-job-box .it-job-name[data-v-387a041b] {\n  min-width: 40%;\n  font-size: 15px;\n  text-align: center;\n  border: 1px solid #FF4D5A;\n  border-radius: 30px;\n  padding: 5px;\n  margin: 0px 20px 10px 0px;\n}\n.it-section-page .sx-profile .mid-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description[data-v-387a041b] {\n  margin: 15px 0px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description h5[data-v-387a041b] {\n  margin-bottom: 10px;\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .mid-sx .wrap-cv h5[data-v-387a041b] {\n  margin-bottom: 10px;\n}\n.it-section-page .sx-profile .bottom-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .bottom-sx h5[data-v-387a041b] {\n  margin-bottom: 15px;\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding: 20px 10px;\n}\n.it-section-page .dx-profile .call-to-action[data-v-387a041b] {\n  height: 350px;\n  width: 100%;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n  overflow-y: auto;\n}\n.it-section-page .dx-profile .call-to-action h5[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile .call-to-action p[data-v-387a041b] {\n  font-size: 13px;\n  margin-top: 10px;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit[data-v-387a041b] {\n  width: 100%;\n  margin-top: 15px;\n  font-weight: 600;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 7px 15px;\n  width: 100%;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button a[data-v-387a041b] {\n  color: white;\n}\n.it-section-page .bottom-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px;\n}\n.it-section-page .bottom-profile .top-bottom[data-v-387a041b] {\n  width: 100%;\n  max-height: 550px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px;\n}\n.it-section-page .bottom-profile .top-bottom h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews[data-v-387a041b] {\n  overflow: auto;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review[data-v-387a041b] {\n  margin: 15px 0px;\n  width: 100%;\n  padding: 10px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review h6[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review p[data-v-387a041b] {\n  font-size: 13px;\n  margin: 5px 0px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span[data-v-387a041b] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .wrap-star .star[data-v-387a041b] {\n  color: white;\n  font-size: 14px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .date[data-v-387a041b] {\n  font-size: 15px;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -3505,7 +3519,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".it-slider[data-v-22c8bcd1] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-22c8bcd1] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  border-radius: 30px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1]::before {\n  content: \"\";\n  position: absolute;\n  border-radius: 30px;\n  height: 100%;\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-22c8bcd1] {\n  padding: 60px 30px 30px 30px;\n  position: relative;\n  z-index: 100;\n  height: 350px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-btn[data-v-22c8bcd1] {\n  font-size: 13px;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-22c8bcd1] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-22c8bcd1] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info img[data-v-22c8bcd1] {\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-22c8bcd1] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-22c8bcd1] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1], .it-slider .swiper-button-prev[data-v-22c8bcd1] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1]:hover, .it-slider .swiper-button-prev[data-v-22c8bcd1]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
+exports.push([module.i, ".it-slider[data-v-22c8bcd1] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-22c8bcd1] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  padding: 0px 20px 20px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-22c8bcd1]::before {\n  content: \"\";\n  z-index: -1;\n  position: absolute;\n  border-radius: 30px;\n  height: 100%;\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-22c8bcd1] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  z-index: 100;\n  height: 280px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-22c8bcd1] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info img[data-v-22c8bcd1] {\n  width: 100%;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-btn[data-v-22c8bcd1] {\n  z-index: 50;\n  font-size: 13px;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1], .it-slider .swiper-button-prev[data-v-22c8bcd1] {\n  opacity: 0.7;\n  color: white;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-22c8bcd1]:hover, .it-slider .swiper-button-prev[data-v-22c8bcd1]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -3524,7 +3538,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-8c9f9304] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-8c9f9304] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\n.it_input label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-8c9f9304], p[data-v-8c9f9304] {\n  color: #fff;\n}\n.glass[data-v-8c9f9304] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-8c9f9304] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\nform#contact_us[data-v-8c9f9304] {\n  margin-top: 40px;\n  width: 70%;\n}\nform#contact_us .it_input_contact_us[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\nform#contact_us .it_input_contact_us textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\nform#contact_us .it_input_contact_us .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n}\nform#contact_us .it_input_contact_us .it_input_field:focus ~ .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\nform#contact_us .it_input_contact_us label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\nform#contact_us .it_input_contact_us .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nform#contact_us label[data-v-8c9f9304], form#contact_us p[data-v-8c9f9304] {\n  color: #fff;\n}", ""]);
+exports.push([module.i, "*[data-v-8c9f9304] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-8c9f9304] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-8c9f9304],\na[data-v-8c9f9304]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-8c9f9304] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-8c9f9304] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-8c9f9304] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-8c9f9304] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-8c9f9304] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-8c9f9304] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-8c9f9304] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-8c9f9304] {\n  background-color: #FF4D5A;\n  font-weight: 600;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-8c9f9304]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\n.it_input label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-8c9f9304], p[data-v-8c9f9304] {\n  color: #fff;\n}\n.glass[data-v-8c9f9304] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-8c9f9304] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\nform#contact_us[data-v-8c9f9304] {\n  margin-top: 40px;\n  width: 70%;\n}\nform#contact_us .it_input_contact_us[data-v-8c9f9304] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\nform#contact_us .it_input_contact_us textarea[data-v-8c9f9304] {\n  max-height: 200px;\n}\nform#contact_us .it_input_contact_us .it_input_field[data-v-8c9f9304] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n}\nform#contact_us .it_input_contact_us .it_input_field:focus ~ .it_input_border[data-v-8c9f9304] {\n  width: 100%;\n}\nform#contact_us .it_input_contact_us label[data-v-8c9f9304] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\nform#contact_us .it_input_contact_us .it_input_border[data-v-8c9f9304] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nform#contact_us label[data-v-8c9f9304], form#contact_us p[data-v-8c9f9304] {\n  color: #fff;\n}", ""]);
 
 // exports
 
@@ -3562,7 +3576,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "/* SEARCH */\n.it-search[data-v-05fad3c5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  min-height: 50px;\n  background-color: #FF4D5A;\n  border-radius: 20px;\n  border: 5px solid white;\n  margin-top: 20px;\n  /*box-shadow: 0 5px 20px #f16972, 0 0 0 10px white;*/\n}\n.it-search form[data-v-05fad3c5] {\n  height: 100%;\n  width: 100%;\n}\n.it-search form .it-table[data-v-05fad3c5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  padding: 0 50px;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5] {\n  width: 100%;\n  min-height: 50px;\n  font-size: 25px;\n  line-height: 1;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]::-moz-placeholder {\n  color: #ffbfbf;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]:-ms-input-placeholder {\n  color: #ffbfbf;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]::placeholder {\n  color: #ffbfbf;\n}\n.it-search form .it-table .it-td button[data-v-05fad3c5] {\n  position: relative;\n  display: block;\n  height: 96px;\n  cursor: pointer;\n}\n.it-search form .it-table .it-td button #it-search-circle[data-v-05fad3c5] {\n  width: 30px;\n  height: 30px;\n  margin-top: 0;\n  border-width: 5px;\n  border: 5px solid #fff;\n  background-color: transparent;\n  border-radius: 50%;\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td button span[data-v-05fad3c5] {\n  position: absolute;\n  top: 55px;\n  left: 0px;\n  display: block;\n  width: 45px;\n  height: 4px;\n  background-color: transparent;\n  border-radius: 10px;\n  transform: rotateZ(52deg);\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td button span[data-v-05fad3c5]:after, .it-search form .it-table .it-td button span[data-v-05fad3c5]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 20px;\n  height: 5px;\n  background-color: #fff;\n  border-radius: 10px;\n  transform: rotateZ(0);\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td input[data-v-05fad3c5], .it-search form .it-table .it-td button[data-v-05fad3c5] {\n  color: #fff;\n  padding: 0;\n  margin: 0;\n  border: 0;\n  background-color: transparent;\n}\n.it-search form .it-table #it-search-left[data-v-05fad3c5] {\n  width: 90%;\n}\n.it-search form .it-table #it-search-right[data-v-05fad3c5] {\n  display: flex;\n  justify-content: flex-end;\n  width: 10%;\n}\n#it-search-right:hover #it-search-circle[data-v-05fad3c5] {\n  top: -1px;\n  width: 50px;\n  height: 5px;\n  border-width: 0;\n  background-color: #fff;\n  border-radius: 20px;\n}\n#it-search-right:hover span[data-v-05fad3c5] {\n  top: 55px;\n  left: 25px;\n  width: 25px;\n  margin-top: -8.5px;\n  transform: rotateZ(0);\n}\n#it-search-right:hover button span[data-v-05fad3c5]:before {\n  bottom: 6px;\n  left: 9px;\n  transform: rotateZ(52deg);\n}\n#it-search-right:hover button span[data-v-05fad3c5]:after {\n  bottom: -6px;\n  left: 9px;\n  transform: rotateZ(-52deg);\n}", ""]);
+exports.push([module.i, "/* SEARCH */\n.it-search[data-v-05fad3c5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  min-height: 50px;\n  border-radius: 20px;\n  border: 5px solid white;\n  margin-top: 20px;\n  /*box-shadow: 0 5px 20px #f16972, 0 0 0 10px white;*/\n}\n.it-search form[data-v-05fad3c5] {\n  height: 100%;\n  width: 100%;\n}\n.it-search form .it-table[data-v-05fad3c5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  padding: 0 40px;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5] {\n  width: 100%;\n  min-height: 50px;\n  font-size: 25px;\n  line-height: 1;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]::-moz-placeholder {\n  color: #fff;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]:-ms-input-placeholder {\n  color: #fff;\n}\n.it-search form .it-table .it-td input[type=text][data-v-05fad3c5]::placeholder {\n  color: #fff;\n}\n.it-search form .it-table .it-td button[data-v-05fad3c5] {\n  position: relative;\n  display: block;\n  height: 96px;\n  cursor: pointer;\n}\n.it-search form .it-table .it-td button #it-search-circle[data-v-05fad3c5] {\n  width: 30px;\n  height: 30px;\n  margin-top: 0;\n  border-width: 5px;\n  border: 5px solid #FF4D5A;\n  background-color: transparent;\n  border-radius: 50%;\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td button span[data-v-05fad3c5] {\n  position: absolute;\n  top: 55px;\n  left: 0px;\n  display: block;\n  width: 45px;\n  height: 4px;\n  background-color: transparent;\n  border-radius: 10px;\n  transform: rotateZ(52deg);\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td button span[data-v-05fad3c5]:after, .it-search form .it-table .it-td button span[data-v-05fad3c5]:before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 20px;\n  height: 5px;\n  background-color: #FF4D5A;\n  border-radius: 10px;\n  transform: rotateZ(0);\n  transition: 0.5s ease all;\n}\n.it-search form .it-table .it-td input[data-v-05fad3c5], .it-search form .it-table .it-td button[data-v-05fad3c5] {\n  color: #fff;\n  padding: 0;\n  margin: 0;\n  border: 0;\n  background-color: transparent;\n}\n.it-search form .it-table #it-search-left[data-v-05fad3c5] {\n  width: 90%;\n}\n.it-search form .it-table #it-search-right[data-v-05fad3c5] {\n  display: flex;\n  justify-content: flex-end;\n  width: 10%;\n}\n#it-search-right:hover #it-search-circle[data-v-05fad3c5] {\n  top: -1px;\n  width: 50px;\n  height: 5px;\n  border-width: 0;\n  background-color: #FF4D5A;\n  border-radius: 20px;\n}\n#it-search-right:hover span[data-v-05fad3c5] {\n  top: 55px;\n  left: 25px;\n  width: 25px;\n  margin-top: -8.5px;\n  transform: rotateZ(0);\n}\n#it-search-right:hover button span[data-v-05fad3c5]:before {\n  bottom: 6px;\n  left: 9px;\n  transform: rotateZ(52deg);\n}\n#it-search-right:hover button span[data-v-05fad3c5]:after {\n  bottom: -6px;\n  left: 9px;\n  transform: rotateZ(-52deg);\n}", ""]);
 
 // exports
 
@@ -3581,7 +3595,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-a8bd8652] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652] {\n  position: relative;\n  background: #fff;\n  margin: 70px 0;\n  border-radius: 30px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652]::before {\n  content: \"\";\n  position: absolute;\n  border-radius: 30px 30px 0 0;\n  height: 40%;\n  width: 100%;\n  background: #FF4D5A;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar[data-v-a8bd8652] {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  padding: 3px;\n  background: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar img[data-v-a8bd8652] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 3px solid white;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons[data-v-a8bd8652] {\n  position: absolute;\n  top: 10px;\n  right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652] {\n  color: white;\n  opacity: 0.6;\n  margin-top: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652]:hover {\n  opacity: 1;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-a8bd8652] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .profession[data-v-a8bd8652] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-a8bd8652] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-a8bd8652] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652], .it-slider .swiper-button-prev[data-v-a8bd8652] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652]:hover, .it-slider .swiper-button-prev[data-v-a8bd8652]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
+exports.push([module.i, ".it-slider[data-v-a8bd8652] {\n  position: relative;\n  display: flex;\n  min-height: 50vh;\n  align-items: center;\n}\n.it-slider .swiper[data-v-a8bd8652] {\n  max-width: 768px;\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652] {\n  position: relative;\n  margin: 70px 0;\n  border-radius: 30px;\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);\n}\n.it-slider .swiper .swiper-wrapper .it-card[data-v-a8bd8652]::before {\n  content: \"\";\n  position: absolute;\n  border-radius: 10px 10px 0 0;\n  height: 40%;\n  width: 100%;\n  background: #FF4D5A;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 30px;\n  position: relative;\n  z-index: 100;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar[data-v-a8bd8652] {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  padding: 3px;\n  background: #072142;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-slider-avatar img[data-v-a8bd8652] {\n  height: 100%;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50%;\n  border: 3px solid white;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons[data-v-a8bd8652] {\n  position: absolute;\n  top: 10px;\n  right: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652] {\n  color: white;\n  opacity: 0.6;\n  margin-top: 10px;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .media-icons i[data-v-a8bd8652]:hover {\n  opacity: 1;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info[data-v-a8bd8652] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 10px;\n  color: white;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .name[data-v-a8bd8652] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .it-info .profession[data-v-a8bd8652] {\n  font-size: 15px;\n  font-weight: 500;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating[data-v-a8bd8652] {\n  display: flex;\n  align-items: center;\n  margin-top: 18px;\n}\n.it-slider .swiper .swiper-wrapper .it-card .it-card-content .rating i[data-v-a8bd8652] {\n  font-size: 18px;\n  margin: 0 2px;\n  color: #FF4D5A;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652], .it-slider .swiper-button-prev[data-v-a8bd8652] {\n  opacity: 0.7;\n  color: #FF4D5A;\n  transition: all 0.3s ease;\n}\n.it-slider .swiper-button-next[data-v-a8bd8652]:hover, .it-slider .swiper-button-prev[data-v-a8bd8652]:hover {\n  opacity: 1;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -11565,418 +11579,472 @@ var render = function () {
         ? _c("h1", [_vm._v("Recensisci")])
         : _vm._e(),
       _vm._v(" "),
-      _vm.$route.params.type === "message"
+      _vm.success
         ? _c(
-            "form",
-            {
-              attrs: { id: "contact_us" },
-              on: {
-                submit: function ($event) {
-                  $event.preventDefault()
-                  return _vm.sendForm.apply(null, arguments)
-                },
-              },
-            },
+            "div",
             [
-              _vm._l(_vm.formFieldsMessage, function (field, index) {
-                return _c(
-                  "div",
-                  { key: "field" + index, staticClass: "it_input_contact_us" },
-                  [
-                    _c("label", { attrs: { for: field.for } }, [
-                      _vm._v(_vm._s(field.label)),
-                    ]),
-                    _vm._v(" "),
-                    field.type === "checkbox" && field.tag === "input"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: {
-                            id: field.for,
-                            name: field.for,
-                            type: "checkbox",
-                          },
-                          domProps: {
-                            checked: Array.isArray(field.content)
-                              ? _vm._i(field.content, null) > -1
-                              : field.content,
-                          },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            change: function ($event) {
-                              var $$a = field.content,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      field,
-                                      "content",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      field,
-                                      "content",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(field, "content", $$c)
-                              }
-                            },
-                          },
-                        })
-                      : field.type === "radio" && field.tag === "input"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: {
-                            id: field.for,
-                            name: field.for,
-                            type: "radio",
-                          },
-                          domProps: { checked: _vm._q(field.content, null) },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            change: function ($event) {
-                              return _vm.$set(field, "content", null)
-                            },
-                          },
-                        })
-                      : field.tag === "input"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: {
-                            id: field.for,
-                            name: field.for,
-                            type: field.type,
-                          },
-                          domProps: { value: field.content },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(field, "content", $event.target.value)
-                            },
-                          },
-                        })
-                      : _c("textarea", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: { name: field.for, id: field.for },
-                          domProps: { value: field.content },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(field, "content", $event.target.value)
-                            },
-                          },
-                        }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "it_input_border" }),
-                  ]
-                )
-              }),
-              _vm._v(" "),
-              _vm.errors.name
-                ? _c("p", { staticClass: "error-field" }, [
-                    _vm._v(_vm._s(_vm.errors.message[0])),
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.errors.name
-                ? _c("p", { staticClass: "error-field" }, [
-                    _vm._v(_vm._s(_vm.errors.name[0])),
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.errors.email
-                ? _c("p", { staticClass: "error-field" }, [
-                    _vm._v(_vm._s(_vm.errors.email[0])),
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "it-btn mt-5" }, [
-                _c(
-                  "button",
-                  {
-                    class: { active: !_vm.sending },
-                    attrs: { type: "submit", disabled: _vm.sending },
-                  },
-                  [_vm._v(_vm._s(_vm.sending ? "Invio in corso..." : "Invio"))]
-                ),
+              _c("h2", { staticClass: "sent" }, [
+                _vm._v("Inviato correttamente"),
               ]),
-            ],
-            2
-          )
-        : _c(
-            "form",
-            {
-              attrs: { id: "contact_us" },
-              on: {
-                submit: function ($event) {
-                  $event.preventDefault()
-                  return _vm.sendForm.apply(null, arguments)
-                },
-              },
-            },
-            [
-              _c("div", { staticClass: "vote" }, [
-                _c("h3", { staticClass: "it-title-small it-text-black" }, [
-                  _vm._v("Voto"),
+              _vm._v(" "),
+              _c("router-link", { attrs: { to: "/" } }, [
+                _c("div", { staticClass: "it-btn" }, [
+                  _c("button", [_vm._v("Torna alla Home")]),
                 ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "stars" },
-                  _vm._l(_vm.starRange, function (star, index) {
-                    return _c("i", {
-                      key: index,
-                      staticClass: "fa",
-                      class: _vm.setRangeStar(star),
-                      attrs: { "aria-hidden": "true" },
-                      on: {
-                        click: function ($event) {
-                          return _vm.activeStar(star)
-                        },
-                      },
-                    })
-                  }),
-                  0
-                ),
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.formFieldsReview, function (field, index) {
-                return _c(
-                  "div",
-                  { key: "field" + index, staticClass: "it_input_contact_us" },
-                  [
-                    _c("label", { attrs: { for: field.for } }, [
-                      _vm._v(_vm._s(field.label)),
-                    ]),
-                    _vm._v(" "),
-                    field.type === "checkbox" && field.tag === "input"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: {
-                            id: field.for,
-                            name: field.for,
-                            type: "checkbox",
-                          },
-                          domProps: {
-                            checked: Array.isArray(field.content)
-                              ? _vm._i(field.content, null) > -1
-                              : field.content,
-                          },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            change: function ($event) {
-                              var $$a = field.content,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      field,
-                                      "content",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      field,
-                                      "content",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(field, "content", $$c)
-                              }
-                            },
-                          },
-                        })
-                      : field.type === "radio" && field.tag === "input"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: {
-                            id: field.for,
-                            name: field.for,
-                            type: "radio",
-                          },
-                          domProps: { checked: _vm._q(field.content, null) },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            change: function ($event) {
-                              return _vm.$set(field, "content", null)
-                            },
-                          },
-                        })
-                      : field.tag === "input"
-                      ? _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: {
-                            id: field.for,
-                            name: field.for,
-                            type: field.type,
-                          },
-                          domProps: { value: field.content },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(field, "content", $event.target.value)
-                            },
-                          },
-                        })
-                      : _c("textarea", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: field.content,
-                              expression: "field.content",
-                            },
-                          ],
-                          staticClass: "it_input_field",
-                          attrs: { name: field.for, id: field.for },
-                          domProps: { value: field.content },
-                          on: {
-                            click: function ($event) {
-                              _vm.labelAnimation(field.for),
-                                _vm.resetLabel(field.label)
-                            },
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(field, "content", $event.target.value)
-                            },
-                          },
-                        }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "it_input_border" }),
-                  ]
-                )
-              }),
-              _vm._v(" "),
-              _vm.errors.message
-                ? _c("p", { staticClass: "error-field" }, [
-                    _vm._v(_vm._s(_vm.errors.message[0])),
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.errors.name
-                ? _c("p", { staticClass: "error-field" }, [
-                    _vm._v(_vm._s(_vm.errors.name[0])),
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "it-btn mt-5" }, [
-                _c(
-                  "button",
-                  {
-                    class: { active: !_vm.sending },
-                    attrs: { type: "submit", disabled: _vm.sending },
-                  },
-                  [_vm._v(_vm._s(_vm.sending ? "Invio in corso..." : "Invio"))]
-                ),
               ]),
             ],
-            2
-          ),
+            1
+          )
+        : _c("div", [
+            _vm.$route.params.type === "message"
+              ? _c(
+                  "form",
+                  {
+                    attrs: { id: "contact_us" },
+                    on: {
+                      submit: function ($event) {
+                        $event.preventDefault()
+                        return _vm.sendForm.apply(null, arguments)
+                      },
+                    },
+                  },
+                  [
+                    _vm._l(_vm.formFieldsMessage, function (field, index) {
+                      return _c(
+                        "div",
+                        {
+                          key: "field" + index,
+                          staticClass: "it_input_contact_us",
+                        },
+                        [
+                          _c("label", { attrs: { for: field.for } }, [
+                            _vm._v(_vm._s(field.label)),
+                          ]),
+                          _vm._v(" "),
+                          field.type === "checkbox" && field.tag === "input"
+                            ? _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: {
+                                  id: field.for,
+                                  name: field.for,
+                                  type: "checkbox",
+                                },
+                                domProps: {
+                                  checked: Array.isArray(field.content)
+                                    ? _vm._i(field.content, null) > -1
+                                    : field.content,
+                                },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  change: function ($event) {
+                                    var $$a = field.content,
+                                      $$el = $event.target,
+                                      $$c = $$el.checked ? true : false
+                                    if (Array.isArray($$a)) {
+                                      var $$v = null,
+                                        $$i = _vm._i($$a, $$v)
+                                      if ($$el.checked) {
+                                        $$i < 0 &&
+                                          _vm.$set(
+                                            field,
+                                            "content",
+                                            $$a.concat([$$v])
+                                          )
+                                      } else {
+                                        $$i > -1 &&
+                                          _vm.$set(
+                                            field,
+                                            "content",
+                                            $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1))
+                                          )
+                                      }
+                                    } else {
+                                      _vm.$set(field, "content", $$c)
+                                    }
+                                  },
+                                },
+                              })
+                            : field.type === "radio" && field.tag === "input"
+                            ? _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: {
+                                  id: field.for,
+                                  name: field.for,
+                                  type: "radio",
+                                },
+                                domProps: {
+                                  checked: _vm._q(field.content, null),
+                                },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  change: function ($event) {
+                                    return _vm.$set(field, "content", null)
+                                  },
+                                },
+                              })
+                            : field.tag === "input"
+                            ? _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: {
+                                  id: field.for,
+                                  name: field.for,
+                                  type: field.type,
+                                },
+                                domProps: { value: field.content },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  input: function ($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      field,
+                                      "content",
+                                      $event.target.value
+                                    )
+                                  },
+                                },
+                              })
+                            : _c("textarea", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: { name: field.for, id: field.for },
+                                domProps: { value: field.content },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  input: function ($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      field,
+                                      "content",
+                                      $event.target.value
+                                    )
+                                  },
+                                },
+                              }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "it_input_border" }),
+                        ]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.name
+                      ? _c("p", { staticClass: "error-field" }, [
+                          _vm._v(_vm._s(_vm.errors.message[0])),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.errors.name
+                      ? _c("p", { staticClass: "error-field" }, [
+                          _vm._v(_vm._s(_vm.errors.name[0])),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.errors.email
+                      ? _c("p", { staticClass: "error-field" }, [
+                          _vm._v(_vm._s(_vm.errors.email[0])),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "it-btn mt-5" }, [
+                      _c(
+                        "button",
+                        {
+                          class: { active: !_vm.sending },
+                          attrs: { type: "submit", disabled: _vm.sending },
+                        },
+                        [
+                          _vm._v(
+                            _vm._s(_vm.sending ? "Invio in corso..." : "Invio")
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ],
+                  2
+                )
+              : _c(
+                  "form",
+                  {
+                    attrs: { id: "contact_us" },
+                    on: {
+                      submit: function ($event) {
+                        $event.preventDefault()
+                        return _vm.sendForm.apply(null, arguments)
+                      },
+                    },
+                  },
+                  [
+                    _c("div", { staticClass: "vote" }, [
+                      _c(
+                        "h3",
+                        { staticClass: "it-title-small it-text-black" },
+                        [_vm._v("Voto")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "stars" },
+                        _vm._l(_vm.starRange, function (star, index) {
+                          return _c("i", {
+                            key: index,
+                            staticClass: "fa",
+                            class: _vm.setRangeStar(star),
+                            attrs: { "aria-hidden": "true" },
+                            on: {
+                              click: function ($event) {
+                                return _vm.activeStar(star)
+                              },
+                            },
+                          })
+                        }),
+                        0
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.formFieldsReview, function (field, index) {
+                      return _c(
+                        "div",
+                        {
+                          key: "field" + index,
+                          staticClass: "it_input_contact_us",
+                        },
+                        [
+                          _c("label", { attrs: { for: field.for } }, [
+                            _vm._v(_vm._s(field.label)),
+                          ]),
+                          _vm._v(" "),
+                          field.type === "checkbox" && field.tag === "input"
+                            ? _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: {
+                                  id: field.for,
+                                  name: field.for,
+                                  type: "checkbox",
+                                },
+                                domProps: {
+                                  checked: Array.isArray(field.content)
+                                    ? _vm._i(field.content, null) > -1
+                                    : field.content,
+                                },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  change: function ($event) {
+                                    var $$a = field.content,
+                                      $$el = $event.target,
+                                      $$c = $$el.checked ? true : false
+                                    if (Array.isArray($$a)) {
+                                      var $$v = null,
+                                        $$i = _vm._i($$a, $$v)
+                                      if ($$el.checked) {
+                                        $$i < 0 &&
+                                          _vm.$set(
+                                            field,
+                                            "content",
+                                            $$a.concat([$$v])
+                                          )
+                                      } else {
+                                        $$i > -1 &&
+                                          _vm.$set(
+                                            field,
+                                            "content",
+                                            $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1))
+                                          )
+                                      }
+                                    } else {
+                                      _vm.$set(field, "content", $$c)
+                                    }
+                                  },
+                                },
+                              })
+                            : field.type === "radio" && field.tag === "input"
+                            ? _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: {
+                                  id: field.for,
+                                  name: field.for,
+                                  type: "radio",
+                                },
+                                domProps: {
+                                  checked: _vm._q(field.content, null),
+                                },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  change: function ($event) {
+                                    return _vm.$set(field, "content", null)
+                                  },
+                                },
+                              })
+                            : field.tag === "input"
+                            ? _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: {
+                                  id: field.for,
+                                  name: field.for,
+                                  type: field.type,
+                                },
+                                domProps: { value: field.content },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  input: function ($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      field,
+                                      "content",
+                                      $event.target.value
+                                    )
+                                  },
+                                },
+                              })
+                            : _c("textarea", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: field.content,
+                                    expression: "field.content",
+                                  },
+                                ],
+                                staticClass: "it_input_field",
+                                attrs: { name: field.for, id: field.for },
+                                domProps: { value: field.content },
+                                on: {
+                                  click: function ($event) {
+                                    _vm.labelAnimation(field.for),
+                                      _vm.resetLabel(field.label)
+                                  },
+                                  input: function ($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      field,
+                                      "content",
+                                      $event.target.value
+                                    )
+                                  },
+                                },
+                              }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "it_input_border" }),
+                        ]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.message
+                      ? _c("p", { staticClass: "error-field" }, [
+                          _vm._v(_vm._s(_vm.errors.message[0])),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.errors.name
+                      ? _c("p", { staticClass: "error-field" }, [
+                          _vm._v(_vm._s(_vm.errors.name[0])),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "it-btn mt-5" }, [
+                      _c(
+                        "button",
+                        {
+                          class: { active: !_vm.sending },
+                          attrs: { type: "submit", disabled: _vm.sending },
+                        },
+                        [
+                          _vm._v(
+                            _vm._s(_vm.sending ? "Invio in corso..." : "Invio")
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ],
+                  2
+                ),
+          ]),
     ]),
   ])
 }
@@ -12186,9 +12254,13 @@ var render = function () {
                 _vm._v(" "),
                 _c("div", { staticClass: "it-btn" }, [
                   _c("button", [
-                    _c("a", { attrs: { href: _vm.profile.cv_path } }, [
-                      _vm._v("Clicca qui"),
-                    ]),
+                    _c(
+                      "a",
+                      {
+                        attrs: { target: "_blank", href: _vm.profile.cv_path },
+                      },
+                      [_vm._v("Clicca qui")]
+                    ),
                   ]),
                 ]),
               ])
@@ -12402,12 +12474,26 @@ var render = function () {
                       })
                     : _vm._e(),
                 ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "it-btn" }, [
-                  _c("button", [_vm._v(_vm._s(card.name))]),
-                ]),
               ]),
-            ]
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  attrs: {
+                    to: {
+                      name: "advanced_search",
+                      params: { job_role: card.name },
+                    },
+                  },
+                },
+                [
+                  _c("div", { staticClass: "it-btn" }, [
+                    _c("button", [_vm._v(_vm._s(card.name))]),
+                  ]),
+                ]
+              ),
+            ],
+            1
           )
         }),
         0
@@ -12629,7 +12715,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "it-search" }, [
+  return _c("div", { staticClass: "it-search glass" }, [
     _c("form", { attrs: { method: "get", action: "" } }, [
       _c(
         "div",
@@ -12719,7 +12805,7 @@ var render = function () {
         _vm._l(6, function (card, index) {
           return _c(
             "div",
-            { key: index, staticClass: "swiper-slide it-card" },
+            { key: index, staticClass: "swiper-slide it-card glass" },
             [_vm._m(0, true)]
           )
         }),

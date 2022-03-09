@@ -4,11 +4,11 @@
       <div class="swiper it-swiper">
         <div class="swiper-wrapper content">
 
-          <!-- card -->
-          <div 
-          v-for="(card, index) in allJobRoles"
-          :key="index"
-          class="swiper-slide it-card glass">
+         <!-- card -->
+         <div 
+         v-for="(card, index) in allJobRoles"
+         :key="index"
+         class="swiper-slide it-card glass">
             <div class="it-card-content">
 
               <div class="it-info">
@@ -45,13 +45,15 @@
               </div>
 
             </div>
+            <router-link :to="{ name: 'advanced_search', params: { job_role: card.name }}">
+               <div class="it-btn">
+                  <button>{{card.name}}</button>
+               </div>
+            </router-link>
 
-             <div class="it-btn">
-                <button>{{card.name}}</button>
-              </div>
 
-          </div>
-          <!-- /card -->
+         </div>
+         <!-- /card -->
           
         </div>
       </div>
@@ -142,6 +144,7 @@ export default {
 
             &::before{
                content: "";
+               z-index: -1;
                position: absolute;
                border-radius: 30px;
                // background: #7B40FF;
@@ -172,6 +175,7 @@ export default {
             }
 
             .it-btn{
+                  z-index: 50;
                   font-size: 13px;
                   width: 100%;
                   display: flex;

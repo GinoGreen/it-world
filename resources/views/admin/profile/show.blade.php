@@ -48,11 +48,13 @@
                class="wrap-cv"
             >
                <h5>Scarica il curriculum</h5>
+               <a href="{{ asset('storage/' . Auth::user()->cv_path) }}" target="_blank">
                <div class="it-btn">
-                  <button>
-                     <a href="{{ asset('storage/' . Auth::user()->cv_path) }}" target="_blank">Clicca qui</a>
-                  </button>
-               </div>
+                     <button>
+                        Clicca qui
+                     </button>
+                  </div>
+               </a>
             </div>
             @endif 
  
@@ -69,12 +71,13 @@
  
             <h5>Modifica il tuo profilo</h5>
             <p>Puoi in qualsiasi momento modificare il tuo profilo. Se qualcosa non ti convince premi il bottone!</p>
-              
-            <div class="it-btn-show mb-4">
-               <button>
-                  <a href="{{ route('admin.edit')}}">Modifica</a>
-               </button>
-            </div>
+            <a class="w-50" href="{{ route('admin.edit')}}">
+               <div class="it-btn-show mb-4">
+                  <button>
+                     Modifica
+                  </button>
+               </div>
+            </a>
                
          </div>
       </div>
