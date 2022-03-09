@@ -72,6 +72,10 @@
                               {{ profile.name }} {{ profile.surname }}
                            </p>
                         </router-link>
+                        <div class="stars">
+                           <i v-for="(star, index) in 5"
+                           :key="'star' + index" class="fa" :class="setRangeStarProfile(star, profile.vote_average)" aria-hidden="true"></i>
+                        </div>
                         <p class="it-text-info it-text-blue "
                         v-for="(role, index) in profile.jobRole"
                         :key="profile.id + index"
@@ -185,6 +189,14 @@ export default {
       },
       setRangeStar(star){
          if(star.active){
+            return 'fa-star';
+         }
+         else{
+            return 'fa-star-o';
+         }
+      },
+      setRangeStarProfile(star, vote){
+         if(star <= vote){
             return 'fa-star';
          }
          else{
@@ -394,6 +406,13 @@ export default {
                   p{
                      margin-bottom: 0px;
                      color:black;
+                  }
+                  .stars{
+                     i{
+                        font-size: 20px;
+                        color: rgb(255, 153, 0);
+                        cursor: pointer;
+                     }
                   }
                }
             }
