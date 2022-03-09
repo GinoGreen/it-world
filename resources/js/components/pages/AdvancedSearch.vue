@@ -93,7 +93,7 @@
                      <h2>Nessun risultato trovato.</h2>
                   </div>
                   <div class="message loading" v-if="(loading === false)">
-                     <h2>Loading...</h2>
+                     <Loading />
                   </div>
                </div>
             </div>
@@ -108,10 +108,12 @@
 </template>
 
 <script>
+import Loading from './widgets/Loading.vue';
 
 
 export default {
    name: 'AdvancedSearch',
+   components: {Loading},
 
    data(){
       return{
@@ -373,6 +375,7 @@ export default {
          position: relative;
          .results-title{
             width: 100%;
+            z-index: 100;
             position: absolute;
             top: 0;
             min-height: 50px;
@@ -410,8 +413,9 @@ export default {
                align-items: flex-start;
 
                .photo{
-                  width: 90px;
-                  height: 90px;
+                  width: 23%;
+                  min-width: 90px;
+                  min-height: 90px;
                   background-color: $primary_color;
                   margin-right: 20px;
                   overflow: hidden;
@@ -421,7 +425,13 @@ export default {
                   }
                }
 
+               .info-content {
+                  width: 77%;
+                  
+                  min-width: calc(100% - 90px);
+               }
                .info{
+                  width: 100%;
                   margin-bottom: 15px;
                   p{
                      margin-bottom: 0px;
