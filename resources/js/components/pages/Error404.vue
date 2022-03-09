@@ -6,8 +6,7 @@
 
       <div class="wrap-error">
 
-         <img src="/img/catslider/frontend-dev.svg" alt="">
-         <h1>Errore 404</h1>
+         <img src="/img/slider/404.svg" alt="error-404">
          <h3>Questa pagina non esiste!</h3>
 
       </div>
@@ -36,10 +35,10 @@ export default {
    // justify-content: center;
 
    img{
-      width: 20%;
+      width: 40%;
    }
 
-   h1{
+   h3{
       margin: 30px 0px;
    }
 
