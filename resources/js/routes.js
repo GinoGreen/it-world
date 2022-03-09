@@ -29,8 +29,8 @@ const router = new VueRouter({
       },
 
       {
-         path: '/form/:type',
-         name: 'MessageReviewForm',
+         path: '/contact/:type',
+         name: 'from_contact',
          component: MessageReviewForm,
       },
    ]

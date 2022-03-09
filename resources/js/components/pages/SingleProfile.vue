@@ -53,15 +53,15 @@
          <div class="call-to-action glass">
 
             <h5>Rimani in contatto con {{profile.name}}</h5>
-            <p>Compila il form e proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
-             <router-link :to="{name: 'MessageReviewForm'}">
+            <p>Proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
+             <router-link :to="{name: 'from_contact', params: this.type.message}">
                <div class="it-btn-edit mb-4">
                   <button>Invia un messaggio</button>
                </div>
              </router-link>
             <h5>Valuta l'esperienza di {{profile.name}}</h5>
-            <p>Hai già avuto a che fare con il nostro professionista? Lascia una recensione e aiuta gli altri utenti!</p>
-            <router-link :to="{name: 'MessageReviewForm'}">
+            <p>Lascia una recensione e aiuta gli altri utenti!</p>
+            <router-link :to="{name: 'from_contact', params: this.type.review}">
                <div class="it-btn-edit">
                   <button>Scrivi una recensione</button>
                </div>
@@ -123,6 +123,10 @@ export default {
       return{
          apiUrl: 'http://127.0.0.1:8000/api/profile/',
          profile: null,
+         type: {
+            message: 'message',
+            review: 'review',
+         }
       }
    },
    methods:{

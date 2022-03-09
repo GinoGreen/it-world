@@ -85,11 +85,14 @@ export default {
          errors: {},
          success: false,
          sending: false,
+         
       }
    },
 
    methods:{
       labelAnimation(labelFor) {
+      console.log(this.$route.params.type);
+
          gsap.to('label[for="' + labelFor + '"]', {
             bottom: '100%',
             fontSize: '1.1em',
