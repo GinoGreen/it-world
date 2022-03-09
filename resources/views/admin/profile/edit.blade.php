@@ -25,8 +25,14 @@
                <img src="{{ asset('img/slider/undraw_profile_pic_ic-5-t.svg') }}" alt="avatar">
             @endif
          </div>
+         
          <h5>{{ Auth::user()->name }} {{ Auth::user()->surname }}</h5>
-         <h6>{{ Auth::user()->job_roles[0]->name }}</h6>
+         
+         <div class="it-job-box">
+            @foreach (Auth::user()->job_roles as $job_role)
+               <span class="it-job-name">{{ $job_role->name }}</span>
+            @endforeach   
+         </div>
       </div>
 
       <div class="col-8 wrap-secondary-edit">

@@ -15,7 +15,13 @@
  
             <div class="wrap-text">
                <h3>{{ Auth::user()->name }} {{ Auth::user()->surname }}</h3>
-               <h5>{{ Auth::user()->job_roles[0]->name }}</h5>
+               
+               <div class="it-job-box">
+                  @foreach (Auth::user()->job_roles as $job_role)
+                  <span class="it-job-name">{{ $job_role->name }}</span>
+                  @endforeach   
+               </div>
+               
                <h6>{{ Auth::user()->region }}</h6>
             </div>
              
@@ -62,7 +68,7 @@
               
             <div class="it-btn mb-4">
                <button>
-                  <a href="#">Modifica</a>
+                  <a href="{{ route('admin.edit')}}">Modifica</a>
                </button>
             </div>
                
