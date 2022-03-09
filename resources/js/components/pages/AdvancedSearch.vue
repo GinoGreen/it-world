@@ -40,7 +40,7 @@
                      <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
                   </div>
                   <div class="star-reset it-btn">
-                     <button @click="actualNumberStar = 0">Stars Reset</button>
+                     <button @click="resetStars()">Stars Reset</button>
                   </div>
                </div>
 
@@ -200,6 +200,16 @@ export default {
          }
          this.actualNumberStar = star.numberStar;
          console.log('numero stelle attuale:', this.actualNumberStar)
+         this.getApi();
+      },
+
+      resetStars(){
+         this.actualNumberStar = 0;
+         for(let i = 0; i < this.starRange.length; i++){
+            const star = this.starRange[i];
+            star.active = false;
+            this.setRangeStar(star);
+         }
          this.getApi();
       }
    },
