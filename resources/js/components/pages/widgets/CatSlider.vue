@@ -44,10 +44,12 @@
                
               </div>
 
-              <div class="it-btn">
+            </div>
+
+             <div class="it-btn">
                 <button>{{card.name}}</button>
               </div>
-            </div>
+
           </div>
           <!-- /card -->
           
@@ -135,7 +137,7 @@ export default {
             position: relative;
             background: #fff;
             margin: 70px 0;
-            border-radius: 30px;
+            padding: 0px 20px 20px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
             &::before{
@@ -148,54 +150,43 @@ export default {
             }
 
             .it-card-content{
-               
-               padding: 60px 30px 30px 30px;
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
                position: relative;
                z-index: 100;
-               height: 350px;
+               height: 280px;
 
-               .it-btn{
+               .it-info{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  img{
+                     width: 100%;
+                  }
+                  
+               }
+               
+            }
+
+            .it-btn{
                   font-size: 13px;
                   width: 100%;
                   display: flex;
                   justify-content: center;
-               }
-
-               .it-info{
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  margin-top: 10px;
-                  color: $secondary_color;
-
-                  .name{
-                     font-size: 20px;
-                     font-weight: 600;
-                  }
-                  img{
-                     width: 100%;
-                  }
-               }
-
-               .rating{
-                  display: flex;
-                  align-items: center;
-                  margin-top: 18px;
-
-                  i{
-                     font-size: 18px;
-                     margin: 0 2px;
-                     color: $primary_color;
-                  }                    
-               }
+                  
             }
+
+            
          }
       }
    }
 
    .swiper-button-next, .swiper-button-prev{
       opacity: 0.7;
-      color: $primary_color;
+      color: white;
       transition: all 0.3s ease;
 
       &:hover{

@@ -134,7 +134,7 @@ export default {
    section {
       height: 100vh;
       width: 90%;
-
+      
       .row{
          padding-top: 30px;
 
