@@ -54,14 +54,22 @@
 
             <h5>Rimani in contatto con {{profile.name}}</h5>
             <p>Proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
-             <router-link :to="{name: 'from_contact', params: this.type.message}">
+            <router-link :to="{
+               name: 'from_contact', 
+               params: {type: this.type.message, userId: profile.id},
+            }">
+               <!-- props: {id: this.profile.id} -->
                <div class="it-btn-edit mb-4">
                   <button>Invia un messaggio</button>
                </div>
-             </router-link>
+            </router-link>
             <h5>Valuta l'esperienza di {{profile.name}}</h5>
             <p>Lascia una recensione e aiuta gli altri utenti!</p>
-            <router-link :to="{name: 'from_contact', params: this.type.review}">
+            <router-link :to="{
+               name: 'from_contact', 
+               params: {type: this.type.review, userId: profile.id},
+            }">
+               <!-- props: {id: this.profile.id} -->
                <div class="it-btn-edit">
                   <button>Scrivi una recensione</button>
                </div>
@@ -134,8 +142,6 @@ export default {
          axios.get(this.apiUrl + this.$route.params.profile_id)
             .then(res => {
                this.profile = res.data;
-               console.log(res.data);
-               // console.log(this.profile.avatar_path);
          });
       }
    },

@@ -29,7 +29,7 @@ const router = new VueRouter({
       },
 
       {
-         path: '/contact/:type',
+         path: '/contact/:type/:userId',
          name: 'from_contact',
          component: MessageReviewForm,
       },

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Message;
+use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -26,9 +27,21 @@ class ContactController extends Controller
             ]);
         }
 
+
+        $new_message = new Message();
+        $new_message->name = $data['name'];
+        $new_message->message = $data['message'];
+        $new_message->user_id = $data['user_id'];
+        $new_message->save();
+
         // if ($data['type'] === 'message') {
         //     $new_message = new Message();
-        //     $new_message->
+        //     $new_message->fill($data);
+        //     $new_message->save();
+        // } elseif ($data['type'] === 'review') {
+        //     $new_review = new Review();
+        //     $new_review->fill($data);
+        //     $new_review->save();
         // }
 
         // $new_contact = new Contact();
