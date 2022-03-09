@@ -13,7 +13,7 @@
             <h3 class="it-m-name d-inline">{{$message->name}}</h3>
             <div class="it-m-text">
                <p class="it-m-description">{{$message->message}}</p>
-               <p class="it-m-date">{{$message->date}}</p>
+               {{-- <p class="it-m-date">{{$message->date}}</p> --}}
             </div>
          </div>
       </div>
