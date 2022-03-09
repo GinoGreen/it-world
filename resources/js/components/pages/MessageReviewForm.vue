@@ -7,94 +7,109 @@
       <h1 v-if="$route.params.type === 'message'">Contatta</h1>
       <h1 v-else-if="$route.params.type === 'review'">Recensisci</h1>
 
-      <form v-if="$route.params.type === 'message'" id="contact_us" @submit.prevent="sendForm">
+      <div v-if="success">
+         <h2 class="sent">Inviato correttamente</h2>
+         <router-link :to="'/'">
+            <div class="it-btn">
+               <button>Torna alla Home</button>
+            </div>
+         </router-link>
+      </div>
 
-         <div class="it_input_contact_us"
-            v-for="(field, index) in formFieldsMessage"
-            :key="'field' + index"
-         >
-            <label :for="field.for">{{ field.label }}</label>
+      <div v-else>
 
-            <input v-if="field.tag === 'input'"
-               class="it_input_field" 
-               :id="field.for"
-               :name="field.for"
-               v-model="field.content"
-               :type="field.type"
-               @click="labelAnimation(field.for), resetLabel(field.label)"
+         <form v-if="$route.params.type === 'message'" id="contact_us" @submit.prevent="sendForm">
+
+            <div class="it_input_contact_us"
+               v-for="(field, index) in formFieldsMessage"
+               :key="'field' + index"
             >
-            <textarea v-else
-               class="it_input_field"
-               :name="field.for" 
-               :id="field.for" 
-               v-model="field.content"
-               @click="labelAnimation(field.for), resetLabel(field.label)"
-            ></textarea>
-            <div class="it_input_border"></div>
-            
-         </div>
-         <p v-if="errors.name" class="error-field">{{errors.message[0]}}</p>
-            <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
-            <p v-if="errors.email" class="error-field">{{errors.email[0]}}</p>
+               <label :for="field.for">{{ field.label }}</label>
 
-         <div class="it-btn mt-5">
-            <button 
-               type="submit"
-               :class="{active: !sending}"
-               :disabled="sending"
-            >{{ sending ? 'Invio in corso...' : 'Invio' }}</button>
-         </div>
+               <input v-if="field.tag === 'input'"
+                  class="it_input_field" 
+                  :id="field.for"
+                  :name="field.for"
+                  v-model="field.content"
+                  :type="field.type"
+                  @click="labelAnimation(field.for), resetLabel(field.label)"
+               >
+               <textarea v-else
+                  class="it_input_field"
+                  :name="field.for" 
+                  :id="field.for" 
+                  v-model="field.content"
+                  @click="labelAnimation(field.for), resetLabel(field.label)"
+               ></textarea>
+               <div class="it_input_border"></div>
+               
+            </div>
+            <p v-if="errors.name" class="error-field">{{errors.message[0]}}</p>
+               <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
+               <p v-if="errors.email" class="error-field">{{errors.email[0]}}</p>
 
-      </form>
-
-      <form v-else id="contact_us" @submit.prevent="sendForm">
-
-         <div class="vote">
-               <h3 class="it-title-small it-text-black">Voto</h3>
-               <div class="stars">
-                  <!-- da sostituire con icona FontAwesome -->
-                  <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
-               </div>
+            <div class="it-btn mt-5">
+               <button 
+                  type="submit"
+                  :class="{active: !sending}"
+                  :disabled="sending"
+               >{{ sending ? 'Invio in corso...' : 'Invio' }}</button>
             </div>
 
-         <div class="it_input_contact_us"
-            v-for="(field, index) in formFieldsReview"
-            :key="'field' + index"
-         >
-            <label :for="field.for">{{ field.label }}</label>
+         </form>
 
-            <input v-if="field.tag === 'input'"
-               class="it_input_field" 
-               :id="field.for"
-               :name="field.for"
-               v-model="field.content"
-               :type="field.type"
-               @click="labelAnimation(field.for), resetLabel(field.label)"
+         <form v-else id="contact_us" @submit.prevent="sendForm">
+
+            <div class="vote">
+                  <h3 class="it-title-small it-text-black">Voto</h3>
+                  <div class="stars">
+                     <!-- da sostituire con icona FontAwesome -->
+                     <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
+                  </div>
+               </div>
+
+            <div class="it_input_contact_us"
+               v-for="(field, index) in formFieldsReview"
+               :key="'field' + index"
             >
-            
-            <textarea v-else
-               class="it_input_field"
-               :name="field.for" 
-               :id="field.for" 
-               v-model="field.content"
-               @click="labelAnimation(field.for), resetLabel(field.label)"
-            ></textarea>
-            <div class="it_input_border"></div>
-            
-            
-         </div>
-         <p v-if="errors.message" class="error-field">{{errors.message[0]}}</p>
-         <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
+               <label :for="field.for">{{ field.label }}</label>
 
-         <div class="it-btn mt-5">
-            <button 
-               type="submit"
-               :class="{active: !sending}"
-               :disabled="sending"
-            >{{ sending ? 'Invio in corso...' : 'Invio' }}</button>
-         </div>
+               <input v-if="field.tag === 'input'"
+                  class="it_input_field" 
+                  :id="field.for"
+                  :name="field.for"
+                  v-model="field.content"
+                  :type="field.type"
+                  @click="labelAnimation(field.for), resetLabel(field.label)"
+               >
+               
+               <textarea v-else
+                  class="it_input_field"
+                  :name="field.for" 
+                  :id="field.for" 
+                  v-model="field.content"
+                  @click="labelAnimation(field.for), resetLabel(field.label)"
+               ></textarea>
+               <div class="it_input_border"></div>
+               
+               
+            </div>
+            <p v-if="errors.message" class="error-field">{{errors.message[0]}}</p>
+            <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
 
-      </form>
+            <div class="it-btn mt-5">
+               <button 
+                  type="submit"
+                  :class="{active: !sending}"
+                  :disabled="sending"
+               >{{ sending ? 'Invio in corso...' : 'Invio' }}</button>
+            </div>
+
+         </form>
+
+      </div>
+
+
 
    </section>
 
@@ -285,7 +300,6 @@ export default {
                   this.formFieldsReview.forEach(element => {
                      element.content = '';
                   });
-                  this.resetStars();
                }
                this.errors = {};
             } else {
@@ -293,12 +307,6 @@ export default {
             }
 
          });
-      },
-      resetStars() {
-         this.actualNumberStar = 0
-         //TODO
-         
-
       },
       setRangeStar(star){
          if(star.active){
@@ -405,6 +413,11 @@ export default {
    }
    
    
+}
+
+.sent {
+   margin: 20px 0;
+   color: $primary-color;
 }
 
 
