@@ -355,8 +355,8 @@ p {
 }
 
 .it-section-page .sx-profile .top-sx .wrap-image {
-  height: 150px;
-  width: 150px;
+  max-height: 150px;
+  max-width: 150px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -369,6 +369,22 @@ p {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
+}
+
+.it-section-page .sx-profile .top-sx .it-job-box {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.it-section-page .sx-profile .top-sx .it-job-box .it-job-name {
+  width: 40%;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid #FF4D5A;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 0px 20px 10px 0px;
 }
 
 .it-section-page .sx-profile .mid-sx {
@@ -713,6 +729,23 @@ p {
 
 .white-wrap-edit .wrap-sx .wrap-avatar img {
   width: 100%;
+}
+
+.white-wrap-edit .wrap-sx .it-job-box {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.white-wrap-edit .wrap-sx .it-job-box .it-job-name {
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid #FF4D5A;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 0px 20px 10px 0px;
 }
 
 .it-card {
