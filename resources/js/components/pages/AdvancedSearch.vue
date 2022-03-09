@@ -39,6 +39,9 @@
                      <!-- da sostituire con icona FontAwesome -->
                      <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
                   </div>
+                  <div class="star-reset it-btn">
+                     <button @click="actualNumberStar = 0">Stars Reset</button>
+                  </div>
                </div>
 
             </div>
