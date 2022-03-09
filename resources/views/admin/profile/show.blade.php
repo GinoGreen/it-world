@@ -10,7 +10,11 @@
          <div class="top-sx glass">
  
             <div class="wrap-image">
-               <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
+               @if (Auth::user()->avatar_path)
+                  <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
+               @else
+                  <img src="{{ asset('img/slider/undraw_profile_pic_ic-5-t.svg') }}" alt="avatar">
+               @endif
             </div>
  
             <div class="wrap-text">
