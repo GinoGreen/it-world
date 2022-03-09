@@ -39,7 +39,7 @@
                <h5>Scarica il curriculum</h5>
                <div class="it-btn">
                   <button>
-                     <a :href="profile.cv_path">Clicca qui</a>
+                     <a target="_blank" :href="profile.cv_path">Clicca qui</a>
                   </button>
                </div>
                
@@ -302,6 +302,7 @@ export default {
          .it-btn-edit{
             width: 100%;
             margin-top: 15px;
+            font-weight: 600;
             button{
                background-color: $primary_color;
                outline: none;

@@ -133,12 +133,13 @@
             width: 100%;
             button{
                background-color: $primary_color;
+               width: 100%;
                outline: none;
                border: none;
+               font-weight: 600;
                color: #fff;
                border-radius: 30px;
                padding: 7px 15px;
-               width: 60%;
                transition: all .4s;
                cursor: pointer;
          

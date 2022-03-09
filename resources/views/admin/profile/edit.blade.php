@@ -99,12 +99,12 @@
 
             </div>
 
-            <div class="it-job-role-wrapper it_input_selection px-5">
-               <p class="it-job-role-title">
+            <div class="it-job-role-wrapper row it_input_selection px-5">
+               <p class="it-job-role-title col-12 text-center">
                    In cosa sei specializzato?
                </p>
                @foreach ($job_roles as $job_role)
-               <div class="it-job-role">
+               <div class="it-job-role col-6">
                   <input type="checkbox"
                      class="it_input_checkbox"
                      id="job_role{{ $job_role->id }}"
