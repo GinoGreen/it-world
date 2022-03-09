@@ -18,7 +18,12 @@ class HomeController extends Controller
 
         $reviews = Review::where('user_id', $profile->id)->paginate(5);
 
-        return view('admin.home',compact('reviews', 'profile'));
+        $messages = Message::where('user_id', $profile->id)
+                    ->orderBy('date','DESC')
+                    ->paginate(3);
+
+
+        return view('admin.home',compact('reviews', 'messages', 'profile'));
     }
 
     public function message() {

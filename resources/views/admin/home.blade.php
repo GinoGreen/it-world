@@ -46,21 +46,19 @@
                 <div class="it-dash-bottom-left">
                     <h5 class="it-title-small">Le tue ultime recensioni</h5>
                     @foreach ($reviews as $review)
-                        <p>{{$review->description}}</p>
+                        <p>{{ $review->description }}</p>
                     @endforeach             
                 </div>
-            @else
-                <p>Non c'è niente da visualizzare</p>
             @endif
 
-            <div class="it-dash-bottom-right">
-                <h5 class="it-title-small">I tuoi ultimi messaggi</h5>
-                <p>Messaggio Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Messaggio Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Messaggio Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Messaggio Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-                <p>Messaggio Lorem ipsum dolor sit amet consectetur adipisicing...</p>
-            </div>
+            @if ($messages)
+                <div class="it-dash-bottom-right">
+                    <h5 class="it-title-small">I tuoi ultimi messaggi</h5>
+                    @foreach ($messages as $message)
+                        <p>{{ $message->message }}</p>
+                    @endforeach             
+                </div>
+            @endif
         </div>
     </div>
 
