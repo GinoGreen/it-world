@@ -42,19 +42,19 @@
         <div class="line-horizontal"></div>
     
         <div class="it-dashboard-bottom">
-            @if ($reviews)
+            @if (Auth::user()->reviews)
                 <div class="it-dash-bottom-left">
                     <h5 class="it-title-small">Le tue ultime recensioni</h5>
-                    @foreach ($reviews as $review)
+                    @foreach (Auth::user()->reviews as $review)
                         <p>{{ $review->description }}</p>
                     @endforeach             
                 </div>
             @endif
 
-            @if ($messages)
+            @if (Auth::user()->messages)
                 <div class="it-dash-bottom-right">
                     <h5 class="it-title-small">I tuoi ultimi messaggi</h5>
-                    @foreach ($messages as $message)
+                    @foreach (Auth::user()->messages as $message)
                         <p>{{ $message->message }}</p>
                     @endforeach             
                 </div>

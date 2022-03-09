@@ -14,24 +14,17 @@ class HomeController extends Controller
 {
     public function index() {
 
-        $profile = Auth::user();
-
-        $reviews = Review::where('user_id', $profile->id)->paginate(5);
-
-        $messages = Message::where('user_id', $profile->id)
-                    ->orderBy('date','DESC')
-                    ->paginate(3);
-
-
-        return view('admin.home',compact('reviews', 'messages', 'profile'));
+        return view('admin.home');
     }
 
     public function message() {
 
         $profile = Auth::user();
 
+        // $messages = Message::paginate(3);
+
         $messages = Message::where('user_id', $profile->id)
-                    ->orderBy('date','DESC')
+                    ->orderBy('created_at','DESC')
                     ->paginate(3);
 
         return view('admin.profile.message',compact('messages'));
@@ -41,7 +34,9 @@ class HomeController extends Controller
 
         $profile = Auth::user();
 
-        $reviews = Review::where('user_id', $profile->id)->paginate(3);
+        $reviews = Review::where('user_id', $profile->id)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(3);
             
         return view('admin.profile.review',compact('reviews', 'profile'));
     }

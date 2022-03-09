@@ -72,6 +72,10 @@
                               {{ profile.name }} {{ profile.surname }}
                            </p>
                         </router-link>
+                        <div class="stars">
+                           <i v-for="(star, index) in 5"
+                           :key="'star' + index" class="fa" :class="setRangeStarProfile(star, profile.vote_average)" aria-hidden="true"></i>
+                        </div>
                         <p class="it-text-info it-text-blue "
                         v-for="(role, index) in profile.jobRole"
                         :key="profile.id + index"
@@ -82,6 +86,14 @@
                            {{ profile.description }}
                         </p>
                      </div>
+                  </div>
+               </div>
+               <div class="message-box">
+                  <div class="message not-found" v-if="(profiles.length === 0) && (loading === true)">
+                     <h2>Nessun risultato trovato.</h2>
+                  </div>
+                  <div class="message loading" v-if="(loading === false)">
+                     <Loading />
                   </div>
                </div>
             </div>
@@ -96,10 +108,12 @@
 </template>
 
 <script>
+import Loading from './widgets/Loading.vue';
 
 
 export default {
    name: 'AdvancedSearch',
+   components: {Loading},
 
    data(){
       return{
@@ -109,6 +123,7 @@ export default {
           profiles: [],
           rangeReviewsValue: 0, 
           actualNumberStar: 0,
+          loading: false,
           starRange: [
              {
                 numberStar: 1,
@@ -143,6 +158,7 @@ export default {
             });
       },
       getApi(){
+         this.loading = false;
          this.profiles = [];
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
@@ -168,6 +184,7 @@ export default {
                            
                            this.profiles.find(element => element.id === profile.id).jobRole.push(jobRole.name);
                         }
+                        this.loading = true;
                      });
                   }
                });
@@ -185,6 +202,14 @@ export default {
       },
       setRangeStar(star){
          if(star.active){
+            return 'fa-star';
+         }
+         else{
+            return 'fa-star-o';
+         }
+      },
+      setRangeStarProfile(star, vote){
+         if(star <= vote){
             return 'fa-star';
          }
          else{
@@ -348,9 +373,9 @@ export default {
          height: calc(100vh - 100px);
          overflow: hidden;
          position: relative;
-         
          .results-title{
             width: 100%;
+            z-index: 100;
             position: absolute;
             top: 0;
             min-height: 50px;
@@ -368,6 +393,16 @@ export default {
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            height: 100%;
+            .message-box{
+               position: absolute;
+               top: 50%;
+               transform: translate(0, -50%);
+               .message{
+
+               }
+            }
             .profile-box{
                width: 80%;
                background-color: white;
@@ -378,8 +413,9 @@ export default {
                align-items: flex-start;
 
                .photo{
-                  width: 90px;
-                  height: 90px;
+                  width: 23%;
+                  min-width: 90px;
+                  min-height: 90px;
                   background-color: $primary_color;
                   margin-right: 20px;
                   overflow: hidden;
@@ -389,11 +425,24 @@ export default {
                   }
                }
 
+               .info-content {
+                  width: 77%;
+                  
+                  min-width: calc(100% - 90px);
+               }
                .info{
+                  width: 100%;
                   margin-bottom: 15px;
                   p{
                      margin-bottom: 0px;
                      color:black;
+                  }
+                  .stars{
+                     i{
+                        font-size: 20px;
+                        color: rgb(255, 153, 0);
+                        cursor: pointer;
+                     }
                   }
                }
             }
