@@ -16,7 +16,6 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->string('date');
             $table->text('description', 500)->nullable();
             $table->tinyInteger('vote');
 

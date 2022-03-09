@@ -18,9 +18,9 @@ class MessagesTableSeeder extends Seeder
             
             $newReview = new Message();
             $newReview->name = $faker->name();
+            $newReview->email = $faker->freeEmail();
             $newReview->message = $faker->text();
             $newReview->user_id = User::inRandomOrder()->first()->id;
-            // $newReview->date = $faker->dateTime();
             $newReview->save();
 
         }

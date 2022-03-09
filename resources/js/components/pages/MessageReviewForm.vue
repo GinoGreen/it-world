@@ -4,12 +4,13 @@
 
    <section class="it-section-page">
 
-      <h1>Form Dinamico</h1>
+      <h1 v-if="$route.params.type === 'message'">Contatta</h1>
+      <h1 v-else-if="$route.params.type === 'review'">Recensisci</h1>
 
-      <form id="contact_us" @submit.prevent="sendForm">
+      <form v-if="$route.params.type === 'message'" id="contact_us" @submit.prevent="sendForm">
 
          <div class="it_input_contact_us"
-            v-for="(field, index) in formFields"
+            v-for="(field, index) in formFieldsMessage"
             :key="'field' + index"
          >
             <label :for="field.for">{{ field.label }}</label>
@@ -30,8 +31,60 @@
                @click="labelAnimation(field.for), resetLabel(field.label)"
             ></textarea>
             <div class="it_input_border"></div>
-            <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
+            
          </div>
+         <p v-if="errors.name" class="error-field">{{errors.message[0]}}</p>
+            <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
+            <p v-if="errors.email" class="error-field">{{errors.email[0]}}</p>
+
+         <div class="it-btn mt-5">
+            <button 
+               type="submit"
+               :class="{active: !sending}"
+               :disabled="sending"
+            >{{ sending ? 'Invio in corso...' : 'Invio' }}</button>
+         </div>
+
+      </form>
+
+      <form v-else id="contact_us" @submit.prevent="sendForm">
+
+         <div class="vote">
+               <h3 class="it-title-small it-text-black">Voto</h3>
+               <div class="stars">
+                  <!-- da sostituire con icona FontAwesome -->
+                  <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
+               </div>
+            </div>
+
+         <div class="it_input_contact_us"
+            v-for="(field, index) in formFieldsReview"
+            :key="'field' + index"
+         >
+            <label :for="field.for">{{ field.label }}</label>
+
+            <input v-if="field.tag === 'input'"
+               class="it_input_field" 
+               :id="field.for"
+               :name="field.for"
+               v-model="field.content"
+               :type="field.type"
+               @click="labelAnimation(field.for), resetLabel(field.label)"
+            >
+            
+            <textarea v-else
+               class="it_input_field"
+               :name="field.for" 
+               :id="field.for" 
+               v-model="field.content"
+               @click="labelAnimation(field.for), resetLabel(field.label)"
+            ></textarea>
+            <div class="it_input_border"></div>
+            
+            
+         </div>
+         <p v-if="errors.message" class="error-field">{{errors.message[0]}}</p>
+         <p v-if="errors.name" class="error-field">{{errors.name[0]}}</p>
 
          <div class="it-btn mt-5">
             <button 
@@ -58,7 +111,29 @@ export default {
 
    data(){
       return{
-         formFields: [
+         starRange: [
+            {
+               numberStar: 1,
+               active: false,
+            },
+            {
+               numberStar: 2,
+               active: false,
+            },
+            {
+               numberStar: 3,
+               active: false,
+            },
+            {
+               numberStar: 4,
+               active: false,
+            },
+            {
+               numberStar: 5,
+               active: false,
+            }
+         ],
+         formFieldsMessage: [
             {  
                label: 'Nome',
                for: 'name',
@@ -80,13 +155,29 @@ export default {
                content: '',
             },
          ],
+         formFieldsReview: [
+            {  
+               label: 'Nome',
+               for: 'name',
+               tag: 'input',
+               type: 'text',
+               content: '',
+            },
+            {
+               label: 'Messaggio',
+               for: 'message',
+               tag: 'textarea',
+               content: '',
+            },
+         ],
          name: '',
          email: '',
          message: '',
          errors: {},
          success: false,
          sending: false,
-         apiUrl: 'http://127.0.0.1:8000/api/contacts'
+         apiUrl: 'http://127.0.0.1:8000/api/contacts',
+         actualNumberStar: 0
       }
    },
 
@@ -110,31 +201,61 @@ export default {
       },
 
       resetLabel(label) {
-         this.formFields.forEach(field => {
-            if ((field.label !== label) && (field.content === '')) {
-               gsap.to('label[for="' + field.for + '"]', {
-                  bottom: 10,
-                  fontSize: '1em',
-                  duration: .1,
-               });
-            }
+         if (this.$route.params.type === 'message') {
+                  
+            this.formFieldsMessage.forEach(field => {
+               if ((field.label !== label) && (field.content === '')) {
+                  gsap.to('label[for="' + field.for + '"]', {
+                     bottom: 10,
+                     fontSize: '1em',
+                     duration: .1,
+                  });
+               }
+               if ((label !== 'Messaggio') && (this.formFieldsMessage[this.formFieldsMessage.length - 1].content === '')) {
+                  gsap.to('textarea.it_input_field', {
+                     height: 40,
+                     duration: .8,
+                     delay: .15,
+                     ease: "bounce",
+                  })
+               }
+            });
 
-         });
 
-         if ((label !== 'Messaggio') && (this.formFields[this.formFields.length - 1].content === '')) {
-            gsap.to('textarea.it_input_field', {
-               height: 40,
-               duration: .8,
-               delay: .15,
-               ease: "bounce",
-            })
+         } else {
+            this.formFieldsReview.forEach(field => {
+               if ((field.label !== label) && (field.content === '')) {
+                  gsap.to('label[for="' + field.for + '"]', {
+                     bottom: 10,
+                     fontSize: '1em',
+                     duration: .1,
+                  });
+               }
+               if ((label !== 'Messaggio') && (this.formFieldsReview[this.formFieldsReview.length - 1].content === '')) {
+                  gsap.to('textarea.it_input_field', {
+                     height: 40,
+                     duration: .8,
+                     delay: .15,
+                     ease: "bounce",
+                  })
+               }
+            });
+
          }
       },
 
       sendForm() {
-         this.name = this.formFields[0].content;
-         this.email = this.formFields[1].content;
-         this.message = this.formFields[2].content;
+         if (this.$route.params.type === 'message') {
+                  
+            this.name = this.formFieldsMessage[0].content;
+            this.email = this.formFieldsMessage[1].content;
+            this.message = this.formFieldsMessage[2].content;
+
+         } else {
+            this.name = this.formFieldsReview[0].content;
+            this.message = this.formFieldsReview[1].content;
+         }
+         
          this.success = false;
          this.sending = true;
          axios.post(this.apiUrl, {
@@ -143,25 +264,59 @@ export default {
             email: this.email,
             message: this.message,
             type: this.$route.params.type,
-            user_id: this.$route.params.userId
+            user_id: this.$route.params.userId,
+            vote: this.actualNumberStar
 
          }).then(response => {
 
             this.sending = false;
+            console.log('inviato');
             if (response.data.success) {
                this.success = true;
                this.name = '';
                this.email = '';
                this.message = '';
-               this.formFields.forEach(element => {
-                  element.content = '';
-               });
+               if (this.$route.params.type === 'message') {
+                  
+                  this.formFieldsMessage.forEach(element => {
+                     element.content = '';
+                  });
+               } else if (this.$route.params.type === 'review') {
+                  this.formFieldsReview.forEach(element => {
+                     element.content = '';
+                  });
+                  this.resetStars();
+               }
                this.errors = {};
             } else {
                this.errors = response.data.errors;
             }
 
          });
+      },
+      resetStars() {
+         this.actualNumberStar = 0
+         //TODO
+         
+
+      },
+      setRangeStar(star){
+         if(star.active){
+            return 'fa-star';
+         }
+         else{
+            return 'fa-star-o';
+         }
+      },
+      activeStar(star){
+         for(let i = 0; i < this.starRange.length; i++){
+            this.starRange[i].active = false;
+         }
+         for(let i = 0; i < star.numberStar; i++){
+            this.starRange[i].active = true;
+         }
+         this.actualNumberStar = star.numberStar;
+         console.log('numero stelle attuale:', this.actualNumberStar);
       }
    },
 
@@ -226,6 +381,15 @@ export default {
                transition: all .5s;
             }
 
+      }
+
+      .vote{
+         .stars{
+            i{
+               font-size: 20px;
+               cursor: pointer;
+            }
+         }
       }
 
       .it-btn {
