@@ -40,6 +40,11 @@ class HomeController extends Controller
             
         return view('admin.profile.review',compact('reviews', 'profile'));
     }
+    
+    public function premium() { 
+            
+        return view('admin.profile.premium');
+    }
 
     public function getAverageForCurrentYear() {
         $i=0;
