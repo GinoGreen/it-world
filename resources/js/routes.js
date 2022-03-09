@@ -34,10 +34,9 @@ const router = new VueRouter({
          name: 'from_contact',
          component: MessageReviewForm,
       },
-
       {
-         path: '/*',
-         name: 'erroe404',
+         path: '*',
+         name: 'error404',
          component: Error404,
       },
    ]
