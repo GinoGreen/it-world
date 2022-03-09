@@ -55,12 +55,12 @@
 
             <!-- COMPONENTE DA CICLARE -->
             <div class="results-box">
-               <div class="profile-box m-3"
+               <div class="profile-box m-3 vis"
                   v-for="(profile, index) in profiles"
                   :key="'profile' + index"
                >
                   <div class="photo">
-                     <img :src="profile.image" alt="">
+                     <img :src="profile.avatar_path" alt="avatar">
                   </div>
                   <div class="info-content">
                      <div class="info">
@@ -365,6 +365,11 @@ export default {
                   height: 90px;
                   background-color: $primary_color;
                   margin-right: 20px;
+                  overflow: hidden;
+                  border-radius: 50%;
+                  img{
+                     width: 100%;
+                  }
                }
 
                .info{
