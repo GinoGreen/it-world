@@ -55,6 +55,7 @@ import gsap from 'gsap';
 
 export default {
    name: 'MessageReviewForm',
+
    data(){
       return{
          formFields: [
@@ -85,11 +86,13 @@ export default {
          errors: {},
          success: false,
          sending: false,
+         apiUrl: 'http://127.0.0.1:8000/api/contacts'
       }
    },
 
    methods:{
       labelAnimation(labelFor) {
+
          gsap.to('label[for="' + labelFor + '"]', {
             bottom: '100%',
             fontSize: '1.1em',
@@ -134,14 +137,13 @@ export default {
          this.message = this.formFields[2].content;
          this.success = false;
          this.sending = true;
-         axios.post('api/contacts', {
-
-            
+         axios.post(this.apiUrl, {
 
             name: this.name,
             email: this.email,
             message: this.message,
-            type: this.$route.params.type
+            type: this.$route.params.type,
+            user_id: this.$route.params.userId
 
          }).then(response => {
 
@@ -164,7 +166,7 @@ export default {
    },
 
    mounted(){
-      console.log(this.$route.params.type);
+      
    }
 }
 

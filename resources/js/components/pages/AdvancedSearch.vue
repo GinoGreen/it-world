@@ -28,7 +28,7 @@
                <div class="reviews">
                   <h3 class="it-title-small it-text-black">Recensioni</h3>
                   <div class="slider-box">
-                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="0" class="slider" id="myRange" @click="getApi()">
                      <p>min: <span id="demo">{{rangeReviewsValue}}</span></p>
                   </div>
                </div>
@@ -38,6 +38,9 @@
                   <div class="stars">
                      <!-- da sostituire con icona FontAwesome -->
                      <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
+                  </div>
+                  <div class="star-reset it-btn">
+                     <button @click="resetFilters()">Reset Filters</button>
                   </div>
                </div>
 
@@ -55,12 +58,12 @@
 
             <!-- COMPONENTE DA CICLARE -->
             <div class="results-box">
-               <div class="profile-box m-3"
+               <div class="profile-box m-3 vis"
                   v-for="(profile, index) in profiles"
                   :key="'profile' + index"
                >
                   <div class="photo">
-                     <img :src="profile.image" alt="">
+                     <img :src="profile.avatar_path" alt="avatar">
                   </div>
                   <div class="info-content">
                      <div class="info">
@@ -140,6 +143,7 @@ export default {
             });
       },
       getApi(){
+         this.profiles = [];
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
             
@@ -155,10 +159,11 @@ export default {
                      jobRole.users.forEach(profile => {
                      
                         if (!this.profiles.some(element => element.id === profile.id)) {
+                           if((profile.vote_average >= this.actualNumberStar) && (profile.reviews_length >= this.rangeReviewsValue)){
+                              profile.jobRole = [jobRole.name];
 
-                           profile.jobRole = [jobRole.name];
-
-                           this.profiles.push(profile);
+                              this.profiles.push(profile);
+                           }
                         } else {
                            
                            this.profiles.find(element => element.id === profile.id).jobRole.push(jobRole.name);
@@ -194,7 +199,19 @@ export default {
             this.starRange[i].active = true;
          }
          this.actualNumberStar = star.numberStar;
-         console.log('numero stelle attuale:', this.actualNumberStar)
+         console.log('numero stelle attuale:', this.actualNumberStar);
+         this.getApi();
+      },
+
+      resetFilters(){
+         this.actualNumberStar = 0;
+         this.rangeReviewsValue = 0;
+         for(let i = 0; i < this.starRange.length; i++){
+            const star = this.starRange[i];
+            star.active = false;
+            this.setRangeStar(star);
+         }
+         this.getApi();
       }
    },
 
@@ -365,6 +382,11 @@ export default {
                   height: 90px;
                   background-color: $primary_color;
                   margin-right: 20px;
+                  overflow: hidden;
+                  border-radius: 50%;
+                  img{
+                     width: 100%;
+                  }
                }
 
                .info{

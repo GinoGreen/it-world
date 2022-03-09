@@ -2069,6 +2069,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AdvancedSearch',
   data: function data() {
@@ -2108,6 +2111,7 @@ __webpack_require__.r(__webpack_exports__);
     getApi: function getApi() {
       var _this2 = this;
 
+      this.profiles = [];
       axios.get(this.apiUrl + this.$route.params.job_role).then(function (res) {
         _this2.jobRoles = res.data; // console.log(res.data);
         // profiles
@@ -2118,9 +2122,11 @@ __webpack_require__.r(__webpack_exports__);
               if (!_this2.profiles.some(function (element) {
                 return element.id === profile.id;
               })) {
-                profile.jobRole = [jobRole.name];
+                if (profile.vote_average >= _this2.actualNumberStar && profile.reviews_length >= _this2.rangeReviewsValue) {
+                  profile.jobRole = [jobRole.name];
 
-                _this2.profiles.push(profile);
+                  _this2.profiles.push(profile);
+                }
               } else {
                 _this2.profiles.find(function (element) {
                   return element.id === profile.id;
@@ -2158,6 +2164,19 @@ __webpack_require__.r(__webpack_exports__);
 
       this.actualNumberStar = star.numberStar;
       console.log('numero stelle attuale:', this.actualNumberStar);
+      this.getApi();
+    },
+    resetFilters: function resetFilters() {
+      this.actualNumberStar = 0;
+      this.rangeReviewsValue = 0;
+
+      for (var i = 0; i < this.starRange.length; i++) {
+        var star = this.starRange[i];
+        star.active = false;
+        this.setRangeStar(star);
+      }
+
+      this.getApi();
     }
   },
   mounted: function mounted() {
@@ -2319,7 +2338,8 @@ __webpack_require__.r(__webpack_exports__);
       message: '',
       errors: {},
       success: false,
-      sending: false
+      sending: false,
+      apiUrl: 'http://127.0.0.1:8000/api/contacts'
     };
   },
   methods: {
@@ -2367,11 +2387,12 @@ __webpack_require__.r(__webpack_exports__);
       this.message = this.formFields[2].content;
       this.success = false;
       this.sending = true;
-      axios.post('api/contacts', {
+      axios.post(this.apiUrl, {
         name: this.name,
         email: this.email,
         message: this.message,
-        type: this.$route.params.type
+        type: this.$route.params.type,
+        user_id: this.$route.params.userId
       }).then(function (response) {
         _this.sending = false;
 
@@ -2392,9 +2413,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  mounted: function mounted() {
-    console.log(this.$route.params.type);
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2670,12 +2689,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SingleProfile',
   data: function data() {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/profile/',
-      profile: null
+      profile: null,
+      type: {
+        message: 'message',
+        review: 'review'
+      }
     };
   },
   methods: {
@@ -2684,7 +2719,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(this.apiUrl + this.$route.params.profile_id).then(function (res) {
         _this.profile = res.data;
-        console.log(res.data); // console.log(this.profile.avatar_path);
       });
     }
   },
@@ -3186,7 +3220,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Op
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-781a2080], p[data-v-781a2080] {\n  color: #fff;\n}\n.glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .content-left .it-links[data-v-781a2080], .it-section-page .content-right .it-links[data-v-781a2080] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-height: 20px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  overflow: hidden;\n  height: calc(100vh - 100px);\n}\n.it-section-page .content-left .filters-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left .filters-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  overflow: auto;\n  border-radius: 10px 10px 0px 0px;\n  padding: 50px 10px 20px 10px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: transparent;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slider-box[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080] {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 5px;\n  background: #072142;\n  outline: none;\n  opacity: 1;\n  transition: opacity 0.2s;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]:hover {\n  opacity: 0.7;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  appearance: none;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-moz-range-thumb {\n  width: 15px;\n  height: 15px;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  height: calc(100vh - 100px);\n  overflow: hidden;\n  position: relative;\n}\n.it-section-page .content-right .results-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-right .results-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-right .results-box[data-v-781a2080] {\n  padding: 50px 0;\n  overflow-y: auto;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-section-page .content-right .results-box .profile-box[data-v-781a2080] {\n  width: 80%;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .results-box .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n}\n.it-section-page .content-right .results-box .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .results-box .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}", ""]);
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-781a2080], p[data-v-781a2080] {\n  color: #fff;\n}\n.glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .content-left .it-links[data-v-781a2080], .it-section-page .content-right .it-links[data-v-781a2080] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-height: 20px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  overflow: hidden;\n  height: calc(100vh - 100px);\n}\n.it-section-page .content-left .filters-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left .filters-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  overflow: auto;\n  border-radius: 10px 10px 0px 0px;\n  padding: 50px 10px 20px 10px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: transparent;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slider-box[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080] {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 5px;\n  background: #072142;\n  outline: none;\n  opacity: 1;\n  transition: opacity 0.2s;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]:hover {\n  opacity: 0.7;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  appearance: none;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-moz-range-thumb {\n  width: 15px;\n  height: 15px;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  height: calc(100vh - 100px);\n  overflow: hidden;\n  position: relative;\n}\n.it-section-page .content-right .results-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-right .results-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-right .results-box[data-v-781a2080] {\n  padding: 50px 0;\n  overflow-y: auto;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.it-section-page .content-right .results-box .profile-box[data-v-781a2080] {\n  width: 80%;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .results-box .profile-box .photo[data-v-781a2080] {\n  width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n  overflow: hidden;\n  border-radius: 50%;\n}\n.it-section-page .content-right .results-box .profile-box .photo img[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-right .results-box .profile-box .info[data-v-781a2080] {\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .results-box .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}", ""]);
 
 // exports
 
@@ -3262,7 +3296,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-387a041b] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-387a041b] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-387a041b],\na[data-v-387a041b]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-387a041b] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-387a041b] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-387a041b] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-387a041b] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-387a041b] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-387a041b] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-387a041b] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-387a041b] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-387a041b] {\n  width: 100%;\n}\n.it_input label[data-v-387a041b] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-387a041b], p[data-v-387a041b] {\n  color: #fff;\n}\n.glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-387a041b] {\n  justify-content: space-between;\n}\n.it-section-page .sx-profile[data-v-387a041b], .it-section-page .dx-profile[data-v-387a041b] {\n  width: 90%;\n}\n.it-section-page .sx-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 20px;\n  overflow: auto;\n  max-height: 670px;\n}\n.it-section-page .sx-profile .top-sx[data-v-387a041b] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .top-sx h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .top-sx .wrap-image[data-v-387a041b] {\n  height: 150px;\n  width: 150px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.it-section-page .sx-profile .top-sx .wrap-image img[data-v-387a041b] {\n  width: 100%;\n}\n.it-section-page .sx-profile .top-sx .wrap-text[data-v-387a041b] {\n  margin-left: 15px;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .sx-profile .mid-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description[data-v-387a041b] {\n  margin: 15px 0px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description h5[data-v-387a041b] {\n  margin-bottom: 10px;\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .mid-sx .wrap-cv h5[data-v-387a041b] {\n  margin-bottom: 10px;\n}\n.it-section-page .sx-profile .bottom-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .bottom-sx h5[data-v-387a041b] {\n  margin-bottom: 15px;\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding: 20px 10px;\n}\n.it-section-page .dx-profile .call-to-action[data-v-387a041b] {\n  height: 350px;\n  width: 100%;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n  overflow-y: auto;\n}\n.it-section-page .dx-profile .call-to-action h5[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile .call-to-action p[data-v-387a041b] {\n  font-size: 13px;\n  margin-top: 10px;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit[data-v-387a041b] {\n  width: 100%;\n  margin-top: 15px;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 7px 15px;\n  width: 100%;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button a[data-v-387a041b] {\n  color: white;\n}\n.it-section-page .bottom-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px;\n}\n.it-section-page .bottom-profile .top-bottom[data-v-387a041b] {\n  width: 100%;\n  max-height: 550px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px;\n}\n.it-section-page .bottom-profile .top-bottom h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews[data-v-387a041b] {\n  overflow: auto;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review[data-v-387a041b] {\n  margin: 15px 0px;\n  width: 100%;\n  padding: 10px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review h6[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review p[data-v-387a041b] {\n  font-size: 13px;\n  margin: 5px 0px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span[data-v-387a041b] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .wrap-star .star[data-v-387a041b] {\n  color: white;\n  font-size: 14px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .date[data-v-387a041b] {\n  font-size: 15px;\n  color: #FF4D5A;\n}", ""]);
+exports.push([module.i, "*[data-v-387a041b] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-387a041b] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-387a041b],\na[data-v-387a041b]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-387a041b] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-387a041b] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-387a041b] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-387a041b] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-387a041b] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-387a041b] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-387a041b] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-387a041b] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-387a041b] {\n  width: 100%;\n}\n.it_input label[data-v-387a041b] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-387a041b] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-387a041b], p[data-v-387a041b] {\n  color: #fff;\n}\n.glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-387a041b] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.it-section-page[data-v-387a041b] {\n  justify-content: space-between;\n}\n.it-section-page .sx-profile[data-v-387a041b], .it-section-page .dx-profile[data-v-387a041b] {\n  width: 90%;\n}\n.it-section-page .sx-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 20px;\n  overflow: auto;\n  max-height: 670px;\n}\n.it-section-page .sx-profile .top-sx[data-v-387a041b] {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .top-sx h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .top-sx .wrap-image[data-v-387a041b] {\n  height: 150px;\n  width: 150px;\n  border-radius: 50%;\n  overflow: hidden;\n}\n.it-section-page .sx-profile .top-sx .wrap-image img[data-v-387a041b] {\n  width: 100%;\n}\n.it-section-page .sx-profile .top-sx .wrap-text[data-v-387a041b] {\n  margin-left: 15px;\n  display: flex;\n  flex-direction: column;\n}\n.it-section-page .sx-profile .top-sx .wrap-text .it-job-box[data-v-387a041b] {\n  display: flex;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n  margin-top: 10px;\n}\n.it-section-page .sx-profile .top-sx .wrap-text .it-job-box .it-job-name[data-v-387a041b] {\n  min-width: 40%;\n  font-size: 15px;\n  text-align: center;\n  border: 1px solid #FF4D5A;\n  border-radius: 30px;\n  padding: 5px;\n  margin: 0px 20px 10px 0px;\n}\n.it-section-page .sx-profile .mid-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description[data-v-387a041b] {\n  margin: 15px 0px;\n}\n.it-section-page .sx-profile .mid-sx .wrap-description h5[data-v-387a041b] {\n  margin-bottom: 10px;\n  color: #FF4D5A;\n}\n.it-section-page .sx-profile .mid-sx .wrap-cv h5[data-v-387a041b] {\n  margin-bottom: 10px;\n}\n.it-section-page .sx-profile .bottom-sx[data-v-387a041b] {\n  width: 100%;\n  padding: 15px;\n  margin-bottom: 20px;\n}\n.it-section-page .sx-profile .bottom-sx h5[data-v-387a041b] {\n  margin-bottom: 15px;\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile[data-v-387a041b] {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  padding: 20px 10px;\n}\n.it-section-page .dx-profile .call-to-action[data-v-387a041b] {\n  height: 350px;\n  width: 100%;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n  overflow-y: auto;\n}\n.it-section-page .dx-profile .call-to-action h5[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .dx-profile .call-to-action p[data-v-387a041b] {\n  font-size: 13px;\n  margin-top: 10px;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit[data-v-387a041b] {\n  width: 100%;\n  margin-top: 15px;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b] {\n  background-color: #FF4D5A;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 7px 15px;\n  width: 100%;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button[data-v-387a041b]:hover {\n  transform: translateY(-3px);\n}\n.it-section-page .dx-profile .call-to-action .it-btn-edit button a[data-v-387a041b] {\n  color: white;\n}\n.it-section-page .bottom-profile[data-v-387a041b] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-between;\n  padding: 20px;\n}\n.it-section-page .bottom-profile .top-bottom[data-v-387a041b] {\n  width: 100%;\n  max-height: 550px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px;\n}\n.it-section-page .bottom-profile .top-bottom h3[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews[data-v-387a041b] {\n  overflow: auto;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review[data-v-387a041b] {\n  margin: 15px 0px;\n  width: 100%;\n  padding: 10px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review h6[data-v-387a041b] {\n  color: #FF4D5A;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review p[data-v-387a041b] {\n  font-size: 13px;\n  margin: 5px 0px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span[data-v-387a041b] {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .wrap-star .star[data-v-387a041b] {\n  color: white;\n  font-size: 14px;\n}\n.it-section-page .bottom-profile .top-bottom .contaier-reviews .wrap-review .wrap-span .date[data-v-387a041b] {\n  font-size: 15px;\n  color: #FF4D5A;\n}", ""]);
 
 // exports
 
@@ -10983,11 +11017,14 @@ var render = function () {
                     type: "range",
                     min: "0",
                     max: "100",
-                    value: "50",
+                    value: "0",
                     id: "myRange",
                   },
                   domProps: { value: _vm.rangeReviewsValue },
                   on: {
+                    click: function ($event) {
+                      return _vm.getApi()
+                    },
                     __r: function ($event) {
                       _vm.rangeReviewsValue = $event.target.value
                     },
@@ -11026,6 +11063,20 @@ var render = function () {
                 }),
                 0
               ),
+              _vm._v(" "),
+              _c("div", { staticClass: "star-reset it-btn" }, [
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function ($event) {
+                        return _vm.resetFilters()
+                      },
+                    },
+                  },
+                  [_vm._v("Reset Filters")]
+                ),
+              ]),
             ]),
           ]),
           _vm._v(" "),
@@ -11048,10 +11099,12 @@ var render = function () {
             _vm._l(_vm.profiles, function (profile, index) {
               return _c(
                 "div",
-                { key: "profile" + index, staticClass: "profile-box m-3" },
+                { key: "profile" + index, staticClass: "profile-box m-3 vis" },
                 [
                   _c("div", { staticClass: "photo" }, [
-                    _c("img", { attrs: { src: profile.image, alt: "" } }),
+                    _c("img", {
+                      attrs: { src: profile.avatar_path, alt: "avatar" },
+                    }),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "info-content" }, [
@@ -11577,7 +11630,20 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
-            _c("h5", [_vm._v(_vm._s(_vm.profile.job_roles[0].name))]),
+            _c(
+              "div",
+              { staticClass: "it-job-box" },
+              _vm._l(_vm.profile.job_roles, function (job_role, index) {
+                return _c("h5", { key: index, staticClass: "it-job-name" }, [
+                  _vm._v(
+                    "\n                     " +
+                      _vm._s(job_role.name) +
+                      "\n                  "
+                  ),
+                ])
+              }),
+              0
+            ),
             _vm._v(" "),
             _c("h6", [_vm._v(_vm._s(_vm.profile.region))]),
           ]),
@@ -11627,13 +11693,20 @@ var render = function () {
             _vm._v(" "),
             _c("p", [
               _vm._v(
-                "Compila il form e proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!"
+                "Proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!"
               ),
             ]),
             _vm._v(" "),
             _c(
               "router-link",
-              { attrs: { to: { name: "MessageReviewForm" } } },
+              {
+                attrs: {
+                  to: {
+                    name: "from_contact",
+                    params: { type: this.type.message, userId: _vm.profile.id },
+                  },
+                },
+              },
               [
                 _c("div", { staticClass: "it-btn-edit mb-4" }, [
                   _c("button", [_vm._v("Invia un messaggio")]),
@@ -11646,14 +11719,19 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("p", [
-              _vm._v(
-                "Hai già avuto a che fare con il nostro professionista? Lascia una recensione e aiuta gli altri utenti!"
-              ),
+              _vm._v("Lascia una recensione e aiuta gli altri utenti!"),
             ]),
             _vm._v(" "),
             _c(
               "router-link",
-              { attrs: { to: { name: "MessageReviewForm" } } },
+              {
+                attrs: {
+                  to: {
+                    name: "from_contact",
+                    params: { type: this.type.review, userId: _vm.profile.id },
+                  },
+                },
+              },
               [
                 _c("div", { staticClass: "it-btn-edit" }, [
                   _c("button", [_vm._v("Scrivi una recensione")]),
@@ -28146,8 +28224,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'profile',
     component: _components_pages_SingleProfile_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '/form/:type',
-    name: 'MessageReviewForm',
+    path: '/contact/:type/:userId',
+    name: 'from_contact',
     component: _components_pages_MessageReviewForm_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }]
 });

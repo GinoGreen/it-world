@@ -13,7 +13,11 @@
 
             <div class="wrap-text">
                <h3>{{profile.name}} {{profile.surname}}</h3>
-               <h5>{{profile.job_roles[0].name}}</h5>
+               <div class="it-job-box">
+                  <h5 v-for="(job_role, index) in profile.job_roles" :key="index" class="it-job-name">
+                     {{job_role.name}}
+                  </h5>
+               </div>
                <h6>{{profile.region}}</h6>
             </div>
             
@@ -53,15 +57,23 @@
          <div class="call-to-action glass">
 
             <h5>Rimani in contatto con {{profile.name}}</h5>
-            <p>Compila il form e proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
-             <router-link :to="{name: 'MessageReviewForm'}">
+            <p>Proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
+            <router-link :to="{
+               name: 'from_contact', 
+               params: {type: this.type.message, userId: profile.id},
+            }">
+               <!-- props: {id: this.profile.id} -->
                <div class="it-btn-edit mb-4">
                   <button>Invia un messaggio</button>
                </div>
-             </router-link>
+            </router-link>
             <h5>Valuta l'esperienza di {{profile.name}}</h5>
-            <p>Hai già avuto a che fare con il nostro professionista? Lascia una recensione e aiuta gli altri utenti!</p>
-            <router-link :to="{name: 'MessageReviewForm'}">
+            <p>Lascia una recensione e aiuta gli altri utenti!</p>
+            <router-link :to="{
+               name: 'from_contact', 
+               params: {type: this.type.review, userId: profile.id},
+            }">
+               <!-- props: {id: this.profile.id} -->
                <div class="it-btn-edit">
                   <button>Scrivi una recensione</button>
                </div>
@@ -123,6 +135,10 @@ export default {
       return{
          apiUrl: 'http://127.0.0.1:8000/api/profile/',
          profile: null,
+         type: {
+            message: 'message',
+            review: 'review',
+         }
       }
    },
    methods:{
@@ -130,8 +146,6 @@ export default {
          axios.get(this.apiUrl + this.$route.params.profile_id)
             .then(res => {
                this.profile = res.data;
-               console.log(res.data);
-               // console.log(this.profile.avatar_path);
          });
       }
    },
@@ -189,6 +203,23 @@ export default {
             margin-left: 15px;
             display: flex;
             flex-direction: column;
+
+            .it-job-box{
+               display: flex;
+               justify-content: flex-start;
+               flex-wrap: wrap;
+               margin-top: 10px;
+
+               .it-job-name{
+                  min-width: 40%;
+                  font-size: 15px;
+                  text-align: center;
+                  border: 1px solid $primary_color;
+                  border-radius: 30px;
+                  padding: 5px;
+                  margin: 0px 20px 10px 0px;
+               }
+            }
          }
          
       }
