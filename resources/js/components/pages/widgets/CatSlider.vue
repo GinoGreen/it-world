@@ -6,17 +6,46 @@
 
           <!-- card -->
           <div 
-          v-for="(card, index) in 6"
+          v-for="(card, index) in allJobRoles"
           :key="index"
-          class="swiper-slide it-card">
+          class="swiper-slide it-card glass">
             <div class="it-card-content">
 
               <div class="it-info">
-               <img src="/img/catslider/frontend-dev.svg" alt="image">
+               <img 
+
+               v-if="card.id === 1"
+               src="/img/catslider/front-end.svg" alt="image">
+
+               <img 
+               v-if="card.id === 2"
+               src="/img/catslider/back-end.svg" alt="image">
+
+               <img 
+               v-if="card.id === 3"
+               src="/img/catslider/social-media.svg" alt="image">
+
+               <img 
+               v-if="card.id === 4"
+               src="/img/catslider/uex.svg" alt="image">
+
+               <img 
+               v-if="card.id === 5"
+               src="/img/catslider/ui.svg" alt="image">
+
+               <img 
+               v-if="card.id === 6"
+               src="/img/catslider/app.svg" alt="image">
+
+               <img 
+               v-if="card.id === 7"
+               src="/img/catslider/cyber.svg" alt="image">
+
+               
               </div>
 
               <div class="it-btn">
-                <button>Categoria</button>
+                <button>{{card.name}}</button>
               </div>
             </div>
           </div>
@@ -38,9 +67,20 @@ export default {
       return{
          swiper: null,
          card: 1,
+         apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
+         allJobRoles: [],
       }
    },
    methods:{
+
+      getJobRoles(){
+         axios.get(this.apiUrl)
+            .then(res => {
+               this.allJobRoles = res.data;
+               console.log('all roles: ', this.allJobRoles);
+            });
+      },
+
       mediaSlider() {
          if (window.innerWidth > 970) {
             this.card = 3
@@ -71,6 +111,9 @@ export default {
    mounted(){
       this.mediaSlider();
       window.addEventListener('resize', this.mediaSlider);
+
+      this.getJobRoles();
+     
    }
 }
 
@@ -78,6 +121,7 @@ export default {
 
 <style lang='scss' scoped>
 @import '../../../../sass/guest/_variables.scss';
+
 .it-slider{
    position: relative;
    display: flex;
@@ -93,22 +137,29 @@ export default {
             margin: 70px 0;
             border-radius: 30px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
             &::before{
                content: "";
                position: absolute;
                border-radius: 30px;
-               background: #7B40FF;
+               // background: #7B40FF;
                height: 100%;
                width: 100%;
             }
 
             .it-card-content{
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-               padding: 30px;
+               
+               padding: 60px 30px 30px 30px;
                position: relative;
                z-index: 100;
+               height: 350px;
+
+               .it-btn{
+                  font-size: 13px;
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+               }
 
                .it-info{
                   display: flex;
