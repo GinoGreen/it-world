@@ -88,6 +88,14 @@
                      </div>
                   </div>
                </div>
+               <div class="message-box">
+                  <div class="message not-found" v-if="(profiles.length === 0) && (loading === true)">
+                     <h2>Nessun risultato trovato.</h2>
+                  </div>
+                  <div class="message loading" v-if="(loading === false)">
+                     <h2>Loading...</h2>
+                  </div>
+               </div>
             </div>
 
             <div class="it-links col-12 text-dark">
@@ -113,6 +121,7 @@ export default {
           profiles: [],
           rangeReviewsValue: 0, 
           actualNumberStar: 0,
+          loading: false,
           starRange: [
              {
                 numberStar: 1,
@@ -147,6 +156,7 @@ export default {
             });
       },
       getApi(){
+         this.loading = false;
          this.profiles = [];
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
@@ -172,6 +182,7 @@ export default {
                            
                            this.profiles.find(element => element.id === profile.id).jobRole.push(jobRole.name);
                         }
+                        this.loading = true;
                      });
                   }
                });
@@ -360,7 +371,6 @@ export default {
          height: calc(100vh - 100px);
          overflow: hidden;
          position: relative;
-         
          .results-title{
             width: 100%;
             position: absolute;
@@ -380,6 +390,16 @@ export default {
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            height: 100%;
+            .message-box{
+               position: absolute;
+               top: 50%;
+               transform: translate(0, -50%);
+               .message{
+
+               }
+            }
             .profile-box{
                width: 80%;
                background-color: white;
