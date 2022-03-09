@@ -32,6 +32,8 @@ Route::middleware('auth')
 
             Route::get('/review', 'HomeController@review')->name('review');
 
+            Route::get('/premium', 'HomeController@premium')->name('premium');
+
             Route::get('/statistic', 'HomeController@getAverageForCurrentYear')->name('statistic');
 
             Route::get('/statistic/{year}', 'HomeController@getAverageForSelectedYear')->name('statistic.year');

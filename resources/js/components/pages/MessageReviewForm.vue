@@ -85,11 +85,14 @@ export default {
          errors: {},
          success: false,
          sending: false,
+         
       }
    },
 
    methods:{
       labelAnimation(labelFor) {
+      console.log(this.$route.params.type);
+
          gsap.to('label[for="' + labelFor + '"]', {
             bottom: '100%',
             fontSize: '1.1em',
@@ -141,6 +144,7 @@ export default {
             name: this.name,
             email: this.email,
             message: this.message,
+            type: this.$route.params.type
 
          }).then(response => {
 
@@ -163,7 +167,7 @@ export default {
    },
 
    mounted(){
-      
+      console.log(this.$route.params.type);
    }
 }
 

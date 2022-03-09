@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
 
             $table->string('name')->nullable();
             $table->string('message');
-            $table->timestamp('date');
+          
           
 
             $table->unsignedBigInteger('user_id')->nullable();
@@ -26,6 +26,8 @@ class CreateMessagesTable extends Migration
                     ->references('id')
                     ->on('users')
                     ->onDelete('cascade');
+
+            $table->string('date');        
 
 
             $table->timestamps();

@@ -66,7 +66,7 @@
             <h5>Modifica il tuo profilo</h5>
             <p>Puoi in qualsiasi momento modificare il tuo profilo. Se qualcosa non ti convince premi il bottone!</p>
               
-            <div class="it-btn mb-4">
+            <div class="it-btn-show mb-4">
                <button>
                   <a href="{{ route('admin.edit')}}">Modifica</a>
                </button>

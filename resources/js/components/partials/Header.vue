@@ -5,9 +5,9 @@
          <div class="row justify-content-between h-100">
 
             <div class="logo h-100">
-               <a href="/">
-                  <img src="/img/logo.png" alt="">
-               </a>
+                <router-link :to="{name: 'home' }">
+                  <img src="/img/logo.png">
+                </router-link>
             </div>
 
             <div class="menu h-100">
