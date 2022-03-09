@@ -28,7 +28,7 @@
                <div class="reviews">
                   <h3 class="it-title-small it-text-black">Recensioni</h3>
                   <div class="slider-box">
-                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="50" class="slider" id="myRange" @click="getApi()">
                      <p>min: <span id="demo">{{rangeReviewsValue}}</span></p>
                   </div>
                </div>
@@ -38,6 +38,9 @@
                   <div class="stars">
                      <!-- da sostituire con icona FontAwesome -->
                      <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
+                  </div>
+                  <div class="star-reset it-btn">
+                     <button @click="actualNumberStar = 0">Stars Reset</button>
                   </div>
                </div>
 
@@ -140,6 +143,7 @@ export default {
             });
       },
       getApi(){
+         this.profiles = [];
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
             
@@ -155,10 +159,11 @@ export default {
                      jobRole.users.forEach(profile => {
                      
                         if (!this.profiles.some(element => element.id === profile.id)) {
+                           if((profile.vote_average >= this.actualNumberStar) && (profile.reviews_length >= this.rangeReviewsValue)){
+                              profile.jobRole = [jobRole.name];
 
-                           profile.jobRole = [jobRole.name];
-
-                           this.profiles.push(profile);
+                              this.profiles.push(profile);
+                           }
                         } else {
                            
                            this.profiles.find(element => element.id === profile.id).jobRole.push(jobRole.name);
@@ -195,6 +200,7 @@ export default {
          }
          this.actualNumberStar = star.numberStar;
          console.log('numero stelle attuale:', this.actualNumberStar)
+         this.getApi();
       }
    },
 
