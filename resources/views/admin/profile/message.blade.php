@@ -13,6 +13,8 @@
             <h3 class="it-m-name d-inline">{{$message->name}}</h3>
             <div class="it-m-text">
                <p class="it-m-description">{{$message->message}}</p>
+               <p class="it-m-description">{{$message->email}}</p>
+               <p class="it-m-description">{{$message->created_at}}</p>
                {{-- <p class="it-m-date">{{$message->date}}</p> --}}
             </div>
          </div>
@@ -20,7 +22,7 @@
    @endforeach
    <div class="paginate">        
       {{$messages->links()}}
-    </div>
+   </div>
    
 </div>
 @endsection
