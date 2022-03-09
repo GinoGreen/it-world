@@ -13,7 +13,11 @@
 
             <div class="wrap-text">
                <h3>{{profile.name}} {{profile.surname}}</h3>
-               <h5>{{profile.job_roles[0].name}}</h5>
+               <div class="it-job-box">
+                  <h5 v-for="(job_role, index) in profile.job_roles" :key="index" class="it-job-name">
+                     {{job_role.name}}
+                  </h5>
+               </div>
                <h6>{{profile.region}}</h6>
             </div>
             
@@ -193,6 +197,23 @@ export default {
             margin-left: 15px;
             display: flex;
             flex-direction: column;
+
+            .it-job-box{
+               display: flex;
+               justify-content: flex-start;
+               flex-wrap: wrap;
+               margin-top: 10px;
+
+               .it-job-name{
+                  min-width: 40%;
+                  font-size: 15px;
+                  text-align: center;
+                  border: 1px solid $primary_color;
+                  border-radius: 30px;
+                  padding: 5px;
+                  margin: 0px 20px 10px 0px;
+               }
+            }
          }
          
       }

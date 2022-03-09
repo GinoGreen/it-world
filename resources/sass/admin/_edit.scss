@@ -205,6 +205,23 @@
             width: 100%;
          }
       }
+
+      .it-job-box{
+         display: flex;
+         justify-content: flex-start;
+         flex-wrap: wrap;
+         margin-top: 10px;
+
+         .it-job-name{
+            width: 100%;
+            font-size: 15px;
+            text-align: center;
+            border: 1px solid $primary_color;
+            border-radius: 30px;
+            padding: 5px;
+            margin: 0px 20px 10px 0px;
+         }
+      }
       
    }
 
