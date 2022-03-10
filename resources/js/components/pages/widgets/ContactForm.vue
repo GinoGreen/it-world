@@ -124,13 +124,13 @@ export default {
 @import '../../../../sass/guest/_generals.scss';
 
    form#contact_us {
-      margin-top: 40px;
+      margin-top: 30px;
       width: 70%;
 
       .it_input_contact_us {
          display: flex;
          flex-direction: column;
-         margin-top: 70px;
+         margin-top: 40px;
          margin-bottom: 0;
 
             position: relative;
