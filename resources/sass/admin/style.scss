@@ -20,10 +20,17 @@
 @import './chartjs';
 @import './statistic';
 @import './premium';
+@import './subscription';
+
 
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+a,
+a:hover {
+   text-decoration: none;
+}
 
 .button {
    cursor: pointer;

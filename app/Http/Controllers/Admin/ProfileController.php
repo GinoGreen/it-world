@@ -55,6 +55,13 @@ class ProfileController extends Controller
         abort(404, 'Profile non trovato o inesistente');
     }
 
+    public function subscription() {
+
+        
+
+        return view('admin.profile.subscription');
+    }
+
     
     public function update(ProfilePostRequest $request)
     {

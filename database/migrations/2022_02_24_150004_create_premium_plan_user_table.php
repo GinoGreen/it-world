@@ -15,7 +15,18 @@ class CreatePremiumPlanUserTable extends Migration
     {
         Schema::create('premium_plan_user', function (Blueprint $table) {
             $table->id();
-            $table->string('expiration_date',45);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
+
+            $table->unsignedBigInteger('premium_plan_id');
+            $table->foreign('premium_plan_id')
+                    ->references('id')
+                    ->on('premium_plans')
+                    ->onDelete('cascade');
+            $table->string('expiration_date',45)->nullable();
             $table->timestamps();
         });
     }
