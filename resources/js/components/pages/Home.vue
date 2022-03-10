@@ -206,7 +206,9 @@ export default {
    main{
       
       width: 100%;
-      height: 100vh;
+      // height: 100vh;
+      height: calc(100vh - 90px);
+      margin-top: 90px;
       color: #000;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
