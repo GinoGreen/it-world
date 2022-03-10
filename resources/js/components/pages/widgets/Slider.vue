@@ -14,11 +14,6 @@
                 <img src="/img/slider/undraw_profile_pic_ic-5-t.svg" alt="avatar">
               </div>
 
-              <div class="media-icons">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                <i class="fa fa-github" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </div>
 
               <div class="it-info">
                 <span class="name">Nome Cognome</span>

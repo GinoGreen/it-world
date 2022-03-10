@@ -108,7 +108,6 @@ export default {
 
    mounted(){
       gsap.registerPlugin(ScrollToPlugin);
-      
    }
 
 }
