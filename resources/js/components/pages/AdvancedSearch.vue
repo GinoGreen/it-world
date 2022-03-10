@@ -371,7 +371,7 @@ export default {
       }
 
       .content-right{
-         max-height: calc(100vh - 100px);
+         height: calc(100vh - 100px);
          overflow: hidden;
          position: relative;
          .results-title{
