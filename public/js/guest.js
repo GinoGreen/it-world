@@ -12913,9 +12913,7 @@ var render = function () {
                         _c("span", { staticClass: "date" }, [
                           _vm._v(
                             "\r\n                        " +
-                              _vm._s(review.month) +
-                              " / " +
-                              _vm._s(review.year) +
+                              _vm._s(review.created_at) +
                               "\r\n                     "
                           ),
                         ]),
