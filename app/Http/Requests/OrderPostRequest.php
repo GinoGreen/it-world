@@ -25,7 +25,7 @@ class OrderPostRequest extends FormRequest
     {
         return [
             'token' => 'required',
-            'amount' => 'required'
+            'premium_plan' => 'required'
         ];
     }
 }
