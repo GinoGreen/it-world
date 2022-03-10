@@ -134,6 +134,10 @@ export default {
    section {
       height: 100vh;
       width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
       
       .row{
          padding-top: 30px;

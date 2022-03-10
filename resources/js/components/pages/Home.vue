@@ -7,6 +7,7 @@
          <div class="wrap-scroll-line">
             <a v-for="(line, index) in sections"
                :key="`line${index}`"
+               :href="'#section' + index"
             ><div class="scroll-line"></div></a>
          </div>
          

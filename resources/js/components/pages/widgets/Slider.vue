@@ -99,15 +99,14 @@ export default {
 .it-slider{
    position: relative;
    display: flex;
-   min-height: 50vh;
    align-items: center;
 
    .swiper{
-      max-width: 768px;
+      max-width: 70vw;
       .swiper-wrapper{
          .it-card{
             position: relative;
-            margin: 70px 0;
+            margin: 50px 0;
             border-radius: 30px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             &::before{

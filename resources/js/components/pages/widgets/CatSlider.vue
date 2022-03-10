@@ -129,16 +129,15 @@ export default {
 .it-slider{
    position: relative;
    display: flex;
-   min-height: 50vh;
    align-items: center;
 
    .swiper{
-      max-width: 768px;
+      max-width: 70vw;
       .swiper-wrapper{
          .it-card{
             position: relative;
             background: #fff;
-            margin: 70px 0;
+            margin: 50px 0;
             padding: 0px 20px 20px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
@@ -160,14 +159,17 @@ export default {
                position: relative;
                z-index: 100;
                height: 280px;
+               width: 100%;
 
                .it-info{
                   display: flex;
                   align-items: center;
                   justify-content: center;
+                  width: 100%;
 
                   img{
-                     width: 100%;
+                     width: 70%;
+                     max-height: 150px;
                   }
                   
                }
