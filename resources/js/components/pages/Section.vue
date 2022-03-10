@@ -50,7 +50,9 @@
                v-if="sectionInfo.section.class === 'join'"
                class="it-btn"
             >
-               <button class="it-title-small">Unisciti a noi</button>
+               <a href="/register">
+                  <button class="it-title-small">Unisciti a noi</button>
+               </a>
             </div>
 
             <ContactForm v-if="sectionInfo.section.class === 'contact'"/>
