@@ -1,19 +1,26 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="">
+<section class="">
+   <h1 class="text-white">Effettua il pagamento</h1>
+</section>
+<div class="pay-wrap">
 
-   <section class="">
-      <h1 class="text-white">Effettua il pagamento</h1>
-   </section>
+   
    <form id="payment-form" action="{{ route('admin.payment', $plan) }}" method="post">
       @csrf
       <!-- Putting the empty container you plan to pass to
         `braintree.dropin.create` inside a form will make layout and flow
         easier to manage -->
-      <div id="dropin-container"></div>
-      <input type="submit" />
-      <input type="hidden" id="nonce" name="payment_method_nonce"/>
+      <div id="dropin-container" class="ciao"></div>
+
+         <div class="it-btn">
+            <button>
+               <input type="submit" />
+            </button>
+            <input type="hidden" id="nonce" name="payment_method_nonce"/>
+         </div>
+
    </form>
 
 </div>

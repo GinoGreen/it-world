@@ -9,7 +9,7 @@
          
          <p>pagamento: {{ $result->transaction->amount }}</p>
          {{-- qui dentro sono tutti i dati di result --}}
-         @dump($result->transaction)
+         {{-- @dump($result->transaction) --}}
       @endif
       <a href="{{ route('admin.home') }}">
          <div class="it-btn">
