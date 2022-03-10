@@ -30,7 +30,7 @@
             </div>
              
          </div>
-         <div class="mid-sx glass col-12">
+         <div class="mid-sx glass">
             <h5> Livello: {{ Auth::user()->level }}</h5>
 
             @if(Auth::user()->description)
