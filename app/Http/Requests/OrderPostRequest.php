@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Orders;
+namespace App\Http\Requests;
 
-use App\Rules\ValidProduct;
 use Illuminate\Foundation\Http\FormRequest;
 
-class OrderRequest extends FormRequest
+class OrderPostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +24,8 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'token' =>'required',
-            'product'=>[
-                'required',
-                new ValidProduct()
-            ]
+            'token' => 'required',
+            'amount' => 'required'
         ];
     }
 }
