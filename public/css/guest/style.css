@@ -14065,6 +14065,7 @@ a:hover {
 
 .it-btn button {
   background-color: #FF4D5A;
+  font-weight: 600;
   outline: none;
   border: none;
   color: #fff;
@@ -14154,6 +14155,31 @@ p {
   backdrop-filter: blur(3.4px) !important;
   -webkit-backdrop-filter: blur(3.4px) !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 20px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #FF4D5A;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
 }
 
 .container {

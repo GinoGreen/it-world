@@ -4,23 +4,56 @@
       <div class="swiper it-swiper">
         <div class="swiper-wrapper content">
 
-          <!-- card -->
-          <div 
-          v-for="(card, index) in 6"
-          :key="index"
-          class="swiper-slide it-card">
+         <!-- card -->
+         <div 
+         v-for="(card, index) in allJobRoles"
+         :key="index"
+         class="swiper-slide it-card glass">
             <div class="it-card-content">
 
               <div class="it-info">
-               <img src="/img/catslider/frontend-dev.svg" alt="image">
+               <img 
+
+               v-if="card.id === 1"
+               src="/img/catslider/front-end.svg" alt="image">
+
+               <img 
+               v-if="card.id === 2"
+               src="/img/catslider/back-end.svg" alt="image">
+
+               <img 
+               v-if="card.id === 3"
+               src="/img/catslider/social-media.svg" alt="image">
+
+               <img 
+               v-if="card.id === 4"
+               src="/img/catslider/uex.svg" alt="image">
+
+               <img 
+               v-if="card.id === 5"
+               src="/img/catslider/ui.svg" alt="image">
+
+               <img 
+               v-if="card.id === 6"
+               src="/img/catslider/app.svg" alt="image">
+
+               <img 
+               v-if="card.id === 7"
+               src="/img/catslider/cyber.svg" alt="image">
+
+               
               </div>
 
-              <div class="it-btn">
-                <button>Categoria</button>
-              </div>
             </div>
-          </div>
-          <!-- /card -->
+            <router-link :to="{ name: 'advanced_search', params: { job_role: card.name }}">
+               <div class="it-btn">
+                  <button>{{card.name}}</button>
+               </div>
+            </router-link>
+
+
+         </div>
+         <!-- /card -->
           
         </div>
       </div>
@@ -38,9 +71,20 @@ export default {
       return{
          swiper: null,
          card: 1,
+         apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
+         allJobRoles: [],
       }
    },
    methods:{
+
+      getJobRoles(){
+         axios.get(this.apiUrl)
+            .then(res => {
+               this.allJobRoles = res.data;
+               
+            });
+      },
+
       mediaSlider() {
          if (window.innerWidth > 970) {
             this.card = 3
@@ -71,6 +115,9 @@ export default {
    mounted(){
       this.mediaSlider();
       window.addEventListener('resize', this.mediaSlider);
+
+      this.getJobRoles();
+     
    }
 }
 
@@ -78,26 +125,28 @@ export default {
 
 <style lang='scss' scoped>
 @import '../../../../sass/guest/_variables.scss';
+
 .it-slider{
    position: relative;
    display: flex;
-   min-height: 50vh;
    align-items: center;
 
    .swiper{
-      max-width: 768px;
+      max-width: 70vw;
       .swiper-wrapper{
          .it-card{
             position: relative;
             background: #fff;
-            margin: 70px 0;
-            border-radius: 30px;
+            margin: 50px 0;
+            padding: 0px 20px 20px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
             &::before{
                content: "";
+               z-index: -1;
                position: absolute;
                border-radius: 30px;
-               background: #7B40FF;
+               // background: #7B40FF;
                height: 100%;
                width: 100%;
             }
@@ -105,46 +154,45 @@ export default {
             .it-card-content{
                display: flex;
                flex-direction: column;
+               justify-content: center;
                align-items: center;
-               padding: 30px;
                position: relative;
                z-index: 100;
+               height: 280px;
+               width: 100%;
 
                .it-info{
                   display: flex;
-                  flex-direction: column;
                   align-items: center;
-                  margin-top: 10px;
-                  color: $secondary_color;
+                  justify-content: center;
+                  width: 100%;
 
-                  .name{
-                     font-size: 20px;
-                     font-weight: 600;
-                  }
                   img{
-                     width: 100%;
+                     width: 70%;
+                     max-height: 150px;
                   }
+                  
                }
-
-               .rating{
-                  display: flex;
-                  align-items: center;
-                  margin-top: 18px;
-
-                  i{
-                     font-size: 18px;
-                     margin: 0 2px;
-                     color: $primary_color;
-                  }                    
-               }
+               
             }
+
+            .it-btn{
+                  z-index: 50;
+                  font-size: 13px;
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  
+            }
+
+            
          }
       }
    }
 
    .swiper-button-next, .swiper-button-prev{
       opacity: 0.7;
-      color: $primary_color;
+      color: white;
       transition: all 0.3s ease;
 
       &:hover{

@@ -10,12 +10,22 @@
          <div class="top-sx glass">
  
             <div class="wrap-image">
-               <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
+               @if (Auth::user()->avatar_path)
+                  <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
+               @else
+                  <img src="{{ asset('img/slider/undraw_profile_pic_ic-5-t.svg') }}" alt="avatar">
+               @endif
             </div>
  
             <div class="wrap-text">
                <h3>{{ Auth::user()->name }} {{ Auth::user()->surname }}</h3>
-               <h5>{{ Auth::user()->job_roles[0]->name }}</h5>
+               
+               <div class="it-job-box">
+                  @foreach (Auth::user()->job_roles as $job_role)
+                  <span class="it-job-name">{{ $job_role->name }}</span>
+                  @endforeach   
+               </div>
+               
                <h6>{{ Auth::user()->region }}</h6>
             </div>
              
@@ -38,11 +48,13 @@
                class="wrap-cv"
             >
                <h5>Scarica il curriculum</h5>
+               <a href="{{ asset('storage/' . Auth::user()->cv_path) }}" target="_blank">
                <div class="it-btn">
-                  <button>
-                     <a href="{{ asset('storage/' . Auth::user()->cv_path) }}" target="_blank">Clicca qui</a>
-                  </button>
-               </div>
+                     <button>
+                        Clicca qui
+                     </button>
+                  </div>
+               </a>
             </div>
             @endif 
  
@@ -59,12 +71,13 @@
  
             <h5>Modifica il tuo profilo</h5>
             <p>Puoi in qualsiasi momento modificare il tuo profilo. Se qualcosa non ti convince premi il bottone!</p>
-              
-            <div class="it-btn mb-4">
-               <button>
-                  <a href="#">Modifica</a>
-               </button>
-            </div>
+            <a class="w-50" href="{{ route('admin.edit')}}">
+               <div class="it-btn-show mb-4">
+                  <button>
+                     Modifica
+                  </button>
+               </div>
+            </a>
                
          </div>
       </div>

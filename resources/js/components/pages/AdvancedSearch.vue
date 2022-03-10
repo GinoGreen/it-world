@@ -3,7 +3,7 @@
    <div class="it-container-page container-fluid">
       
       <section class="it-section-page row">
-         <div class="content-left glass p-1 col-xl-3 col-md-3 col-sm-12 ml-auto mr-auto">
+         <div class="content-left glass p-1 col-xl-3 col-md-12 col-sm-12 ml-auto mr-auto">
 
             <div class="filters-title">
                <h3 class="it-title-small it-text-orange text-center">Filtri</h3>
@@ -28,7 +28,7 @@
                <div class="reviews">
                   <h3 class="it-title-small it-text-black">Recensioni</h3>
                   <div class="slider-box">
-                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                     <input v-model="rangeReviewsValue" type="range" min="0" max="100" value="0" class="slider" id="myRange" @click="getApi()">
                      <p>min: <span id="demo">{{rangeReviewsValue}}</span></p>
                   </div>
                </div>
@@ -39,6 +39,9 @@
                      <!-- da sostituire con icona FontAwesome -->
                      <i v-for="(star, index) in starRange" :key="index" class="fa" :class="setRangeStar(star)" aria-hidden="true" @click="activeStar(star)"></i>
                   </div>
+                  <div class="star-reset it-btn">
+                     <button @click="resetFilters()">Reset Filters</button>
+                  </div>
                </div>
 
             </div>
@@ -47,7 +50,7 @@
             </div>
 
          </div>
-         <div class="content-right glass p-1 col-xl-8 col-md-5 col-sm-12 mr-auto d-flex align-items-center">
+         <div class="content-right glass p-1 col-xl-8 col-md-12 col-sm-12 mr-auto d-flex align-items-center">
             
             <div class="results-title">
                <h3 class="it-title-small it-text-orange text-center">Risultati migliori</h3>
@@ -55,12 +58,12 @@
 
             <!-- COMPONENTE DA CICLARE -->
             <div class="results-box">
-               <div class="profile-box m-3"
+               <div class="profile-box m-3 vis"
                   v-for="(profile, index) in profiles"
                   :key="'profile' + index"
                >
                   <div class="photo">
-                     <img :src="profile.image" alt="">
+                     <img :src="profile.avatar_path" alt="avatar">
                   </div>
                   <div class="info-content">
                      <div class="info">
@@ -69,6 +72,10 @@
                               {{ profile.name }} {{ profile.surname }}
                            </p>
                         </router-link>
+                        <div class="stars">
+                           <i v-for="(star, index) in 5"
+                           :key="'star' + index" class="fa" :class="setRangeStarProfile(star, profile.vote_average)" aria-hidden="true"></i>
+                        </div>
                         <p class="it-text-info it-text-blue "
                         v-for="(role, index) in profile.jobRole"
                         :key="profile.id + index"
@@ -79,6 +86,14 @@
                            {{ profile.description }}
                         </p>
                      </div>
+                  </div>
+               </div>
+               <div class="message-box">
+                  <div class="message not-found" v-if="(profiles.length === 0) && (loading === true)">
+                     <h2>Nessun risultato trovato.</h2>
+                  </div>
+                  <div class="message loading" v-if="(loading === false)">
+                     <Loading />
                   </div>
                </div>
             </div>
@@ -93,10 +108,12 @@
 </template>
 
 <script>
+import Loading from './widgets/Loading.vue';
 
 
 export default {
    name: 'AdvancedSearch',
+   components: {Loading},
 
    data(){
       return{
@@ -106,6 +123,7 @@ export default {
           profiles: [],
           rangeReviewsValue: 0, 
           actualNumberStar: 0,
+          loading: false,
           starRange: [
              {
                 numberStar: 1,
@@ -140,6 +158,8 @@ export default {
             });
       },
       getApi(){
+         this.loading = false;
+         this.profiles = [];
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
             
@@ -155,14 +175,16 @@ export default {
                      jobRole.users.forEach(profile => {
                      
                         if (!this.profiles.some(element => element.id === profile.id)) {
+                           if((profile.vote_average >= this.actualNumberStar) && (profile.reviews_length >= this.rangeReviewsValue)){
+                              profile.jobRole = [jobRole.name];
 
-                           profile.jobRole = [jobRole.name];
-
-                           this.profiles.push(profile);
+                              this.profiles.push(profile);
+                           }
                         } else {
                            
                            this.profiles.find(element => element.id === profile.id).jobRole.push(jobRole.name);
                         }
+                        this.loading = true;
                      });
                   }
                });
@@ -186,6 +208,14 @@ export default {
             return 'fa-star-o';
          }
       },
+      setRangeStarProfile(star, vote){
+         if(star <= vote){
+            return 'fa-star';
+         }
+         else{
+            return 'fa-star-o';
+         }
+      },
       activeStar(star){
          for(let i = 0; i < this.starRange.length; i++){
             this.starRange[i].active = false;
@@ -194,7 +224,19 @@ export default {
             this.starRange[i].active = true;
          }
          this.actualNumberStar = star.numberStar;
-         console.log('numero stelle attuale:', this.actualNumberStar)
+         console.log('numero stelle attuale:', this.actualNumberStar);
+         this.getApi();
+      },
+
+      resetFilters(){
+         this.actualNumberStar = 0;
+         this.rangeReviewsValue = 0;
+         for(let i = 0; i < this.starRange.length; i++){
+            const star = this.starRange[i];
+            star.active = false;
+            this.setRangeStar(star);
+         }
+         this.getApi();
       }
    },
 
@@ -220,6 +262,7 @@ export default {
          position: relative;
          display: flex;
          flex-direction: column;
+         margin-bottom: 20px;
          .it-links{
             position: absolute;
             bottom: 0;
@@ -331,9 +374,9 @@ export default {
          height: calc(100vh - 100px);
          overflow: hidden;
          position: relative;
-         
          .results-title{
             width: 100%;
+            z-index: 100;
             position: absolute;
             top: 0;
             min-height: 50px;
@@ -351,6 +394,16 @@ export default {
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            height: 100%;
+            .message-box{
+               position: absolute;
+               top: 50%;
+               transform: translate(0, -50%);
+               .message{
+
+               }
+            }
             .profile-box{
                width: 80%;
                background-color: white;
@@ -361,17 +414,36 @@ export default {
                align-items: flex-start;
 
                .photo{
-                  width: 90px;
-                  height: 90px;
+                  width: 23%;
+                  min-width: 90px;
+                  min-height: 90px;
                   background-color: $primary_color;
                   margin-right: 20px;
+                  overflow: hidden;
+                  border-radius: 50%;
+                  img{
+                     width: 100%;
+                  }
                }
 
+               .info-content {
+                  width: 77%;
+                  
+                  min-width: calc(100% - 90px);
+               }
                .info{
+                  width: 100%;
                   margin-bottom: 15px;
                   p{
                      margin-bottom: 0px;
                      color:black;
+                  }
+                  .stars{
+                     i{
+                        font-size: 20px;
+                        color: rgb(255, 153, 0);
+                        cursor: pointer;
+                     }
                   }
                }
             }

@@ -8,7 +8,7 @@
           <div 
           v-for="(card, index) in 6"
           :key="index"
-          class="swiper-slide it-card">
+          class="swiper-slide it-card glass">
             <div class="it-card-content">
               <div class="it-slider-avatar">
                 <img src="/img/slider/undraw_profile_pic_ic-5-t.svg" alt="avatar">
@@ -99,22 +99,20 @@ export default {
 .it-slider{
    position: relative;
    display: flex;
-   min-height: 50vh;
    align-items: center;
 
    .swiper{
-      max-width: 768px;
+      max-width: 70vw;
       .swiper-wrapper{
          .it-card{
             position: relative;
-            background: #fff;
-            margin: 70px 0;
+            margin: 50px 0;
             border-radius: 30px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             &::before{
                content: "";
                position: absolute;
-               border-radius: 30px 30px 0 0;
+               border-radius: 10px 10px 0 0;
                height: 40%;
                width: 100%;
                background: $primary_color;
@@ -169,7 +167,7 @@ export default {
                   flex-direction: column;
                   align-items: center;
                   margin-top: 10px;
-                  color: $secondary_color;
+                  color: white;
 
                   .name{
                      font-size: 20px;

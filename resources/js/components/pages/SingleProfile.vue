@@ -2,9 +2,12 @@
 
 <div class="it-container-page">
 
-   <section class="it-section-page row">
+   <div v-if="isLoading" class="it-section-page d-flex justify-content-center align-items-center">
+      <Loading />
+   </div>
+   <section v-else class="it-section-page row">
 
-      <div class="sx-profile col-8">
+      <div class="sx-profile col-xl-8 col-md-12 col-sm-12">
          <div class="top-sx glass">
 
             <div class="wrap-image">
@@ -13,7 +16,11 @@
 
             <div class="wrap-text">
                <h3>{{profile.name}} {{profile.surname}}</h3>
-               <h5>{{profile.job_roles[0].name}}</h5>
+               <div class="it-job-box">
+                  <h5 v-for="(job_role, index) in profile.job_roles" :key="index" class="it-job-name">
+                     {{job_role.name}}
+                  </h5>
+               </div>
                <h6>{{profile.region}}</h6>
             </div>
             
@@ -35,7 +42,7 @@
                <h5>Scarica il curriculum</h5>
                <div class="it-btn">
                   <button>
-                     <a :href="profile.cv_path">Clicca qui</a>
+                     <a target="_blank" :href="profile.cv_path">Clicca qui</a>
                   </button>
                </div>
                
@@ -49,20 +56,28 @@
          </div>
       </div>
 
-      <div class="dx-profile col-4">
+      <div class="dx-profile col-xl-4 col-md-12 col-sm-12">
          <div class="call-to-action glass">
 
             <h5>Rimani in contatto con {{profile.name}}</h5>
-            <p>Compila il form e proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
-             <router-link :to="{name: 'MessageReviewForm'}">
-               <div class="it-btn mb-4">
+            <p>Proponi la tua idea, entro poche ore verrai contattato dal nostro professionista!</p>
+            <router-link :to="{
+               name: 'from_contact', 
+               params: {type: this.type.message, userId: profile.id},
+            }">
+               <!-- props: {id: this.profile.id} -->
+               <div class="it-btn-edit mb-4">
                   <button>Invia un messaggio</button>
                </div>
-             </router-link>
+            </router-link>
             <h5>Valuta l'esperienza di {{profile.name}}</h5>
-            <p>Hai già avuto a che fare con il nostro professionista? Lascia una recensione e aiuta gli altri utenti!</p>
-            <router-link :to="{name: 'MessageReviewForm'}">
-               <div class="it-btn">
+            <p>Lascia una recensione e aiuta gli altri utenti!</p>
+            <router-link :to="{
+               name: 'from_contact', 
+               params: {type: this.type.review, userId: profile.id},
+            }">
+               <!-- props: {id: this.profile.id} -->
+               <div class="it-btn-edit">
                   <button>Scrivi una recensione</button>
                </div>
             </router-link>
@@ -117,21 +132,32 @@
 </template>
 
 <script>
+import Loading from './widgets/Loading.vue'
 export default {
    name: 'SingleProfile',
+   
+   components:{
+      Loading
+   },
+
    data(){
       return{
          apiUrl: 'http://127.0.0.1:8000/api/profile/',
-         profile: null,
+         profile: {},
+         type: {
+            message: 'message',
+            review: 'review',
+         },
+         isLoading: false,
       }
    },
    methods:{
       getApi(){
+         this.isLoading = true;
          axios.get(this.apiUrl + this.$route.params.profile_id)
             .then(res => {
                this.profile = res.data;
-               console.log(res.data);
-               // console.log(this.profile.avatar_path);
+               this.isLoading = false;
          });
       }
    },
@@ -189,6 +215,23 @@ export default {
             margin-left: 15px;
             display: flex;
             flex-direction: column;
+
+            .it-job-box{
+               display: flex;
+               justify-content: flex-start;
+               flex-wrap: wrap;
+               margin-top: 10px;
+
+               .it-job-name{
+                  min-width: 40%;
+                  font-size: 15px;
+                  text-align: center;
+                  border: 1px solid $primary_color;
+                  border-radius: 30px;
+                  padding: 5px;
+                  margin: 0px 20px 10px 0px;
+               }
+            }
          }
          
       }
@@ -259,12 +302,39 @@ export default {
          flex-direction: column;
          align-items: flex-start;
          justify-content: center;
+         overflow-y: auto;
          h5{
             color: $primary_color;
          }
          p{
             font-size: 13px;
             margin-top: 10px;
+         }
+
+         .it-btn-edit{
+            width: 100%;
+            margin-top: 15px;
+            font-weight: 600;
+            button{
+               background-color: $primary_color;
+               outline: none;
+               border: none;
+               color: #fff;
+               border-radius: 30px;
+               padding: 7px 15px;
+               width: 100%;
+               transition: all .4s;
+               cursor: pointer;
+         
+               &:hover{
+                  transform: translateY(-3px);
+               }
+
+               a{
+                  color: white;
+
+               }
+            }
          }
       }
 

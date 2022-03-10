@@ -29,8 +29,8 @@
          }
 
          .wrap-image{
-            height: 150px;
-            width: 150px;
+            max-height: 150px;
+            max-width: 150px;
             border-radius: 50%;
             overflow: hidden;
 
@@ -43,6 +43,22 @@
             margin-left: 15px;
             display: flex;
             flex-direction: column;
+         }
+
+         .it-job-box{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            .it-job-name{
+               width: 40%;
+               font-size: 15px;
+               text-align: center;
+               border: 1px solid $primary_color;
+               border-radius: 30px;
+               padding: 5px;
+               margin: 0px 20px 10px 0px;
+            }
          }
          
       }
@@ -113,12 +129,27 @@
             margin-top: 10px;
          }
 
-         .it-btn{
+         .it-btn-show{
+            width: 100%;
             button{
-               padding: 5px 6px;
+               background-color: $primary_color;
+               width: 100%;
+               outline: none;
+               border: none;
+               font-weight: 600;
+               color: #fff;
+               border-radius: 30px;
+               padding: 7px 15px;
+               transition: all .4s;
+               cursor: pointer;
+         
+               &:hover{
+                  transform: translateY(-3px);
+               }
+
                a{
                   color: white;
-                  font-size: 14px;
+
                }
             }
          }

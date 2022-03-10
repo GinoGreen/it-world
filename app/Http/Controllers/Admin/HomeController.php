@@ -14,19 +14,17 @@ class HomeController extends Controller
 {
     public function index() {
 
-        $profile = Auth::user();
-
-        $reviews = Review::where('user_id', $profile->id)->paginate(5);
-
-        return view('admin.home',compact('reviews', 'profile'));
+        return view('admin.home');
     }
 
     public function message() {
 
         $profile = Auth::user();
 
+        // $messages = Message::paginate(3);
+
         $messages = Message::where('user_id', $profile->id)
-                    ->orderBy('date','DESC')
+                    ->orderBy('created_at','DESC')
                     ->paginate(3);
 
         return view('admin.profile.message',compact('messages'));
@@ -36,7 +34,9 @@ class HomeController extends Controller
 
         $profile = Auth::user();
 
-        $reviews = Review::where('user_id', $profile->id)->paginate(3);
+        $reviews = Review::where('user_id', $profile->id)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(3);
             
         return view('admin.profile.review',compact('reviews', 'profile'));
     }
@@ -49,9 +49,9 @@ class HomeController extends Controller
     public function getAverageForCurrentYear() {
         $i=0;
         $years=[];
-        $reviews = Review::orderBy('date','DESC')->get();
+        $reviews = Review::orderBy('created_at','DESC')->get();
         foreach ($reviews as $review) {
-            $year = Carbon::parse($review['date'])->year;
+            $year = Carbon::parse($review['created_at'])->year;
            
             if (!in_array($year,$years) && $i < 5) {
             
@@ -69,8 +69,8 @@ class HomeController extends Controller
            
             $average_vote = DB::table('reviews')
                 ->select('vote')
-                ->whereMonth('date',$i)
-                ->whereYear('date',$year_selected)
+                ->whereMonth('created_at',$i)
+                ->whereYear('created_at',$year_selected)
                 ->avg('vote');
             array_push($average_votes,$average_vote);    
         }
@@ -85,9 +85,9 @@ class HomeController extends Controller
     {
         $i=0;
         $years=[];
-        $reviews = Review::orderBy('date','DESC')->get();
+        $reviews = Review::orderBy('created_at','DESC')->get();
         foreach ($reviews as $review) {
-            $year = Carbon::parse($review['date'])->year;
+            $year = Carbon::parse($review['created_at'])->year;
            
             if (!in_array($year,$years) && $i < 5) {
             
@@ -105,8 +105,8 @@ class HomeController extends Controller
            
             $average_vote = DB::table('reviews')
                 ->select('vote')
-                ->whereMonth('date',$i)
-                ->whereYear('date',$year_selected)
+                ->whereMonth('created_at',$i)
+                ->whereYear('created_at',$year_selected)
                 ->avg('vote');
             array_push($average_votes,$average_vote);    
         }
@@ -120,9 +120,9 @@ class HomeController extends Controller
     public function getCountForCurrentYear() {
         $i=0;
         $years=[];
-        $reviews = Review::orderBy('date','DESC')->get();
+        $reviews = Review::orderBy('created_at','DESC')->get();
         foreach ($reviews as $review) {
-            $year = Carbon::parse($review['date'])->year;
+            $year = Carbon::parse($review['created_at'])->year;
            
             if (!in_array($year,$years) && $i < 5) {
             
@@ -140,8 +140,8 @@ class HomeController extends Controller
            
             $count_vote = DB::table('reviews')
                 ->select('vote')
-                ->whereMonth('date',$i)
-                ->whereYear('date',$year_selected)
+                ->whereMonth('created_at',$i)
+                ->whereYear('created_at',$year_selected)
                 ->count();
             array_push($count_votes,$count_vote);    
         }

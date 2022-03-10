@@ -20,7 +20,7 @@ class ReviewsTableSeeder extends Seeder
             $newReview->description = $faker->text();
             $newReview->user_id = User::inRandomOrder()->first()->id;
             $newReview->vote = $faker->numberBetween(1, 5);
-            $newReview->date = $faker->dateTime();
+            // $newReview->date = $faker->dateTime();
             $newReview->save();
 
         }
