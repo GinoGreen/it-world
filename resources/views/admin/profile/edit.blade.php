@@ -17,7 +17,7 @@
 
    <div class="row">
 
-      <div class="col-3 wrap-sx">
+      <div class="col-12 col-xl-3 wrap-sx">
          <div class="wrap-avatar">
             @if (Auth::user()->avatar_path)
                <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
@@ -35,7 +35,7 @@
          </div>
       </div>
 
-      <div class="col-8 wrap-secondary-edit">
+      <div class="col-12 col-xl-8 mt-sm-4 mt-xl-0 wrap-secondary-edit">
 
          <h1>Edit Pofile</h1>
 

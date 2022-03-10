@@ -67,14 +67,14 @@
 
       .it-dashboard-bottom{
          display: flex;
-
+         justify-content: center;
          .it-dash-bottom-left,
          .it-dash-bottom-right{
             width: 50%;
             height: 290px;
             overflow: auto;
             padding: 30px;
-            margin: 0 10px;
+            margin: 0px 10px 30px 0px;
             opacity: 0.8;
             /*glass effect*/
             background: rgba(255, 255, 255, 0.16);

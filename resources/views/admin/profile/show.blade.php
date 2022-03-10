@@ -6,7 +6,7 @@
 
    <section class="it-section-page row">
  
-      <div class="sx-profile col-8">
+      <div class="sx-profile col-12 col-lg-8">
          <div class="top-sx glass">
  
             <div class="wrap-image">
@@ -30,7 +30,7 @@
             </div>
              
          </div>
-         <div class="mid-sx glass">
+         <div class="mid-sx glass col-12">
             <h5> Livello: {{ Auth::user()->level }}</h5>
 
             @if(Auth::user()->description)
@@ -66,7 +66,7 @@
          </div>
       </div>
  
-      <div class="dx-profile col-4">
+      <div class="dx-profile col-12 col-lg-4">
          <div class="call-to-action glass">
  
             <h5>Modifica il tuo profilo</h5>
