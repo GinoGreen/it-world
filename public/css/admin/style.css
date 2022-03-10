@@ -797,7 +797,7 @@ p {
   border: 1px solid #FF4D5A;
   border-radius: 30px;
   padding: 5px;
-  margin: 0px 20px 10px 0px;
+  margin: 0px 0px 10px 0px;
 }
 
 .it-card {
@@ -1331,6 +1331,7 @@ p {
 
 .container .it-dashboard-info .it-dashboard-bottom {
   display: flex;
+  justify-content: center;
   /* width */
   /* Track */
   /* Handle */
@@ -1343,7 +1344,7 @@ p {
   height: 290px;
   overflow: auto;
   padding: 30px;
-  margin: 0 10px;
+  margin: 0px 10px 30px 0px;
   opacity: 0.8;
   /*glass effect*/
   background: rgba(255, 255, 255, 0.16);
