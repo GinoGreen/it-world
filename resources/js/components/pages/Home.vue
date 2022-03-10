@@ -5,8 +5,10 @@
       <aside>
          <!-- :class="{'active': index === sectionIndex}" -->
          <div class="wrap-scroll-line">
-            <a v-for="(line, index) in sections"
+            <a 
+                v-for="(line, index) in sections"
                :key="`line${index}`"
+               @click="!isScrolling ? scrollToSection(index + 1) : ''"
             ><div class="scroll-line"></div></a>
          </div>
          
@@ -17,9 +19,8 @@
          </div>
       </aside>
 
-      <main>
-         
-         
+      <main @scroll.passive="handleScroll" >
+                  
          <Section 
             v-for="(section, index) in sections" 
             :key="index"
@@ -33,6 +34,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import Section from './Section.vue'
 import sections from '../../data/sections'
 
@@ -44,13 +47,69 @@ export default {
 
    data() {
       return {
+
          sections,
+         sectionIndex: 1,
+         scrollPosition: 0,
+         isScrolling: false,
+         scrollTiming: 1,
+
       }
    },
 
    methods: {
 
+      handleScroll(event){
+         
+         let currentScrollPosition = event.srcElement.scrollTop;
+         
+         if (!this.isScrolling) {
+            
+            if (currentScrollPosition > this.scrollPosition) {
+               console.log('scroll down');
+
+               if (this.sectionIndex < sections.length){
+                  this.sectionIndex++;
+               } 
+
+               this.scrollToSection(this.sectionIndex);
+
+            } else if (currentScrollPosition < this.scrollPosition) {
+               console.log('scroll up');
+
+               if (this.sectionIndex > 1){
+                  this.sectionIndex--;
+               }
+
+               this.scrollToSection(this.sectionIndex);
+            }
+         }
+
+         this.scrollPosition = event.srcElement.scrollTop;
+
+      },
+
+      scrollToSection(index){
+         this.isScrolling = true;
+
+         gsap.to('main', {
+            duration: this.scrollTiming,
+            scrollTo: {
+               y: '#section' + index,
+            },
+            ease: 'sine.in'
+         })
+         
+         setTimeout(() => this.isScrolling = false, this.scrollTiming * 1000 + 100);
+         this.sectionIndex = index;
+      }
+
    },
+
+   mounted(){
+      gsap.registerPlugin(ScrollToPlugin);
+      
+   }
 
 }
 </script>

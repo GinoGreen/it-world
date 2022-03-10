@@ -1,8 +1,13 @@
 <template>
 
-<div class="it-container-page">
+<div class="it-container-page ">
 
-   <section class="it-section-page row">
+   <div v-if="isLoading" class="it-section-page d-flex justify-content-center align-items-center">
+
+      <Loading />
+
+   </div>
+   <section v-else class="it-section-page row">
 
       <div class="sx-profile col-8">
          <div class="top-sx glass">
@@ -129,8 +134,14 @@
 </template>
 
 <script>
+import Loading from './widgets/Loading.vue'
 export default {
    name: 'SingleProfile',
+   
+   components:{
+      Loading
+   },
+
    data(){
       return{
          apiUrl: 'http://127.0.0.1:8000/api/profile/',
@@ -138,14 +149,17 @@ export default {
          type: {
             message: 'message',
             review: 'review',
-         }
+         },
+         isLoading: false,
       }
    },
    methods:{
       getApi(){
+         this.isLoading = true;
          axios.get(this.apiUrl + this.$route.params.profile_id)
             .then(res => {
                this.profile = res.data;
+               this.isLoading = false;
          });
       }
    },
