@@ -27,14 +27,11 @@
       <div class="it_input_border"></div>
    </div>
 
-   <!-- <div class="it_input">
-      <label :for="email.for">Email</label>
-      <input class="it_input_field" 
-         id=""
-         @click="labelAnimation(email.for), resetLabel(email.for)"
-      >
-      <div class="it_input_border"></div>
-   </div> -->
+   <div class="it-btn">
+      <button>
+         Invia
+      </button>
+   </div>
 
 </form>
 

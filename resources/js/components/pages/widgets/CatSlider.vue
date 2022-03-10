@@ -81,7 +81,7 @@ export default {
          axios.get(this.apiUrl)
             .then(res => {
                this.allJobRoles = res.data;
-               console.log('all roles: ', this.allJobRoles);
+               
             });
       },
 

@@ -2,7 +2,7 @@
 
    <section 
       :class="sectionInfo.section.class"
-      :id="'section' + sectionInfo.index"
+      :id="'section' + (sectionInfo.index + 1) "
    >
 
 
