@@ -18,6 +18,10 @@ Route::get('/', function() {
     return view('guest.home');
 });
 
+
+
+
+
 Auth::routes();
 
 Route::middleware('auth')
@@ -43,6 +47,12 @@ Route::middleware('auth')
             Route::get('/profile/show', 'ProfileController@show')->name('show');
 
             Route::get('/profile/edit', 'ProfileController@edit')->name('edit');
+
+            Route::get('products', 'Products\ProductController@index');
+            Route::get('orders/generate', 'Orders\OrderController@generate')->name('token');
+            Route::post('orders/make/payment','Orders\OrderController@makePayment')->name('orders.make.payment');
+
+        
 
             Route::put('/profile/update', 'ProfileController@update')->name('update');
 
