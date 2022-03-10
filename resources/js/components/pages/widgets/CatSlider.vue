@@ -140,7 +140,7 @@ export default {
             width: 200px;
             position: relative;
             background: #fff;
-            margin: 50px 0;
+            margin: 10px 0;
             padding: 0px 20px 20px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
@@ -186,6 +186,9 @@ export default {
                   display: flex;
                   justify-content: center;
                   
+                  button{
+                     font-size: 80%;
+                  }
             }
 
             
@@ -195,10 +198,6 @@ export default {
             background-color: burlywood;
          }
       }
-   }
-
-   .it-swiper{
-      // background-color: red;
    }
 
    .swiper-button-next, .swiper-button-prev{

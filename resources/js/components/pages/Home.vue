@@ -215,7 +215,14 @@ export default {
      
    }
 
-   
+   @media screen and (max-width: 900px){
+      .wrap-scroll-line{
+         position: absolute;
+         left: calc(50vw - 72px);
+         bottom: 0px;
+         transform: rotate(-90deg);
+      }
+   }
 }   
 
 </style>
