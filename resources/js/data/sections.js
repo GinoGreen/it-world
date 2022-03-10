@@ -1,6 +1,6 @@
 export default [
    {
-      title: 'IL PROTALE DI PROFESSIONISTI IT',
+      title: 'IT WORLD',
       subtitle: 'tutti i professionisti del settore a portata di mano',
       id: '1',
       class: 'search',

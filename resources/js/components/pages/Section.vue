@@ -8,8 +8,8 @@
 
       <div class="row">
 
-         <div class="content-sx" 
-            :class="'col-' + sectionInfo.section.col.sx"
+         <div class="content-sx col-12" 
+            :class="'col-xl-' + sectionInfo.section.col.sx"
          >
             <h1 v-if="sectionInfo.section.title" 
                class="it-title-big"
@@ -27,15 +27,15 @@
                   <span class="typing-word"></span>
                   <span class="cursor">|</span>
                </div>
-               <span class="it-title">{{ sectionInfo.section.subtitle }}</span>
+               <span class="it-title d-none d-md-block">{{ sectionInfo.section.subtitle }}</span>
             </h2>
 
             <h2 v-else-if="sectionInfo.section.subtitle" 
                class="it-title-medium"
             >{{ sectionInfo.section.subtitle }}</h2>
-
+            
             <p v-if="sectionInfo.section.text" 
-               class="it-title-medium"
+               class="it-title-medium d-none d-md-block"
             >{{ sectionInfo.section.text }}</p>
 
             <SearchBar
@@ -58,7 +58,7 @@
          </div>
 
          <div v-if="sectionInfo.section.image" 
-            class="content-dx" :class="'col-' + sectionInfo.section.col.dx"
+            class="content-dx d-none d-xl-block" :class="'col-' + sectionInfo.section.col.dx"
          >
             <img :src="sectionInfo.section.image" alt="">
          </div>
@@ -154,7 +154,6 @@ export default {
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-
             h1{
                color: #FFF;
             }
