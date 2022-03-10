@@ -274,7 +274,7 @@ export default {
 
       .content-left{
          overflow: hidden;
-         height: calc(100vh - 100px);
+         max-height: calc(100vh - 100px);
 
          .filters-title{
             width: 100%;
@@ -371,7 +371,7 @@ export default {
       }
 
       .content-right{
-         height: calc(100vh - 100px);
+         max-height: calc(100vh - 100px);
          overflow: hidden;
          position: relative;
          .results-title{
