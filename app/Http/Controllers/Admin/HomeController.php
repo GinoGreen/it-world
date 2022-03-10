@@ -21,8 +21,6 @@ class HomeController extends Controller
 
         $profile = Auth::user();
 
-        // $messages = Message::paginate(3);
-
         $messages = Message::where('user_id', $profile->id)
                     ->orderBy('created_at','DESC')
                     ->paginate(3);
@@ -39,11 +37,6 @@ class HomeController extends Controller
                     ->paginate(3);
             
         return view('admin.profile.review',compact('reviews', 'profile'));
-    }
-    
-    public function premium() { 
-            
-        return view('admin.profile.premium');
     }
 
     public function getAverageForCurrentYear() {

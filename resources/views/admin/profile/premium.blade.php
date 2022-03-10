@@ -4,47 +4,46 @@
 <div class="">
 
    <section class="">
-      <h1 class="text-white">Piano Premium</h1>
+      <h1 class="text-white">Effettua il pagamento</h1>
    </section>
-
-   <form method="POST" action="{{ route('admin.payment') }}">
+   <form id="payment-form" action="{{ route('admin.payment', $plan) }}" method="post">
       @csrf
-      @method('POST')
+      <!-- Putting the empty container you plan to pass to
+        `braintree.dropin.create` inside a form will make layout and flow
+        easier to manage -->
       <div id="dropin-container"></div>
-      <input type="hidden" id="nonce" name="payment_method_nonce">
-      <button type="submit" id="submit-button" class="button button--small button--green">Purchase</button>
+      <input type="submit" />
+      <input type="hidden" id="nonce" name="payment_method_nonce"/>
    </form>
 
 </div>
 <script>
    var button = document.querySelector('#submit-button');
-   var token = "{{$token}}"
 
    braintree.dropin.create({
-      authorization: token,
-      selector: '#dropin-container'
-      }, function (err, instance) {
+   authorization: '{{ $token }}',
+   container: '#dropin-container'
+   }, (error, dropinInstance) => {
+   if (error) console.error(error);
 
-         if (err) {
-            console.log('error', err);
-            return;
-         }
-         
-         
-         document.querySelector('form').addEventListener('submit', function () {
+   form.addEventListener('submit', event => {
+      event.preventDefault();
 
-            instance.requestPaymentMethod(function (err, payload) {
-               // Submit payload.nonce to your server
-               if (err) {
-                  console.log('errorRequestPaymentMethod', err);
-                  return;
-               }
+      dropinInstance.requestPaymentMethod((error, payload) => {
+         if (error) console.error(error);
 
-               document.querySelector('#nonce').value = payload.nonce;
-               form.submit();
-            });
-      })
+         // Step four: when the user is ready to complete their
+         //   transaction, use the dropinInstance to get a payment
+         //   method nonce for the user's selected payment method, then add
+         //   it a the hidden field before submitting the complete form to
+         //   a server-side integration
+         document.getElementById('nonce').value = payload.nonce;
+         form.submit();
+      });
    });
+   });
+
+   
 </script>
 @endsection
 

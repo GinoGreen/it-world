@@ -25,6 +25,11 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+a,
+a:hover {
+   text-decoration: none;
+}
+
 .button {
    cursor: pointer;
    font-weight: 500;
