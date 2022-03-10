@@ -1,66 +1,64 @@
 <template>
   <!-- slider -->
-    <div class="it-slider container-fluid">
+   <div class="it-slider container-fluid">
       <div class="swiper it-swiper">
-        <div class="swiper-wrapper content">
+         <div class="swiper-wrapper content">
 
-         <!-- card -->
-         <div 
-         v-for="(card, index) in allJobRoles"
-         :key="index"
-         class="swiper-slide it-card glass">
-            <div class="it-card-content">
+            <!-- card -->
+            <div 
+               v-for="(card, index) in allJobRoles"
+               :key="index"
+               class="swiper-slide it-card glass"
+            >
+               <div class="it-card-content">
 
-              <div class="it-info">
-               <img 
+                  <div class="it-info">
+                     <img
+                     v-if="card.id === 1"
+                     src="/img/catslider/front-end.svg" alt="image">
 
-               v-if="card.id === 1"
-               src="/img/catslider/front-end.svg" alt="image">
+                     <img 
+                     v-if="card.id === 2"
+                     src="/img/catslider/back-end.svg" alt="image">
 
-               <img 
-               v-if="card.id === 2"
-               src="/img/catslider/back-end.svg" alt="image">
+                     <img 
+                     v-if="card.id === 3"
+                     src="/img/catslider/social-media.svg" alt="image">
 
-               <img 
-               v-if="card.id === 3"
-               src="/img/catslider/social-media.svg" alt="image">
+                     <img 
+                     v-if="card.id === 4"
+                     src="/img/catslider/uex.svg" alt="image">
 
-               <img 
-               v-if="card.id === 4"
-               src="/img/catslider/uex.svg" alt="image">
+                     <img 
+                     v-if="card.id === 5"
+                     src="/img/catslider/ui.svg" alt="image">
 
-               <img 
-               v-if="card.id === 5"
-               src="/img/catslider/ui.svg" alt="image">
+                     <img 
+                     v-if="card.id === 6"
+                     src="/img/catslider/app.svg" alt="image">
 
-               <img 
-               v-if="card.id === 6"
-               src="/img/catslider/app.svg" alt="image">
+                     <img 
+                     v-if="card.id === 7"
+                     src="/img/catslider/cyber.svg" alt="image">
+                  </div>
 
-               <img 
-               v-if="card.id === 7"
-               src="/img/catslider/cyber.svg" alt="image">
+               </div>
 
-               
-              </div>
+               <router-link :to="{ name: 'advanced_search', params: { job_role: card.name }}">
+                  <div class="it-btn">
+                     <button>{{card.name}}</button>
+                  </div>
+               </router-link>
 
             </div>
-            <router-link :to="{ name: 'advanced_search', params: { job_role: card.name }}">
-               <div class="it-btn">
-                  <button>{{card.name}}</button>
-               </div>
-            </router-link>
-
-
-         </div>
-         <!-- /card -->
+            <!-- /card -->
           
-        </div>
+         </div>
       </div>
 
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-    </div>
+   </div>
    <!-- /slider -->
 </template>
 
@@ -132,9 +130,14 @@ export default {
    align-items: center;
 
    .swiper{
-      max-width: 70vw;
+      max-width: 50vw;
+      // background-color: green;
+
       .swiper-wrapper{
+         // background-color: blueviolet;
+
          .it-card{
+            width: 200px;
             position: relative;
             background: #fff;
             margin: 50px 0;
@@ -158,7 +161,7 @@ export default {
                align-items: center;
                position: relative;
                z-index: 100;
-               height: 280px;
+               height: 180px;
                width: 100%;
 
                .it-info{
@@ -187,7 +190,15 @@ export default {
 
             
          }
+
+         .swiper-slide{
+            background-color: burlywood;
+         }
       }
+   }
+
+   .it-swiper{
+      // background-color: red;
    }
 
    .swiper-button-next, .swiper-button-prev{
