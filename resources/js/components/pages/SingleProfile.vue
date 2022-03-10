@@ -111,7 +111,7 @@
                      </div>
       
                      <span class="date">
-                        {{review.month}} / {{review.year}}
+                        {{review.created_at}}
                      </span>
                
                   </div>
