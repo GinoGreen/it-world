@@ -28,7 +28,7 @@
          </div>
          @endforeach
        </div>
-      @dump($plans)
+      {{-- @dump($plans) --}}
    </section>
 
 </div>
