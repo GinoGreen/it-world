@@ -35,7 +35,7 @@ const router = new VueRouter({
          component: MessageReviewForm,
       },
       {
-         path: '*',
+         path: '/*',
          name: 'error404',
          component: Error404,
       },
