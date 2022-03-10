@@ -431,12 +431,16 @@ p {
 
 .it-section-page .sx-profile .top-sx .it-job-box .it-job-name {
   width: 40%;
-  font-size: 15px;
+  font-size: 11px;
   text-align: center;
   border: 1px solid #FF4D5A;
-  border-radius: 30px;
-  padding: 5px;
+  border-radius: 10px;
   margin: 0px 20px 10px 0px;
+  padding: 5px;
+}
+
+.it-section-page .sx-profile .top-sx .it-job-box .it-job-name span {
+  padding: 10px 15px;
 }
 
 .it-section-page .sx-profile .mid-sx {
