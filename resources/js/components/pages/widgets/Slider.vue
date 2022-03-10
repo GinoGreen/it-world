@@ -2,7 +2,7 @@
    <!-- slider -->
    <div class="it-slider container-fluid">
       <div class="swiper it-swiper">
-         <div class="swiper-wrapper content">
+         <div class="swiper-wrapper content ">
 
             <!-- card -->
             <div 
@@ -103,7 +103,7 @@ export default {
          
          .it-card{
             position: relative;
-            margin: 50px 0;
+            margin: 10px 0;
             border-radius: 30px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             
@@ -150,7 +150,7 @@ export default {
                   color: white;
 
                   .name{
-                     font-size: 20px;
+                     font-size: 80%;
                      font-weight: 600;
                   }
                   
@@ -178,7 +178,7 @@ export default {
 
    .swiper-button-next, .swiper-button-prev{
       opacity: 0.7;
-      color: $primary_color;
+      color: #fff;
       transition: all 0.3s ease;
 
       &:hover{
