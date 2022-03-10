@@ -1,11 +1,9 @@
 <template>
 
-<div class="it-container-page ">
+<div class="it-container-page">
 
    <div v-if="isLoading" class="it-section-page d-flex justify-content-center align-items-center">
-
       <Loading />
-
    </div>
    <section v-else class="it-section-page row">
 
@@ -145,7 +143,7 @@ export default {
    data(){
       return{
          apiUrl: 'http://127.0.0.1:8000/api/profile/',
-         profile: null,
+         profile: {},
          type: {
             message: 'message',
             review: 'review',

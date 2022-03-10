@@ -9,7 +9,9 @@
                 v-for="(line, index) in sections"
                :key="`line${index}`"
                @click="!isScrolling ? scrollToSection(index + 1) : ''"
-            ><div class="scroll-line"></div></a>
+            >
+               <div class="scroll-line" :class="{active: sectionIndex === (index + 1)}"></div>
+            </a>
          </div>
          
 
@@ -91,6 +93,24 @@ export default {
 
       scrollToSection(index){
          this.isScrolling = true;
+
+         if (index > 1) {
+            gsap.to('.scroll-down', {
+               translateY: '150%',
+               opacity: 0,
+               ease: 'back.in',
+               duration: 1,
+            });
+         } else {
+            gsap.to('.scroll-down', {
+               translateY: '0%',
+               opacity: 1,
+               ease: 'back.out',
+               duration: 1,
+               delay: .5,
+            });
+         }
+
 
          gsap.to('main', {
             duration: this.scrollTiming,

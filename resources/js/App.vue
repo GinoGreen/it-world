@@ -47,14 +47,14 @@ export default {
    methods:{
       animateWavesPlanetLights() {
          gsap.to('.circle', {
-            scale: 1.01,
+            scale: 1.02,
             duration: 1.7,
             stagger: {
-               each: .4,
+               each: .1,
                from: 'start',
                repeat: -1,
                yoyo: true,
-               ease: 'Back.easeInOut.config(4)',
+               ease: 'back.outIn',
             }
          })
       }

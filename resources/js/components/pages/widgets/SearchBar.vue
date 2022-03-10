@@ -7,7 +7,7 @@
             <!-- search-input -->
             <div class="it-td" id="it-search-left">
                <input type="text" 
-                  placeholder="Ricerca..."
+                  placeholder="Ricerca per professione..."
                   v-model="stringSearched"
                   @keypress="preventTyping"
                >
@@ -82,6 +82,7 @@ export default {
                line-height: 1;
                &::placeholder{
                   color: #fff;
+                  font-size: 2vw;
                }
             }
 

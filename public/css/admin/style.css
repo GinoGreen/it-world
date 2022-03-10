@@ -152,6 +152,31 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
 }
 
+/* width */
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 20px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #FF4D5A;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
 header {
   background-color: transparent;
   position: fixed;
@@ -322,6 +347,31 @@ p {
   backdrop-filter: blur(3.4px) !important;
   -webkit-backdrop-filter: blur(3.4px) !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 20px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #FF4D5A;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
 }
 
 .it-section-page {
@@ -562,7 +612,8 @@ p {
 
 .white-wrap-edit .wrap-secondary-edit form .it_input.it_textarea textarea.it_input_field {
   max-height: 200px;
-  border: 3px solid #fff;
+  border: 2px solid #fff;
+  padding: 20px;
   transition: all 0.3s;
 }
 

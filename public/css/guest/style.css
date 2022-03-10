@@ -14157,6 +14157,31 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
 }
 
+/* width */
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 20px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #FF4D5A;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
 .container {
   width: calc(100vw - 50px);
   max-width: calc(100vw - 50px);
