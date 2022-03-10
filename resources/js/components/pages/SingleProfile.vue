@@ -9,7 +9,7 @@
    </div>
    <section v-else class="it-section-page row">
 
-      <div class="sx-profile col-8">
+      <div class="sx-profile col-xl-8 col-md-12 col-sm-12">
          <div class="top-sx glass">
 
             <div class="wrap-image">
@@ -58,7 +58,7 @@
          </div>
       </div>
 
-      <div class="dx-profile col-4">
+      <div class="dx-profile col-xl-4 col-md-12 col-sm-12">
          <div class="call-to-action glass">
 
             <h5>Rimani in contatto con {{profile.name}}</h5>

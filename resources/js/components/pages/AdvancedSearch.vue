@@ -3,7 +3,7 @@
    <div class="it-container-page container-fluid">
       
       <section class="it-section-page row">
-         <div class="content-left glass p-1 col-xl-3 col-md-3 col-sm-12 ml-auto mr-auto">
+         <div class="content-left glass p-1 col-xl-3 col-md-12 col-sm-12 ml-auto mr-auto">
 
             <div class="filters-title">
                <h3 class="it-title-small it-text-orange text-center">Filtri</h3>
@@ -50,7 +50,7 @@
             </div>
 
          </div>
-         <div class="content-right glass p-1 col-xl-8 col-md-5 col-sm-12 mr-auto d-flex align-items-center">
+         <div class="content-right glass p-1 col-xl-8 col-md-12 col-sm-12 mr-auto d-flex align-items-center">
             
             <div class="results-title">
                <h3 class="it-title-small it-text-orange text-center">Risultati migliori</h3>
@@ -262,6 +262,7 @@ export default {
          position: relative;
          display: flex;
          flex-direction: column;
+         margin-bottom: 20px;
          .it-links{
             position: absolute;
             bottom: 0;
