@@ -17,7 +17,7 @@
 
    <div class="row">
 
-      <div class="col-3 wrap-sx">
+      <div class="col-12 col-xl-3 wrap-sx">
          <div class="wrap-avatar">
             @if (Auth::user()->avatar_path)
                <img src="{{ asset('storage/' . Auth::user()->avatar_path) }}" alt="avatar">
@@ -25,11 +25,17 @@
                <img src="{{ asset('img/slider/undraw_profile_pic_ic-5-t.svg') }}" alt="avatar">
             @endif
          </div>
+         
          <h5>{{ Auth::user()->name }} {{ Auth::user()->surname }}</h5>
-         <h6>{{ Auth::user()->job_roles[0]->name }}</h6>
+         
+         <div class="it-job-box">
+            @foreach (Auth::user()->job_roles as $job_role)
+               <span class="it-job-name">{{ $job_role->name }}</span>
+            @endforeach   
+         </div>
       </div>
 
-      <div class="col-8 wrap-secondary-edit">
+      <div class="col-12 col-xl-8 mt-sm-4 mt-xl-0 wrap-secondary-edit">
 
          <h1>Edit Pofile</h1>
 
@@ -93,12 +99,12 @@
 
             </div>
 
-            <div class="it-job-role-wrapper it_input_selection px-5">
-               <p class="it-job-role-title">
+            <div class="it-job-role-wrapper row it_input_selection px-5">
+               <p class="it-job-role-title col-12 text-center">
                    In cosa sei specializzato?
                </p>
                @foreach ($job_roles as $job_role)
-               <div class="it-job-role">
+               <div class="it-job-role col-6">
                   <input type="checkbox"
                      class="it_input_checkbox"
                      id="job_role{{ $job_role->id }}"

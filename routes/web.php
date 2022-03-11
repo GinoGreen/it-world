@@ -18,6 +18,10 @@ Route::get('/', function() {
     return view('guest.home');
 });
 
+
+
+
+
 Auth::routes();
 
 Route::middleware('auth')
@@ -32,6 +36,8 @@ Route::middleware('auth')
 
             Route::get('/review', 'HomeController@review')->name('review');
 
+            Route::get('/premium', 'HomeController@premium')->name('premium');
+
             Route::get('/statistic', 'HomeController@getAverageForCurrentYear')->name('statistic');
 
             Route::get('/statistic/{year}', 'HomeController@getAverageForSelectedYear')->name('statistic.year');
@@ -42,9 +48,17 @@ Route::middleware('auth')
 
             Route::get('/profile/edit', 'ProfileController@edit')->name('edit');
 
+            Route::get('/profile/subscription', 'ProfileController@subscription')->name('subscription');
+
             Route::put('/profile/update', 'ProfileController@update')->name('update');
 
             Route::delete('/profile/destroy', 'ProfileController@destroy')->name('destroy');
+
+            Route::get('/orders/premium_plans', 'Premium_planController@index')->name('premium_plan');
+
+            Route::get('/orders/generate/{plan}', 'OrderController@generate')->name('generateOrder');
+
+            Route::post('/orders/payment/{plan}', 'OrderController@makePayment')->name('payment');
 
         });
 

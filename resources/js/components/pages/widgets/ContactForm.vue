@@ -27,14 +27,11 @@
       <div class="it_input_border"></div>
    </div>
 
-   <!-- <div class="it_input">
-      <label :for="email.for">Email</label>
-      <input class="it_input_field" 
-         id=""
-         @click="labelAnimation(email.for), resetLabel(email.for)"
-      >
-      <div class="it_input_border"></div>
-   </div> -->
+   <div class="it-btn">
+      <button>
+         Invia
+      </button>
+   </div>
 
 </form>
 
@@ -127,13 +124,13 @@ export default {
 @import '../../../../sass/guest/_generals.scss';
 
    form#contact_us {
-      margin-top: 40px;
+      margin-top: 30px;
       width: 70%;
 
       .it_input_contact_us {
          display: flex;
          flex-direction: column;
-         margin-top: 70px;
+         margin-top: 40px;
          margin-bottom: 0;
 
             position: relative;

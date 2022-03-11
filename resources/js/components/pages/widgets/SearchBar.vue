@@ -1,13 +1,13 @@
 <template>
 <!-- search-bar -->
-   <div class="it-search">
+   <div class="it-search glass">
       <form method="get" action="">
          <div class="it-table">
 
             <!-- search-input -->
             <div class="it-td" id="it-search-left">
                <input type="text" 
-                  placeholder="Ricerca..."
+                  placeholder="Ricerca per professione..."
                   v-model="stringSearched"
                   @keypress="preventTyping"
                >
@@ -60,7 +60,7 @@ export default {
    align-items: center;
    width: 100%;
    min-height: 50px;
-   background-color: $primary_color;
+   // background-color: $primary_color;
    border-radius: 20px;
    border: 5px solid white;
    margin-top: 20px;
@@ -73,7 +73,7 @@ export default {
          justify-content: space-between;
          align-items: center;
          width: 100%;
-         padding: 0 50px;
+         padding: 0 40px;
          .it-td{
             input[type="text"]{
                width: 100%;
@@ -81,9 +81,11 @@ export default {
                font-size: 25px;
                line-height: 1;
                &::placeholder{
-                  color: #ffbfbf;
+                  color: #fff;
+                  font-size: 2vw;
                }
             }
+
 
             button{
                position: relative;
@@ -95,7 +97,7 @@ export default {
                   height: 30px;
                   margin-top: 0;
                   border-width: 5px;
-                  border: 5px solid #fff;
+                  border: 5px solid $primary_color;
                   background-color: transparent;
                   border-radius: 50%;
                   transition: 0.5s ease all;
@@ -118,7 +120,7 @@ export default {
                      right: 0;
                      width: 20px;
                      height: 5px;
-                     background-color: #fff;
+                     background-color: $primary_color;
                      border-radius: 10px;
                      transform: rotateZ(0);
                      transition: 0.5s ease all;
@@ -152,7 +154,7 @@ export default {
    width: 50px;
    height: 5px;
    border-width: 0;
-   background-color: #fff;
+   background-color: $primary_color;
    border-radius: 20px;
 }
 #it-search-right:hover span{

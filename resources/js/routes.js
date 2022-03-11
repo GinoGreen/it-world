@@ -4,6 +4,7 @@ import Home from './components/pages/Home.vue';
 import AdvancedSearch from './components/pages/AdvancedSearch.vue';
 import SingleProfile from './components/pages/SingleProfile.vue';
 import MessageReviewForm from './components/pages/MessageReviewForm.vue';
+import Error404 from './components/pages/Error404.vue';
 
 Vue.use(VueRouter);
 
@@ -29,9 +30,14 @@ const router = new VueRouter({
       },
 
       {
-         path: '/form/:type',
-         name: 'MessageReviewForm',
+         path: '/contact/:type/:userId',
+         name: 'from_contact',
          component: MessageReviewForm,
+      },
+      {
+         path: '/*',
+         name: 'error404',
+         component: Error404,
       },
    ]
 });

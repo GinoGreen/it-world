@@ -23,6 +23,11 @@
                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                        @csrf
                    </form>
+                   <a class="navbar-brand" href="{{ route('admin.premium_plan') }}">
+                       Premium 
+                       <i class="fa fa-plus" aria-hidden="true"></i>
+
+                   </a>
                @endauth
                @guest
                <a class="navbar-brand" href="{{ route('login') }}">

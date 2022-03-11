@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Message;
+use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,7 +16,6 @@ class ContactController extends Controller
 
         $validator = Validator::make($data, [
             'name' => 'required|max:255|min:2',
-            'email' => 'required|email',
             'message' => 'required|min:5',
         ]);
 
@@ -26,10 +26,24 @@ class ContactController extends Controller
             ]);
         }
 
-        // if ($data['type'] === 'message') {
-        //     $new_message = new Message();
-        //     $new_message->
-        // }
+
+        
+
+        if ($data['type'] === 'message') {
+            $new_message = new Message();
+            $new_message->name = $data['name'];
+            $new_message->email = $data['email'];
+            $new_message->message = $data['message'];
+            $new_message->user_id = $data['user_id'];
+            $new_message->save();
+        } elseif ($data['type'] === 'review') {
+            $new_review = new Review();
+            $new_review->title = $data['name'];
+            $new_review->vote = $data['vote'];
+            $new_review->description = $data['message'];
+            $new_review->user_id = $data['user_id'];
+            $new_review->save();
+        }
 
         // $new_contact = new Contact();
         // $new_contact->fill($data);
