@@ -6,9 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Premium_plan;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    protected function isLog(){
+        // $auth = Auth::check();
+        $auth = Auth::user();
+        return response()->json($auth);
+    }
 
     public function show($profile_id){
         $profile = User::where('id', $profile_id)->with(['job_roles', 'reviews'])->first();
