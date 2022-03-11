@@ -44,6 +44,11 @@ class Job_roleController extends Controller
                     $user->reviews_length = $new_review_length;
                     $user->vote_average = $vote_average;
                 }
+
+                //premium
+                if (count($user->premium_plans) > 0) {
+                    $user->premium = true;
+                }
             }
         }
         

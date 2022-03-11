@@ -22,13 +22,13 @@
              </div>
            </div>
            <div class="package-name"></div>
-           <ul class="features">
+           <a href="{{ route('admin.generateOrder', $plan) }}" class="features">
              <div class="btn"><button>aggiungi al carrello</button></div>
-           </ul>
+           </a>
          </div>
          @endforeach
        </div>
-      @dump($plans)
+      {{-- @dump($plans) --}}
    </section>
 
 </div>

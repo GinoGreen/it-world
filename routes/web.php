@@ -48,15 +48,17 @@ Route::middleware('auth')
 
             Route::get('/profile/edit', 'ProfileController@edit')->name('edit');
 
+            Route::get('/profile/subscription', 'ProfileController@subscription')->name('subscription');
+
             Route::put('/profile/update', 'ProfileController@update')->name('update');
 
             Route::delete('/profile/destroy', 'ProfileController@destroy')->name('destroy');
 
             Route::get('/orders/premium_plans', 'Premium_planController@index')->name('premium_plan');
 
-            Route::get('/orders/generate', 'OrderController@generate')->name('generateOrder');
+            Route::get('/orders/generate/{plan}', 'OrderController@generate')->name('generateOrder');
 
-            Route::post('/orders/payment', 'OrderController@makePayment')->name('payment');
+            Route::post('/orders/payment/{plan}', 'OrderController@makePayment')->name('payment');
 
         });
 

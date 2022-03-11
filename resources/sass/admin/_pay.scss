@@ -1,0 +1,19 @@
+@import '../guest/_variables.scss';
+@import '../guest/_generals.scss';
+
+.pay-wrap{
+   
+   form{
+      width: 50%;
+      .it-btn{
+         button{
+            input{
+               background-color: $primary_color;
+               border: none;
+               color: white;
+               font-weight: 500;
+            }
+         }
+      }
+   }
+}

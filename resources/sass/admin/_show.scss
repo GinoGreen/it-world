@@ -52,12 +52,15 @@
 
             .it-job-name{
                width: 40%;
-               font-size: 15px;
+               font-size: 11px;
                text-align: center;
                border: 1px solid $primary_color;
-               border-radius: 30px;
-               padding: 5px;
+               border-radius: 10px;
                margin: 0px 20px 10px 0px;
+               padding: 5px;
+               span{
+                  padding:  10px 15px;
+               }
             }
          }
          

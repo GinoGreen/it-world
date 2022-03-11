@@ -44,6 +44,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar_path')->nullable();
             $table->string('cv_path')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('premium')->default(false); 
             $table->enum('level', ['Junior', 'Middle', 'Senior']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

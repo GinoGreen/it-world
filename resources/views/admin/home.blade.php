@@ -37,6 +37,12 @@
                     <p>Dicono di te</p>
                 </div>
             </a>
+            <a class:="col-12" href="{{ route('admin.subscription') }}">
+                <div class="it-dashboard-box it-title-small">
+                    <i class="it-dash-icon fa fa-tachometer" aria-hidden="true"></i>
+                    <p>Dati Abbonamento</p>
+                </div>
+            </a>
         </div>
 
         <div class="line-horizontal"></div>
