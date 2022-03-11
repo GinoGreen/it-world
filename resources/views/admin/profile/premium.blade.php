@@ -26,6 +26,7 @@
 </div>
 <script>
    var button = document.querySelector('#submit-button');
+   var form = document.querySelector('#payment-form');
 
    braintree.dropin.create({
    authorization: '{{ $token }}',
