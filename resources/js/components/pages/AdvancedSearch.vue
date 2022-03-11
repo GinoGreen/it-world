@@ -62,6 +62,7 @@
                   v-for="(profile, index) in profiles"
                   :key="'profile' + index"
                >
+                  <div v-if="profile.premium" class="ribbon ribbon-top-right"><span><i class="fa fa-rocket" aria-hidden="true"></i></span></div> 
                   <div class="photo">
                      <img :src="profile.avatar_path" alt="avatar">
                   </div>
@@ -403,10 +404,8 @@ export default {
                position: absolute;
                top: 50%;
                transform: translate(0, -50%);
-               .message{
-
-               }
             }
+
             .profile-box{
                width: 80%;
                background-color: white;
@@ -415,6 +414,62 @@ export default {
                padding: 20px;
                display: flex;
                align-items: flex-start;
+               position:relative;
+
+               .ribbon {
+                  width: 150px;
+                  height: 150px;
+                  overflow: hidden;
+                  position: absolute;
+
+                  &::before, &::after{
+                     position: absolute;
+                     z-index: -1;
+                     content: '';
+                     display: block;
+                     border: 5px solid #2980b9;
+                  }
+
+                  span {
+                     position: absolute;
+                     display: block;
+                     width: 225px;
+                     padding: 5px 0 5px 30px;
+                     background-color: $secondary-color;
+                     box-shadow: 0 5px 10px rgba($secondary-color,.1);
+                     color: #fff;
+                     font: 700 18px/1 'Lato', sans-serif;
+                     text-shadow: 0 1px 1px rgba($secondary-color,.2);
+                     text-transform: uppercase;
+                     text-align: center;
+                  }
+
+               }
+
+               .ribbon-top-right {
+                  top: -10px;
+                  right: -10px;
+
+                  &::before, &::after {
+                     border-top-color: transparent;
+                     border-right-color: transparent;
+                  }
+
+                  &::before {
+                     top: 0;
+                     left: 25px;
+                  }
+
+                  &::after {
+                     bottom: 25px;
+                     right: 0;
+                  }
+                  span {
+                     left: -25px;
+                     top: 30px;
+                     transform: rotate(45deg);
+                  }
+               }
 
                .photo{
                   width: 23%;
