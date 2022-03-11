@@ -44,6 +44,8 @@ Route::middleware('auth')
 
             Route::get('/statistic_count', 'HomeController@getCountForCurrentYear')->name('statistic.count');
 
+            Route::get('/statistic_count/{year}', 'HomeController@getCountForSelectedYear')->name('statistic.count.year');
+
             Route::get('/profile/show', 'ProfileController@show')->name('show');
 
             Route::get('/profile/edit', 'ProfileController@edit')->name('edit');

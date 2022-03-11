@@ -18,7 +18,7 @@
                                 </a>
                             @endforeach
                         </div>
-                        <a class="link_statistics" href="{{route('admin.statistic.count',$year)}}">
+                        <a class="link_statistics" href="{{route('admin.statistic.count')}}">
                             <span class="statistics_btn sum ">
                                 Count
                             </span>
