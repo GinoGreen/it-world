@@ -24,7 +24,7 @@ Route::namespace('Api')
 Route::namespace('Api')
     ->prefix('profile')
     ->group(function(){
-        Route::get('/','UserController@index');
+        Route::get('/evidence','UserController@evidence');
         Route::get('/{profile_id}','UserController@show');
     });
 

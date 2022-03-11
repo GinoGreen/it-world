@@ -416,7 +416,7 @@ export default {
                .photo{
                   width: 23%;
                   min-width: 90px;
-                  min-height: 90px;
+                  height: 90px;
                   background-color: $primary_color;
                   margin-right: 20px;
                   overflow: hidden;

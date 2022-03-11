@@ -6,31 +6,32 @@
 
             <!-- card -->
             <div 
-               v-for="(card, index) in 6"
-               :key="index"
+               v-for="profile in profiles"
+               :key="profile.id"
                class="swiper-slide it-card glass"
             >
                <div class="it-card-content">
                   <div class="it-slider-avatar">
-                     <img src="/img/slider/undraw_profile_pic_ic-5-t.svg" alt="avatar">
+                     <img :src="profile.avatar_path" alt="avatar">
                   </div>
 
                   <div class="it-info">
-                     <span class="name">Nome Cognome</span>
-                     <span class="profession">Web Developer</span>
+                     <span class="name">{{profile.name}} {{profile.surname}}</span>
+                     <span class="profession">{{profile.job_roles[0].name}}</span>
                   </div>
 
-                  <div class="rating">
+                  <!-- <div class="rating">
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star" aria-hidden="true"></i>
                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                  </div>
-
-                  <div class="it-btn">
-                     <button class="aboutMe">Dettagli</button>
-                  </div>
+                  </div> -->
+                  <router-link :to="{name: 'profile', params: {profile_id: profile.id}}">
+                     <div class="it-btn">
+                        <button class="aboutMe">Dettagli</button>
+                     </div>
+                  </router-link>
                </div>
             </div>
             <!-- /card -->
@@ -50,10 +51,20 @@ export default {
    data(){
       return{
          swiper: null,
+         profiles: [],
+         apiUrl: 'http://127.0.0.1:8000/api/profile/evidence',
          card: 1,
       }
    },
    methods:{
+      getEvidence() {
+         axios.get(this.apiUrl)
+            .then(response => {
+               this.profiles = response.data
+               console.log(this.profiles);
+            });
+      },
+
       mediaSlider() {
          if (window.innerWidth > 970) {
             this.card = 3
@@ -82,6 +93,7 @@ export default {
       },
    },
    mounted(){
+      this.getEvidence();
       this.mediaSlider();
       window.addEventListener('resize', this.mediaSlider);
    }
