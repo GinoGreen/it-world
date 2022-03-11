@@ -11,15 +11,14 @@
             
             <div class="filters">
 
-               <div class="specialization">
-                  <h3 class="it-title-small it-text-black">Specializzazione</h3>
+               <div class="specialization mt-2">
+                  <h3 class="it-title-small it-text-black">Specializzazioni:</h3>
                   <div class="tag-container">
 
                      <span
-                        v-for="jobRole in allJobRoles"
+                        v-for="jobRole in jobRoles"
                         :key="'jobRole' + jobRole.id"
-                        class="tag it-text-info"
-                        :class="activeJobRole(jobRole)"
+                        class="tag it-text-info active"
                      >{{jobRole.name}}</span>
                      
                   </div>
@@ -53,7 +52,7 @@
          <div class="content-right glass p-1 col-xl-8 col-md-12 col-sm-12 mr-auto d-flex align-items-center">
             
             <div class="results-title">
-               <h3 class="it-title-small it-text-orange text-center">Risultati migliori</h3>
+               <h3 class="it-title-small it-text-orange text-center">Risultati per : '{{searched}}'</h3>
             </div>
 
             <!-- COMPONENTE DA CICLARE -->
@@ -62,7 +61,8 @@
                   v-for="(profile, index) in profiles"
                   :key="'profile' + index"
                >
-                  <div v-if="profile.premium" class="ribbon ribbon-top-right"><span><i class="fa fa-rocket" aria-hidden="true"></i></span></div> 
+                  <div v-if="profile.premium" class="ribbon ribbon-top-right d-none d-md-block"><span>in evidenza</span></div> 
+                  <div v-if="profile.premium" class="premium-user-sm"><i class="fa fa-rocket" aria-hidden="true"></i></div>
                   <div class="photo">
                      <img :src="profile.avatar_path" alt="avatar">
                   </div>
@@ -119,9 +119,9 @@ export default {
    data(){
       return{
           apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
-          allJobRoles: [],
           jobRoles: null,
           profiles: [],
+          searched: null,
           rangeReviewsValue: 0, 
           actualNumberStar: 0,
           loading: false,
@@ -151,16 +151,10 @@ export default {
    },
 
    methods:{
-      getJobRoles(){
-         axios.get(this.apiUrl)
-            .then(res => {
-               this.allJobRoles = res.data;
-               // console.log('all roles: ', res.data);
-            });
-      },
       getApi(){
          this.loading = false;
          this.profiles = [];
+         this.searched = this.$route.params.job_role;
          axios.get(this.apiUrl + this.$route.params.job_role)
             .then(res => {
             
@@ -246,7 +240,6 @@ export default {
 
    mounted(){
       this.getApi();
-      this.getJobRoles();
    }
 
 
@@ -416,6 +409,24 @@ export default {
                align-items: flex-start;
                position:relative;
 
+               .premium-user-sm{
+                  position: absolute;
+                  right: 10px;
+                  top: 10px;
+                  height: 25px;
+                  width: 25px;
+                  border-radius: 50%;
+                  background-color: $secondary_color;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  i{
+                     color: white;
+                     font-size: 10px;
+                  }
+               }
+
                .ribbon {
                   width: 150px;
                   height: 150px;
@@ -438,7 +449,7 @@ export default {
                      background-color: $secondary-color;
                      box-shadow: 0 5px 10px rgba($secondary-color,.1);
                      color: #fff;
-                     font: 700 18px/1 'Lato', sans-serif;
+                     font: 700 12px/1 'Lato', sans-serif;
                      text-shadow: 0 1px 1px rgba($secondary-color,.2);
                      text-transform: uppercase;
                      text-align: center;
@@ -457,11 +468,11 @@ export default {
 
                   &::before {
                      top: 0;
-                     left: 25px;
+                     left: 30px;
                   }
 
                   &::after {
-                     bottom: 25px;
+                     bottom: 30px;
                      right: 0;
                   }
                   span {
