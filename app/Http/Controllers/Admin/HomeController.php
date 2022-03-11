@@ -40,6 +40,7 @@ class HomeController extends Controller
     }
 
     public function getAverageForCurrentYear() {
+        $user=Auth::user()->id;
         $i=0;
         $years=[];
         $reviews = Review::orderBy('created_at','DESC')->get();
@@ -62,6 +63,7 @@ class HomeController extends Controller
            
             $average_vote = DB::table('reviews')
                 ->select('vote')
+                ->where('user_id',$user)
                 ->whereMonth('created_at',$i)
                 ->whereYear('created_at',$year_selected)
                 ->avg('vote');
@@ -76,6 +78,7 @@ class HomeController extends Controller
 
     public function getAverageForSelectedYear($year_selected)
     {
+        $user=Auth::user()->id;
         $i=0;
         $years=[];
         $reviews = Review::orderBy('created_at','DESC')->get();
@@ -98,6 +101,7 @@ class HomeController extends Controller
            
             $average_vote = DB::table('reviews')
                 ->select('vote')
+                ->where('user_id',$user)
                 ->whereMonth('created_at',$i)
                 ->whereYear('created_at',$year_selected)
                 ->avg('vote');
@@ -111,6 +115,7 @@ class HomeController extends Controller
     }
 
     public function getCountForCurrentYear() {
+        $user=Auth::user()->id;
         $i=0;
         $years=[];
         $reviews = Review::orderBy('created_at','DESC')->get();
@@ -133,6 +138,45 @@ class HomeController extends Controller
            
             $count_vote = DB::table('reviews')
                 ->select('vote')
+                ->where('user_id',$user)
+                ->whereMonth('created_at',$i)
+                ->whereYear('created_at',$year_selected)
+                ->count();
+            array_push($count_votes,$count_vote);    
+        }
+        
+
+        array_push($count_votes,0);
+       
+    	return view('admin.profile.statistics.count',compact('years','year_selected'))->with('months',json_encode($months,JSON_NUMERIC_CHECK))->with('count_vote',json_encode($count_votes,JSON_NUMERIC_CHECK));
+        
+    }
+
+    public function getCountForSelectedYear($year_selected) {
+        $user=Auth::user()->id;
+        $i=0;
+        $years=[];
+        $reviews = Review::orderBy('created_at','DESC')->get();
+        foreach ($reviews as $review) {
+            $year = Carbon::parse($review['created_at'])->year;
+           
+            if (!in_array($year,$years) && $i < 5) {
+            
+                array_push($years,$year);
+                $i++;
+            }
+        }
+
+
+        $months = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
+       
+        $count_votes=[];
+        for ($i=1; $i < 13 ; $i++) { 
+           
+            $count_vote = DB::table('reviews')
+                ->select('vote')
+                ->where('user_id',$user)
                 ->whereMonth('created_at',$i)
                 ->whereYear('created_at',$year_selected)
                 ->count();

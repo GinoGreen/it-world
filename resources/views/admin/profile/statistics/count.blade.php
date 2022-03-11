@@ -11,14 +11,14 @@
                     <div class="box_button">
                         <div class="button_years">
                             @foreach ($years as $year)
-                                <a class="link_statistics" href="{{route('admin.statistic.year',$year)}}">
+                                <a class="link_statistics" href="{{route('admin.statistic.count.year',$year)}}">
                                     <span class="statistics_btn {{$year_selected == $year ? 'active' : ''}} ">
                                         {{$year}}
                                     </span>
                                 </a>
                             @endforeach
                         </div>
-                        <a class="link_statistics" href="{{route('admin.statistic.year',$year)}}">
+                        <a class="link_statistics" href="{{route('admin.statistic')}}">
                             <span class="statistics_btn sum ">
                                 Average
                             </span>
@@ -68,7 +68,7 @@
                 responsive: true,
                 title: {
                     display: true,
-                    text: 'Numero voti per mese ed anno'
+                    text: 'Numero recensioni per mese ed anno'
                     
                 }
             }
