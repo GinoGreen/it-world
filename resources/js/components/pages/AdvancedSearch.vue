@@ -177,8 +177,11 @@ export default {
                         if (!this.profiles.some(element => element.id === profile.id)) {
                            if((profile.vote_average >= this.actualNumberStar) && (profile.reviews_length >= this.rangeReviewsValue)){
                               profile.jobRole = [jobRole.name];
-
-                              this.profiles.push(profile);
+                              if(profile.premium){
+                                 this.profiles.unshift(profile);
+                              }else{
+                                 this.profiles.push(profile);
+                              }
                            }
                         } else {
                            
