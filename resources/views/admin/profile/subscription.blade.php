@@ -50,15 +50,23 @@
       
       <div class="it-sub-bottom">
          <h3>La cronologia dei tuoi pagamenti</h3>
-   
+         
+         @if ( count(Auth::user()->premium_plans) > 0 )
+            <div class="it-sub-list">
+               <ul>
+                  @foreach (Auth::user()->premium_plans as $order)
+                     {{-- @dump($order) --}}
+                     <li>Pacchetto: {{ $order->name }} | Pagato: €{{ $order->price }}</li>
+                  @endforeach
+               </ul>
+            </div>
+         @else
          <div class="it-sub-list">
             <ul>
-               @foreach (Auth::user()->premium_plans as $order)
-                  {{-- @dump($order) --}}
-                  <li>Pacchetto: {{ $order->name }} | Pagato: €{{ $order->price }}</li>
-               @endforeach
+               <li>Non ci sono ordini</li>
             </ul>
          </div>
+         @endif
       </div>
 
    </section>
