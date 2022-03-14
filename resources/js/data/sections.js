@@ -4,7 +4,7 @@ export default [
       subtitle: 'tutti i professionisti del settore a portata di mano',
       id: '1',
       class: 'search',
-      image: '/img/search.svg',
+      // image: '/img/search.svg',
       col: {
          sx: 9,
          dx: 3,
@@ -60,7 +60,7 @@ export default [
       subtitle: 'Non importa in quale fase del processo ti trovi, siamo qui per aiutarti. Facci sapere cosa hai in mente.',
       id: '6',
       class: 'contact',
-      image: '/img/contact.png',
+      // image: '/img/contact.png',
       col: {
          sx: 9,
          dx: 3,
