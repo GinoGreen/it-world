@@ -23,7 +23,7 @@
            </div>
            <div class="package-name"></div>
            <a href="{{ route('admin.generateOrder', $plan) }}" class="features">
-             <div class="btn"><button>aggiungi al carrello</button></div>
+             <div class="btn"><button>Acquista</button></div>
            </a>
          </div>
          @endforeach
