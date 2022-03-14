@@ -10,7 +10,7 @@
          <div class="it-sub-active glass">
             {{-- @dd(Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]) --}}
             
-            @if (Auth::user()->premium)
+            @if ( count(Auth::user()->premium_plans) > 0)
             <h2 class="text-center mb-5">IL TUO PIANO ATTIVO</h2>
                <div class="it-sub-box">
                   <div class="it-sub-active-info">
