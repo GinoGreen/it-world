@@ -63,8 +63,10 @@ class Job_roleController extends Controller
     }
 
     public function getAvatarPath($file) {
-        if ($file) {
+        if ($file && !str_starts_with($file, 'https://picsum.photos')) {
             $file = url('storage/' . $file);
+        } else if (str_starts_with($file, 'https://picsum.photos')) {
+            return $file;
         } else {
             $file = url('img/slider/undraw_profile_pic_ic-5-t.svg');
         }

@@ -11,7 +11,7 @@
             </div>
 
             <div class="menu h-100">
-
+               
                <span class="d-none d-md-block">
                   <a href="/login">Accedi</a>
                </span>
@@ -60,13 +60,25 @@ export default {
 
    data(){
       return {
-         navOpen: false
+         apiUrl: 'http://127.0.0.1:8000/api/profile/auth',
+         navOpen: false,
+         auth: null,
       }
    },
 
    methods: {
+      getAuthUser(){
+         axios.get(this.apiUrl)
+            .then(res => {
+               this.auth = res.data;
+               console.log('auth: ', this.auth);
+            });
+      },
+   },
 
-   }
+   mounted() {
+      this.getAuthUser();
+   },
 }
 
 
