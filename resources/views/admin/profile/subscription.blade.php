@@ -8,33 +8,46 @@
       
       <div class="it-sub-top">
          <div class="it-sub-active glass">
-            {{-- @dump(Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]) --}}
+            {{-- @dd(Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]) --}}
+            
+            @if (Auth::user()->premium)
             <h2 class="text-center mb-5">IL TUO PIANO ATTIVO</h2>
-            <div class="it-sub-box">
-               <div class="it-sub-active-info">
-                  <p>Pacchetto scelto: 
-                     <span>{{ Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->name }}</span>
-                  </p>
-                  <p>Prezzo: 
-                     <span>€ {{ Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->price }}</span>
-                  </p>
-                  <p>
-                     Il tuo piano scadrà tra 
-                     <span>{{ Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->duration_days }}</span> 
-                     @if (Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->duration_days > 1)
-                        giorni
-                     @else
-                        giorno
-                     @endif
-                  </p>
+               <div class="it-sub-box">
+                  <div class="it-sub-active-info">
+                     <p>Pacchetto scelto: 
+                        <span>{{ Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->name }}</span>
+                     </p>
+                     <p>Prezzo: 
+                        <span>€ {{ Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->price }}</span>
+                     </p>
+                     <p>
+                        Il tuo piano scadrà tra 
+                        <span>{{ Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->duration_days }}</span> 
+                        @if (Auth::user()->premium_plans[count(Auth::user()->premium_plans) - 1]->duration_days > 1)
+                           giorni
+                        @else
+                           giorno
+                        @endif
+                     </p>
+                  </div>
+                  <div class="it-sub-img">
+                     <img src="/img/subscription.svg" alt="subscription">
+                  </div>
                </div>
-               <div class="it-sub-img">
-                  <img src="/img/subscription.svg" alt="subscription">
+            @else
+               <div class="it-sub-box">
+                  <div class="it-sub-active-info">
+                     <p>AL MOMENTO NON HAI ATTIVATO NESSUN ABBONAMENTO</p>
+                  </div>
+                  <div class="it-sub-img">
+                     <img src="/img/subscription.svg" alt="subscription">
+                  </div>
                </div>
-            </div>
+            @endif
          </div>
       </div>
 
+      
       <div class="it-sub-bottom">
          <h3>La cronologia dei tuoi pagamenti</h3>
    
