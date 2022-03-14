@@ -50,7 +50,7 @@
         <div class="line-horizontal"></div>
     
         <div class="it-dashboard-bottom row">
-            @if (Auth::user()->reviews)
+            @if (count(Auth::user()->reviews) > 0)
                 <div class="it-dash-bottom-left col-12 col-lg-5 mb-lg-0">
                     <h5 class="it-title-small">Le tue ultime recensioni</h5>
                     @foreach (Auth::user()->reviews as $review)
@@ -59,7 +59,7 @@
                 </div>
             @endif
 
-            @if (Auth::user()->messages)
+            @if (count(Auth::user()->messages) > 0)
                 <div class="it-dash-bottom-right col-12 col-lg-5">
                     <h5 class="it-title-small">I tuoi ultimi messaggi</h5>
                     @foreach (Auth::user()->messages as $message)
