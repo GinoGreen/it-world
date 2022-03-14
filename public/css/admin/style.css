@@ -16134,6 +16134,9 @@ a:hover {
 body {
   font-family: "Syne", sans-serif;
   background-image: linear-gradient(#072142, #020B16);
+  background-image: url("/img/moon/planet-vector-stars-solo.svg"), linear-gradient(#072142, #020B16);
+  background-position: left;
+  background-size: 40%;
 }
 
 main.back-end-main {

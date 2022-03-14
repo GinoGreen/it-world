@@ -1,10 +1,12 @@
 <?php
 
 use App\Job_role;
+use App\Premium_plan;
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UsersTableSeeder extends Seeder
 {
@@ -32,6 +34,20 @@ class UsersTableSeeder extends Seeder
         foreach ($users as $user) { 
             $job_role = Job_role::inRandomOrder()->first();
             $user->job_roles()->attach($job_role->id);
+
+            // $premium_plan = Premium_plan::inRandomOrder()->first();
+            // $user->premium_plans()->attach($premium_plan);
+
+            // image($dir = '/tmp', $width = 640, $height = 480)
+            $avatar_path = 'https://picsum.photos/200/300?random=' . rand(1, 100);
+            $user->avatar_path = $avatar_path;
+            $user->save();
+            // dd($faker->imageUrl(640, 480));
+        }
+
+        for ($i=0; $i < 9; $i++) { 
+            $premium_plan = Premium_plan::inRandomOrder()->first();
+            $users[$i]->premium_plans()->attach($premium_plan);
         }
     }
 }

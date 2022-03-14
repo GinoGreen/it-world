@@ -2085,6 +2085,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AdvancedSearch',
@@ -2094,9 +2095,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/job_roles/',
-      allJobRoles: [],
       jobRoles: null,
       profiles: [],
+      searched: null,
       rangeReviewsValue: 0,
       actualNumberStar: 0,
       loading: false,
@@ -2119,45 +2120,43 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    getJobRoles: function getJobRoles() {
-      var _this = this;
-
-      axios.get(this.apiUrl).then(function (res) {
-        _this.allJobRoles = res.data; // console.log('all roles: ', res.data);
-      });
-    },
     getApi: function getApi() {
-      var _this2 = this;
+      var _this = this;
 
       this.loading = false;
       this.profiles = [];
+      this.searched = this.$route.params.job_role;
       axios.get(this.apiUrl + this.$route.params.job_role).then(function (res) {
-        _this2.jobRoles = res.data; // console.log(res.data);
+        _this.jobRoles = res.data; // console.log(res.data);
         // profiles
 
-        _this2.jobRoles.forEach(function (jobRole) {
+        _this.jobRoles.forEach(function (jobRole) {
           if (jobRole.users.length !== 0) {
             jobRole.users.forEach(function (profile) {
-              if (!_this2.profiles.some(function (element) {
+              if (!_this.profiles.some(function (element) {
                 return element.id === profile.id;
               })) {
-                if (profile.vote_average >= _this2.actualNumberStar && profile.reviews_length >= _this2.rangeReviewsValue) {
+                if (profile.vote_average >= _this.actualNumberStar && profile.reviews_length >= _this.rangeReviewsValue) {
                   profile.jobRole = [jobRole.name];
 
-                  _this2.profiles.push(profile);
+                  if (profile.premium) {
+                    _this.profiles.unshift(profile);
+                  } else {
+                    _this.profiles.push(profile);
+                  }
                 }
               } else {
-                _this2.profiles.find(function (element) {
+                _this.profiles.find(function (element) {
                   return element.id === profile.id;
                 }).jobRole.push(jobRole.name);
               }
 
-              _this2.loading = true;
+              _this.loading = true;
             });
           }
         });
 
-        console.log(_this2.profiles);
+        console.log(_this.profiles);
       });
     },
     activeJobRole: function activeJobRole(jobRole) {
@@ -2209,7 +2208,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getApi();
-    this.getJobRoles();
   }
 });
 
@@ -3407,15 +3405,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Slider',
   data: function data() {
     return {
       swiper: null,
+      profiles: [],
+      apiUrl: 'http://127.0.0.1:8000/api/profile/evidence',
       card: 1
     };
   },
   methods: {
+    getEvidence: function getEvidence() {
+      var _this = this;
+
+      axios.get(this.apiUrl).then(function (response) {
+        _this.profiles = response.data;
+        console.log(_this.profiles);
+      });
+    },
     mediaSlider: function mediaSlider() {
       if (window.innerWidth > 970) {
         this.card = 3;
@@ -3444,6 +3453,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    this.getEvidence();
     this.mediaSlider();
     window.addEventListener('resize', this.mediaSlider);
   }
@@ -3520,10 +3530,24 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Header',
   data: function data() {
     return {
-      navOpen: false
+      apiUrl: 'http://127.0.0.1:8000/api/profile/auth',
+      navOpen: false,
+      auth: null
     };
   },
-  methods: {}
+  methods: {
+    getAuthUser: function getAuthUser() {
+      var _this = this;
+
+      axios.get(this.apiUrl).then(function (res) {
+        _this.auth = res.data;
+        console.log('auth: ', _this.auth);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getAuthUser();
+  }
 });
 
 /***/ }),
@@ -3560,7 +3584,11 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Op
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Itim&family=Syne:wght@400;500;600;700;800&display=swap);", ""]);
 
 // module
+<<<<<<< HEAD
+exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #FF4D5A;\n  font-weight: 600;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-781a2080], p[data-v-781a2080] {\n  color: #fff;\n}\n.glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n\n/* width */\n[data-v-781a2080]::-webkit-scrollbar {\n  width: 3px;\n  border-radius: 20px;\n}\n\n/* Track */\n[data-v-781a2080]::-webkit-scrollbar-track {\n  background: none;\n}\n\n/* Handle */\n[data-v-781a2080]::-webkit-scrollbar-thumb {\n  background: #FF4D5A;\n}\n\n/* Handle on hover */\n[data-v-781a2080]::-webkit-scrollbar-thumb:hover {\n  cursor: pointer;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 20px;\n}\n.it-section-page .content-left .it-links[data-v-781a2080], .it-section-page .content-right .it-links[data-v-781a2080] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-height: 20px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  overflow: hidden;\n  max-height: calc(100vh - 100px);\n}\n.it-section-page .content-left .filters-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left .filters-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  overflow: auto;\n  border-radius: 10px 10px 0px 0px;\n  padding: 50px 10px 20px 10px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: transparent;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slider-box[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080] {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 5px;\n  background: #072142;\n  outline: none;\n  opacity: 1;\n  transition: opacity 0.2s;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]:hover {\n  opacity: 0.7;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  appearance: none;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-moz-range-thumb {\n  width: 15px;\n  height: 15px;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  height: calc(100vh - 100px);\n  overflow: hidden;\n  position: relative;\n}\n.it-section-page .content-right .results-title[data-v-781a2080] {\n  width: 100%;\n  z-index: 100;\n  position: absolute;\n  top: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-right .results-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-right .results-box[data-v-781a2080] {\n  padding: 50px 0;\n  overflow-y: auto;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  position: relative;\n  height: 100%;\n}\n.it-section-page .content-right .results-box .message-box[data-v-781a2080] {\n  position: absolute;\n  top: 50%;\n  transform: translate(0, -50%);\n}\n.it-section-page .content-right .results-box .profile-box[data-v-781a2080] {\n  width: 80%;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n  position: relative;\n}\n.it-section-page .content-right .results-box .profile-box .premium-user-sm[data-v-781a2080] {\n  position: absolute;\n  right: 10px;\n  top: 10px;\n  height: 25px;\n  width: 25px;\n  border-radius: 50%;\n  background-color: #072142;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-section-page .content-right .results-box .profile-box .premium-user-sm i[data-v-781a2080] {\n  color: white;\n  font-size: 10px;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon[data-v-781a2080] {\n  width: 150px;\n  height: 150px;\n  overflow: hidden;\n  position: absolute;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon[data-v-781a2080]::before, .it-section-page .content-right .results-box .profile-box .ribbon[data-v-781a2080]::after {\n  position: absolute;\n  z-index: -1;\n  content: \"\";\n  display: block;\n  border: 5px solid #2980b9;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon span[data-v-781a2080] {\n  position: absolute;\n  display: block;\n  width: 225px;\n  padding: 5px 0 5px 30px;\n  background-color: #072142;\n  box-shadow: 0 5px 10px rgba(7, 33, 66, 0.1);\n  color: #fff;\n  font: 700 12px/1 \"Lato\", sans-serif;\n  text-shadow: 0 1px 1px rgba(7, 33, 66, 0.2);\n  text-transform: uppercase;\n  text-align: center;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon-top-right[data-v-781a2080] {\n  top: -10px;\n  right: -10px;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon-top-right[data-v-781a2080]::before, .it-section-page .content-right .results-box .profile-box .ribbon-top-right[data-v-781a2080]::after {\n  border-top-color: transparent;\n  border-right-color: transparent;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon-top-right[data-v-781a2080]::before {\n  top: 0;\n  left: 30px;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon-top-right[data-v-781a2080]::after {\n  bottom: 30px;\n  right: 0;\n}\n.it-section-page .content-right .results-box .profile-box .ribbon-top-right span[data-v-781a2080] {\n  left: -25px;\n  top: 30px;\n  transform: rotate(45deg);\n}\n.it-section-page .content-right .results-box .profile-box .photo[data-v-781a2080] {\n  width: 23%;\n  min-width: 90px;\n  height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n  overflow: hidden;\n  border-radius: 50%;\n}\n.it-section-page .content-right .results-box .profile-box .photo img[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-right .results-box .profile-box .info-content[data-v-781a2080] {\n  width: 77%;\n  min-width: calc(100% - 90px);\n}\n.it-section-page .content-right .results-box .profile-box .info[data-v-781a2080] {\n  width: 100%;\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .results-box .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}\n.it-section-page .content-right .results-box .profile-box .info .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}", ""]);
+=======
 exports.push([module.i, "*[data-v-781a2080] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  outline: none;\n}\nbody[data-v-781a2080] {\n  font-family: \"Itim\", cursive;\n  font-family: \"Syne\", sans-serif;\n  background-image: linear-gradient(#072142, #020B16);\n}\na[data-v-781a2080],\na[data-v-781a2080]:hover {\n  color: #fff;\n  text-decoration: none;\n}\n.it-container-page[data-v-781a2080] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.it-container-page .it-section-page[data-v-781a2080] {\n  margin-top: 90px;\n  color: white;\n  min-height: calc(100vh - 90px);\n  width: 80%;\n}\n.it-title-big[data-v-781a2080] {\n  font-weight: 800;\n  font-size: 2em;\n}\n.it-title-medium[data-v-781a2080] {\n  font-weight: 400;\n  font-size: 1.2em;\n}\n.it-title-small[data-v-781a2080] {\n  font-weight: 600;\n  font-size: 1em;\n}\n.it-text-info[data-v-781a2080] {\n  font-size: 12px;\n  font-weight: 300;\n  margin-bottom: 10px;\n}\n.it-btn[data-v-781a2080] {\n  margin-top: 20px;\n}\n.it-btn button[data-v-781a2080] {\n  background-color: #FF4D5A;\n  font-weight: 600;\n  outline: none;\n  border: none;\n  color: #fff;\n  border-radius: 30px;\n  padding: 10px 20px;\n  transition: all 0.4s;\n  cursor: pointer;\n}\n.it-btn button[data-v-781a2080]:hover {\n  transform: translateY(-3px);\n}\n.it_input[data-v-781a2080] {\n  display: flex;\n  flex-direction: column;\n  margin-top: 70px;\n  margin-bottom: 0;\n  position: relative;\n}\n.it_input textarea[data-v-781a2080] {\n  max-height: 200px;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  background-color: #FF4D5A;\n  transform: translateY(-2px);\n  transition: all 0.5s;\n}\n.it_input .it_input_field[data-v-781a2080] {\n  z-index: 200;\n  display: block;\n  height: 40px;\n  width: 100%;\n  background-color: transparent;\n  border: 0;\n  border-bottom: 2px solid #fff;\n  caret-color: #FF4D5A;\n  color: #fff;\n  opacity: 0;\n}\n.it_input .it_input_field:focus ~ .it_input_border[data-v-781a2080] {\n  width: 100%;\n}\n.it_input label[data-v-781a2080] {\n  position: absolute;\n  left: 0;\n  bottom: 10px;\n  font-size: 0.9em;\n  z-index: 100;\n  transition: all 0.1s;\n}\n.it_input .it_input_border[data-v-781a2080] {\n  z-index: 300;\n  width: 0;\n  height: 3px;\n  transform: translateY(-3px);\n  transition: all 0.5s;\n}\nlabel[data-v-781a2080], p[data-v-781a2080] {\n  color: #fff;\n}\n.glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n.duble-glass[data-v-781a2080] {\n  background: rgba(255, 255, 255, 0.16) !important;\n  border-radius: 16px !important;\n  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;\n  backdrop-filter: blur(3.4px) !important;\n  -webkit-backdrop-filter: blur(3.4px) !important;\n  border: 1px solid rgba(255, 255, 255, 0.28) !important;\n}\n\n/* width */\n[data-v-781a2080]::-webkit-scrollbar {\n  width: 3px;\n  border-radius: 20px;\n}\n\n/* Track */\n[data-v-781a2080]::-webkit-scrollbar-track {\n  background: none;\n}\n\n/* Handle */\n[data-v-781a2080]::-webkit-scrollbar-thumb {\n  background: #FF4D5A;\n}\n\n/* Handle on hover */\n[data-v-781a2080]::-webkit-scrollbar-thumb:hover {\n  cursor: pointer;\n}\n.it-section-page[data-v-781a2080] {\n  display: flex;\n}\n.it-section-page .content-left[data-v-781a2080], .it-section-page .content-right[data-v-781a2080] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 20px;\n}\n.it-section-page .content-left .it-links[data-v-781a2080], .it-section-page .content-right .it-links[data-v-781a2080] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  min-height: 20px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left[data-v-781a2080] {\n  overflow: hidden;\n  max-height: calc(100vh - 100px);\n}\n.it-section-page .content-left .filters-title[data-v-781a2080] {\n  width: 100%;\n  position: absolute;\n  top: 0;\n  left: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-left .filters-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-left .filters[data-v-781a2080] {\n  width: 100%;\n  overflow: auto;\n  border-radius: 10px 10px 0px 0px;\n  padding: 50px 10px 20px 10px;\n}\n.it-section-page .content-left .filters .specialization[data-v-781a2080], .it-section-page .content-left .filters .reviews[data-v-781a2080], .it-section-page .content-left .filters .vote[data-v-781a2080] {\n  margin-bottom: 30px;\n}\n.it-section-page .content-left .filters .specialization .tag-container[data-v-781a2080] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag[data-v-781a2080] {\n  color: #FF4D5A;\n  background-color: transparent;\n  border: 2px solid #FF4D5A;\n  padding: 3px 20px;\n  border-radius: 25px;\n  margin: 5px;\n}\n.it-section-page .content-left .filters .specialization .tag-container .tag.active[data-v-781a2080] {\n  color: white;\n  background-color: #FF4D5A;\n  border: 2px solid transparent;\n}\n.it-section-page .content-left .filters .reviews .slider-box[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080] {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 5px;\n  background: #072142;\n  outline: none;\n  opacity: 1;\n  transition: opacity 0.2s;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]:hover {\n  opacity: 0.7;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  appearance: none;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .reviews .slider-box .slider[data-v-781a2080]::-moz-range-thumb {\n  width: 15px;\n  height: 15px;\n  background: #FF4D5A;\n  cursor: pointer;\n}\n.it-section-page .content-left .filters .vote .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}\n.it-section-page .content-right[data-v-781a2080] {\n  height: calc(100vh - 100px);\n  overflow: hidden;\n  position: relative;\n}\n.it-section-page .content-right .results-title[data-v-781a2080] {\n  width: 100%;\n  z-index: 100;\n  position: absolute;\n  top: 0;\n  min-height: 50px;\n  background-color: #FF4D5A;\n}\n.it-section-page .content-right .results-title h3[data-v-781a2080] {\n  line-height: 50px;\n  color: white;\n}\n.it-section-page .content-right .results-box[data-v-781a2080] {\n  padding: 50px 0;\n  overflow-y: auto;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  position: relative;\n  height: 100%;\n}\n.it-section-page .content-right .results-box .message-box[data-v-781a2080] {\n  position: absolute;\n  top: 50%;\n  transform: translate(0, -50%);\n}\n.it-section-page .content-right .results-box .profile-box[data-v-781a2080] {\n  width: 80%;\n  background-color: white;\n  border-radius: 10px;\n  margin: 0 auto;\n  padding: 20px;\n  display: flex;\n  align-items: flex-start;\n}\n.it-section-page .content-right .results-box .profile-box .photo[data-v-781a2080] {\n  width: 23%;\n  min-width: 90px;\n  min-height: 90px;\n  background-color: #FF4D5A;\n  margin-right: 20px;\n  overflow: hidden;\n  border-radius: 50%;\n}\n.it-section-page .content-right .results-box .profile-box .photo img[data-v-781a2080] {\n  width: 100%;\n}\n.it-section-page .content-right .results-box .profile-box .info-content[data-v-781a2080] {\n  width: 77%;\n  min-width: calc(100% - 90px);\n}\n.it-section-page .content-right .results-box .profile-box .info[data-v-781a2080] {\n  width: 100%;\n  margin-bottom: 15px;\n}\n.it-section-page .content-right .results-box .profile-box .info p[data-v-781a2080] {\n  margin-bottom: 0px;\n  color: black;\n}\n.it-section-page .content-right .results-box .profile-box .info .stars i[data-v-781a2080] {\n  font-size: 20px;\n  color: #ff9900;\n  cursor: pointer;\n}", ""]);
+>>>>>>> master
 
 // exports
 
@@ -11689,21 +11717,20 @@ var render = function () {
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "filters" }, [
-            _c("div", { staticClass: "specialization" }, [
+            _c("div", { staticClass: "specialization mt-2" }, [
               _c("h3", { staticClass: "it-title-small it-text-black" }, [
-                _vm._v("Specializzazione"),
+                _vm._v("Specializzazioni:"),
               ]),
               _vm._v(" "),
               _c(
                 "div",
                 { staticClass: "tag-container" },
-                _vm._l(_vm.allJobRoles, function (jobRole) {
+                _vm._l(_vm.jobRoles, function (jobRole) {
                   return _c(
                     "span",
                     {
                       key: "jobRole" + jobRole.id,
-                      staticClass: "tag it-text-info",
-                      class: _vm.activeJobRole(jobRole),
+                      staticClass: "tag it-text-info active",
                     },
                     [_vm._v(_vm._s(jobRole.name))]
                   )
@@ -11806,7 +11833,13 @@ var render = function () {
             "content-right glass p-1 col-xl-8 col-md-12 col-sm-12 mr-auto d-flex align-items-center",
         },
         [
-          _vm._m(1),
+          _c("div", { staticClass: "results-title" }, [
+            _c(
+              "h3",
+              { staticClass: "it-title-small it-text-orange text-center" },
+              [_vm._v("Risultati per : '" + _vm._s(_vm.searched) + "'")]
+            ),
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -11820,6 +11853,26 @@ var render = function () {
                     staticClass: "profile-box m-3 vis",
                   },
                   [
+                    profile.premium
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "ribbon ribbon-top-right d-none d-md-block",
+                          },
+                          [_c("span", [_vm._v("in evidenza")])]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    profile.premium
+                      ? _c("div", { staticClass: "premium-user-sm" }, [
+                          _c("i", {
+                            staticClass: "fa fa-rocket",
+                            attrs: { "aria-hidden": "true" },
+                          }),
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c("div", { staticClass: "photo" }, [
                       _c("img", {
                         attrs: { src: profile.avatar_path, alt: "avatar" },
@@ -11937,16 +11990,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "filters-title" }, [
       _c("h3", { staticClass: "it-title-small it-text-orange text-center" }, [
         _vm._v("Filtri"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "results-title" }, [
-      _c("h3", { staticClass: "it-title-small it-text-orange text-center" }, [
-        _vm._v("Risultati migliori"),
       ]),
     ])
   },
@@ -13388,11 +13431,55 @@ var render = function () {
       _c(
         "div",
         { staticClass: "swiper-wrapper content " },
-        _vm._l(6, function (card, index) {
+        _vm._l(_vm.profiles, function (profile) {
           return _c(
             "div",
-            { key: index, staticClass: "swiper-slide it-card glass" },
-            [_vm._m(0, true)]
+            { key: profile.id, staticClass: "swiper-slide it-card glass" },
+            [
+              _c(
+                "div",
+                { staticClass: "it-card-content" },
+                [
+                  _c("div", { staticClass: "it-slider-avatar" }, [
+                    _c("img", {
+                      attrs: { src: profile.avatar_path, alt: "avatar" },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "it-info" }, [
+                    _c("span", { staticClass: "name" }, [
+                      _vm._v(
+                        _vm._s(profile.name) + " " + _vm._s(profile.surname)
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "profession" }, [
+                      _vm._v(_vm._s(profile.job_roles[0].name)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "profile",
+                          params: { profile_id: profile.id },
+                        },
+                      },
+                    },
+                    [
+                      _c("div", { staticClass: "it-btn" }, [
+                        _c("button", { staticClass: "aboutMe" }, [
+                          _vm._v("Dettagli"),
+                        ]),
+                      ]),
+                    ]
+                  ),
+                ],
+                1
+              ),
+            ]
           )
         }),
         0
@@ -13404,60 +13491,7 @@ var render = function () {
     _c("div", { staticClass: "swiper-button-prev" }),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "it-card-content" }, [
-      _c("div", { staticClass: "it-slider-avatar" }, [
-        _c("img", {
-          attrs: {
-            src: "/img/slider/undraw_profile_pic_ic-5-t.svg",
-            alt: "avatar",
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "it-info" }, [
-        _c("span", { staticClass: "name" }, [_vm._v("Nome Cognome")]),
-        _vm._v(" "),
-        _c("span", { staticClass: "profession" }, [_vm._v("Web Developer")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "rating" }, [
-        _c("i", {
-          staticClass: "fa fa-star",
-          attrs: { "aria-hidden": "true" },
-        }),
-        _vm._v(" "),
-        _c("i", {
-          staticClass: "fa fa-star",
-          attrs: { "aria-hidden": "true" },
-        }),
-        _vm._v(" "),
-        _c("i", {
-          staticClass: "fa fa-star",
-          attrs: { "aria-hidden": "true" },
-        }),
-        _vm._v(" "),
-        _c("i", {
-          staticClass: "fa fa-star",
-          attrs: { "aria-hidden": "true" },
-        }),
-        _vm._v(" "),
-        _c("i", {
-          staticClass: "fa fa-star-o",
-          attrs: { "aria-hidden": "true" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "it-btn" }, [
-        _c("button", { staticClass: "aboutMe" }, [_vm._v("Dettagli")]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
